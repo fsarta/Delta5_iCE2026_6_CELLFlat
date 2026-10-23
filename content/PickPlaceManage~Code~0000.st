@@ -111,6 +111,26 @@ FB_PickPlace_Sequencer1(
     // ConveyorNumber => ConveyorNumber 
 );
 
+(* ---------------------------------------------------------------------------------------------
+   CONTROLLO VELOCITA' NASTRO FEEDIN (rampa proporzionale)
+   ---------------------------------------------------------------------------------------------
+   Il nastro rallenta in modo proporzionale alla distanza residua dal punto di stop:
+
+     - da tracking_start (FrameOffset[1] + 300 mm) il setpoint scende linearmente
+       da v_nominal a v_min;
+     - negli ultimi end_zone_margin mm (50 mm) scende linearmente da v_min a 0;
+     - a tracking_end (FrameOffset[1] + 450 mm) il nastro e' fermo.
+
+   Il punto di arresto (450 mm) e' scelto per restare DENTRO la finestra di
+   tracking: la EndDistance del blocco MC_TrackConveyorBelt e' 500 mm (vedi
+   M_Step_EnablePickTracking), quindi il nastro si ferma prima che il pezzo
+   esca dalla finestra e il robot lo prende sempre, anche quando arriva molto
+   avanti. Inoltre, siccome la rampa porta il setpoint a 0 gia' sulla soglia,
+   il pezzo non "scivola" oltre il punto di stop come succedeva con il taglio
+   secco a 0 e la decelerazione minima (dec_min).
+   La velocita' e' continua fra le zone: niente piu' gradini (era: v_nominal ->
+   v_min in un ciclo e poi taglio a 0 sulla soglia).
+   --------------------------------------------------------------------------------------------- *)
 FB_ConveyorController1(
     enable          := StartPickPlace_Delta AND G_bAutoCycleRunning,
     in_sync         := DATA_Machine.Status.InSyncPick_Delta,
@@ -119,11 +139,11 @@ FB_ConveyorController1(
     (* Parametri – idealmente da struttura dati macchina *)
     v_nominal       := HMI_Data.Axis.FeedIn.Setting.CommandVelocity, //DATA_Machine.ConveyorNominalSpeed,
     v_min           := 50.0, //DATA_Machine.ConveyorMinSpeed,
-    tracking_start  := vFeedIn_FrameOffset[1] + 300.0, //DATA_Machine.TrackingStart,
-    tracking_end    := vFeedIn_FrameOffset[1] + 450.0, //DATA_Machine.TrackingEnd,
+    tracking_start  := vFeedIn_FrameOffset[1] + 300.0, //DATA_Machine.TrackingStart,  (inizio rampa proporzionale)
+    tracking_end    := vFeedIn_FrameOffset[1] + 450.0, //DATA_Machine.TrackingEnd,    (nastro fermo: dentro la finestra di tracking, EndDistance = 500)
     max_error       := max_error, //DATA_Machine.TrackingMaxError,
-    end_zone_margin := end_zone_margin, //DATA_Machine.EndZoneMargin,
-    dec_min         := 100.0, //DATA_Machine.DecMin,
+    end_zone_margin := end_zone_margin, //DATA_Machine.EndZoneMargin, (ultimi mm della rampa: v_min -> 0)
+    dec_min         := 100.0, //DATA_Machine.DecMin, (non piu' usato per il jog: vedi HMI, JogDec = CommandDeceleration)
     dec_max         := HMI_Data.Axis.FeedIn.Setting.CommandDeceleration, //DATA_Machine.DecMax,
     acc_min         := 100.0, //DATA_Machine.AccMin,
     acc_max         := HMI_Data.Axis.FeedIn.Setting.CommandAcceleration, //DATA_Machine.AccMax
