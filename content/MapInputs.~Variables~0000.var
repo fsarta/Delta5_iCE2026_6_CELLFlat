@@ -1,0 +1,5 @@
+{ CustomGroupDefinition('3bbfff51-2a4d-4d77-a31c-1573eac9450a', '') }
+
+VAR
+    i : INT { CustomGroupReference('3bbfff51-2a4d-4d77-a31c-1573eac9450a') } {Id('20f5cb37-1e22-4d8e-b2cf-805d89689bc7')};
+END_VAR

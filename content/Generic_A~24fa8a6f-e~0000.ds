@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DevInstDoc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Projekte/PC_Worx_Next/XML/Schemas/DevInst.xsd" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <DevInst uuid="24fa8a6f-ee70-430a-8a1e-e322ef8473b2">
+    <TInfo uri="adeprojectref:///e639c0f9-db09-46f4-abf7-50216a13f220/cda306f5-f682-4871-b688-a10accb5b712/5b1c76c2-94c2-49a0-b4c4-af6df647ce5d" />
+    <InstVal xPath="/InstanceObjList/Obj[@uID='base00' type='Generic:Function']" Type="Ade.Fdcml.Core.StringAscii">VisorSensoPart</InstVal>
+    <InstVal xPath="/InstanceObjList/Obj[@uID='base01' type='Generic:Location']" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="/InstanceObjList/Obj[@uID='base02' type='AmlApcStationName']" Type="Ade.Fdcml.Core.String">[UTF-8;]</InstVal>
+    <InstVal xPath="Generic:Uri" Type="System.String">adeprojectref:///e639c0f9-db09-46f4-abf7-50216a13f220/606e2993-1c57-411c-b0d2-c57a13c52bbf/66f87239-e140-405e-ac98-33c484d4dfc0</InstVal>
+    <InstVal xPath="Generic:FormattedTypeNameWithoutVersion" Type="System.String">Generic Adapter Device</InstVal>
+    <InstVal xPath="Generic:FormattedTypeName" Type="System.String">Generic Adapter Device</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/InstanceObjList/Obj[@uID='eipdAddress' type='EIPIpAddress']" Type="Ade.Fdcml.Core.Ipv4">192.168.1.210</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/InstanceObjList/Obj[@uID='eipdTimeoutMultiplier' type='EIPTimeoutMultiplier']" Type="Ade.Fdcml.Core.Unsigned16">2</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/InstanceObjList/Obj[@uID='eipdApplicationType' type='ApplicationType']" Type="Ade.Fdcml.Core.Signed32">0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/InstanceObjList/Obj[@uID='eipdInputOnlyInstanceID' type='InputOnlyInstanceID']" Type="Ade.Fdcml.Core.Unsigned16">198</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/InstanceObjList/Obj[@uID='eipdListenOnlyInstanceID' type='ListenOnlyInstanceID']" Type="Ade.Fdcml.Core.Unsigned16">199</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/InstanceObjList/Obj[@uID='cmnEipStatusRefVarUri' type='LinkedVariables:eipStatusVar']" Type="Ade.Fdcml.Core.StringAscii">41dba471-64e5-4851-9579-1bb758f180b0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=statusVarConnectionState]" Type="System.String">ConnectionState</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=statusVarNetworkPath]" Type="System.String">NetworkPath</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=statusVarT2OInstance]" Type="System.String">T2OInstance</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=statusVarO2TInstance]" Type="System.String">O2TInstance</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=statusVarT2OConnectionId]" Type="System.String">T2OConnectionID</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=statusVarO2TConnectionId]" Type="System.String">O2TConnectionID</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=statusVarT2OInstanceIPAddress]" Type="System.String">T2OIPAddress</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=statusVarO2TInstanceIPAddress]" Type="System.String">O2TIPAddress</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=statusVarLocalErrorCode]" Type="System.String">LocalErrorCode</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=statusVarGeneralErrorStatus]" Type="System.String">GeneralErrorStatus</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=statusVarExtendedErrorStatus]" Type="System.String">ExtendedErrorStatus</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=statusVarNumSentPackets]" Type="System.String">NumSentPackets</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=statusVarNumReceivedPackets]" Type="System.String">NumReceivedPackets</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=statusVarMaxSendDelay]" Type="System.String">MaxSendDelay</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=statusVarMaxReceiveDelay]" Type="System.String">MaxReceiveDelay</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=statusVarNumSentBytes]" Type="System.String">NumSentBytes</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=statusVarNumReceivedBytes]" Type="System.String">NumReceivedBytes</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=statusVarNumLostPackets]" Type="System.String">NumLostPackets</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=statusVarNumSendErrors]" Type="System.String">NumSendErrors</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=statusVarNumTimeouts]" Type="System.String">NumTimeouts</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=statusVarNumErrors]" Type="System.String">NumErrors</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=statusVarNumReceiveErrors]" Type="System.String">NumReceiveErrors</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/NodeId" Type="Ade.Fdcml.Core.Unsigned32">1</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/Generic:FormattedTypeNameWithoutVersion" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/Generic:FormattedTypeName" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/LinkedVariables" Type="System.String">{"LinkedVariables:eipStatusVar":{"GdsConnections":null,"DataType":"EIP_STATUS_REF","VariableName":"","NameFormat":"{0}_ConnectionState","NameProvider":"","UId":"eipStatusVar","StringIdentifier":"41dba471-64e5-4851-9579-1bb758f180b0","GroupStringIdentifier":"abe6088a-b276-4fbd-841b-29b05de2e9a0"}}</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/InstanceObjList/Obj[@uID='eipdd00' type='EIP:ConsecutiveNumber']" Type="Ade.Fdcml.Core.Signed32">1</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/InstanceObjList/Obj[@uID='eipdInputInstance' type='InputInstance']" Type="Ade.Fdcml.Core.Unsigned16">105</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/InstanceObjList/Obj[@uID='eipdInputRPI' type='InputRPI']" Type="Ade.Fdcml.Core.Unsigned32">4</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/InstanceObjList/Obj[@uID='eipdInputSize' type='InputSize']" Type="Ade.Fdcml.Core.Unsigned16">72</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/InstanceObjList/Obj[@uID='eipdInputOwnership' type='InputOwnership']" Type="Ade.Fdcml.Core.Signed32">0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/InstanceObjList/Obj[@uID='eipdInputPriority' type='InputPriority']" Type="Ade.Fdcml.Core.Signed32">0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/InstanceObjList/Obj[@uID='eipdInputConnectionType' type='InputConnectionType']" Type="Ade.Fdcml.Core.Signed32">1</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/InstanceObjList/Obj[@uID='eipdInputRunIdle' type='InputRunIdle']" Type="Ade.Fdcml.Core.Boolean">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/InstanceObjList/Obj[@uID='eipdInputInstanceUID' type='InputInstanceUID']" Type="Ade.Fdcml.Core.StringAscii">de659925-ef7f-4667-bc22-4e4fad50b0c0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/Generic:FormattedTypeNameWithoutVersion" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/Generic:FormattedTypeName" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/InstanceObjList/Obj[@uID='eipdOutputInstance' type='OutputInstance']" Type="Ade.Fdcml.Core.Unsigned16">100</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/InstanceObjList/Obj[@uID='eipdOutputRPI' type='OutputRPI']" Type="Ade.Fdcml.Core.Unsigned32">4</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/InstanceObjList/Obj[@uID='eipdOutputSize' type='OutputSize']" Type="Ade.Fdcml.Core.Unsigned16">3</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/InstanceObjList/Obj[@uID='eipdOutputOwnership' type='OutputOwnership']" Type="Ade.Fdcml.Core.Signed32">0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/InstanceObjList/Obj[@uID='eipdOutputPriority' type='OutputPriority']" Type="Ade.Fdcml.Core.Signed32">0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/InstanceObjList/Obj[@uID='eipdOutputConnectionType' type='OutputConnectionType']" Type="Ade.Fdcml.Core.Signed32">0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/InstanceObjList/Obj[@uID='eipdOutputRunIdle' type='OutputRunIdle']" Type="Ade.Fdcml.Core.Boolean">True</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/InstanceObjList/Obj[@uID='eipdOutputInstanceUID' type='OutputInstanceUID']" Type="Ade.Fdcml.Core.StringAscii">74a6a0c7-a0a9-4eec-881e-f27cd12f86c0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/InstanceObjList/Obj[@uID='eipdOutputRetainType' type='OutputRetainType']" Type="Ade.Fdcml.Core.Signed32">0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/Generic:FormattedTypeNameWithoutVersion" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/Generic:FormattedTypeName" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_3']/InstanceObjList/Obj[@uID='eipdConfigEnable' type='ConfigEnable']" Type="Ade.Fdcml.Core.Boolean">True</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_3']/InstanceObjList/Obj[@uID='eipdConfigInstance' type='ConfigInstance']" Type="Ade.Fdcml.Core.Unsigned16">1</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_3']/InstanceObjList/Obj[@uID='eipdConfigSize' type='ConfigSize']" Type="Ade.Fdcml.Core.Unsigned16">0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_3']/InstanceObjList/Obj[@uID='eipdConfigData' type='ConfigData']" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_3']/Generic:FormattedTypeNameWithoutVersion" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_3']/Generic:FormattedTypeName" Type="System.String"></InstVal>
+  </DevInst>
+</DevInstDoc>

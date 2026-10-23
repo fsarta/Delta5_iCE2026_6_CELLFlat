@@ -1,0 +1,10 @@
+{ CustomGroupDefinition('d3184d3b-b4c0-47e3-a6f8-ba67ed2c4269', '') }
+
+VAR
+    xMotionAxesEnableCondition : BOOL { CustomGroupReference('d3184d3b-b4c0-47e3-a6f8-ba67ed2c4269') } {Id('10105cab-3f34-4ee1-a5e3-d7d6c74c3422')};
+    xJogJointEnableCondition : BOOL { CustomGroupReference('d3184d3b-b4c0-47e3-a6f8-ba67ed2c4269') } {Id('fa67204b-f781-433d-814e-0a654b4a255c')};
+    xJogLinearEnableCondition : BOOL { CustomGroupReference('d3184d3b-b4c0-47e3-a6f8-ba67ed2c4269') } {Id('f8eb72fb-9bd4-4163-a25b-f1c2696a4cf4')};
+    bServoError_Manual : BOOL { CustomGroupReference('d3184d3b-b4c0-47e3-a6f8-ba67ed2c4269') } {Id('326c433c-513d-4b3a-9bc9-51af68f7c14e')};
+    xAbsPosJointEnableCondition : BOOL { CustomGroupReference('d3184d3b-b4c0-47e3-a6f8-ba67ed2c4269') } {Id('9c94a415-f961-4bcf-9ebf-cf607f1a01a7')};
+    xAbsPosLinearEnableCondition : BOOL { CustomGroupReference('d3184d3b-b4c0-47e3-a6f8-ba67ed2c4269') } {Id('b3313cca-93b1-4487-ab2c-2bdf6dd51798')};
+END_VAR

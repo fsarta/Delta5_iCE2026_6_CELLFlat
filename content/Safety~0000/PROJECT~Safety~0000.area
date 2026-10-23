@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Area xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+   <PropertyGroup>
+      <AdeSafetyVersion>1.0.0.4</AdeSafetyVersion>
+      <SafetyId>f163eb85-ca12-45e7-af80-76459668d014</SafetyId>
+      <SafetyPassword>8sKLBY/Y33h0bGUGMjhxYNXeYSwkXie6/DX/p6aE6Nc=</SafetyPassword>
+   </PropertyGroup>
+   <ItemGroup>
+      <CodeWorksheet Include="Logical Elements\S_Main.pou\Code1.snold">
+         <Id>0dc048c3-741b-435f-bb22-5cc5fdb49b1a</Id>
+         <Extension>.snold</Extension>
+         <Type>.snold</Type>
+         <Visible>False</Visible>
+         <LockedNetworks></LockedNetworks>
+         <ParentIndex>6</ParentIndex>
+      </CodeWorksheet>
+   </ItemGroup>
+   <ItemGroup>
+      <Folder Include="Hardware\CFG_DAD2D2864F6B4807B38187D03BBF955E">
+         <Id>dad2d286-4f6b-4807-b381-87d03bbf955e</Id>
+         <FolderType>Configuration</FolderType>
+         <AllowReordering>true</AllowReordering>
+         <InstanceId>e80c5347-2c9d-4736-be8c-d4e2435129ac</InstanceId>
+         <TypeId>{D697523D-B237-4FF4-A24F-E9916F76CA40}</TypeId>
+         <TypeName>iC9226M-FSoE</TypeName>
+         <TypeRevision>A/2026.6.0</TypeRevision>
+         <ParentIndex>13</ParentIndex>
+      </Folder>
+      <Folder Include="Hardware\CFG_DAD2D2864F6B4807B38187D03BBF955E\RES_9744F38493744A68ADA88550937D3A0E">
+         <Id>9744f384-9374-4a68-ada8-8550937d3a0e</Id>
+         <FolderType>Resource</FolderType>
+         <IsFixed>true</IsFixed>
+         <TypeId>L7_11</TypeId>
+         <TypeName>SafeOS</TypeName>
+         <Type>Cortex SafetyPLC</Type>
+         <Version>1.0.0</Version>
+         <ParentIndex>15</ParentIndex>
+      </Folder>
+      <Folder Include="Logical Elements\S_Main.pou">
+         <Id>e99fe607-a393-4574-ad9c-2ee178087b28</Id>
+         <FolderType>PouFolder</FolderType>
+         <ParentIndex>0</ParentIndex>
+      </Folder>
+      <Folder Include="Hardware\CFG_DAD2D2864F6B4807B38187D03BBF955E\SliceBus_Master\DI_4xDC24V_Safety_(021-1SD10)">
+         <Id>2bcb3dce-c5b9-4f2f-94a8-99b6c382a0a3</Id>
+         <FolderType>DeviceInstance</FolderType>
+         <AllowReordering>true</AllowReordering>
+         <InstanceId>b4de795e-05a6-44aa-9435-21389ce99e4e</InstanceId>
+         <TypeId>0374F2CA-162C-42F0-92BC-479D130DC56A</TypeId>
+         <TypeName>DI 4xDC24V Safety (021-1SD10)</TypeName>
+         <TypeRevision>00/1.00</TypeRevision>
+         <ParentIndex>7</ParentIndex>
+      </Folder>
+      <Folder Include="Hardware\CFG_DAD2D2864F6B4807B38187D03BBF955E\SliceBus_Master\DI_4xDC24V_Safety_(021-1SD10)1">
+         <Id>b395533d-dc6e-41cc-8b12-351a45d6936e</Id>
+         <FolderType>DeviceInstance</FolderType>
+         <AllowReordering>true</AllowReordering>
+         <InstanceId>166af565-b7ed-4b96-be0f-3c8b52c96e70</InstanceId>
+         <TypeId>0374F2CA-162C-42F0-92BC-479D130DC56A</TypeId>
+         <TypeName>DI 4xDC24V Safety (021-1SD10)</TypeName>
+         <TypeRevision>00/1.00</TypeRevision>
+         <ParentIndex>8</ParentIndex>
+      </Folder>
+      <Folder Include="Hardware\CFG_DAD2D2864F6B4807B38187D03BBF955E\SliceBus_Master\DO_4xDC24V_0_5A_Safety_(022-1SD10)">
+         <Id>a6ca2958-08eb-4408-b326-c45678d4839f</Id>
+         <FolderType>DeviceInstance</FolderType>
+         <AllowReordering>true</AllowReordering>
+         <InstanceId>91264b7c-b326-4c03-ae35-69ac9e1359ad</InstanceId>
+         <TypeId>B9E05B8C-7149-485B-9683-5D65AE5E42D5</TypeId>
+         <TypeName>DO 4xDC24V 0.5A Safety (022-1SD10)</TypeName>
+         <TypeRevision>00/1.00</TypeRevision>
+         <ParentIndex>9</ParentIndex>
+      </Folder>
+      <Folder Include="Hardware\CFG_DAD2D2864F6B4807B38187D03BBF955E\SliceBus_Master\DO_4xDC24V_0_5A_Safety_(022-1SD10)1">
+         <Id>99122c69-396d-4405-a8c4-425f21c6a89f</Id>
+         <FolderType>DeviceInstance</FolderType>
+         <AllowReordering>true</AllowReordering>
+         <InstanceId>77e0e083-0fb1-47e2-9c60-38a6b5528a4a</InstanceId>
+         <TypeId>B9E05B8C-7149-485B-9683-5D65AE5E42D5</TypeId>
+         <TypeName>DO 4xDC24V 0.5A Safety (022-1SD10)</TypeName>
+         <TypeRevision>00/1.00</TypeRevision>
+         <ParentIndex>10</ParentIndex>
+      </Folder>
+   </ItemGroup>
+   <ItemGroup>
+      <MetadataDocument Include="Logical Elements\S_Main.pou\Metadata.meta">
+         <Id>33d65bfc-0c3d-4ee2-a964-16726b5d8b3f</Id>
+         <Extension>.meta</Extension>
+         <ParentIndex>0</ParentIndex>
+      </MetadataDocument>
+   </ItemGroup>
+   <ItemGroup>
+      <SafetyCockpitDocument Include="Hardware\CFG_DAD2D2864F6B4807B38187D03BBF955E\RES_9744F38493744A68ADA88550937D3A0E\57539a58-30c8-4561-bc70-a02601a76d90.L7_11.scockpit">
+         <Id>f295ca08-5d1e-4ca9-8fc9-d7b624d7a1bf</Id>
+         <Visible>False</Visible>
+         <ParentIndex>0</ParentIndex>
+      </SafetyCockpitDocument>
+   </ItemGroup>
+   <ItemGroup>
+      <SafetyStatisticDocument Include="Hardware\CFG_DAD2D2864F6B4807B38187D03BBF955E\RES_9744F38493744A68ADA88550937D3A0E\57539a58-30c8-4561-bc70-a02601a76d90.L7_11.sstatistic">
+         <Id>161d1317-0818-4c58-8e43-76c504c5b1e2</Id>
+         <Visible>False</Visible>
+         <ParentIndex>1</ParentIndex>
+      </SafetyStatisticDocument>
+   </ItemGroup>
+   <ItemGroup>
+      <UserMetadata Include="Logical Elements\S_Main.pou\VersionHistory.usermeta">
+         <Id>39ad41f9-d554-47e7-a99c-055836da8521</Id>
+         <Extension>.usermeta</Extension>
+         <ParentIndex>2</ParentIndex>
+      </UserMetadata>
+   </ItemGroup>
+   <ItemGroup>
+      <UserMetadataDescription Include="Logical Elements\S_Main.pou\Description.html">
+         <Id>a282b1df-fadf-4e1a-a882-cd030142d41c</Id>
+         <Extension>.html</Extension>
+         <ParentIndex>3</ParentIndex>
+      </UserMetadataDescription>
+      <UserMetadataDescription Include="Logical Elements\S_Main.pou\Description.rtf">
+         <Id>7077e521-4213-41af-85c3-70359abca04f</Id>
+         <Extension>.rtf</Extension>
+         <ParentIndex>4</ParentIndex>
+      </UserMetadataDescription>
+   </ItemGroup>
+   <ItemGroup>
+      <VariableWorksheet Include="Hardware\CFG_DAD2D2864F6B4807B38187D03BBF955E\RES_9744F38493744A68ADA88550937D3A0E\GlobalVariables.var">
+         <Id>28b54e4f-e5a2-4c32-8eb5-7cdc64ac298a</Id>
+         <IsVarConfig>true</IsVarConfig>
+         <Visible>false</Visible>
+         <ParentIndex>6</ParentIndex>
+      </VariableWorksheet>
+      <VariableWorksheet Include="Logical Elements\S_Main.pou\Variables.var">
+         <Id>5709d84d-5e6e-43b4-9291-84c63fa3f0f2</Id>
+         <Extension>.var</Extension>
+         <Type>.var</Type>
+         <Visible>False</Visible>
+         <ParentIndex>1</ParentIndex>
+      </VariableWorksheet>
+   </ItemGroup>
+   <ItemGroup>
+      <EsmConfiguration Include="Hardware\CFG_DAD2D2864F6B4807B38187D03BBF955E\RES_9744F38493744A68ADA88550937D3A0E\EsmConfiguration.esmc">
+         <Id>224f7399-da98-4f95-a83d-fa5581882d2d</Id>
+         <Visible>False</Visible>
+         <ParentIndex>9</ParentIndex>
+      </EsmConfiguration>
+   </ItemGroup>
+   <ItemGroup>
+      <SafetyParameterDocument Include="Hardware\CFG_DAD2D2864F6B4807B38187D03BBF955E\SliceBus_Master\DI_4xDC24V_Safety_(021-1SD10)\b4de795e-05a6-44aa-9435-21389ce99e4e.spar">
+         <Id>acdcd010-e410-4f6f-abf7-8d213afbf3b1</Id>
+         <ParentIndex>0</ParentIndex>
+      </SafetyParameterDocument>
+      <SafetyParameterDocument Include="Hardware\CFG_DAD2D2864F6B4807B38187D03BBF955E\SliceBus_Master\DI_4xDC24V_Safety_(021-1SD10)1\166af565-b7ed-4b96-be0f-3c8b52c96e70.spar">
+         <Id>fec3be21-fdd3-4cb8-9bfe-3619f28bc4b0</Id>
+         <ParentIndex>0</ParentIndex>
+      </SafetyParameterDocument>
+      <SafetyParameterDocument Include="Hardware\CFG_DAD2D2864F6B4807B38187D03BBF955E\SliceBus_Master\DO_4xDC24V_0_5A_Safety_(022-1SD10)\91264b7c-b326-4c03-ae35-69ac9e1359ad.spar">
+         <Id>ef2036b1-a1c3-4d0d-bd24-b2cb7557a065</Id>
+         <ParentIndex>0</ParentIndex>
+      </SafetyParameterDocument>
+      <SafetyParameterDocument Include="Hardware\CFG_DAD2D2864F6B4807B38187D03BBF955E\SliceBus_Master\DO_4xDC24V_0_5A_Safety_(022-1SD10)1\77e0e083-0fb1-47e2-9c60-38a6b5528a4a.spar">
+         <Id>c41bc466-e32b-4aed-93fd-ecc86fd12eda</Id>
+         <ParentIndex>0</ParentIndex>
+      </SafetyParameterDocument>
+   </ItemGroup>
+</Area>

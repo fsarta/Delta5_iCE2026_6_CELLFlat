@@ -1,0 +1,45 @@
+{ CustomGroupDefinition('6fc73d0c-a6cc-4fc5-9d12-c948a272da35', 'VAR_INPUT') }
+{ CustomGroupDefinition('cf7355d8-a393-4db3-b5c5-c337df97d814', 'VAR_OUTPUT') }
+{ CustomGroupDefinition('7ed7693a-99bb-4e1a-9936-faac69e9f5ac', '') }
+
+VAR_INPUT
+    distance : LREAL { CustomGroupReference('6fc73d0c-a6cc-4fc5-9d12-c948a272da35') } {Id('3c4da9b6-cfe8-4bd8-8afc-492000606576')};
+    enable : BOOL { CustomGroupReference('6fc73d0c-a6cc-4fc5-9d12-c948a272da35') } {Id('d367044b-a4f2-4c18-95c4-74efcc5c1fdd')};
+    in_sync : BOOL { CustomGroupReference('6fc73d0c-a6cc-4fc5-9d12-c948a272da35') } {Id('97ed4351-0b6b-425d-889b-0a7733abfbd8')};
+    v_nominal : LREAL := LREAL#200.0 { CustomGroupReference('6fc73d0c-a6cc-4fc5-9d12-c948a272da35') } {Id('68e446ed-d818-4d62-b983-bd668556ce94')};
+    v_min : LREAL := LREAL#50.0 { CustomGroupReference('6fc73d0c-a6cc-4fc5-9d12-c948a272da35') } {Id('0cd86483-e610-4234-8125-c9442777b131')};
+    tracking_start : LREAL { CustomGroupReference('6fc73d0c-a6cc-4fc5-9d12-c948a272da35') } {Id('f49ed2ee-b351-4050-becb-ab5b9d6b950b')};
+    tracking_end : LREAL { CustomGroupReference('6fc73d0c-a6cc-4fc5-9d12-c948a272da35') } {Id('a4f4306d-d262-434b-a504-86166f7560b5')};
+    max_error : LREAL { CustomGroupReference('6fc73d0c-a6cc-4fc5-9d12-c948a272da35') } {Id('f8fd6853-841a-44ec-8460-4100decf5d94')};
+    end_zone_margin : LREAL { CustomGroupReference('6fc73d0c-a6cc-4fc5-9d12-c948a272da35') } {Id('08628b4b-7a08-443c-a72b-9d546cf586b0')};
+    acc_min : LREAL { CustomGroupReference('6fc73d0c-a6cc-4fc5-9d12-c948a272da35') } {Id('36036beb-8627-4a45-8bea-338c93d10490')};
+    acc_max : LREAL { CustomGroupReference('6fc73d0c-a6cc-4fc5-9d12-c948a272da35') } {Id('9dbecdba-33e2-478d-9246-759e8d45fe3b')};
+    dec_min : LREAL { CustomGroupReference('6fc73d0c-a6cc-4fc5-9d12-c948a272da35') } {Id('46251fa8-08d7-453a-817e-badabaa2a377')};
+    dec_max : LREAL { CustomGroupReference('6fc73d0c-a6cc-4fc5-9d12-c948a272da35') } {Id('0146574f-582e-497c-a604-95f52119ad23')};
+END_VAR
+
+VAR_OUTPUT
+    speed_setpoint : LREAL { CustomGroupReference('cf7355d8-a393-4db3-b5c5-c337df97d814') } {Id('d57031f8-4c5e-4c86-abdb-cbb1bcfa63b9')};
+    acceleration : LREAL { CustomGroupReference('cf7355d8-a393-4db3-b5c5-c337df97d814') } {Id('d093d981-b5bb-4afa-932b-280639d246e8')};
+    deceleration : LREAL { CustomGroupReference('cf7355d8-a393-4db3-b5c5-c337df97d814') } {Id('6c174c9d-a40b-4957-ba80-d5218d4e06f4')};
+    tracking_active : BOOL { CustomGroupReference('cf7355d8-a393-4db3-b5c5-c337df97d814') } {Id('0b7c502d-9ad4-433a-85cc-392e2f2c02d3')};
+    end_zone_active : BOOL { CustomGroupReference('cf7355d8-a393-4db3-b5c5-c337df97d814') } {Id('6d4c0c1f-e5a5-452c-93bc-09c66470e437')};
+END_VAR
+
+VAR
+    error_start : LREAL { CustomGroupReference('7ed7693a-99bb-4e1a-9936-faac69e9f5ac') } {Id('76313141-1001-46f5-8184-555be70a0bc5')};
+    ratio_start : LREAL { CustomGroupReference('7ed7693a-99bb-4e1a-9936-faac69e9f5ac') } {Id('e25b381c-e068-4257-92d3-66f63c12b9a3')};
+    spd_phase1 : LREAL { CustomGroupReference('7ed7693a-99bb-4e1a-9936-faac69e9f5ac') } {Id('7487bae6-c80d-4fd0-955a-354808ae2b2b')};
+    dec_phase1 : LREAL { CustomGroupReference('7ed7693a-99bb-4e1a-9936-faac69e9f5ac') } {Id('f8914955-6c45-486f-8c77-d59b276f1fea')};
+    d_remaining : LREAL { CustomGroupReference('7ed7693a-99bb-4e1a-9936-faac69e9f5ac') } {Id('d3802bc9-e7ae-4875-9823-d5a4808d86f3')};
+    ratio_end : LREAL { CustomGroupReference('7ed7693a-99bb-4e1a-9936-faac69e9f5ac') } {Id('a88ef39d-d723-4c2f-a0a3-d4a6ccf71907')};
+    spd_phase2 : LREAL { CustomGroupReference('7ed7693a-99bb-4e1a-9936-faac69e9f5ac') } {Id('3d0c7158-863a-4b1a-9fec-670064b65eff')};
+    dec_phase2 : LREAL { CustomGroupReference('7ed7693a-99bb-4e1a-9936-faac69e9f5ac') } {Id('3810b394-7a67-4741-9054-cb4941545c86')};
+    acc_phase2 : LREAL { CustomGroupReference('7ed7693a-99bb-4e1a-9936-faac69e9f5ac') } {Id('2725bcfb-8563-45a0-ac08-617b0ab6dc9e')};
+    zone_length : LREAL { CustomGroupReference('7ed7693a-99bb-4e1a-9936-faac69e9f5ac') } {Id('0c91d7d0-1dd4-4a69-b108-44c3eb55631d')};
+    progress : LREAL { CustomGroupReference('7ed7693a-99bb-4e1a-9936-faac69e9f5ac') } {Id('e856bfc3-d3f8-48af-be27-51d28842d4ee')};
+END_VAR
+
+VAR_EXTERNAL
+    MultiGrpProductData : Yt_GP_MultiGrpProductStruct { CustomGroupReference('7ed7693a-99bb-4e1a-9936-faac69e9f5ac') } {Id('dabc8068-4e0f-40ff-ab63-84dee90e76ca')};
+END_VAR

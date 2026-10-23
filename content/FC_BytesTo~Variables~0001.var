@@ -1,0 +1,10 @@
+{ CustomGroupDefinition('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24', '') }
+
+VAR_INPUT
+    bLow : BYTE { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('d44894f3-d9ee-4538-b8f0-2d512489ec45')};
+    bHigh : BYTE { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('8de72987-1226-497d-8965-e4d692df94c8')};
+END_VAR
+
+VAR
+    iResult : INT { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('392ca2cc-eab2-4ca6-ad05-0621310cd651')};
+END_VAR

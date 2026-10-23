@@ -1,0 +1,18 @@
+{ CustomGroupDefinition('6104853d-a795-426d-9efd-be2cd8a84cef', 'Input') }
+{ CustomGroupDefinition('df170b7f-7171-430d-b6be-ce62c0a6e984', '') }
+
+VAR_INPUT
+    bErrorDetected : BOOL { CustomGroupReference('6104853d-a795-426d-9efd-be2cd8a84cef') } {Id('c560db37-943a-46e7-9720-e27fd0e397f7')}; (*TRUE if the error is currently detected*)
+    udiErrorID : UDINT { CustomGroupReference('6104853d-a795-426d-9efd-be2cd8a84cef') } {Id('f34641b8-c191-427b-b3da-ab7676a762a0')}; (*The ID of the error*)
+    sErrorSource : STRING { CustomGroupReference('6104853d-a795-426d-9efd-be2cd8a84cef') } {Id('4e5851cd-bb74-4634-a213-127968796567')}; (*Source of the error (e.g., FB instance name)*)
+    sErrorMessage : STRING512 { CustomGroupReference('6104853d-a795-426d-9efd-be2cd8a84cef') } {Id('b676fd7c-e0cc-4ea9-b054-79853001200e')}; (*Direct input for the descriptive error message*)
+    eErrorSeverity : E_ErrorSeverity { CustomGroupReference('6104853d-a795-426d-9efd-be2cd8a84cef') } {Id('55d53961-c9b7-4c73-b153-58578c70aace')}; (*Severity of this specific error*)
+END_VAR
+
+VAR
+    sFinalErrorMessage : STRING512 { CustomGroupReference('df170b7f-7171-430d-b6be-ce62c0a6e984') } {Id('3df95ac1-047e-4f03-868e-5db6dff5484d')}; (*The message that will be stored in the error buffer*)
+    udiActiveMatchIndex : UDINT { CustomGroupReference('df170b7f-7171-430d-b6be-ce62c0a6e984') } {Id('2a2b496f-aae9-4c69-a0c4-68f3aff4b9da')}; (*Indice dell'errore ATTIVO già presente (se esiste)*)
+    udiInactiveMatchIndex : UDINT { CustomGroupReference('df170b7f-7171-430d-b6be-ce62c0a6e984') } {Id('e1b78c0d-05ee-41d7-a77f-170d6279ccde')}; (*Indice dell'errore INATTIVO già presente (se esiste, per riattivarlo)*)
+    bActionPerformed : BOOL { CustomGroupReference('df170b7f-7171-430d-b6be-ce62c0a6e984') } {Id('8e1e26b7-ca02-4d95-940b-d7aa26a11a1c')};
+    i : UDINT { CustomGroupReference('df170b7f-7171-430d-b6be-ce62c0a6e984') } {Id('9287016c-853a-43c6-b0da-5ae3ba169706')};
+END_VAR

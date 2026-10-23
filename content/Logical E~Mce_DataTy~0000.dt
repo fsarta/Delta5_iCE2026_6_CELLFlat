@@ -1,0 +1,189 @@
+VAR CONSTANT
+  QA_MAX : INT := 16; (*max Queueing Amount; max number of motions which can be queued*)
+  CONDITIONS_UBOUND : SINT := 15;  
+  ENTRIES_UBOUND : SINT := 15;
+END_VAR
+
+TYPE
+  MceCmdStatusQA_Array : ARRAY[0..QA_MAX] OF MceCmdStatus;
+  CoordSysQA_Array : ARRAY[0..QA_MAX] OF MC_CoordinateSystem;
+  //SIntQA_Array : ARRAY[0..QA_MAX] OF SINT;
+  IntQA_Array : ARRAY[0..QA_MAX] OF INT;
+  BoolQA_Array : ARRAY[0..QA_MAX] OF BOOL;
+END_TYPE
+
+(*status signals of a motion command - mapped to PLCopen standard*)
+TYPE MceCmdStatus : 
+
+(*
+ * -----------------------------------------------------------------------------
+ * Name               : MceCmdStatus
+ * Version            : 1.0.0
+ * Date               : 2026-03-17
+ * Author             : FraSar
+ * Family             : McePosTable
+ * 
+ * -----------------------------------------------------------------------------
+ * Status signals of a motion command, aligned with PLCopen standard
+ * (Done, Busy, Active, CommandAborted, Error)
+ * -----------------------------------------------------------------------------
+ *)
+
+STRUCT
+  bDone           : BOOL; (*motion completed successfully*)
+  bBusy           : BOOL; (*FB is processing a command*)
+  bActive         : BOOL; (*this motion is the currently active motion*)
+  bCommandAborted : BOOL; (*motion was aborted by another command*)
+  bError          : BOOL; (*error occurred during execution*)
+  nErrorID        : UDINT; (*error identification code*)
+END_STRUCT
+END_TYPE
+
+(*IO data for the McePosTable function*)
+TYPE McePosTableIO :
+    
+(*
+ * -----------------------------------------------------------------------------
+ * Name               : McePosTableIO
+ * Version            : 1.0.0
+ * Date               : 2026-03-17
+ * Author             : FraSar
+ * Family             : McePosTable
+ * 
+ * -----------------------------------------------------------------------------
+ * IO data for the McePosTable function - PLCopen compatible
+ * -----------------------------------------------------------------------------
+ *)
+ 
+STRUCT
+  bSystemReady : BOOL := 0; (*input: system ready for running motion commands*)
+  bRun : BOOL; (*input: run PosTable. Reset PosTable when False*)
+  bStep : BOOL; (*input: trigger next step*)
+  bRecalcQA : BOOL; (*input: recalculate QA (queueing amount)*)
+  nAbortingMode : SINT := 0; (*input: select aborting mode [0=controlled stop, 1=immediate reset of PosTable]*)
+  nMode : SINT := 0; (*input: PosTable operation mode [0=with blending, 1=not blending, 2=single motion (wait for step after each motion)]*)
+  nNrOfCycles : INT := 1; (*input: number of cycles [0=repeat forever, 1=single cycle, >1=n cycles]*)
+  aConditions : ARRAY [0..CONDITIONS_UBOUND] OF BOOL; (*input: conditions state*)
+  bCustomActionDone : BOOL; (*input: custom action at standstill done*)
+  bActionStart : BOOL; (*output: start action at standstill*)
+  nActionID : INT; (*output: action with standstill [0=none, 1-19=built-in action, >19=custom action]*)
+  aMissingConditions : ARRAY [0..CONDITIONS_UBOUND] OF BOOL; (*output: conditions preventing the trajectory to continue*)
+  nPercentComplete : SINT; (*output: Percentage of motion that is completed (for active motion command)*)
+  nStateTime : DINT; (*output: elapsed time in current state [ms]*)
+  bIdle : BOOL; (*output: state machine: idle*)
+  bBusy : BOOL; (*output: state machine: busy*)
+  bWaitForStep : BOOL; (*output: Wait for user bStep trigger*)
+  bDone : BOOL; (*output: PosTable has completed the specified number of cycles*)
+  bError : BOOL; (*output: state machine: error*)
+  nErrorCode : UDINT := 0; (*output: state machine error code*)
+  nSmPosTable : INT := 0; (*in/out: state machine 1: PosTable*)
+  nIndex : INT; (*in/out: PosTable index for current motion*)
+  nLoadIndex : INT; (*in/out: PosTable index for loading next motion(s)*)
+  nCycleNr : INT; (*in/out: number of cycles ran by PosTable*)
+END_STRUCT
+END_TYPE
+
+(*Datatype for a PosTable entry - PLCopen aligned*)
+TYPE McePosTableEntry : 
+
+(*
+ * -----------------------------------------------------------------------------
+ * Name               : McePosTableEntry
+ * Version            : 1.0.0
+ * Date               : 2026-03-17
+ * Author             : FraSar
+ * Family             : McePosTable
+ * 
+ * -----------------------------------------------------------------------------
+ * Datatype for a PosTable entry - simplified for PLCopen standard
+ * Tool and UserFrame management is handled externally.
+ * -----------------------------------------------------------------------------
+ *)
+
+STRUCT
+  bSkipEntry : BOOL; (*1=skip this entry*)
+  bLastEntry : BOOL; (*1=mark this as the last entry (ignoring rest of the PosTable)*)
+  aPosition : VECTOR; (*target position: axis positions [deg] for MoveType=0 / TCP position (X, Y, Z, Rx, Ry, Rz) for MoveType=1*)
+  fSpeed : LREAL; (*target velocity*)
+  eCoordSystem : MC_CoordinateSystem; (*0=ACS, 1=MCS, 2=PCS, 3=TCS, 4=WCS, 5=TPCS*)
+  nAcc : LREAL; (*acceleration*)
+  nDec : LREAL; (*deceleration*)
+  nBlendFactor : MC_BufferMode; (*buffer/blending mode - Aborting/Buffered/BlendingLow/BlendingPrevious/BlendingNext/BlendingHigh *)
+  stMoveOptions : Yt_GroupMoveOptions;
+  nTransitionMode : MC_TransitionMode;
+  aTransitionParam : VECTOR;
+  nActionID : SINT; (*action with standstill; 0=none, 1=wait one PLC scan, 2=wait for step, >=20=custom actions*)
+  aStartCondition : ARRAY [0..CONDITIONS_UBOUND] OF BOOL; (*conditions to continue the trajectory*)
+END_STRUCT
+END_TYPE
+
+(*Data type for defining the size of the PosTable*)
+TYPE McePosTableData : 
+
+(*
+ * -----------------------------------------------------------------------------
+ * Name               : McePosTableData
+ * Version            : 0.1.0
+ * Date               : 2024-02-06
+ * Author             : Rioual 
+ * Family             : McePosTable
+ * 
+ * -----------------------------------------------------------------------------
+ * Data type for defining the size of the PosTable
+ * -----------------------------------------------------------------------------
+ *)
+
+STRUCT
+  stEntry : ARRAY [0..ENTRIES_UBOUND] OF McePosTableEntry;
+END_STRUCT
+END_TYPE
+
+(*data for state machine monitoring*)
+TYPE MceStateMonitoringData : 
+
+(*
+ * -----------------------------------------------------------------------------
+ * Name               : MceStateMonitoringData
+ * Version            : 0.2.0
+ * Date               : 2026-02-18
+ * Author             : deGroot 
+ * Family             : McePosTable
+ * 
+ * -----------------------------------------------------------------------------
+ * data for state machine monitoring
+ * -----------------------------------------------------------------------------
+ *)
+
+STRUCT
+  nStateStored : DINT; (*stored state for detecting change*)
+  nStatePrevious : DINT; (*previous state*)
+  nStateTimeUs : DINT; (*elapsed time [µs]*)
+  nStateTime : DINT; (*elapsed time [ms]*)
+  nStateTimePrevious : DINT; (*elapsed time previous state [ms]*)
+  tStored : LTIME; (*stored plc clock*)
+  bOsrStateChange : BOOL; (*rising edge on state change*)
+END_STRUCT
+END_TYPE
+
+(*Datatype for checking the start conditions of a PosTable entry*)
+TYPE McePosTableConditions : 
+
+(*
+ * -----------------------------------------------------------------------------
+ * Name               : McePosTableConditions
+ * Version            : 0.1.0
+ * Date               : 2024-03-28
+ * Author             : deGroot 
+ * Family             : McePosTable
+ * 
+ * -----------------------------------------------------------------------------
+ * Datatype for checking the start conditions of a PosTable entry
+ * -----------------------------------------------------------------------------
+ *)
+
+STRUCT
+  bHasConditions : BOOL; (*the entry has conditions*)
+  bConditionsOk : BOOL; (*all required start conditions are ok*)
+  aMissingConditions : ARRAY [0..CONDITIONS_UBOUND] OF BOOL; (*indicates which of the required start conditions are missing*)
+END_STRUCT
+END_TYPE

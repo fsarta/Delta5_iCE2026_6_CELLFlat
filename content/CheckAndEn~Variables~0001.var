@@ -1,0 +1,15 @@
+{ CustomGroupDefinition('11719282-a74b-4d17-9138-d78a23f66599', '') }
+
+VAR_INPUT
+    usiTaskID : USINT { CustomGroupReference('11719282-a74b-4d17-9138-d78a23f66599') } {Id('2686321b-a74f-47a7-94fa-6ba2593353c9')};
+    bTrigger : BOOL { CustomGroupReference('11719282-a74b-4d17-9138-d78a23f66599') } {Id('bfa360ee-9fc9-4572-b4c5-1af320b3b4a1')};
+    bOldTrigger : BOOL { CustomGroupReference('11719282-a74b-4d17-9138-d78a23f66599') } {Id('2392faf6-0f16-43a9-bb25-750be52f7109')};
+    udiEventID : UDINT { CustomGroupReference('11719282-a74b-4d17-9138-d78a23f66599') } {Id('0780a24b-acf5-4836-ab1a-972cee18d6a7')};
+    sSource : STRING[80] { CustomGroupReference('11719282-a74b-4d17-9138-d78a23f66599') } {Id('01240208-e4f4-4569-867b-e90c6065defb')};
+    sMessage : STRING512 { CustomGroupReference('11719282-a74b-4d17-9138-d78a23f66599') } {Id('55bf46e2-ed36-4c78-98fc-78a660030fba')};
+    eSeverity : E_ErrorSeverity { CustomGroupReference('11719282-a74b-4d17-9138-d78a23f66599') } {Id('febfab98-ff16-4420-8e37-ee81adfc47fa')};
+END_VAR
+
+VAR
+    udiNextHead : UDINT { CustomGroupReference('11719282-a74b-4d17-9138-d78a23f66599') } {Id('c9c98131-0f06-4f5e-9d63-e5606d59d68f')};
+END_VAR

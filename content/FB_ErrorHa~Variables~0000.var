@@ -1,0 +1,49 @@
+{ CustomGroupDefinition('24da5e1f-2951-49f9-978f-2847474b54c0', 'Input') }
+{ CustomGroupDefinition('686a5575-1a3b-413f-8558-e97ebcffcdfb', 'Output') }
+{ CustomGroupDefinition('a67d7da2-c443-4cba-b2c6-2c3d046a967c', '') }
+
+VAR_INPUT
+    bResetErrors : BOOL { CustomGroupReference('24da5e1f-2951-49f9-978f-2847474b54c0') } {Id('f0e72d70-e299-473f-a5d1-ec16deb189b6')}; (*Command to reset (clear) all errors in the buffer*)
+    bAcknowledgeErrors : BOOL { CustomGroupReference('24da5e1f-2951-49f9-978f-2847474b54c0') } {Id('83e38537-2846-4aea-b188-3015d920efb9')}; (*Command to acknowledge all active errors*)
+END_VAR
+
+VAR
+    xResetErrorsR_TRIG : R_TRIG { CustomGroupReference('a67d7da2-c443-4cba-b2c6-2c3d046a967c') } {Id('1a91c11b-0d57-4d59-8f2e-5c67ce9d64a6')}; (*Rising edge detection for reset command*)
+    xAcknowledgeErrorsR_TRIG : R_TRIG { CustomGroupReference('a67d7da2-c443-4cba-b2c6-2c3d046a967c') } {Id('5041c981-d8b8-4628-b292-121b3e996f3d')}; (*Rising edge detection for acknowledge command*)
+    i : UDINT { CustomGroupReference('a67d7da2-c443-4cba-b2c6-2c3d046a967c') } {Id('626f266d-2abf-4014-96dd-9764b0d2edd2')}; (*Loop counter*)
+    Y_YA_PLC_uSec1 : Y_YA_PLC_uSec { CustomGroupReference('a67d7da2-c443-4cba-b2c6-2c3d046a967c') } {Id('a16ce801-2422-48f2-9be4-ddfda7a57748')};
+    SysTimestamp : Yt_YA_RTC_Struct { CustomGroupReference('a67d7da2-c443-4cba-b2c6-2c3d046a967c') } {Id('a883f203-4b36-490b-a7f6-55e87f1ea686')};
+END_VAR
+
+VAR_EXTERNAL CONSTANT
+    C_ERROR_BUFFER_SIZE : UDINT { CustomGroupReference('a67d7da2-c443-4cba-b2c6-2c3d046a967c') } {Id('e7c9a5e2-00c2-4e8d-a28c-ce3def1c60e8')}; (*Size of the circular error buffer*)
+END_VAR
+
+VAR_EXTERNAL
+    G_ErrorBuffer : arrST_ErrorEntry { CustomGroupReference('a67d7da2-c443-4cba-b2c6-2c3d046a967c') } {Id('1bf65e9e-bec6-4467-8c21-d8494ec22a75')}; (*Circular buffer for errors*)
+    G_udiErrorHead : UDINT { CustomGroupReference('a67d7da2-c443-4cba-b2c6-2c3d046a967c') } {Id('70896250-e176-468d-867b-a70a3c9196e4')}; (*Pointer to the next available slot (for new errors)*)
+    G_udiErrorTail : UDINT { CustomGroupReference('a67d7da2-c443-4cba-b2c6-2c3d046a967c') } {Id('4c76c888-6477-4070-a155-0e858d648b80')}; (*Pointer to the oldest error (for reading/clearing)*)
+    G_bBufferFull : BOOL { CustomGroupReference('a67d7da2-c443-4cba-b2c6-2c3d046a967c') } {Id('56911b4b-0aa8-4956-828f-107315fd10af')};
+    G_udiActiveErrorCount : UDINT { CustomGroupReference('a67d7da2-c443-4cba-b2c6-2c3d046a967c') } {Id('ec491d4b-0edf-4cef-a0fb-d3d2e87b3808')};
+    G_eSystemErrorState : E_ErrorSeverity { CustomGroupReference('a67d7da2-c443-4cba-b2c6-2c3d046a967c') } {Id('be5ea3d4-fc68-4f42-a4fa-6a66cf3f77fe')};
+    G_bGlobalErrorActive : BOOL { CustomGroupReference('a67d7da2-c443-4cba-b2c6-2c3d046a967c') } {Id('2bfb3a10-9f8c-4011-8ed4-a508c2230c12')};
+    G_bResetAllErrors : BOOL { CustomGroupReference('a67d7da2-c443-4cba-b2c6-2c3d046a967c') } {Id('054b07aa-8e64-4d92-a0f1-4c440ff5a44d')}; (*Global command to reset all errors (acknowledge and mark inactive)*)
+    G_bAcknowledgeAllErrors : BOOL { CustomGroupReference('a67d7da2-c443-4cba-b2c6-2c3d046a967c') } {Id('c1e7ba75-400e-4abc-80b4-57a34b5b7686')}; (*Global command to acknowledge all active errors*)
+END_VAR
+
+VAR
+    Y_YA_RealTimeClock1 : Y_YA_RealTimeClock { CustomGroupReference('a67d7da2-c443-4cba-b2c6-2c3d046a967c') } {Id('e11346b4-351b-4fb4-952f-a92f48425c16')};
+END_VAR
+
+VAR_EXTERNAL CONSTANT
+    C_MAX_ERROR_LOOKUP_ENTRIES : UDINT { CustomGroupReference('a67d7da2-c443-4cba-b2c6-2c3d046a967c') } {Id('139152c8-95ff-4e5f-9156-fa13c7b47487')};
+END_VAR
+
+VAR_EXTERNAL
+    G_ErrorLookupTable : arrST_ErrorLookupEntry { CustomGroupReference('a67d7da2-c443-4cba-b2c6-2c3d046a967c') } {Id('00fced50-e959-4d8c-af33-5107a1a3d772')};
+    G_stOverallErrorStatus : ST_GlobalErrorStatus { CustomGroupReference('a67d7da2-c443-4cba-b2c6-2c3d046a967c') } {Id('1112c5ec-1b06-44de-bf97-c2780de586ec')}; (*Structure to hold overall error status*)
+END_VAR
+
+VAR
+    SysTimestamp1 : UDINT { CustomGroupReference('a67d7da2-c443-4cba-b2c6-2c3d046a967c') } {Id('33b452ff-caba-4aeb-b558-be3df0a62e0e')};
+END_VAR

@@ -1,0 +1,11 @@
+{ CustomGroupDefinition('9bde6f50-31ca-4bfa-86be-b3fb03447385', 'VAR_INPUT') }
+{ CustomGroupDefinition('ea442366-40ff-41d2-9e33-19badb5d5e7b', '') }
+
+VAR_INPUT
+    mA : Yt_MA_Matrix3x3 { CustomGroupReference('9bde6f50-31ca-4bfa-86be-b3fb03447385') } {Id('fd4365e7-ea88-435b-abb0-4c82a4986652')};
+    mB : Yt_MA_Matrix3x3 { CustomGroupReference('9bde6f50-31ca-4bfa-86be-b3fb03447385') } {Id('3fe3821b-dc83-44fc-b5bb-6f8b2adb4e62')};
+END_VAR
+
+VAR
+    r : Yt_MA_Matrix3x3 { CustomGroupReference('ea442366-40ff-41d2-9e33-19badb5d5e7b') } {Id('30c0bc04-cae6-4314-ba14-c4a72c05dbbe')};
+END_VAR

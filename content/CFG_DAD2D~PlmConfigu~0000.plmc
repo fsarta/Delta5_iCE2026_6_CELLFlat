@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PlmConfiguration>
+	<ComponentInstances id="85b1d9b9-b363-41fc-967a-67519d905842" contextUri="adeprojectref:///e639c0f9-db09-46f4-abf7-50216a13f220/606e2993-1c57-411c-b0d2-c57a13c52bbf/dad2d286-4f6b-4807-b381-87d03bbf955e">
+		<ComponentInstance id="83676196-6e5d-4f6e-92c0-927016546ec0" name="Arp.Plc.Eclr" libraryName="Arp.Plc.Eclr" componentType="EclrComponent" comment="" isReadOnly="true" />
+		<ComponentInstance id="c56f311a-6369-4f67-b639-22dddd6381bb" name="Arp.Io.EthernetIPAdapter" libraryName="Arp.Io.EthernetIP" componentType="ControllerComponent" comment="" isReadOnly="true" />
+		<ComponentInstance id="60e9b088-4f23-420d-9f81-b974fe5538de" name="Arp.Io.PnC" libraryName="Arp.Io.Pn" componentType="ControllerComponent" comment="" isReadOnly="true" />
+		<ComponentInstance id="1aa51d2d-4064-4e84-97bd-087720828859" name="Arp.Services.SpnsProxy" libraryName="SpnsProxy" componentType="Arp.Services.SpnsProxy" comment="" isReadOnly="true" />
+		<ComponentInstance id="cbd740ef-c85e-465a-ac75-ba95b468f3af" name="Arp.Io.SliceBus" libraryName="Arp.Io.SliceBus" componentType="Arp.Io.SliceBus.ControllerComponent" comment="" isReadOnly="true" />
+		<ComponentInstance id="db8bc62b-227a-4892-92e2-f7d05ddf4008" name="Arp.Services.Ehmi" libraryName="Arp.Plc.Ehmi" componentType="EhmiComponent" comment="" isReadOnly="true" />
+		<ComponentInstance id="29d2ead8-b1cc-450d-b8d4-497ce858520e" name="Arp.Services.FMK" libraryName="Arp.Services.FMK" componentType="ControllerComponent" comment="" isReadOnly="true" />
+	</ComponentInstances>
+</PlmConfiguration>

@@ -1,0 +1,19 @@
+{ CustomGroupDefinition('4df47381-92a8-4efb-818b-0165890458d3', 'VAR_INPUT') }
+{ CustomGroupDefinition('b656cfa9-e477-4972-a5eb-aad2940771d4', 'VAR_IN_OUT') }
+{ CustomGroupDefinition('a926cda1-a25a-4c80-8735-60937b0f3e55', '') }
+
+VAR_INPUT
+    bEnable : BOOL { CustomGroupReference('4df47381-92a8-4efb-818b-0165890458d3') } {Id('238398a2-515d-437f-a7b0-45311f519317')}; (*Enables the logic*)
+    Execute : BOOL { CustomGroupReference('4df47381-92a8-4efb-818b-0165890458d3') } {Id('b19e93d8-6cc3-4307-91d5-d914ed42b2a1')}; (*Confirm Position*)
+    FrameIndex : INT { CustomGroupReference('4df47381-92a8-4efb-818b-0165890458d3') } {Id('e251ed93-2a5b-4b0d-8c2a-38605a475eb0')};
+    CurrentPos : MC_CARTESIAN_REF { CustomGroupReference('4df47381-92a8-4efb-818b-0165890458d3') } {Id('a7216852-517e-4b08-a765-89641748d1b6')}; (*The realtime TCP position*)
+    PointSelect : eFrame { CustomGroupReference('4df47381-92a8-4efb-818b-0165890458d3') } {Id('dd88ca3c-0d51-4c13-94fb-cba0bd641014')};
+END_VAR
+
+VAR_IN_OUT
+    FramesData : ST_HMI_Frames { CustomGroupReference('b656cfa9-e477-4972-a5eb-aad2940771d4') } {Id('0aaac42a-ebb5-4a0a-af1c-2cf14a138db4')};
+END_VAR
+
+VAR
+    trigExec : R_TRIG { CustomGroupReference('a926cda1-a25a-4c80-8735-60937b0f3e55') } {Id('5ef5fbd9-d7c3-4fbe-9520-44d114b3e63d')};
+END_VAR

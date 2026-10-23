@@ -1,0 +1,36 @@
+{ CustomGroupDefinition('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24', 'Default') }
+{ CustomGroupDefinition('971398c9-e054-4349-a1d9-e00a1840c9f4', 'System Variables') }
+
+VAR_GLOBAL
+    sEmergency_CH0 : SAFEBOOL { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24'), InputLocation } {Id('3c2363b0-b53e-41ac-8aee-6652a20e9885')};
+    sEmergency_CH1 : SAFEBOOL { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24'), InputLocation } {Id('62f3a6a5-e0bf-47df-9607-38be88bfe59e')};
+    sdi_1_DI2 : SAFEBOOL { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24'), InputLocation } {Id('a3174d3d-a635-4346-a8ad-eb90efaf855b')};
+    sdi_1_DI3 : SAFEBOOL { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24'), InputLocation } {Id('47ff9a45-8b65-4bd5-b9b4-339da8c05e92')};
+    sDeltaDoor_CH0 : SAFEBOOL { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24'), InputLocation } {Id('830ecd94-ac10-498e-87ec-5a94cb73dca0')};
+    sDeltaDoor_CH1 : SAFEBOOL { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24'), InputLocation } {Id('87e91ccd-ab69-437b-b419-caec5347e7ee')};
+    sCameraDoor_CH0 : SAFEBOOL { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24'), InputLocation } {Id('69a378c6-ad6b-4c18-9b36-bfb1b8974acb')};
+    sCameraDoor_CH1 : SAFEBOOL { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24'), InputLocation } {Id('a2ef92bd-c994-41f2-b293-90e2cde191e6')};
+    sPilzSTO_SL : SAFEBOOL { OutputLocation, CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('8e506f8a-8009-4a48-abdd-73a58bd5e7c5')};
+    sPilzSTO_UB : SAFEBOOL { OutputLocation, CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('8d8574f3-75fb-48da-a234-758241ed4116')};
+    sPilzSTO_TInv : SAFEBOOL { OutputLocation, CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('7c3416dc-faa5-4bd5-a72f-a17bb678bfca')};
+    sPilzSTO_Spare : SAFEBOOL { OutputLocation, CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('f59bfdd0-198f-4eca-a406-0fc96b8fe8c6')};
+    sOutDeltaDoor : SAFEBOOL { OutputLocation, CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('c4fe26d0-a93d-4999-b183-97ee24ccf351')};
+    sOutCameraDoor : SAFEBOOL { OutputLocation, CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('4e361772-1e5f-4960-ace0-db777b62cf0f')};
+    sOutSpare2 : SAFEBOOL { OutputLocation, CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('ed751012-348e-40fd-987f-0af0e87bfdef')};
+    sOutSpare3 : SAFEBOOL { OutputLocation, CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('7cd9a995-bcc4-4cf7-ac52-04944fe7c47b')};
+    Safe_YellowInputButton : BOOL { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24'), InputLocation } {Id('4c038418-425b-4dda-8362-b98051a3ec7d')}; (*!!! DO NOT MODIFY !!! - Variable is automatically linked to module.*)
+    ResetSafety : BOOL { SharedMemoryLocation, CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('397b519e-688e-4bc3-9a6c-4aaa9b455090')};
+    C001 : SAFEBOOL { SharedMemoryLocation, CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('57a034ed-1ddf-4d20-b8da-eeb903ddd299')};
+    EmergencyStop : SAFEBOOL { SharedMemoryLocation, CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('9721d982-4c35-4bac-9fd7-be995982190e')};
+    UnlockRequestDeltaDoor : BOOL { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24'), InputLocation } {Id('56563653-3245-42cb-bdec-88371ec9d828')};
+    UnlockRequestCameraDoor : BOOL { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24'), InputLocation } {Id('b257bda0-b56e-447f-9399-f934daaa438e')};
+    SecuredArea : BOOL { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24'), InputLocation } {Id('0a2c4e6b-4232-450f-89b9-89fd2bc46b77')};
+    CameraGuardLocked : BOOL { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24'), InputLocation } {Id('86b74e99-ebe2-4b62-a633-a6e962ae687d')}; (*!!! DO NOT MODIFY !!! - Variable is automatically linked to module.*)
+    DeltaGuardLocked : BOOL { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24'), InputLocation } {Id('934f07ac-9fb1-42cd-8daa-64e8033ecbe9')}; (*!!! DO NOT MODIFY !!! - Variable is automatically linked to module.*)
+    sdi_1_Data : SAFEBYTE { SystemVariable, OutputLocation, CustomGroupReference('971398c9-e054-4349-a1d9-e00a1840c9f4') } {Id('40ddeac9-e7c2-43b5-936b-d629cb68b105')};
+    sdi_2_Data : SAFEBYTE { SystemVariable, OutputLocation, CustomGroupReference('971398c9-e054-4349-a1d9-e00a1840c9f4') } {Id('1eac0493-6aba-4835-baa8-92d6e4048c4a')};
+    sdo_1_Data : SAFEBYTE { SystemVariable, CustomGroupReference('971398c9-e054-4349-a1d9-e00a1840c9f4'), InputLocation } {Id('4169b03c-4bb7-4f31-b0b1-db2c7c62e576')};
+    sdo_2_Data : SAFEBYTE { SystemVariable, CustomGroupReference('971398c9-e054-4349-a1d9-e00a1840c9f4'), InputLocation } {Id('e6c795e1-76b0-4fdb-959f-3c063ff1ee50')};
+    ACK_REQ_FSOE_MSTR_GLOBAL AT %IX1.6 : BOOL { SystemVariable, CustomGroupReference('971398c9-e054-4349-a1d9-e00a1840c9f4'), DiagnosticAddress, InputLocation } {Id('880b50c7-70b5-4445-aee8-4c063cbcc8de')};
+    ACK_REI_FSOE_MSTR_GLOBAL AT %QX1.2 : BOOL { SystemVariable, OutputLocation, CustomGroupReference('971398c9-e054-4349-a1d9-e00a1840c9f4'), DiagnosticAddress } {Id('4704a928-8375-4a6a-9ac0-33eab9e48b5a')};
+END_VAR

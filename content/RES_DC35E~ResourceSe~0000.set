@@ -1,0 +1,67 @@
+{ Type('IC9226M-FSOE') }
+RESOURCE PLC
+{ DeviceProfileWorksheet('DeviceProfile', Id := '4909372d-3091-498d-aaa3-9dff06771183') }
+{ DeviceProfile(
+    Name := 'RES_DC35EA2F0B2344C3814B4194CB6414CB',
+    Parent := ( Name := 'IC9226M-FSOE', Version := '2026.6.0'), 
+    UpdateType := 'Manual',
+    CommunicationMetadata := 'UniqueId=LAN (X3/X4);IsBackup=False',
+    CommunicationParameters := 'DLL socomm.dll -ip192.168.1.200 -p41100 -to2000',
+    CommunicationType := 'TcpIp',
+    DebugCodePous := 
+    ['FB_AxisController','FB_CamController','FB_VirtualMovement','libParamSDO','FB_ErrorHandler','FB_ErrorHandler_AddUpdateError','FB_ErrorHandler_CheckAndEnqueue','FB_ErrorHandler_CheckAndEnqueueEvent','FB_ErrorHandler_EnqueueError','FB_ErrorHandler_EnqueueEvent','FB_ErrorHandler_GetErrorMessage','FB_ErrorHandler_LogEvent','FB_ErrorHandler_ProcessEvent','FB_ErrorHandler_RecalculateHighestSeverity','FB_ErrorHandler_ResetBufferAndCounters','FB_ErrorHandler_Update','FB_GroupController','FB_PickPlace_Sequencer1','FB_PickPlace_Sequencer1_AddStep','FB_PickPlace_Sequencer1_M_ConfigSequence_Parking','FB_PickPlace_Sequencer1_M_ConfigSequence_Run','FB_PickPlace_Sequencer1_M_Dispatcher','FB_PickPlace_Sequencer1_M_Driver_InitPointers','FB_PickPlace_Sequencer1_M_Driver_Motion_Check','FB_PickPlace_Sequencer1_M_Driver_Motion_Cmd','FB_PickPlace_Sequencer1_M_Driver_ResetMove','FB_PickPlace_Sequencer1_M_Helper_FindStepIndex','FB_PickPlace_Sequencer1_M_ResetMachine','FB_PickPlace_Sequencer1_M_Step_ApproachPick_Tracking','FB_PickPlace_Sequencer1_M_Step_ApproachPlace_Tracking','FB_PickPlace_Sequencer1_M_Step_AscendAfterPick','FB_PickPlace_Sequencer1_M_Step_AscendAfterPlace','FB_PickPlace_Sequencer1_M_Step_CalcPickOffset','FB_PickPlace_Sequencer1_M_Step_CheckPickLimits','FB_PickPlace_Sequencer1_M_Step_CheckPlaceLimits','FB_PickPlace_Sequencer1_M_Step_ConvertPickToCartesian_Tracking','FB_PickPlace_Sequencer1_M_Step_ConvertPlaceToCartesian_Tracking','FB_PickPlace_Sequencer1_M_Step_CycleCompletitionAndChangeMode','FB_PickPlace_Sequencer1_M_Step_DescendAndPick','FB_PickPlace_Sequencer1_M_Step_DescendAndPlace','FB_PickPlace_Sequencer1_M_Step_EnablePickTracking','FB_PickPlace_Sequencer1_M_Step_EnablePlaceTracking','FB_PickPlace_Sequencer1_M_Step_Error','FB_PickPlace_Sequencer1_M_Step_FinalParkingCompletition','FB_PickPlace_Sequencer1_M_Step_Initialize','FB_PickPlace_Sequencer1_M_Step_InitializePlace','FB_PickPlace_Sequencer1_M_Step_InitParking','FB_PickPlace_Sequencer1_M_Step_MoveToParking_AfterPick','FB_PickPlace_Sequencer1_M_Step_MoveToParking_AfterPlace','FB_PickPlace_Sequencer1_M_Step_MoveToParking_SafePosition','FB_PickPlace_Sequencer1_M_Step_SelectNextProduct_Pick','FB_PickPlace_Sequencer1_M_Step_SetPickFrame_Tracking','FB_PickPlace_Sequencer1_M_Step_SetPickOffsetAndPCS_Tracking','FB_PickPlace_Sequencer1_M_Step_SetPlaceFrame_Tracking','FB_PickPlace_Sequencer1_M_Step_SetPlaceOffsetAndPCS_Tracking','FB_PickPlace_Sequencer1_M_Step_StartMovePath','FB_PickPlace_Sequencer1_M_Step_WaitAfterPick_Tracking','FB_PickPlace_Sequencer1_M_Step_WaitAfterPlace_Tracking','FB_PickPlace_Sequencer1_M_Step_WaitForPickSync','FB_PickPlace_Sequencer1_M_Step_WaitForPlaceSync','FB_TeachFrame','FB_DistanceTrigger','FB_VisionApplication','FB_VisorDriver','FB_VisorDriver_MapInputs','FB_VisorDriver_MapOutputs','FB_MachineController','FB_MachineController_HandleAutomaticState','FB_MachineController_HandleCommissioningState','FB_MachineController_HandleErrorState','FB_MachineController_HandleHomingState','FB_MachineController_HandleIdleState','FB_MachineController_HandleManualState','FB_MachineController_HandlePowerUpState','FB_MachineController_HandleShutdownState','FB_MachineController_HandleStoppingState','FB_MachineController_HandleTeachFrameState','FB_MachineController_HandleUnpoweringState','DEG_TO_RAD','FB_ConveyorController','FB_RotatePosition','FB_RotatePosition_M_BuildRotMatrix','FB_RotatePosition_M_MatMul','FB_RotatePosition_M_MatToEuler','FC_BytesToInt','FC_BytesToReal','McePosTable','McePosTable_McePosTableCheckConditions','McePosTable_McePosTableFindEntry','McePosTable_McePosTableRecalcQA','McePosTable_McePosTableRemainingEntries','McePosTable_McePosTableUpdateIndex','McePosTable_McePosTableUpdateLoadIndex','McePosTable_MceStateMonitoring','MyFormatProductData','CHANGELOG','ErrorManager','HMI','IO','Main','PickPlaceManager','RebootAndReset','VisionManager','Init','InitColdStart','InitWarmStart'
+    ],
+    DebugCodeTimeStamp := '2026-07-31T12:19:29.9816278Z',
+    DebugCodeTypes := 
+    ['Function','SFC'
+    ],
+    DeviceDescription := 
+    (
+        MaxProgramSize := '12582912',
+        MaxDataSize := '67108856',
+        MaxRetainDataSize := '0',
+        MaxTaskPriority := '95',
+        Endianness := 'LittleEndian'
+    ),
+    DownloadFiles := 
+    [
+    ],
+    FilesIni := 
+    [
+    ]
+)}
+
+
+TASK FastTask (INTERVAL := T#2ms, PRIORITY := 0) { Watchdog(T#4ms), Id('1c9aaabb-7c32-4067-8d52-63a81b0943cf') };
+
+TASK MediumTask (INTERVAL := T#2ms, PRIORITY := 3) { Watchdog(T#8ms), Id('5f53ec90-69b7-4193-8b4c-4e20c44e7ec1') };
+
+TASK SlowTask (INTERVAL := T#32ms, PRIORITY := 7) { Watchdog(T#32ms), Id('69ec2e58-5646-4426-a93f-e9006f59f3c6') };
+
+TASK WarmStartTask (INTERVAL := T#0ms, PRIORITY := 0) { Watchdog(T#100ms), Id('7e87058e-b524-4c85-8959-ebf96a18a528') };
+
+TASK ColdStartTask (INTERVAL := T#0ms, PRIORITY := 0) { Watchdog(T#100ms), Id('84dca4e3-cab5-4678-a1e5-e1d4743e9c12') };
+
+TASK RnR_Task (INTERVAL := T#16ms, PRIORITY := 5) { Watchdog(T#16ms), Id('263e62dd-882d-4738-a595-ad908fe90d6f') };
+
+TASK ErrorManagerTask (INTERVAL := T#64ms, PRIORITY := 0) { Watchdog(T#128ms), Id('97094a9b-42bf-4f96-99a4-e9ecc4cf40a4') };
+
+PROGRAM IO1 WITH FastTask : IO { Id('db905970-78bc-4108-8dde-85e36fd0adec') };
+
+PROGRAM PickPlaceManager WITH FastTask : PickPlaceManager { Id('02371725-33b4-49b5-846c-de30f4d5de79') };
+
+PROGRAM Main1 WITH MediumTask : Main { Id('cfbc0209-913d-4b84-978e-85e19813fa3c') };
+
+PROGRAM VisionManager WITH MediumTask : VisionManager { Id('3e907b33-7832-4aca-bb7d-53d053bb2e20') };
+
+PROGRAM HMI1 WITH SlowTask : HMI { Id('ddf3375d-6237-4609-97f2-0714cec83160') };
+
+PROGRAM InitWarmStart1 WITH WarmStartTask : Init { Id('c02f9137-715d-4ad2-b585-4aebdc0bf998') };
+
+PROGRAM InitColdStart1 WITH ColdStartTask : Init { Id('5addb799-561a-4f58-894f-f104b22dfafa') };
+
+PROGRAM RebootAndReset WITH RnR_Task : RebootAndReset { Id('b9c7bc6e-7c4a-40e4-816d-25b15d8fb136') };
+
+PROGRAM ErrorManager WITH ErrorManagerTask : ErrorManager { Id('57a5088a-778e-4312-ae81-d225d2bf764c') };
+
+END_RESOURCE

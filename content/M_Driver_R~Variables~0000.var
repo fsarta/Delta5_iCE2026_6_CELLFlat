@@ -1,0 +1,5 @@
+{ CustomGroupDefinition('5200e66b-8451-4273-99bb-991c3b5887b4', '') }
+
+VAR_INPUT
+    iBlockID : E_MotionChannel { CustomGroupReference('5200e66b-8451-4273-99bb-991c3b5887b4') } {Id('e7db5073-5c8e-4a11-ad30-9b90b3dd8bf9')};
+END_VAR

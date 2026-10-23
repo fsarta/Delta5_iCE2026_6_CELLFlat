@@ -1,0 +1,5 @@
+{ CustomGroupDefinition('df2f2de8-f850-4d4c-b632-f764445480a2', '') }
+
+VAR
+    bM_ConfigSequence_RunOldState : BOOL { CustomGroupReference('df2f2de8-f850-4d4c-b632-f764445480a2') } {Id('6287129a-5216-4dc1-9773-e888ef32a042')};
+END_VAR

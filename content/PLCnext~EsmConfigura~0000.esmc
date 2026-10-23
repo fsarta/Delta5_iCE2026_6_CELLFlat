@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EsmConfiguration id="e4d760fe-011d-4259-a88e-5c2f8949d74d" version="2" importRevision="1">
+	<Esms>
+		<Esm id="83febe2c-766e-4feb-8cd1-424053d669b5" name="ESM1" cpuAffinity="1" timerInterval="500000" taskSchedulerMode="" comment="" readonly="False" />
+	</Esms>
+	<Tasks>
+		<Task id="1c9aaabb-7c32-4067-8d52-63a81b0943cf" name="FastTask" taskType="CyclicTask" priority="0" intervalTime="2000000" watchdogTime="4000000" executionTimeThreshold="0" coreAffinity="0" stackSize="0" taskBuffer="None" comment="" esmId="83febe2c-766e-4feb-8cd1-424053d669b5" readonly="False">
+			<ProgramInstances>
+				<ProgramInstance id="db905970-78bc-4108-8dde-85e36fd0adec" name="IO1" programType="IO" componentId="00000000-0000-0000-0000-000000000000" libraryName="Arp.Plc.Eclr" componentName="Arp.Plc.Eclr" componentType="EclrComponent" comment="" readonly="False" groupName="" />
+				<ProgramInstance id="02371725-33b4-49b5-846c-de30f4d5de79" name="PickPlaceManager" programType="PickPlaceManager" componentId="00000000-0000-0000-0000-000000000000" libraryName="Arp.Plc.Eclr" componentName="Arp.Plc.Eclr" componentType="EclrComponent" comment="" readonly="False" groupName="" />
+			</ProgramInstances>
+		</Task>
+		<Task id="5f53ec90-69b7-4193-8b4c-4e20c44e7ec1" name="MediumTask" taskType="CyclicTask" priority="3" intervalTime="2000000" watchdogTime="8000000" executionTimeThreshold="0" coreAffinity="0" stackSize="0" taskBuffer="None" comment="" esmId="83febe2c-766e-4feb-8cd1-424053d669b5" readonly="False">
+			<ProgramInstances>
+				<ProgramInstance id="cfbc0209-913d-4b84-978e-85e19813fa3c" name="Main1" programType="Main" componentId="00000000-0000-0000-0000-000000000000" libraryName="Arp.Plc.Eclr" componentName="Arp.Plc.Eclr" componentType="EclrComponent" comment="" readonly="False" groupName="" />
+				<ProgramInstance id="3e907b33-7832-4aca-bb7d-53d053bb2e20" name="VisionManager" programType="VisionManager" componentId="00000000-0000-0000-0000-000000000000" libraryName="Arp.Plc.Eclr" componentName="Arp.Plc.Eclr" componentType="EclrComponent" comment="" readonly="False" groupName="" />
+			</ProgramInstances>
+		</Task>
+		<Task id="263e62dd-882d-4738-a595-ad908fe90d6f" name="RnR_Task" taskType="CyclicTask" priority="5" intervalTime="16000000" watchdogTime="16000000" executionTimeThreshold="0" coreAffinity="0" stackSize="0" taskBuffer="None" comment="" esmId="83febe2c-766e-4feb-8cd1-424053d669b5" readonly="False">
+			<ProgramInstances>
+				<ProgramInstance id="b9c7bc6e-7c4a-40e4-816d-25b15d8fb136" name="RebootAndReset" programType="RebootAndReset" componentId="00000000-0000-0000-0000-000000000000" libraryName="Arp.Plc.Eclr" componentName="Arp.Plc.Eclr" componentType="EclrComponent" comment="" readonly="False" groupName="" />
+			</ProgramInstances>
+		</Task>
+		<Task id="69ec2e58-5646-4426-a93f-e9006f59f3c6" name="SlowTask" taskType="CyclicTask" priority="7" intervalTime="32000000" watchdogTime="32000000" executionTimeThreshold="0" coreAffinity="0" stackSize="0" taskBuffer="None" comment="" esmId="83febe2c-766e-4feb-8cd1-424053d669b5" readonly="False">
+			<ProgramInstances>
+				<ProgramInstance id="ddf3375d-6237-4609-97f2-0714cec83160" name="HMI1" programType="HMI" componentId="00000000-0000-0000-0000-000000000000" libraryName="Arp.Plc.Eclr" componentName="Arp.Plc.Eclr" componentType="EclrComponent" comment="" readonly="False" groupName="" />
+			</ProgramInstances>
+		</Task>
+		<Task id="7e87058e-b524-4c85-8959-ebf96a18a528" name="WarmStartTask" taskType="EventTask" eventType="PlcNextEvent" eventName="Arp.Plc.Esm.OnWarmStart" eventSource="" priority="0" watchdogTime="100000000" executionTimeThreshold="0" coreAffinity="0" stackSize="0" taskBuffer="None" comment="" esmId="83febe2c-766e-4feb-8cd1-424053d669b5" readonly="False">
+			<ProgramInstances>
+				<ProgramInstance id="c02f9137-715d-4ad2-b585-4aebdc0bf998" name="InitWarmStart1" programType="Init" componentId="00000000-0000-0000-0000-000000000000" libraryName="Arp.Plc.Eclr" componentName="Arp.Plc.Eclr" componentType="EclrComponent" comment="" readonly="False" groupName="" />
+			</ProgramInstances>
+		</Task>
+		<Task id="84dca4e3-cab5-4678-a1e5-e1d4743e9c12" name="ColdStartTask" taskType="EventTask" eventType="PlcNextEvent" eventName="Arp.Plc.Esm.OnColdStart" eventSource="" priority="0" watchdogTime="100000000" executionTimeThreshold="0" coreAffinity="0" stackSize="0" taskBuffer="None" comment="" esmId="83febe2c-766e-4feb-8cd1-424053d669b5" readonly="False">
+			<ProgramInstances>
+				<ProgramInstance id="5addb799-561a-4f58-894f-f104b22dfafa" name="InitColdStart1" programType="Init" componentId="00000000-0000-0000-0000-000000000000" libraryName="Arp.Plc.Eclr" componentName="Arp.Plc.Eclr" componentType="EclrComponent" comment="" readonly="False" groupName="" />
+			</ProgramInstances>
+		</Task>
+		<Task id="1c978e25-349e-4d00-ae35-7346f4f780c8" name="SafetyProxyTask" taskType="CyclicTask" priority="0" intervalTime="5000000" watchdogTime="100000000" executionTimeThreshold="0" coreAffinity="0" stackSize="0" taskBuffer="None" comment="" esmId="83febe2c-766e-4feb-8cd1-424053d669b5" readonly="True">
+			<ProgramInstances>
+				<ProgramInstance id="472aaab4-bb56-46d7-944f-26b0e072e02d" name="sproxy_1" programType="SpnsProxyProgram" componentId="00000000-0000-0000-0000-000000000000" libraryName="SpnsProxy" componentName="Arp.Services.SpnsProxy" componentType="Arp.Services.SpnsProxy" comment="" readonly="True" groupName="" />
+			</ProgramInstances>
+		</Task>
+		<Task id="97094a9b-42bf-4f96-99a4-e9ecc4cf40a4" name="ErrorManagerTask" taskType="CyclicTask" priority="0" intervalTime="64000000" watchdogTime="128000000" executionTimeThreshold="0" coreAffinity="0" stackSize="0" taskBuffer="None" comment="" esmId="83febe2c-766e-4feb-8cd1-424053d669b5" readonly="False">
+			<ProgramInstances>
+				<ProgramInstance id="57a5088a-778e-4312-ae81-d225d2bf764c" name="ErrorManager" programType="ErrorManager" componentId="00000000-0000-0000-0000-000000000000" libraryName="Arp.Plc.Eclr" componentName="Arp.Plc.Eclr" componentType="EclrComponent" comment="" readonly="False" groupName="" />
+			</ProgramInstances>
+		</Task>
+	</Tasks>
+</EsmConfiguration>

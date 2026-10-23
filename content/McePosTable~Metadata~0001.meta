@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Metadata>
+   <FolderType>MethodFolder</FolderType>
+   <Kind>Method</Kind>
+   <ContentType>Method</ContentType>
+   <ReturnType>McePosTableConditions</ReturnType>
+   <AccessSpecifier>PUBLIC</AccessSpecifier>
+   <Id>e8f94d87-db56-4424-b1f8-acd7b5b1176d</Id>
+   <ItemGroup>
+      <VariableWorksheet>
+         <Id>154712bf-49ed-4fd1-ab86-9c77db02f0af</Id>
+      </VariableWorksheet>
+      <CodeWorksheet Include="Code.st">
+         <Id>a2af5b1e-46bd-4b31-8991-356e55a10864</Id>
+         <Extension>.st</Extension>
+         <Type>.st</Type>
+         <ParentIndex>0</ParentIndex>
+      </CodeWorksheet>
+   </ItemGroup>
+</Metadata>

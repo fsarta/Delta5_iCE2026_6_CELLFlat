@@ -1,0 +1,16 @@
+{ CustomGroupDefinition('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24', '') }
+
+VAR_INPUT
+    udiEventID : UDINT { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('dd80878b-9abb-460f-9fb3-314a6fe136b4')};
+    sSource : STRING[80] { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('95d6d801-ee0d-4e50-9587-630c6c5d050d')};
+    eSeverity : E_ErrorSeverity { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('a2198519-11c9-4359-8f08-e6e845fc869d')};
+END_VAR
+
+VAR
+    udiNextHead : UDINT { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('a1d698d4-7ca4-4f9e-9e2c-9df03892c25b')};
+    G_udiQueue_Head : UDINT { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('39a14098-23d0-4009-a313-baf8c9aafd09')}; (*EXTERNAL*)
+    C_FAST_QUEUE_SIZE : UINT { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('79caef17-1cce-41dc-be3d-f5361127a680')}; (*EXTERNAL*)
+    G_udiQueue_Tail : UDINT { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('30269150-be3d-4099-b4e8-d5861ac5b0e8')}; (*EXTERNAL*)
+    G_aTaskQueue : arrST_ErrorRequest { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('05f66721-cfbe-4095-b54c-913e8ef8b553')}; (*EXTERNAL*)
+    G_bQueueOverflow : BOOL { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('1e53da4a-0805-4ae8-a43c-202f1afaf784')}; (*EXTERNAL*)
+END_VAR

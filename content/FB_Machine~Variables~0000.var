@@ -1,0 +1,144 @@
+{ CustomGroupDefinition('f543ac49-5274-400a-ac9e-7f3ed86e3630', '') }
+
+VAR
+    fbAxisController_CIAxis : FB_AxisController { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('883e4fbc-4f65-42e7-b26e-2b9d1e2af5b1')};
+    fbAxisController_COAxis : FB_AxisController { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('511a5bec-3e5f-49c1-9a25-b547a1faa83b')};
+    fbAxisController_VirtAxis : FB_AxisController { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('c2ce16d9-39a9-4247-8175-ff66ebd07dd2')};
+END_VAR
+
+VAR_EXTERNAL
+    S_Axis : AXIS_REF { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('112c9a6e-e6de-436a-9ef4-d3568f6ca9c0')}; (* (!!! DO NOT MODIFY !!! - Variable is automatically linked to device)*)
+    L_Axis : AXIS_REF { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('9d48f329-9292-4860-978a-c21c0a7d1619')}; (* (!!! DO NOT MODIFY !!! - Variable is automatically linked to device)*)
+    U_Axis : AXIS_REF { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('f311ed81-e601-430f-b6ca-411d6e74f916')}; (* (!!! DO NOT MODIFY !!! - Variable is automatically linked to device)*)
+    T_Axis : AXIS_REF { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('bc4b3961-d966-4795-8ca8-9938f7525871')}; (* (!!! DO NOT MODIFY !!! - Variable is automatically linked to device)*)
+    B_Axis : AXIS_REF { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('479b59b1-0771-498e-a6ad-cb68a936303f')}; (* (!!! DO NOT MODIFY !!! - Variable is automatically linked to device)*)
+    FeedIn_Axis : AXIS_REF { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('94296666-657a-4991-b624-f2b80af995ac')}; (* (!!! DO NOT MODIFY !!! - Variable is automatically linked to device)*)
+    FeedOut_Axis : AXIS_REF { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('c8edfb7f-19cf-4511-a774-39e23c91a8a3')}; (* (!!! DO NOT MODIFY !!! - Variable is automatically linked to device)*)
+    DATA_FeedInAxis : ST_AxisData { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('8e7d4508-5818-478b-9eaf-f574f89f197b')};
+    DATA_FeedOutAxis : ST_AxisData { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('24b61644-362d-42b7-b265-b9c662efe07a')};
+END_VAR
+
+VAR PRIVATE
+    HomingTimer : TON { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('2f64e2de-3dda-4b04-9d59-23329d7af943')};
+END_VAR
+
+VAR
+    fbPowerUpTimer : TON { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('edb6ff1b-0057-402f-a1d2-b1279e6cff09')};
+    trSwitchedToAuto : R_TRIG { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('b4ec588b-c1de-4b98-a201-5b05214b981e')};
+END_VAR
+
+VAR_EXTERNAL
+    bAutoModeSelected : BOOL { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('7b233604-1e62-4ad8-b122-50f32bcf7298')};
+    PowerUp : BOOL { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('fc5d0d98-2b17-40d1-a1b0-9525dcac4b95')};
+    PowerDown : BOOL { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('6f03f0fb-26d7-4437-9fed-565f05badcd9')};
+    E_Stop : BOOL { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('a81f0e5b-741a-4b19-a56f-5581db5cb890')};
+    Safety_Button : BOOL { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('193ade45-eff7-45ea-afe0-f5773a70d4e8')};
+    bManualModeSelected : BOOL { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('b0b18009-5dad-4f8c-9cde-98b3d500ac3b')};
+END_VAR
+
+VAR
+    NextState : E_MachineState { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('996130a3-c304-4290-a907-11b16be3f68a')};
+    bTransition : BOOL { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('f9dac6b6-8cbb-47d9-9c89-1578acc85de7')};
+END_VAR
+
+VAR_EXTERNAL
+    Commissioning : BOOL { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('309b990b-f4a7-4859-aa20-030d1244c594')};
+    MovementAllowed : BOOL { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('37ad94f6-25d4-46dd-94f7-c70d06611142')};
+    Execute_Stop : BOOL { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('52db22ba-c613-4c70-80d9-56be4105aebc')}; (*Stop motion buffer*)
+    Done_Stop : BOOL { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('1e50a62e-8bd9-4760-838a-22a9f07fb26a')};
+    Error_Stop : BOOL { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('19ffb4ad-7977-4906-9d04-5ae39abce5b1')};
+    Error_Disable : BOOL { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('dd4b801b-fca1-4e1f-96d5-9b9dfd3e7c38')};
+    State_MachineController : E_MachineState { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('ee9ce014-6385-4c63-a7e7-7ea04cce7247')};
+    fbErrorHandler : FB_ErrorHandler { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('9f5ae653-cb08-4101-a2e5-4fffac36c829')};
+    G_bResetAllErrors : BOOL { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('89689281-10a5-42b7-9998-87d9d8486259')}; (*Global command to reset all errors (acknowledge and mark inactive)*)
+    G_bAcknowledgeAllErrors : BOOL { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('43640f2a-b5e5-491a-9e99-492a1c68a391')}; (*Global command to acknowledge all active errors*)
+    DELTA : AXES_GROUP_REF { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('b33cccd2-b569-4f9c-b447-cecc99ca9d8c')}; (* (!!! DO NOT MODIFY !!! - Variable is automatically linked to device)*)
+    DATA_Delta : DT_Group { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('770a65a4-f339-4f9b-805e-d14329085345')};
+    G_stOverallErrorStatus : ST_GlobalErrorStatus { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('f3ca0aeb-8686-4871-a51f-8846ea5480aa')};
+END_VAR
+
+VAR
+    fbGroupController_Delta : FB_GroupController { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('60e41b1e-9eb6-4692-a1a9-6291aabef6fe')};
+END_VAR
+
+VAR_EXTERNAL
+    DATA_Axes : DT_AutoAxes { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('3eca51e8-2b98-4515-84a5-aea69fcaf70e')};
+    CycleControls : ST_HMI_Dashboard_Command { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('738276c5-b175-4bf2-b655-2a75c0e2e670')};
+    iJogSpeedLevel : INT { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('d4208b96-816c-431f-99c9-4feef924d97d')};
+END_VAR
+
+VAR
+    Acc_Jog_Delta : LREAL { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('1cc12886-9682-43f2-b49a-8d5b730b34f1')};
+    Dec_Jog_Delta : LREAL { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('f04161f2-72dc-44df-9450-6a8cb5cc39eb')};
+    a_lrFixedJogJointSpeeds : ARRAY[1..5] OF ARRAY[0..2] OF LREAL { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('e5307095-28da-4c6f-9e64-fc24dc70090c')};
+    a_lrFixedJogJointAcceleration : ARRAY[1..5] OF ARRAY[0..2] OF LREAL { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('07a84c80-a543-47f0-ac1f-d1e8aa409ed6')};
+    a_lrFixedJogJointDeceleration : ARRAY[1..5] OF ARRAY[0..2] OF LREAL { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('e4366b23-2f2b-496b-adc5-408c9f48e586')};
+    a_lrFixedJogLinearSpeeds : ARRAY[0..2] OF LREAL { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('5f27737b-9aaf-4479-8728-9a8c45f5ad4f')};
+    a_lrFixedJogLinearAcceleration : ARRAY[0..2] OF LREAL { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('c7eb54cd-badb-4384-aab7-9bdcda00882c')};
+    a_lrFixedJogLinearDeceleration : ARRAY[0..2] OF LREAL { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('ff056fde-62f5-43b0-9115-850cfd41a3ee')};
+END_VAR
+
+VAR_EXTERNAL
+    VIRTUAL_AXIS : AXIS_REF { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('ecc2e4f5-aadf-4c76-8253-c45b9690f7dc')}; (* (!!! DO NOT MODIFY !!! - Variable is automatically linked to device)*)
+    DATA_VirtAxis : ST_AxisData { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('87507cc7-5ae3-43ba-a320-652f647aec3a')};
+END_VAR
+
+VAR
+    Blend_CoordSystem : MC_CoordinateSystem { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('c77f5a23-c5e8-4132-925f-19d3569c9c50')};
+    Blend_BufferMode : MC_BufferMode { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('6170bd63-3966-44bd-9453-8e0e5e56d0a1')};
+    Blend_TransitionMode : MC_TransitionMode { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('8bc94d79-1996-4bc0-af28-26916b116b14')};
+    Blend_TransitionParameter : VECTOR { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('44765212-8952-4daa-aba1-15713b896c4b')};
+    MinRamp_Delta : LREAL { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('2b2b82a2-7940-4e6c-9ad3-ddbdf495c93f')};
+    Speed_Delta : LREAL { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('3d32b94a-8d66-455d-b9fb-226027655ec5')};
+    fbTeachFrame : FB_TeachFrame { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('b3e7d73e-4b28-4387-8ff8-c9816544b631')};
+    fbFrameTransform : Y_MA_FrameTypeTransform { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('56345a25-8b2c-4a8b-9920-0932c6967b4b')};
+    fbCalcOffset : Y_MA_CalcFrameOffset { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('2df80c2d-b60d-4cf4-9d21-3a6786f83871')};
+    fbVectorToCart : VECTOR_TO_CARTESIANREF { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('a16790c1-aadd-4086-8eaf-3eb73bd0b7f3')};
+END_VAR
+
+VAR_EXTERNAL
+    FeedIn_FrameOffset : MC_CARTESIAN_REF { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('ec87f455-077a-4060-b17c-9bf0f39cad8e')};
+    FeedOut_FrameOffset : MC_CARTESIAN_REF { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('d78a62f6-b830-4360-a521-55c2749f6bc9')};
+    RobotJog : ST_Robot_Command { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('9ac91cac-964d-48ad-9639-be6e8150e5b6')};
+    HmiFramesData : ST_HMI_Frames { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('aace66be-306f-4ac1-bff3-5e578c70aa83')};
+    GroupIsHomed : BOOL { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('320ed31d-f6ae-478e-b162-0da3e7a404c3')};
+    DATA_DELTA1 : DT_Group { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('9c683445-4f0e-43b1-81bd-1e3d78f48a76')};
+END_VAR
+
+VAR
+    rtConfirmPoint : R_TRIG { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('01a8d0a7-b385-458a-8434-767fdc6c6ca2')};
+END_VAR
+
+VAR_EXTERNAL
+    HMI_Data : ST_HMI_Interface { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('38ae4be6-6092-421a-995b-179aac77e368')};
+    Robot : ST_Robot { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('afe49983-2b07-41b7-b148-b01d61f7f1b1')};
+    vFeedIn_FrameOffset : VECTOR { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('fbec8f43-409e-422b-8d50-153de6e9534b')};
+    vFeedOut_FrameOffset : VECTOR { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('581da90a-c969-4c60-a3b7-71142151d2d6')};
+    vConfig_Offset_FeedIn : VECTOR { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('19eda638-bab0-4c24-9ba0-a3dac053c410')};
+    vConfig_Offset_FeedOut : VECTOR { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('38501d9e-be06-415f-b11d-dc06ac1b2218')};
+    MotionDataOverride : LREAL { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('e6cd3191-9df4-49c3-9af0-43a8307cb370')};
+    xVision_StartCycle : BOOL { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('d4a1858a-7888-427e-a39f-317ef7c4a207')};
+    io : McePosTableIO { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('8ca48b9c-81aa-4eb4-93e7-f1b6dd085e58')};
+    StartPickPlace_Delta : BOOL { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('47d2d818-015f-4587-b836-dd536e132b87')};
+    LampIn : BOOL { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('f7a3eb91-9b10-41f8-8147-d81e6f190296')};
+    LampOut : BOOL { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('67ba2e82-6591-42cc-ad8b-1d281dbb1526')};
+    MainValveGripper : BOOL { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('ba98d11f-a6ec-4575-ae83-c8578bc9d42f')};
+    SecondaryValveGripper : BOOL { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('011b427a-37f9-4ffe-a4cf-832d6c29e4ac')};
+    G_bAutoCycleRunning : BOOL { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('4190e695-a146-4273-a1d2-e5f776e659ab')};
+    G_bPickPlaceError : BOOL { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('c5bcb63c-38b4-40cd-9022-e457c98f4eda')};
+END_VAR
+
+VAR
+    fbStopTimer : TON { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('8b514f3f-1b7c-453c-9bf1-7a02a2f27780')};
+    fbUnpowerTimer : TON { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('e32c86f9-5fb2-4e66-8a97-860da87dca8a')};
+    fbShutdownTimer : TON { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('5ef9fabf-d423-4c08-b6f4-2764c402bff7')};
+    bServoError_ErrorState : BOOL { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('e158c677-24a9-4c9b-92f9-caed715d8f48')};
+    bStopToUnpower : BOOL { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('3aa22537-2f63-463e-b33a-5d6ad3193a74')};
+    rtResetErrorsMachine : R_TRIG { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('d8c93e87-c3ae-4313-8a72-8a457be77ad4')};
+    rtStartCycleBtn : R_TRIG { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('603d09b6-cb71-4fcb-b527-6393baa09d6d')};
+    rtStopCycleBtn : R_TRIG { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('04c2c6e7-db84-494c-aaaf-fb8328d8683a')};
+END_VAR
+
+VAR_EXTERNAL
+    G_xCycleActive : BOOL { CustomGroupReference('f543ac49-5274-400a-ac9e-7f3ed86e3630') } {Id('981de20b-be89-42c5-a40a-0bef6618a33f')};
+END_VAR

@@ -1,0 +1,15 @@
+{ CustomGroupDefinition('45814bb4-b924-4460-b025-21e259dde1ac', '') }
+
+VAR_INPUT
+    usiTaskID : USINT { CustomGroupReference('45814bb4-b924-4460-b025-21e259dde1ac') } {Id('bd4429f1-3bfa-42f0-a0ab-d577d147f44b')};
+    bCurrentState : BOOL { CustomGroupReference('45814bb4-b924-4460-b025-21e259dde1ac') } {Id('eda397c2-7fcd-4a16-b36c-1ea567a02d45')};
+    bOldState : BOOL { CustomGroupReference('45814bb4-b924-4460-b025-21e259dde1ac') } {Id('4e533b35-75fd-436b-85b3-d4cab077cbb1')};
+    udiErrorID : UDINT { CustomGroupReference('45814bb4-b924-4460-b025-21e259dde1ac') } {Id('4c8e5bb5-36f7-436d-9d28-f6d907a9f0bc')};
+    sSource : STRING[80] { CustomGroupReference('45814bb4-b924-4460-b025-21e259dde1ac') } {Id('fe65c916-ad35-4ea0-918d-a05beb213164')};
+    sMessage : STRING512 { CustomGroupReference('45814bb4-b924-4460-b025-21e259dde1ac') } {Id('aec866a3-0dbe-44ec-9cb7-2cfb1abcaa13')};
+    eSeverity : E_ErrorSeverity { CustomGroupReference('45814bb4-b924-4460-b025-21e259dde1ac') } {Id('ef49c4d5-5c48-4b8f-a57f-4204063c1d8f')};
+END_VAR
+
+VAR
+    udiNextHead : UDINT { CustomGroupReference('45814bb4-b924-4460-b025-21e259dde1ac') } {Id('7ca194b6-fec0-4ffb-afbe-b53a4837da99')};
+END_VAR

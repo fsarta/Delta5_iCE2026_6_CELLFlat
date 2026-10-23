@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Metadata>
+   <FolderType>PouFolder</FolderType>
+   <ContentType>Function</ContentType>
+   <Kind>Function</Kind>
+   <ReturnType>LREAL</ReturnType>
+   <Usings></Usings>
+   <Id>f1d53eaa-4f14-47ac-85a9-aef0875dbc12</Id>
+   <ItemGroup>
+      <VariableWorksheet>
+         <Id>180e428a-40d3-4f33-9b76-9791ded67563</Id>
+      </VariableWorksheet>
+      <CodeWorksheet Include="Code.st">
+         <Id>11991c80-b297-4abc-9696-1a3fa4d14d43</Id>
+         <Extension>.st</Extension>
+         <Type>.st</Type>
+         <ParentIndex>0</ParentIndex>
+      </CodeWorksheet>
+   </ItemGroup>
+</Metadata>

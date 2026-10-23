@@ -1,0 +1,5 @@
+{ CustomGroupDefinition('7d59a943-dcc2-47d9-a74c-4eed92981164', '') }
+
+VAR
+    bServoError_Stopping : BOOL { CustomGroupReference('7d59a943-dcc2-47d9-a74c-4eed92981164') } {Id('8fb07cb4-e81f-4c02-9087-326e1d2fd3db')};
+END_VAR

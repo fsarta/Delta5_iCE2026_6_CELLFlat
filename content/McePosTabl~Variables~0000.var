@@ -1,0 +1,63 @@
+{ CustomGroupDefinition('9dbbf1ee-ec31-4c23-8020-da058fb246ef', 'VAR_CONSTANT') }
+{ CustomGroupDefinition('c6c03672-2b5d-4107-ab68-b1b087344ae7', 'VAR_IN_OUT') }
+{ CustomGroupDefinition('2c0a40bc-440b-4ded-9f11-83b4b6a45a62', '') }
+
+VAR CONSTANT
+    QA_MAX : INT := INT#2 { CustomGroupReference('9dbbf1ee-ec31-4c23-8020-da058fb246ef') } {Id('9757c339-6357-4e81-b819-cdc13d4d62dd')}; (*max Queueing Amount; max number of motions which can be queued*)
+    RESERVED_ACTIONID_UBOUND : SINT := SINT#19 { CustomGroupReference('9dbbf1ee-ec31-4c23-8020-da058fb246ef') } {Id('71b43599-9e7b-44fd-8647-d9f624b7df68')}; (*actionID lower or equal to this value are reserved for default ActionID*)
+    PT_MODE_0 : SINT { CustomGroupReference('9dbbf1ee-ec31-4c23-8020-da058fb246ef') } {Id('38d5607c-6f2f-4907-8c5d-5acb141d0c53')}; (*PosTable in continuous mode*)
+    PT_MODE_2 : SINT := SINT#2 { CustomGroupReference('9dbbf1ee-ec31-4c23-8020-da058fb246ef') } {Id('c113877b-ff0b-42b2-ab5d-68f7652ced01')}; (*PosTable in step-by-step mode*)
+    ACTIONID_NO_ACTION : SINT { CustomGroupReference('9dbbf1ee-ec31-4c23-8020-da058fb246ef') } {Id('1dcaf2fd-b9e7-4f48-b42b-624f50b288c0')}; (*no action*)
+    ACTIONID_WAIT_ONE_SCAN : SINT := SINT#1 { CustomGroupReference('9dbbf1ee-ec31-4c23-8020-da058fb246ef') } {Id('2cf9f39a-50d0-4fb2-946c-6205e9e7d6d2')}; (*wait one PLC scan*)
+    ACTIONID_WAIT_STEP : SINT := SINT#2 { CustomGroupReference('9dbbf1ee-ec31-4c23-8020-da058fb246ef') } {Id('5561040c-b278-417e-823f-a7bfba560d8e')}; (*wait for rising edge*)
+    CONDITIONS_UBOUND : SINT := SINT#15 { CustomGroupReference('9dbbf1ee-ec31-4c23-8020-da058fb246ef') } {Id('1dfcaf46-660c-4264-9a0d-ac64dc983942')};
+END_VAR
+
+VAR_IN_OUT
+    io_In : McePosTableIO { CustomGroupReference('c6c03672-2b5d-4107-ab68-b1b087344ae7') } {Id('8d93a860-36fd-42db-9de5-cc559304eed1')}; (*McePosTable IO variables (Control flags, status, indices)*)
+    AxesGroup : AXES_GROUP_REF { CustomGroupReference('c6c03672-2b5d-4107-ab68-b1b087344ae7') } {Id('7741963e-e011-4546-9587-5e219bc83540')}; (*Axes group reference*)
+    posTable_In : McePosTableData { CustomGroupReference('c6c03672-2b5d-4107-ab68-b1b087344ae7') } {Id('924056ff-34ef-4b2d-ba8a-7f0facaba1c0')}; (*Trajectory to be processed (The Path)*)
+END_VAR
+
+VAR
+    posTable : McePosTableData { CustomGroupReference('2c0a40bc-440b-4ded-9f11-83b4b6a45a62') } {Id('7f6a239b-3893-4243-aa8a-3b839a8b883b')}; (*Trajectory to be processed (The Path)*)
+    io : McePosTableIO { CustomGroupReference('2c0a40bc-440b-4ded-9f11-83b4b6a45a62') } {Id('f7fed374-2807-45b1-b62e-ed2879e803b8')}; (*McePosTable IO variables (Control flags, status, indices)*)
+    aMoveCmd : MceCmdStatusQA_Array { CustomGroupReference('2c0a40bc-440b-4ded-9f11-83b4b6a45a62') } {Id('b5ff1751-2aa8-4799-94d8-7f35759934b6')}; (*Status of the active motions*)
+    aUseCoordSystem : CoordSysQA_Array { CustomGroupReference('2c0a40bc-440b-4ded-9f11-83b4b6a45a62') } {Id('9de01817-4ba6-4b43-9f86-dbe0386a8dff')}; (*0=ACS, 1=MCS, 2=PCS, 3=TCS, 4=WCS, 5=TPCS*)
+    nInstanceNumber : IntQA_Array { CustomGroupReference('2c0a40bc-440b-4ded-9f11-83b4b6a45a62') } {Id('c12608b5-34fa-48ac-b6fb-961c1eddd101')}; (*Maps state machine to QA index*)
+    aEnable : BoolQA_Array { CustomGroupReference('2c0a40bc-440b-4ded-9f11-83b4b6a45a62') } {Id('5bee45bd-79c6-4a7c-9a94-b9eb00235d61')}; (*Enable flags for the motions*)
+    aOsrEnable : BoolQA_Array { CustomGroupReference('2c0a40bc-440b-4ded-9f11-83b4b6a45a62') } {Id('537ddbc4-43d8-4118-a8ee-8f586a637164')}; (*One-shot rising edge for enables*)
+    aOneShots : ARRAY[0..15] OF BOOL { CustomGroupReference('2c0a40bc-440b-4ded-9f11-83b4b6a45a62') } {Id('72b14ac3-05b9-429f-b137-5b2002855ccb')}; (*General purpose edge detectors*)
+    fbMoveAbsolute_0 : MC_MoveAbsolute { CustomGroupReference('2c0a40bc-440b-4ded-9f11-83b4b6a45a62') } {Id('b6f4366b-25cb-476f-9ef4-59bed25b228a')};
+    fbMoveLinearAbsolute_0 : MC_MoveLinearAbsolute { CustomGroupReference('2c0a40bc-440b-4ded-9f11-83b4b6a45a62') } {Id('e607952f-4ed4-4393-ac35-8532131262d8')};
+    fbMoveAbsolute_1 : MC_MoveAbsolute { CustomGroupReference('2c0a40bc-440b-4ded-9f11-83b4b6a45a62') } {Id('6b2c7db7-2368-46e4-bb75-6011e6caaddc')};
+    fbMoveLinearAbsolute_1 : MC_MoveLinearAbsolute { CustomGroupReference('2c0a40bc-440b-4ded-9f11-83b4b6a45a62') } {Id('79bd995e-8b29-4085-8109-f66e0cb4ed78')};
+    fbMoveAbsolute_2 : MC_MoveAbsolute { CustomGroupReference('2c0a40bc-440b-4ded-9f11-83b4b6a45a62') } {Id('598bedd0-7a36-420e-9f2e-0f16fa0e2a63')};
+    fbMoveLinearAbsolute_2 : MC_MoveLinearAbsolute { CustomGroupReference('2c0a40bc-440b-4ded-9f11-83b4b6a45a62') } {Id('a08da6aa-02ab-4498-9c80-6cb7129cbc01')};
+    stStateMonitoringData : MceStateMonitoringData { CustomGroupReference('2c0a40bc-440b-4ded-9f11-83b4b6a45a62') } {Id('71e06143-2de0-4729-a92a-ab36cc7dced9')};
+    stConditionResult : McePosTableConditions { CustomGroupReference('2c0a40bc-440b-4ded-9f11-83b4b6a45a62') } {Id('09207241-d375-45fe-a77a-1aae3a47967f')};
+    nQA : INT { CustomGroupReference('2c0a40bc-440b-4ded-9f11-83b4b6a45a62') } {Id('a0518742-96c2-49a3-a1cf-117d56a4d7a3')}; (*Allowed Queueing Amount*)
+    nPosTableSize : INT { CustomGroupReference('2c0a40bc-440b-4ded-9f11-83b4b6a45a62') } {Id('0b563dc6-c937-466a-afca-80a8f11e777f')}; (*Total rows in posTable*)
+    nLastEntryIndex : DINT { CustomGroupReference('2c0a40bc-440b-4ded-9f11-83b4b6a45a62') } {Id('3a88b463-4afe-46fa-bbca-1e9c186d0c25')}; (*Index of the last active move in the table*)
+    bLastEntry : BOOL { CustomGroupReference('2c0a40bc-440b-4ded-9f11-83b4b6a45a62') } {Id('3a32ac17-3dd7-4b1a-950d-f9f84ef70c2e')}; (*Reached the last entry*)
+    bFirstMove : BOOL { CustomGroupReference('2c0a40bc-440b-4ded-9f11-83b4b6a45a62') } {Id('3db0deb9-d7c7-4373-a862-ce247756b0b6')}; (*Flag for the first move after a stop*)
+    bDefaultActionDone : BOOL { CustomGroupReference('2c0a40bc-440b-4ded-9f11-83b4b6a45a62') } {Id('f695ca5d-2377-4eeb-b022-129d4e4443ab')}; (*Flag indicating the standstill action is complete*)
+    bOsrRun : BOOL { CustomGroupReference('2c0a40bc-440b-4ded-9f11-83b4b6a45a62') } {Id('0734a1ed-6ed0-4fd9-a728-8d14e513f810')}; (*One-shot run signal*)
+    bOsfRun : BOOL { CustomGroupReference('2c0a40bc-440b-4ded-9f11-83b4b6a45a62') } {Id('cd323247-2bdf-41ee-9679-0acb6889834f')}; (*One-shot stop (falling edge of run)*)
+    bOsrStep : BOOL { CustomGroupReference('2c0a40bc-440b-4ded-9f11-83b4b6a45a62') } {Id('ff97a847-d4bd-4879-ada5-a4715cd8276e')}; (*One-shot step signal*)
+    bOsrSystemReady : BOOL { CustomGroupReference('2c0a40bc-440b-4ded-9f11-83b4b6a45a62') } {Id('a82bc5c7-9ffb-4ad9-a62d-7c49f2d0bf55')};
+    bWaiting : BOOL { CustomGroupReference('2c0a40bc-440b-4ded-9f11-83b4b6a45a62') } {Id('17e95b5f-6815-4ded-b239-7f7594c15679')}; (*System is waiting for a step command*)
+    bStopEntry : BOOL { CustomGroupReference('2c0a40bc-440b-4ded-9f11-83b4b6a45a62') } {Id('52f03ec8-bbb2-4828-8fdc-554b37e25469')}; (*Reached a point that requires a full stop*)
+    bWaitBeforeNextEntry : BOOL { CustomGroupReference('2c0a40bc-440b-4ded-9f11-83b4b6a45a62') } {Id('6f523d7c-91db-4e89-a8c2-66c46b0fba0e')};
+    bOsrRecalcQA : BOOL { CustomGroupReference('2c0a40bc-440b-4ded-9f11-83b4b6a45a62') } {Id('aaf70483-90bb-4459-b35e-de593515bd9d')};
+    bError : BOOL { CustomGroupReference('2c0a40bc-440b-4ded-9f11-83b4b6a45a62') } {Id('da903e74-9dc4-4e92-b145-9655d46bfce2')}; (*General error flag*)
+    bLastEntryInProcess : BOOL { CustomGroupReference('2c0a40bc-440b-4ded-9f11-83b4b6a45a62') } {Id('b5187519-74e2-4291-b3e9-d02019a4cb66')}; (*The final table entry is currently executing*)
+    bOsfLastMoveInProcess : BOOL { CustomGroupReference('2c0a40bc-440b-4ded-9f11-83b4b6a45a62') } {Id('04697725-58f3-4f96-8ddc-076c45baba84')};
+    bAllowQueuing : BOOL { CustomGroupReference('2c0a40bc-440b-4ded-9f11-83b4b6a45a62') } {Id('f54c013e-22d4-40c0-afbf-7255475bfe94')}; (*Flag to allow look-ahead blending*)
+    bStopAfterLastEntry : BOOL { CustomGroupReference('2c0a40bc-440b-4ded-9f11-83b4b6a45a62') } {Id('66506bde-be99-47bd-9b36-51b382f9c6a7')}; (*Flag to halt at the end of the cycle*)
+    i : DINT { CustomGroupReference('2c0a40bc-440b-4ded-9f11-83b4b6a45a62') } {Id('ae0eaed5-4b91-4c2a-8b06-ba40078a1341')}; (*Loop counter*)
+    bCustomActionDone : BOOL { CustomGroupReference('2c0a40bc-440b-4ded-9f11-83b4b6a45a62') } {Id('1eb27360-b5a8-4ccd-8f29-c3e2f6312e54')};
+    bUpdateQA : BOOL { CustomGroupReference('2c0a40bc-440b-4ded-9f11-83b4b6a45a62') } {Id('fa7657cc-d24f-42ea-87c6-6ff49f837e6e')};
+    nNextValidLoadIndex : INT { CustomGroupReference('2c0a40bc-440b-4ded-9f11-83b4b6a45a62') } {Id('747a1429-6d1e-4cb6-9943-b9f65545f078')};
+    Out : UINT { CustomGroupReference('2c0a40bc-440b-4ded-9f11-83b4b6a45a62') } {Id('e63c20a5-ec0e-4fd8-bf6b-11ccffd5ed27')};
+END_VAR

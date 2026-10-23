@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RestoreDataItem Version="1" DeletionDate="2026-07-28 09:19:39Z" DisplayName="eip-2 : Generic Adapter Device">
+    <NodeData DomainId="e639c0f9-db09-46f4-abf7-50216a13f220" SolutionId="606e2993-1c57-411c-b0d2-c57a13c52bbf" NodeId="13911219-c379-422e-9893-05f8db097719" ParentId="db952e51-6e33-49bd-92ee-d86cccdb234f" PredecessorId="66f87239-e140-405e-ac98-33c484d4dfc0" Position="6" Kind="Instance" />
+</RestoreDataItem>

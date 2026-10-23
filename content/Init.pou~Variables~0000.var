@@ -1,0 +1,28 @@
+{ CustomGroupDefinition('a04e0da4-75a3-431c-a769-2ffcda83b779', '') }
+
+VAR_EXTERNAL
+    TestGroup : ARRAY_TestGroup { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('1cd2a2ef-36ef-486b-8d5d-1b1b82692bc6')};
+END_VAR
+
+VAR
+    Blend_CoordSystem : MC_CoordinateSystem { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('bd0875cb-7557-44b1-8ddd-240670e03144')};
+    Blend_BufferMode : MC_BufferMode { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('ade3d1ac-0ca2-429f-a484-a775163e807d')};
+    Blend_TransitionMode : MC_TransitionMode { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('609df4a1-e5b5-4843-893d-962f48d6be35')};
+    Blend_TransitionParameter : VECTOR { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('aa329eed-be42-48a2-94c5-b363853a64ef')};
+END_VAR
+
+VAR_EXTERNAL
+    DATA_Machine : DT_Machine { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('f2d2f3e8-038a-456f-99c8-398a3f00ffb4')};
+    HMI_Data : ST_HMI_Interface { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('277f1d94-bb20-49e3-848b-85b8cdde7f78')};
+END_VAR
+
+VAR
+    zeroVector : VECTOR := [32(LREAL#0.0)] { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('774cb593-2c2e-4422-9ccc-ba94a397bc80')};
+END_VAR
+
+VAR_EXTERNAL
+    FeedIn_SmoothSpeed : LREAL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('f774258b-0c70-4536-ba5f-bdc57efdd494')};
+    FeedIn_SmoothAcceleration : LREAL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('ae1a1cdd-b0e5-4f3e-815d-a4cfb8f7c41c')};
+    FeedIn_SmoothDeceleration : LREAL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('f7a027ba-c1df-4902-8584-0009e936aede')};
+    posTable : McePosTableData { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('5956b95a-6c4a-4c0f-8f72-5111a957a285')};
+END_VAR

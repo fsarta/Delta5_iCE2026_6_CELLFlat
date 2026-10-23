@@ -1,0 +1,5 @@
+{ CustomGroupDefinition('83e8cb70-5d16-4971-ab2e-d45d5ed52fd3', '') }
+
+VAR
+    i : UINT { CustomGroupReference('83e8cb70-5d16-4971-ab2e-d45d5ed52fd3') } {Id('4777f5ba-8d53-4fcc-8252-43f2966e896a')};
+END_VAR

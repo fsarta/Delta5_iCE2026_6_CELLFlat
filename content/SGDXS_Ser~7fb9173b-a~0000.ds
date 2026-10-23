@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DevInstDoc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Projekte/PC_Worx_Next/XML/Schemas/DevInst.xsd" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <DevInst uuid="7fb9173b-a93c-4915-9072-b021291b2c5d">
+    <TInfo uri="adeprojectref:///e639c0f9-db09-46f4-abf7-50216a13f220/cda306f5-f682-4871-b688-a10accb5b712/eb90e0e4-0570-4751-9789-4cba68add672" />
+    <InstVal xPath="/InstanceObjList/Obj[@uID='base00' type='Generic:Function']" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="/InstanceObjList/Obj[@uID='base01' type='Generic:Location']" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="/InstanceObjList/Obj[@uID='base02' type='AmlApcStationName']" Type="Ade.Fdcml.Core.String">[UTF-8;]</InstVal>
+    <InstVal xPath="Generic:Uri" Type="System.String">adeprojectref:///e639c0f9-db09-46f4-abf7-50216a13f220/606e2993-1c57-411c-b0d2-c57a13c52bbf/9d25d8f1-3942-4985-a969-6aeba1dd7286</InstVal>
+    <InstVal xPath="Generic:FormattedTypeNameWithoutVersion" Type="System.String">SGDXS Servopack 100V/200V</InstVal>
+    <InstVal xPath="Generic:FormattedTypeName" Type="System.String">SGDXS Servopack 100V/200V Rev. &gt;= 0x10007</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/InstanceObjList/Obj[@uID='ecatd00' type='ETHERCAT:ConsecutiveNumber']" Type="Ade.Fdcml.Core.Signed32">2</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/InstanceObjList/Obj[@uID='ecatd01' type='ETHERCAT:StationAddress']" Type="Ade.Fdcml.Core.Unsigned32">4</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/InstanceObjList/Obj[@uID='ecatdhcsetting01' type='ETHERCAT:HotConnectGroupId']" Type="Ade.Fdcml.Core.Unsigned16">1</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/InstanceObjList/Obj[@uID='ecatdhcsetting02' type='ETHERCAT:HotConnectPositionInTopology']" Type="Ade.Fdcml.Core.Unsigned32">1</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/L7ObjList/Obj[@uID='id4' type='ETHERCAT:IdentificationOffset']" Type="Ade.Fdcml.Core.StringAscii">0x0134</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/L7ObjList/Obj[@uID='id5' type='ETHERCAT:IdentificationValue']" Type="Ade.Fdcml.Core.Unsigned32">4</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/L7ObjList/Obj[@uID='id7' type='ETHERCAT:IdentificationMode']" Type="Ade.Fdcml.Core.Unsigned32">2</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/Generic:FormattedTypeNameWithoutVersion" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/Generic:FormattedTypeName" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/NodeId" Type="Ade.Fdcml.Core.Unsigned32">2</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_97']/InstanceObjList/Obj[@uID='ecatdServoIOUri' type='LinkedVariables:servoIOVar']" Type="Ade.Fdcml.Core.StringAscii">1140d0a2-aaa5-4845-be48-4a275498017e</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_97']/Generic:FormattedTypeNameWithoutVersion" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_97']/Generic:FormattedTypeName" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_97']/LinkedVariables" Type="System.String">{"LinkedVariables:servoIOVar":{"GdsConnections":null,"DataType":"Yt_SGDXS_200V","VariableName":"","NameFormat":"{0}_IO","UId":"servoIOVar","StringIdentifier":"1140d0a2-aaa5-4845-be48-4a275498017e","GroupStringIdentifier":"cb8d00d5-52ac-431b-a5e6-c48ebe43748d"}}</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_98']/InstanceObjList/Obj[@uID='essSimulateAxis' type='SimulateAxis']" Type="Ade.Fdcml.Core.Bit">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_98']/Generic:FormattedTypeNameWithoutVersion" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_98']/Generic:FormattedTypeName" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_99']/Generic:FormattedTypeNameWithoutVersion" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_99']/Generic:FormattedTypeName" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/InstanceObjList/Obj[@uID='ecatd01' type='NodeId']" Type="Ade.Fdcml.Core.Unsigned32">0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/Generic:FormattedTypeNameWithoutVersion" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/Generic:FormattedTypeName" Type="System.String"></InstVal>
+  </DevInst>
+</DevInstDoc>

@@ -1,0 +1,6 @@
+{ CustomGroupDefinition('f30975a1-3e49-49fa-bf11-b107c4af6f17', '') }
+
+VAR
+    i : UINT { CustomGroupReference('f30975a1-3e49-49fa-bf11-b107c4af6f17') } {Id('b8b9d70e-0f56-41c0-adac-4ee9f3a7bc87')};
+    eHighestSeverityLocal : E_ErrorSeverity { CustomGroupReference('f30975a1-3e49-49fa-bf11-b107c4af6f17') } {Id('81aa9980-f26f-45bc-8325-d8a42780c256')};
+END_VAR

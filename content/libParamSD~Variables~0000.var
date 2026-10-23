@@ -1,0 +1,28 @@
+{ CustomGroupDefinition('8d64e704-87a2-41cc-a8a8-567d487c6cdb', 'InOut') }
+{ CustomGroupDefinition('8c862310-257f-427d-a17e-d6d83aee000b', 'Output') }
+{ CustomGroupDefinition('aa9c345c-200d-4640-97b4-6ddbdff412ea', 'Input') }
+{ CustomGroupDefinition('40ea8826-406c-4e92-a1a9-32522980a35b', '') }
+
+VAR_IN_OUT
+    ArrayParams : ARRAY[1..40] OF dtLibParamSdo { CustomGroupReference('8d64e704-87a2-41cc-a8a8-567d487c6cdb') } {Id('2aab217d-a086-43b3-b62d-7d6587cda265')};
+END_VAR
+
+VAR_OUTPUT
+    done : BOOL { CustomGroupReference('8c862310-257f-427d-a17e-d6d83aee000b') } {Id('004bb847-810a-4666-bd10-827f41908aed')};
+    error : BOOL { CustomGroupReference('8c862310-257f-427d-a17e-d6d83aee000b') } {Id('b5fcf59b-8ce7-4750-be97-123f2f321b87')};
+END_VAR
+
+VAR_INPUT
+    stationAddr : UINT { CustomGroupReference('aa9c345c-200d-4640-97b4-6ddbdff412ea') } {Id('bfa12ece-1faa-405f-a3d7-b3bc2d084f53')};
+    execute : BOOL { CustomGroupReference('aa9c345c-200d-4640-97b4-6ddbdff412ea') } {Id('e9c6c4a5-b5dc-4957-bd24-8f1fd02cd92a')};
+END_VAR
+
+VAR
+    Y_EC_COE_SdoWrite1 : Y_EC_COE_SdoWrite { CustomGroupReference('40ea8826-406c-4e92-a1a9-32522980a35b') } {Id('d6ce05be-be69-49c8-a79a-6886b3c4e35b')};
+    Y_EC_COE_SdoRead1 : Y_EC_COE_SdoRead { CustomGroupReference('40ea8826-406c-4e92-a1a9-32522980a35b') } {Id('82c80d02-4e3a-4e9d-b36a-dfdcc9d249af')};
+    step : INT { CustomGroupReference('40ea8826-406c-4e92-a1a9-32522980a35b') } {Id('5195fb3b-74ab-4ef7-9eed-a39ef6d04c03')};
+    i : INT { CustomGroupReference('40ea8826-406c-4e92-a1a9-32522980a35b') } {Id('2b5b5619-396a-4e47-a85e-d4c8f243953b')};
+    record : ARRAY[0..3] OF BYTE { CustomGroupReference('40ea8826-406c-4e92-a1a9-32522980a35b') } {Id('d0bac064-9154-42cb-83d0-2845ad821947')};
+    size : DINT { CustomGroupReference('40ea8826-406c-4e92-a1a9-32522980a35b') } {Id('bddefa87-0dad-4eaf-9f5e-0b899e46570e')};
+    tmpDWORD : DWORD { CustomGroupReference('40ea8826-406c-4e92-a1a9-32522980a35b') } {Id('516b579a-0555-4cbb-bb4e-d7db778abb6a')};
+END_VAR

@@ -1,0 +1,5 @@
+{ CustomGroupDefinition('fc202b6d-2e05-4d80-923b-d3fb4af6bed8', '') }
+
+VAR
+    stMoveOption : Yt_GroupMoveOptions { CustomGroupReference('fc202b6d-2e05-4d80-923b-d3fb4af6bed8') } {Id('b3b0ad82-80fa-4828-8e52-746dded99a0b')};
+END_VAR

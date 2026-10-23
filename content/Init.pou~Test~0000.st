@@ -1,0 +1,72 @@
+Blend_CoordSystem := MC_CoordinateSystem#MCS;
+Blend_BufferMode := MC_BufferMode#BlendingPrevious;
+Blend_TransitionMode := MC_TransitionMode#TMStartVelocity;
+//Blend_TransitionMode := MC_TransitionMode#TMConstantVelocity;
+//Blend_TransitionMode := MC_TransitionMode#TMCornerDistance;
+Blend_TransitionParameter[1] := LREAL#100.0;
+Blend_TransitionParameter[2] := LREAL#100.0;
+Blend_TransitionParameter[3] := LREAL#20.0;
+Blend_TransitionParameter[4] := LREAL#10000.0;
+
+TestGroup[0].Position[1] := 200.0;
+TestGroup[0].Position[2] := 200.0;
+TestGroup[0].Position[3] := 700.0;
+TestGroup[0].Position[6] := -80.0;
+TestGroup[0].Speed := 800.0;
+TestGroup[0].Acc := DATA_Machine.Setting.MinRamp_Delta;
+TestGroup[0].Dec := DATA_Machine.Setting.MinRamp_Delta;
+TestGroup[0].Delay := INT#0;
+TestGroup[0].CoordSystem := Blend_CoordSystem;
+TestGroup[0].BufferMode := Blend_BufferMode;
+TestGroup[0].TransitionMode := Blend_TransitionMode;
+TestGroup[0].TransitionParameter := Blend_TransitionParameter;
+TestGroup[0].MoveOptions_VelocityUnit := 2;
+TestGroup[0].LastItem := FALSE;
+
+TestGroup[1].Position[1] := -200.0;
+TestGroup[1].Position[2] := 200.0;
+TestGroup[1].Position[3] := 770.0;
+TestGroup[1].Position[6] := 120.0;
+TestGroup[1].Speed := 800.0;
+TestGroup[1].Acc := DATA_Machine.Setting.MinRamp_Delta;
+TestGroup[1].Dec := DATA_Machine.Setting.MinRamp_Delta;
+TestGroup[1].Delay := INT#0;
+TestGroup[1].CoordSystem := Blend_CoordSystem;
+TestGroup[1].BufferMode := Blend_BufferMode;
+TestGroup[1].TransitionMode := Blend_TransitionMode;
+TestGroup[1].TransitionParameter := Blend_TransitionParameter;
+TestGroup[1].MoveOptions_VelocityUnit := 2;
+TestGroup[1].LastItem := FALSE;
+
+TestGroup[2].Position[1] := -200.0;
+TestGroup[2].Position[2] := -200.0;
+TestGroup[2].Position[3] := 700.0;
+TestGroup[2].Position[6] := -80.0;
+TestGroup[2].Speed := 800.0;
+TestGroup[2].Acc := DATA_Machine.Setting.MinRamp_Delta;
+TestGroup[2].Dec := DATA_Machine.Setting.MinRamp_Delta;
+TestGroup[2].Delay := INT#0;
+TestGroup[2].CoordSystem := Blend_CoordSystem;
+TestGroup[2].BufferMode := Blend_BufferMode;
+TestGroup[2].TransitionMode := Blend_TransitionMode;
+TestGroup[2].TransitionParameter := Blend_TransitionParameter;
+TestGroup[2].MoveOptions_VelocityUnit := 2;
+TestGroup[2].LastItem := FALSE;
+
+
+TestGroup[3].Position[1] := 200.0;
+TestGroup[3].Position[2] := -200.0;
+TestGroup[3].Position[3] := 770.0;
+TestGroup[3].Position[6] := 120.0;
+TestGroup[3].Speed := 800.0;
+TestGroup[3].Acc := DATA_Machine.Setting.MinRamp_Delta;
+TestGroup[3].Dec := DATA_Machine.Setting.MinRamp_Delta;
+TestGroup[3].Delay := INT#0;
+TestGroup[3].CoordSystem := Blend_CoordSystem;
+TestGroup[3].BufferMode := Blend_BufferMode;
+TestGroup[3].TransitionMode := Blend_TransitionMode;
+TestGroup[3].TransitionParameter := Blend_TransitionParameter;
+TestGroup[3].MoveOptions_VelocityUnit := 2;
+TestGroup[3].LastItem := FALSE;
+
+TestGroup[4].LastItem := true;

@@ -1,0 +1,5 @@
+{ CustomGroupDefinition('6d80857a-3caf-40c4-b129-152f523e2c20', '') }
+
+VAR
+    bServoError_Automatic : BOOL { CustomGroupReference('6d80857a-3caf-40c4-b129-152f523e2c20') } {Id('cd50a39d-c085-4ba1-a0c6-f25a501efa9f')};
+END_VAR

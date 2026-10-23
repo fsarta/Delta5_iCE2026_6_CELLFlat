@@ -1,0 +1,37 @@
+{ CustomGroupDefinition('fd321e2a-538c-444f-9c5e-63bf7589d4f3', 'VAR_INPUT') }
+{ CustomGroupDefinition('e9a388d1-f848-4cfe-a997-00b3259410b9', 'VAR_OUTPUT') }
+{ CustomGroupDefinition('7a7fecc0-00c9-409d-b386-624db7adbdcf', '') }
+
+VAR_INPUT
+    bExecute : BOOL { CustomGroupReference('fd321e2a-538c-444f-9c5e-63bf7589d4f3') } {Id('3da329c7-5c37-49d6-9f0b-4c2847cbaab9')};
+    iPosTable : McePosTableData { CustomGroupReference('fd321e2a-538c-444f-9c5e-63bf7589d4f3') } {Id('e722edf7-3e00-401c-ade1-187f9eba13bc')};
+    fPivotX : LREAL { CustomGroupReference('fd321e2a-538c-444f-9c5e-63bf7589d4f3') } {Id('c358fd30-29a1-45d3-8151-c0bd927b8dc2')};
+    fPivotY : LREAL { CustomGroupReference('fd321e2a-538c-444f-9c5e-63bf7589d4f3') } {Id('f2163e10-3bf6-4dd8-9f49-c134dd6468fc')};
+    fPivotZ : LREAL { CustomGroupReference('fd321e2a-538c-444f-9c5e-63bf7589d4f3') } {Id('a2ea0bf1-44ce-449d-8a65-9806a3c3b7f6')};
+    fDeltaRx : LREAL { CustomGroupReference('fd321e2a-538c-444f-9c5e-63bf7589d4f3') } {Id('19003746-c1a5-4704-b796-8a123ce266be')};
+    fDeltaRy : LREAL { CustomGroupReference('fd321e2a-538c-444f-9c5e-63bf7589d4f3') } {Id('f8b4f42a-05b4-46dd-ac1f-fd3eb52ab394')};
+    fDeltaRz : LREAL { CustomGroupReference('fd321e2a-538c-444f-9c5e-63bf7589d4f3') } {Id('f3652a15-0508-4545-ab99-3344630d97a0')};
+END_VAR
+
+VAR_OUTPUT
+    oPosTable : McePosTableData { CustomGroupReference('e9a388d1-f848-4cfe-a997-00b3259410b9') } {Id('992a94d9-0f52-4eeb-87e7-06740c74cf73')};
+    bDone : BOOL { CustomGroupReference('e9a388d1-f848-4cfe-a997-00b3259410b9') } {Id('b4b6d05b-7264-4d48-b264-1b9ee58ef2a8')};
+    bError : BOOL { CustomGroupReference('e9a388d1-f848-4cfe-a997-00b3259410b9') } {Id('117599b6-925d-4940-9e93-5b4555987a62')};
+    nGimbalCount : INT { CustomGroupReference('e9a388d1-f848-4cfe-a997-00b3259410b9') } {Id('f7233683-c5b7-4223-8b4c-79f32be177d9')};
+END_VAR
+
+VAR
+    bLastExecute : BOOL { CustomGroupReference('7a7fecc0-00c9-409d-b386-624db7adbdcf') } {Id('110079c4-d476-4afd-8a03-db9df5434a48')};
+    i : INT { CustomGroupReference('7a7fecc0-00c9-409d-b386-624db7adbdcf') } {Id('f815683c-472b-4d06-a8c7-d763e20b79d0')};
+    mGlobal : Yt_MA_Matrix3x3 { CustomGroupReference('7a7fecc0-00c9-409d-b386-624db7adbdcf') } {Id('b715c8ff-1af9-4286-ba64-6bec309a99c3')};
+    mPoint : Yt_MA_Matrix3x3 { CustomGroupReference('7a7fecc0-00c9-409d-b386-624db7adbdcf') } {Id('744ccdc1-cd75-48e9-b6df-536b3c9b94e8')};
+    mCombined : Yt_MA_Matrix3x3 { CustomGroupReference('7a7fecc0-00c9-409d-b386-624db7adbdcf') } {Id('cf90bb49-d6fc-42ec-b654-769798b47eff')};
+    vRelX : LREAL { CustomGroupReference('7a7fecc0-00c9-409d-b386-624db7adbdcf') } {Id('3a799803-346c-49b5-b299-c939947c08e4')};
+    vRelY : LREAL { CustomGroupReference('7a7fecc0-00c9-409d-b386-624db7adbdcf') } {Id('ef5bd52e-01eb-4f62-b380-900dc580dcca')};
+    vRelZ : LREAL { CustomGroupReference('7a7fecc0-00c9-409d-b386-624db7adbdcf') } {Id('6c0b2f47-368b-4387-9c20-ec795ae9991f')};
+    vRotX : LREAL { CustomGroupReference('7a7fecc0-00c9-409d-b386-624db7adbdcf') } {Id('651d451d-3d48-499c-9f2c-ee420565ba8c')};
+    vRotY : LREAL { CustomGroupReference('7a7fecc0-00c9-409d-b386-624db7adbdcf') } {Id('6f653f23-5421-4885-b4ad-7fe1f4a496cd')};
+    vRotZ : LREAL { CustomGroupReference('7a7fecc0-00c9-409d-b386-624db7adbdcf') } {Id('f338ab6b-2740-4b16-b79e-1d601c4705e1')};
+    stEuler : ST_EulerResult { CustomGroupReference('7a7fecc0-00c9-409d-b386-624db7adbdcf') } {Id('18a2f259-327d-408b-aeb2-240f32baf1d2')};
+    nLastIdx : INT { CustomGroupReference('7a7fecc0-00c9-409d-b386-624db7adbdcf') } {Id('c7aede9a-7275-4e6b-a47d-a42bc2e8f8d7')};
+END_VAR

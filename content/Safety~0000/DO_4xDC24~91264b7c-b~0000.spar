@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SafetyDeviceParameters xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="Ade.Safety.SafetyDeviceParameterDocument/v1">
+  <Values>
+    <ParameterValue>
+      <ParameterId>safetyParaGroup1/safetyPara10</ParameterId>
+      <Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:unsignedInt">1</Value>
+    </ParameterValue>
+    <ParameterValue>
+      <ParameterId>safetyParaGroup1/safetyPara11</ParameterId>
+      <Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:unsignedInt">0</Value>
+    </ParameterValue>
+    <ParameterValue>
+      <ParameterId>safetyParaGroup1/safetyPara12</ParameterId>
+      <Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:unsignedInt">0</Value>
+    </ParameterValue>
+    <ParameterValue>
+      <ParameterId>safetyParaGroup1/safetyPara13</ParameterId>
+      <Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:unsignedInt">0</Value>
+    </ParameterValue>
+    <ParameterValue>
+      <ParameterId>safetyParaGroup1/safetyPara14</ParameterId>
+      <Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:unsignedInt">1</Value>
+    </ParameterValue>
+    <ParameterValue>
+      <ParameterId>safetyParaGroup1/safetyPara16</ParameterId>
+      <Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:unsignedInt">0</Value>
+    </ParameterValue>
+    <ParameterValue>
+      <ParameterId>safetyParaGroup1/safetyPara17</ParameterId>
+      <Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:unsignedInt">0</Value>
+    </ParameterValue>
+    <ParameterValue>
+      <ParameterId>safetyParaGroup1/safetyPara19</ParameterId>
+      <Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:unsignedInt">4000</Value>
+    </ParameterValue>
+    <ParameterValue>
+      <ParameterId>safetyParaGroup1/safetyPara2</ParameterId>
+      <Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:unsignedInt">2</Value>
+    </ParameterValue>
+    <ParameterValue>
+      <ParameterId>safetyParaGroup1/safetyPara20</ParameterId>
+      <Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:unsignedInt">4000</Value>
+    </ParameterValue>
+    <ParameterValue>
+      <ParameterId>safetyParaGroup1/safetyPara21</ParameterId>
+      <Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:unsignedInt">4000</Value>
+    </ParameterValue>
+    <ParameterValue>
+      <ParameterId>safetyParaGroup1/safetyPara22</ParameterId>
+      <Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:unsignedInt">4000</Value>
+    </ParameterValue>
+    <ParameterValue>
+      <ParameterId>safetyParaGroup1/safetyPara3</ParameterId>
+      <Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:unsignedInt">150</Value>
+    </ParameterValue>
+    <ParameterValue>
+      <ParameterId>safetyParaGroup1/safetyPara4</ParameterId>
+      <Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:unsignedInt">16</Value>
+    </ParameterValue>
+    <ParameterValue>
+      <ParameterId>safetyParaGroup1/safetyPara7</ParameterId>
+      <Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:unsignedInt">0</Value>
+    </ParameterValue>
+    <ParameterValue>
+      <ParameterId>safetyParaGroup1/safetyPara8</ParameterId>
+      <Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:unsignedInt">0</Value>
+    </ParameterValue>
+    <ParameterValue>
+      <ParameterId>safetyParaGroup1/safetyPara9</ParameterId>
+      <Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:unsignedInt">0</Value>
+    </ParameterValue>
+  </Values>
+</SafetyDeviceParameters>

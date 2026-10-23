@@ -1,0 +1,124 @@
+(**)
+
+TYPE
+    DT_Shape:(
+        Other,
+        Square,
+        Triangle,
+        PnP,
+        HMI
+    );
+
+    PosMinMax                   :STRUCT
+        PosMax                  :LREAL;
+        PosMin                  :LREAL;
+    END_STRUCT;
+
+    X_PosMinMax: ARRAY [0..7] OF PosMinMax;
+
+    XY_Limits                   :STRUCT
+        X_Limits                :X_PosMinMax; // it's related to different robot
+        Y_Limits                :PosMinMax;
+        Z_Limits                :PosMinMax;
+    END_STRUCT;
+
+    Array_XY_range: ARRAY [0..15] OF XY_Limits;
+
+    _Parts                      :STRUCT
+        HMI_Delta_X_WCS_Pos     :LREAL;
+        HMI_Delta_Y_WCS_Pos     :LREAL;
+        HMI_Delta_Z_WCS_Pos     :LREAL;
+        HMI_Delta_X_WCS_InSync  :BOOL;
+    END_STRUCT;
+
+    _Command                    :STRUCT
+        PickPlace_Delta         :BOOL;
+        SortingPick             :BOOL;
+        SortingPlace            :BOOL;
+        HardwareSimulation      :BOOL;
+        VisionSimulation        :BOOL;
+        ClearAlarms             :BOOL;
+        KeyLaunch               :BOOL;
+        KeyAbort                :BOOL;
+        KeyPause                :BOOL;
+        ResetAxis               :ARRAY[1..7] OF BOOL;
+        RebootAxis              :ARRAY[1..7] OF BOOL;
+    END_STRUCT;
+
+     _Setting                   :STRUCT
+        MaxRamp_Delta           :LREAL;
+        MaxVelocity_Delta       :LREAL;
+        MinRamp_Delta           :LREAL;
+        MinVelocity_Delta       :LREAL;
+        OutPartsForSector       :INT;
+        OutModulusDistance      :LREAL;
+        Feed_1_2_Speed          :LREAL;
+        Feed_3_Speed            :LREAL;
+        VisionPhotoDistance     :LREAL;
+        SyncInOffset            :LREAL;
+        SyncOutOffset           :LREAL;
+        Z_TransferPosition      :LREAL;
+        Z_PickPosition          :LREAL;
+        Z_PlacePosition         :LREAL;
+        Z_Lenght                :LREAL;
+        ZPickPlaceSpeed         :LREAL;
+        ZPickPlaceRamp          :LREAL;
+        Delta_Z_Pick            :LREAL;
+        Delta_Z_Place           :LREAL;
+        WCS_MCS_ZeroDistance    :LREAL;
+        LimitPos                :Array_XY_range;
+        OffsetCamera            :LREAL;
+    END_STRUCT;
+
+    _Status                     :STRUCT
+        Enabled                 :BOOL;
+        Feed_3_RuntimeStop      :BOOL;
+        InSyncPick_Delta        :BOOL;
+        InSyncPlace_Delta       :BOOL;
+        ManualBrakeDone_Delta   :BOOL;
+        Feed_1_2_Enabled        :BOOL;
+        Feed_3_Enabled          :BOOL;
+        ReadyRephase_Delta      :BOOL;
+    END_STRUCT;
+
+    _Feedback                   :STRUCT
+        Delta_ACS_1             :LREAL;
+        Delta_ACS_2             :LREAL;
+        Delta_ACS_3             :LREAL;
+        Delta_MCS_1             :LREAL;
+        Delta_MCS_2             :LREAL;
+        Delta_MCS_3             :LREAL;
+        Delta_PCS_1             :LREAL;
+        Delta_PCS_2             :LREAL;
+        Delta_PCS_3             :LREAL;
+        Delta_WCS_1             :LREAL;
+        Delta_WCS_2             :LREAL;
+        Delta_WCS_3             :LREAL;
+        ActualNotPicked_Delta   :INT;
+    END_STRUCT;
+
+    DT_Machine                  :STRUCT
+        Command                 :_Command;
+        Setting                 :_Setting;
+        Status                  :_Status;
+        Feedback                :_Feedback;
+        Parts                   :_Parts;
+    END_STRUCT;
+
+END_TYPE
+
+TYPE E_MachineState : (
+    INIT := -1,
+    IDLE := 0,
+    TEACH_FRAME := 1,
+    POWERING_UP := 2,
+    HOMING := 3,
+    WAIT_FOR_COMMISSIONING := 4,
+    OPERATIONAL_AUTOMATIC := 5,
+    OPERATIONAL_MANUAL := 6,
+    STOPPING := 7,
+    UNPOWERING := 8,
+    SHUTDOWN := 9,
+    ERROR := 10
+) OF INT;
+END_TYPE

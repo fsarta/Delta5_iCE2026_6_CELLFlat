@@ -1,0 +1,14 @@
+(*
+====================================================================================================
+ METHOD GetErrorMessage 
+====================================================================================================
+*)
+
+GetErrorMessage := 'Unknown Error ID. Please refer to documentation.'; 
+
+FOR i := 1 TO C_MAX_ERROR_LOOKUP_ENTRIES DO
+    IF G_ErrorLookupTable[i].ErrorCode = udiErrorID THEN
+        GetErrorMessage := G_ErrorLookupTable[i].Message;
+        EXIT; 
+    END_IF
+END_FOR;

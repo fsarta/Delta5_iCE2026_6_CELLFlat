@@ -1,0 +1,5 @@
+{ CustomGroupDefinition('d6077eb7-95e4-4ea1-b85c-90851e6c3211', '') }
+
+VAR
+    bM_Step_InitializeOldState : BOOL { CustomGroupReference('d6077eb7-95e4-4ea1-b85c-90851e6c3211') } {Id('3eb9baa6-d3d5-4261-9954-3fef6414101a')};
+END_VAR

@@ -1,0 +1,22 @@
+{ CustomGroupDefinition('85606fee-4543-457f-bc88-5a1110cdd63d', 'VAR_INPUT') }
+{ CustomGroupDefinition('a3119427-bee5-4370-97ed-8d74f2eb4a31', '') }
+
+VAR_INPUT
+    fRxDeg : LREAL { CustomGroupReference('85606fee-4543-457f-bc88-5a1110cdd63d') } {Id('bace5f6c-d7c9-4531-9b06-7780b8b6e36e')};
+    fRyDeg : LREAL { CustomGroupReference('85606fee-4543-457f-bc88-5a1110cdd63d') } {Id('e80c423b-c1fb-44f4-82b5-9108209f4fa1')};
+    fRzDeg : LREAL { CustomGroupReference('85606fee-4543-457f-bc88-5a1110cdd63d') } {Id('c6fdad1e-b19f-4bee-8f0d-68ef54440324')};
+END_VAR
+
+VAR CONSTANT
+    c_D2R : LREAL := LREAL#0.017453292519943295 { CustomGroupReference('a3119427-bee5-4370-97ed-8d74f2eb4a31') } {Id('dc6c820a-586a-408e-bab5-c15954811307')};
+END_VAR
+
+VAR
+    cx : LREAL { CustomGroupReference('a3119427-bee5-4370-97ed-8d74f2eb4a31') } {Id('c66c9b62-3de9-4227-88fe-6189cd3e2deb')};
+    sx : LREAL { CustomGroupReference('a3119427-bee5-4370-97ed-8d74f2eb4a31') } {Id('a6bf245e-f90a-4c2f-b751-0b34205c9deb')};
+    cy : LREAL { CustomGroupReference('a3119427-bee5-4370-97ed-8d74f2eb4a31') } {Id('36186dc4-930e-4021-bfe9-4b9a0772e0eb')};
+    sy : LREAL { CustomGroupReference('a3119427-bee5-4370-97ed-8d74f2eb4a31') } {Id('6698f399-8b02-4148-a42b-f93515f92cb6')};
+    cz : LREAL { CustomGroupReference('a3119427-bee5-4370-97ed-8d74f2eb4a31') } {Id('b5ed5fe7-b81d-463b-8d3a-2516a9328608')};
+    sz : LREAL { CustomGroupReference('a3119427-bee5-4370-97ed-8d74f2eb4a31') } {Id('d4fb1c9f-977a-467b-92d5-25b035a648ea')};
+    m : Yt_MA_Matrix3x3 { CustomGroupReference('a3119427-bee5-4370-97ed-8d74f2eb4a31') } {Id('df47e4bf-b944-441e-bbd7-f6b536e0cbf8')};
+END_VAR

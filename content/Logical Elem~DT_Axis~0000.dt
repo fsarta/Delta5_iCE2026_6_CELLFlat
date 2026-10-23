@@ -1,0 +1,364 @@
+// Enumeration for the Test Position state machine
+TYPE E_TestPosState :
+(
+    Idle              := 0,    // Initial state, waiting for command
+    LoadData          := 10,   // Load index data and set mission parameters
+    Execute           := 20,   // Execute positioning command
+    WaitDelay         := 30,   // Wait for configured delay after positioning
+    Error             := 990,  // Error state for invalid parameters
+    Finished          := 999  // Finished state (can loop back to Idle or LoadData)
+) := Idle;
+END_TYPE
+
+// Enumeration for the Write Drive Parameter state machine
+TYPE E_WriteDrvParState :
+(
+    Idle          := 0,    // Initial state
+    Write         := 10,   // Execute the write command
+    ReadVerify    := 20,   // Read back the parameter to verify the write
+    Done          := 999   // Operation completed successfully
+) := Idle;
+END_TYPE
+
+// Enumeration for the Home Z-Pulse state machine
+TYPE E_HomeZPulseState :
+(
+    Idle           := 0,    // Initial state, waiting for command
+    ResetConditions:= 10,   // Reset previous homing conditions
+    SearchZPulse   := 20,   // Searching for Z-pulse using MC_StepRefPulse
+    Latency1       := 30,   // Short delay/latency after Z-pulse search
+    MoveOffset     := 40,   // Moving to the home offset position
+    Latency2       := 50,   // Short delay/latency after offset move
+    SetFinalPos    := 60,   // Setting the final home position using MC_SetPosition
+    Done           := 999   // Homing sequence completed
+) := Idle;
+END_TYPE
+
+// Enumeration for the Home External Input state machine
+TYPE E_HomeExtInState :
+(
+    Idle            := 0,    // Initial state, waiting for command
+    ResetConditions := 10,   // Reset previous homing conditions
+    CheckOvertravel := 20,   // Check if overtravel limit is active
+    MoveInJog       := 30,   // Jogging until first transition on home sensor
+    WaitFirstTrans  := 40,   // Waiting for the first transition on home sensor
+    WaitSecondTrans := 50,   // Waiting for the second transition on home sensor
+    ReleaseLimitSw  := 60,   // Jogging to release the limit switch
+    StopMotion      := 70,   // Stopping the axis after releasing limit switch
+    WaitStopping    := 80,   // Waiting for axis to be at standstill
+    Latency1        := 90,   // Short delay/latency after stopping
+    MoveOffset      := 100,  // Moving to the home offset position
+    Latency2        := 110,  // Short delay/latency after offset move
+    SetFinalPos     := 120,  // Setting the final home position using MC_SetPosition
+    Done            := 999   // Homing sequence completed
+) := Idle;
+END_TYPE
+
+// Enumeration for the Home Absolute Encoder state machine
+TYPE E_HomeAbsEncState :
+(
+    Idle           := 0,    // Initial state, waiting for command
+    EnableAPM      := 10,   // Enable Absolute Position Manager instruction
+    EvalEncoderErr := 20,   // Evaluate encoder errors
+    ResetEncoderAlm:= 30,   // Reset encoder alarms (A.810, A.CC0)
+    SetAbsPos      := 40,   // Set absolute position
+    Done           := 999   // Homing sequence completed
+) := Idle;
+END_TYPE
+
+TYPE E_CamStateMachineState :
+(
+    INIT,                       // Init state, resetting variables
+    IDLE,                       // Idle state, waiting for command
+    GENERATE_CAM_TABLE,         // Generating the cam table
+    SELECT_CAM_TABLE,           // Selecting the cam table
+    SET_CAM_MASTER_CYCLE,       // 
+    PREPARE_CAMIN,              // Prepare CamIn
+    ENGAGE_CAM,                 // Engaging the camming motion
+    CAM_ACTIVE,                 // Camming is active
+    ARM_TOUCHPROBE,             // Arming the TouchProbe for shift trigger
+    WAIT_TOUCHPROBE_TRIGGER,    // Waiting for the TouchProbe to trigger
+    PERFORM_CAM_MASTER_LOOKUP,
+    SHIFT_CAM,                  // Applying cam shift based on TouchProbe
+    OFFSET_CAM,                 // Applying slave offset based on TouchProbe
+    DISENGAGE_CAM,              // Disengaging the camming motion
+    WAIT_DISENGAGE_DONE,        // Waiting for cam disengagement to complete
+    ABORT_TRIGGER,              // Aborting the TouchProbe trigger
+    WAIT_ABORT_DONE,            // Waiting for AbortTrigger to complete
+    ERROR                       // Error state
+);
+END_TYPE
+
+TYPE 
+    Yt_CamGenerator_FB_Data : STRUCT
+        CamData     : Yt_CA_CamSegmentStruct;   // Structure containing data for cam segments
+        CamTable    : Yt_MS_CamStruct;          // Cam table structure
+        
+        // Input variables     
+        TableSize   : UDINT;                    // Expected size of the cam table
+        Execute     : BOOL;                     // Rising edge triggers the generation
+    
+        // Output variables
+        Done        : BOOL;                     // TRUE when the generation is complete
+        Busy        : BOOL;                     // TRUE when the function block is active
+        Error       : BOOL;                     // TRUE if an error occurred
+        ErrorID     : UINT;                     // Error identification code if Error is TRUE
+    END_STRUCT
+END_TYPE
+
+TYPE 
+    Yt_CamStructSelect_FB_Data : STRUCT
+        CamTable    : Yt_MS_CamStruct;  // Cam table structure
+    
+        // Input variables
+        BlockSize   : UDINT;            // Size of the cam table block to select
+        Execute     : BOOL;             // Rising edge triggers the selection
+    
+        // Output variables
+        Done        : BOOL;             // TRUE when the selection is complete
+        Busy        : BOOL;             // TRUE when the function block is active
+        Error       : BOOL;             // TRUE if an error occurred
+        ErrorID     : UINT;             // Error identification code if Error is TRUE
+        CamTableID  : UINT;             // ID of the cam table        
+    END_STRUCT
+END_TYPE
+
+TYPE
+    Yt_SetCamMasterCycle_FB_Data : STRUCT
+        // Input variables
+        Execute     : BOOL;
+        CamTableID  : UINT;
+        
+        // Output variables
+        Done : BOOL;
+        Busy : BOOL; 
+        CommandAborted : BOOL; 
+        Error : BOOL;
+        ErrorID : UINT;   
+    END_STRUCT 
+END_TYPE
+    
+
+TYPE 
+    Yt_CamIn_FB_Data : STRUCT
+        // Input variables
+        Execute         : BOOL;             // Rising edge triggers the camming motion
+        CamTableID      : UINT;             // ID of the cam table        
+        EngagePosition  : LREAL;            // Master position at which camming engages
+        EngageWindow    : LREAL;            // Window around EngagePosition for engagement
+        EngageData      : Yt_EngageData;    // Structure containing engagement specific parameters
+        Periodic        : BOOL;             // TRUE for periodic camming, FALSE for non-periodic
+    
+        // Output variables
+        InSync          : BOOL;             // TRUE when master and slave are in sync
+        Busy            : BOOL;             // TRUE when the function block is active
+        Active          : BOOL;             // TRUE when the camming motion is active
+        CommandAborted  : BOOL;             // TRUE if the command was aborted
+        Error           : BOOL;             // TRUE if an error occurred
+        ErrorID         : UINT;             // Error identification code if Error is TRUE
+        EndOfProfile    : BOOL;             // TRUE when the slave reaches the end of the cam profile
+    END_STRUCT
+END_TYPE
+
+TYPE 
+    Yt_CamOut_FB_Data : STRUCT
+        // Input variables
+        Execute             : BOOL;             // Rising edge triggers the disengagement
+        DisengagePosition   : LREAL;            // Master position at which camming disengages
+        DisengageWindow     : LREAL;            // Window around DisengagePosition for disengagement
+        DisengageData       : Yt_DisengageData; // Structure containing disengagement specific parameters
+    
+        // Output variables
+        Done                : BOOL;             // TRUE when the disengagement is complete
+        Busy                : BOOL;             // TRUE when the function block is active
+        Error               : BOOL;             // TRUE if an error occurred
+        ErrorID             : UINT;             // Error identification code if Error is TRUE
+    END_STRUCT
+END_TYPE
+
+TYPE 
+    Yt_CamShift_FB_Data : STRUCT
+        // Input variables
+        Execute         : BOOL;             // Rising edge triggers the shift
+        PhaseShift      : LREAL;            // Amount of phase shift to apply to the slave axis
+        AdjustMode      : Yt_AdjustMode;    // Mode of adjustment (relative or absolute)
+        MasterDistance  : LREAL;            // Master distance over which the shift is applied
+        Duration        : LREAL;            // Time duration over which the shift is applied
+        StartPosition   : LREAL;            // Master position where the shift starts (if applicable)
+        EndPosition     : LREAL;            // Master position where the shift ends (if applicable)
+        BufferMode      : MC_BufferMode;    // Defines how the command is buffered (aborting or buffered)
+    
+        // Output variables
+        Done            : BOOL;             // TRUE when the shift is complete
+        Busy            : BOOL;             // TRUE when the function block is active
+        Active          : BOOL;             // TRUE when the cam shift is active
+        CommandAborted  : BOOL;             // TRUE if the command was aborted
+        Error           : BOOL;             // TRUE if an error occurred
+        ErrorID         : UINT;             // Error identification code if Error is TRUE
+    END_STRUCT
+END_TYPE
+
+TYPE
+    Yt_SlaveOffset_FB_Data : STRUCT
+        // Input variables
+        Execute         : BOOL;
+        Offset          : LREAL;
+        AdjustMode      : Yt_AdjustMode;
+        MasterDistance  : LREAL;
+        Duration        : LREAL;
+        StartPosition   : LREAL;
+        EndPosition     : REAL;
+        BufferMode      : MC_BufferMode;
+        
+        // Output variables
+        Done            : BOOL; 
+        Busy            : BOOL; 
+        Active          : BOOL; 
+        CommandAborted  : BOOL; 
+        Error           : BOOL; 
+        ErrorID         : UINT;
+    END_STRUCT
+END_TYPE
+
+TYPE
+    Yt_TouchProbe_FB_Data : STRUCT
+        // Input variables
+        Execute         : BOOL;     // Rising edge triggers the touch probe
+        WindowOnly      : BOOL;     // 
+        FirstPosition   : LREAL;    // 
+        LastPosition    : LREAL;    // 
+                                    // 
+        // Output variables         // 
+        Done            : BOOL;     // TRUE when the command is complete
+        Busy            : BOOL;     // TRUE when the function block is active
+        CommandAborted  : BOOL;     // TRUE if the command was aborted 
+        Error           : BOOL;     // TRUE if an error occurred
+        ErrorID         : UINT;     // Error identification code
+        RecordedPosition: LREAL;    // Position at which the trigger occurred
+    END_STRUCT
+END_TYPE
+
+TYPE 
+    Yt_AbortTrigger_FB_Data : STRUCT
+        // Input variables
+        Execute : BOOL; // Rising edge triggers the abort
+    
+        // Output variables
+        Done    : BOOL; // TRUE when the abort is complete
+        Busy    : BOOL; // TRUE when the function block is active
+        Error   : BOOL; // TRUE if an error occurred
+        ErrorID : UINT; // Error identification code
+    END_STRUCT
+END_TYPE 
+
+TYPE
+    Yt_CamMasterLookup_FB_Data : STRUCT
+        CamTable        : Yt_MS_CamStruct;
+        
+        // Input variables
+        Enable          : BOOL;
+        MasterMin       : LREAL;
+        SlavePosition   : LREAL;
+        MasterMax : LREAL;
+
+        // Output variables
+        Valid           : BOOL;
+        Error           : BOOL; 
+        ErrorID         : UINT; 
+        MasterPosition  : LREAL;
+    END_STRUCT
+END_TYPE 
+
+TYPE
+    Yt_SlaveOffsetControl_FB_Data : STRUCT
+        RegistrationData        : Yt_AX_ProductBufferStruct; 
+        OffsetControlData       : Yt_CA_SlaveOffsetStruct;
+
+        // Input variables
+        Enable                  : BOOL;
+        DefaultSize             : LREAL; 
+        TheoreticalFirstPosition : LREAL; 
+        ManualOffset            : LREAL;
+        UpdateUsePointer        : BOOL;
+        Action                  : INT;
+
+        // Output variables
+        Valid                   : BOOL;
+        Offsetting              : BOOL;
+        Error                   : BOOL;
+        ErrorID                 : UINT;
+        ItemsProcessed          : UDINT;
+    END_STRUCT
+END_TYPE 
+
+TYPE
+    Yt_CamParams_FB_Data : STRUCT
+        v1500_CamMasterPosition         : LREAL;
+        v1501_CamMasterShiftedPosition  : LREAL;
+        v1502_CamMasterShiftedCyclic    : LREAL;
+        v1510_CamMasterScale            : LREAL;
+        v1511_CamMasterShift            : LREAL;
+        v1512_CamMasterCycle            : LREAL;
+        v1513_CamShiftRemaining         : LREAL;
+        v1530_CamScale                  : LREAL;
+        v1531_CamOffset                 : LREAL;
+        v1533_CamOffsetRemaining        : LREAL;
+        v1534_CamScaleRemaining         : LREAL;
+        v1540_CamState                  : LREAL;
+        v1541_CamTableIDEngaged         : LREAL;
+    END_STRUCT 
+END_TYPE
+
+
+(* --- Master Structure for all Camming Function Block Data --- *)
+TYPE 
+    DT_CamData : STRUCT
+        Master          : AXIS_REF;                 // Reference to the master axis
+        Slave           : AXIS_REF;                 // Reference to the slave axis
+        AxisTouchProbe  : AXIS_REF;                 // Reference to the touch probe axis        
+        CamGenerator    : Yt_CamGenerator_FB_Data;
+        CamStructSelect : Yt_CamStructSelect_FB_Data;
+        SetCamMasterCycle: Yt_SetCamMasterCycle_FB_Data;
+        CamIn           : Yt_CamIn_FB_Data;
+        CamOut          : Yt_CamOut_FB_Data;
+        CamShift        : Yt_CamShift_FB_Data;
+        SlaveOffset     : Yt_SlaveOffset_FB_Data;
+        CamParams       : Yt_CamParams_FB_Data;
+        TriggerInput    : MC_TRIGGER_REF;
+        TouchProbe      : Yt_TouchProbe_FB_Data;
+        AbortTrigger    : Yt_AbortTrigger_FB_Data;
+        CamMasterLookup : Yt_CamMasterLookup_FB_Data;
+        SlaveOffsetControl : Yt_SlaveOffsetControl_FB_Data;
+    END_STRUCT
+END_TYPE
+
+TYPE 
+    E_OscillationState : (
+        INIT := 0,      (* Initial state, used for reset *)
+        IDLE,           (* Waiting for enable command *)
+        MOVING_FORWARD, (* Moving from StartPosition to EndPosition *)
+        MOVING_BACKWARD,(* Moving from EndPosition to StartPosition *)
+        ERROR           (* Error state *)
+    ) OF UINT;
+END_TYPE
+
+TYPE 
+    _MoveAbsolute : STRUCT
+        Axis : AXIS_REF;
+        Execute : BOOL;
+        Position : LREAL;
+        Velocity : LREAL;
+        Acceleration : LREAL;
+        Deceleration : LREAL;
+        Jerk : LREAL;
+        Direction : MC_Direction;
+        BufferMode : MC_BufferMode;
+        Done : BOOL;
+        Busy : BOOL;
+        Active : BOOL;
+        CommandAborted : BOOL;
+        Error : BOOL;
+        ErrorID : UINT;
+    END_STRUCT
+END_TYPE
+

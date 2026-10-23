@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Metadata>
+   <FolderType>MethodFolder</FolderType>
+   <Kind>Method</Kind>
+   <ContentType>Method</ContentType>
+   <ReturnType>STRING512</ReturnType>
+   <AccessSpecifier>PUBLIC</AccessSpecifier>
+   <Id>7f59e996-289f-4393-af4a-b436cc28e8be</Id>
+   <ItemGroup>
+      <VariableWorksheet>
+         <Id>4e65eac7-9d9b-4b32-a16b-c58e6037af3a</Id>
+      </VariableWorksheet>
+      <CodeWorksheet Include="Code.st">
+         <Id>f17125ea-16a3-4ccb-80e5-e2f45f171b4d</Id>
+         <Extension>.st</Extension>
+         <Type>.st</Type>
+         <ParentIndex>0</ParentIndex>
+      </CodeWorksheet>
+   </ItemGroup>
+</Metadata>

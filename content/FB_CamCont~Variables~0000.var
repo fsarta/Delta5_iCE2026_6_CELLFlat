@@ -1,0 +1,60 @@
+{ CustomGroupDefinition('d718af3c-b1cd-4c9b-903d-fc4b3d6d7470', 'INPUT') }
+{ CustomGroupDefinition('4853451e-66e3-46b8-bbfa-1e1939bd98ac', 'OUTPUT') }
+{ CustomGroupDefinition('804c4a39-8be9-49c5-8b0f-a56967dc5c42', '') }
+
+VAR_INPUT
+    EnableSequence : BOOL { CustomGroupReference('d718af3c-b1cd-4c9b-903d-fc4b3d6d7470') } {Id('d513a787-dd99-43b1-8c8c-6262e9e6a633')};
+    Reset : BOOL { CustomGroupReference('d718af3c-b1cd-4c9b-903d-fc4b3d6d7470') } {Id('967fc2a2-dae9-4f8c-b0b6-0d78a847de70')};
+    MasterAxis : AXIS_REF { CustomGroupReference('d718af3c-b1cd-4c9b-903d-fc4b3d6d7470') } {Id('93523190-c6d9-4d22-8a15-3ee7e7d4813f')};
+    SlaveAxis : AXIS_REF { CustomGroupReference('d718af3c-b1cd-4c9b-903d-fc4b3d6d7470') } {Id('486ea2fb-f321-44a5-9c55-9a461553a711')};
+    GetTouchProbe : BOOL { CustomGroupReference('d718af3c-b1cd-4c9b-903d-fc4b3d6d7470') } {Id('a4c561e0-436f-40b8-91a7-03e6022fa8cb')};
+    CamData : Yt_CA_CamSegmentStruct { CustomGroupReference('d718af3c-b1cd-4c9b-903d-fc4b3d6d7470') } {Id('5b44e8e5-d375-4dae-84dc-064ba11c5ee5')};
+    AllowCamIn : BOOL { CustomGroupReference('d718af3c-b1cd-4c9b-903d-fc4b3d6d7470') } {Id('f1c728d5-3d5c-462e-b8b9-b4a829665770')};
+    EngagePosition : LREAL { CustomGroupReference('d718af3c-b1cd-4c9b-903d-fc4b3d6d7470') } {Id('91345c29-cf61-43de-bad5-a634c8f79ff0')};
+    EngageWindow : LREAL { CustomGroupReference('d718af3c-b1cd-4c9b-903d-fc4b3d6d7470') } {Id('b43958a2-27a6-419e-8e6b-26de700e64dd')};
+    Periodic : BOOL { CustomGroupReference('d718af3c-b1cd-4c9b-903d-fc4b3d6d7470') } {Id('7d990b91-3c23-4fec-8407-0239beb26c18')};
+    EngageData : Yt_EngageData { CustomGroupReference('d718af3c-b1cd-4c9b-903d-fc4b3d6d7470') } {Id('5fbe6d62-eac5-49ee-9df0-1e4e36a9f27e')};
+    DisengagePosition : LREAL { CustomGroupReference('d718af3c-b1cd-4c9b-903d-fc4b3d6d7470') } {Id('d849e806-0e57-4ef1-adec-7ceef47b7f7e')};
+    DisengageWindow : LREAL { CustomGroupReference('d718af3c-b1cd-4c9b-903d-fc4b3d6d7470') } {Id('776ff334-a5f4-41e7-8c9e-d0f028ccf218')};
+    DisengageData : Yt_DisengageData { CustomGroupReference('d718af3c-b1cd-4c9b-903d-fc4b3d6d7470') } {Id('2f10422b-fe1a-418a-8674-cd575193079f')};
+    EnableTouchProbe : BOOL { CustomGroupReference('d718af3c-b1cd-4c9b-903d-fc4b3d6d7470') } {Id('f01b76b0-77e4-4e78-8f10-ca2e6948c121')};
+    TriggerInput : MC_TRIGGER_REF { CustomGroupReference('d718af3c-b1cd-4c9b-903d-fc4b3d6d7470') } {Id('fe26b164-c8b3-4b53-897a-3d5fc8212d69')};
+END_VAR
+
+VAR_OUTPUT
+    SequenceComplete : BOOL { CustomGroupReference('4853451e-66e3-46b8-bbfa-1e1939bd98ac') } {Id('de9bf8b6-b79f-4cbf-975b-e9f71bc5388d')};
+    SequenceError : BOOL { CustomGroupReference('4853451e-66e3-46b8-bbfa-1e1939bd98ac') } {Id('1d823c47-31ce-4047-b123-12c9e7881f69')};
+    SequenceErrorID : UDINT { CustomGroupReference('4853451e-66e3-46b8-bbfa-1e1939bd98ac') } {Id('d5f23c6e-2c88-43c5-bece-fd4be351f721')};
+    CurrentState : E_CamStateMachineState { CustomGroupReference('4853451e-66e3-46b8-bbfa-1e1939bd98ac') } {Id('1c49de07-73d3-4148-b61d-d6034351432b')};
+    CamSystemData : DT_CamData { CustomGroupReference('4853451e-66e3-46b8-bbfa-1e1939bd98ac') } {Id('908856cb-7e6e-4bb2-9a47-87f7bd16d4a9')};
+END_VAR
+
+VAR
+    eInternalState : E_CamStateMachineState { CustomGroupReference('804c4a39-8be9-49c5-8b0f-a56967dc5c42') } {Id('14ac4d04-c23b-4651-888e-7e6d2d19156d')};
+    r_EnableSequence : R_TRIG { CustomGroupReference('804c4a39-8be9-49c5-8b0f-a56967dc5c42') } {Id('d84b98d4-dee1-49c7-8433-7ebf311c81ba')};
+    lrRecordedPosition : LREAL { CustomGroupReference('804c4a39-8be9-49c5-8b0f-a56967dc5c42') } {Id('22ceb213-dc91-4838-9c6e-ba82d1133caa')};
+    lrRecordedPositionFirst : LREAL { CustomGroupReference('804c4a39-8be9-49c5-8b0f-a56967dc5c42') } {Id('885b55dc-b3a1-4fc5-bebb-e1f35733dfc1')};
+    Y_CA_CamGenerator1 : Y_CA_CamGenerator { CustomGroupReference('804c4a39-8be9-49c5-8b0f-a56967dc5c42') } {Id('6987fa97-cab1-4b67-bd26-a14ef6d6abc2')};
+    Y_CamStructSelect1 : Y_CamStructSelect { CustomGroupReference('804c4a39-8be9-49c5-8b0f-a56967dc5c42') } {Id('179e5914-edd0-4667-84b6-4397a2c59039')};
+    Y_CamIn1 : Y_CamIn { CustomGroupReference('804c4a39-8be9-49c5-8b0f-a56967dc5c42') } {Id('89975525-3a0f-4c31-adb3-d99febadeff3')};
+    Y_CamOut1 : Y_CamOut { CustomGroupReference('804c4a39-8be9-49c5-8b0f-a56967dc5c42') } {Id('f0f0cc9e-58ce-4c02-8d15-28f167438d5f')};
+    Y_CamShift1 : Y_CamShift { CustomGroupReference('804c4a39-8be9-49c5-8b0f-a56967dc5c42') } {Id('28a17f1f-d232-49d5-8d76-064e9ffa6174')};
+    MC_TouchProbe1 : MC_TouchProbe { CustomGroupReference('804c4a39-8be9-49c5-8b0f-a56967dc5c42') } {Id('718f107a-c624-4288-b54d-4d40aa92295a')};
+    MC_AbortTrigger1 : MC_AbortTrigger { CustomGroupReference('804c4a39-8be9-49c5-8b0f-a56967dc5c42') } {Id('3905cb7c-2d04-4e8b-a7b0-615f00347dca')};
+    uiCamTableID : UINT { CustomGroupReference('804c4a39-8be9-49c5-8b0f-a56967dc5c42') } {Id('f0b589fe-c7ed-49be-be4d-7f8e58d1380c')};
+    MC_Stop1 : MC_Stop { CustomGroupReference('804c4a39-8be9-49c5-8b0f-a56967dc5c42') } {Id('d3b622dd-f09e-48f2-8102-cc1dd24a5864')};
+    StopAxis : BOOL { CustomGroupReference('804c4a39-8be9-49c5-8b0f-a56967dc5c42') } {Id('9db98afe-6165-4a46-b130-21bf912d10a8')};
+    Y_CA_SetCamMasterCycle1 : Y_CA_SetCamMasterCycle { CustomGroupReference('804c4a39-8be9-49c5-8b0f-a56967dc5c42') } {Id('be0ad26d-706a-4667-98dd-da3b996aecbd')};
+    MC_ReadParameter1 : MC_ReadParameter { CustomGroupReference('804c4a39-8be9-49c5-8b0f-a56967dc5c42') } {Id('35334c8c-6385-40ba-a6d0-0ae4205ea0d8')};
+    MC_ReadParameter2 : MC_ReadParameter { CustomGroupReference('804c4a39-8be9-49c5-8b0f-a56967dc5c42') } {Id('c9658550-7a6d-4b3a-bb04-d3b1681d0582')};
+    MC_ReadParameter3 : MC_ReadParameter { CustomGroupReference('804c4a39-8be9-49c5-8b0f-a56967dc5c42') } {Id('1a654090-6254-4a99-850f-1807f87b987f')};
+    MC_ReadParameter4 : MC_ReadParameter { CustomGroupReference('804c4a39-8be9-49c5-8b0f-a56967dc5c42') } {Id('a61b87a7-aa33-4a2e-9bf7-9d5b66b19b3c')};
+    Execute_SetCamMasterCycle1 : BOOL { CustomGroupReference('804c4a39-8be9-49c5-8b0f-a56967dc5c42') } {Id('1b703979-b1c0-4ea6-9b81-6117e24bb28a')};
+    CamTableID_SetCamMasterCycle : UINT { CustomGroupReference('804c4a39-8be9-49c5-8b0f-a56967dc5c42') } {Id('ed7af6c1-4a11-43a3-a1e1-03a3e1cf9fa1')};
+    bTouchProbeTriggeredOnce : BOOL { CustomGroupReference('804c4a39-8be9-49c5-8b0f-a56967dc5c42') } {Id('37c62f57-4b7c-44a8-8a08-127f50c1c5cd')};
+    Y_SlaveOffset1 : Y_SlaveOffset { CustomGroupReference('804c4a39-8be9-49c5-8b0f-a56967dc5c42') } {Id('e37b9321-9143-4f49-b9a0-11c5e5ad13a8')};
+    Y_CA_CamMasterLookup1 : Y_CA_CamMasterLookup { CustomGroupReference('804c4a39-8be9-49c5-8b0f-a56967dc5c42') } {Id('38977e71-9b34-4dc1-a123-84f1416e9dc5')};
+    lrRecordedPositionMaster : LREAL { CustomGroupReference('804c4a39-8be9-49c5-8b0f-a56967dc5c42') } {Id('4b9186c9-0ed3-4625-8aa5-d5712dbf8534')};
+    stCamTable : Yt_MS_CamStruct { CustomGroupReference('804c4a39-8be9-49c5-8b0f-a56967dc5c42') } {Id('7da76da5-6f54-491c-8a6f-34196a134729')};
+    Y_CA_SlaveOffsetControl1 : Y_CA_SlaveOffsetControl { CustomGroupReference('804c4a39-8be9-49c5-8b0f-a56967dc5c42') } {Id('56417edd-0ba6-4cd2-9f1d-986b09cb0360')};
+END_VAR

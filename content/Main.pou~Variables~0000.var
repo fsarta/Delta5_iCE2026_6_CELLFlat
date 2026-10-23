@@ -1,0 +1,44 @@
+{ CustomGroupDefinition('a04e0da4-75a3-431c-a769-2ffcda83b779', '') }
+
+VAR
+    FB_MachineController1 : FB_MachineController { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('9c2f15f1-cbae-4724-af00-15de6a41860f')};
+END_VAR
+
+VAR_EXTERNAL
+    stInput : DT_VISOR_Assem5_Input { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('9b54ae15-9cab-4af7-85f7-ba2377b539c0')};
+END_VAR
+
+VAR
+    stOutput : DT_VISOR_Output { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('fc8669e2-f016-4cc0-8038-334abda8068e')};
+END_VAR
+
+VAR_EXTERNAL
+    VisorEIP_Receive : Yt_ByteArray72 { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('8024b1c1-1392-472d-92da-7d56fbc2bbb4')};
+    VisorEIP_Transmit : Yt_ByteArray3 { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('40f4af0d-8ba9-4575-8962-d60c31c907da')};
+END_VAR
+
+VAR
+    TestTrigger : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('331d6b29-238f-44f8-8e35-cff5c31a13df')};
+    R_TRIG1 : R_TRIG { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('13226926-a75c-494a-ad83-41d96555c293')};
+END_VAR
+
+VAR_EXTERNAL
+    DATA_FeedInAxis : ST_AxisData { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('d1626ee2-0cf1-4d57-ba8d-c06fcad5aae1')};
+    FeedInPositionTrigger : LREAL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('494fce95-db95-40b3-a7b3-6f26fc31a778')};
+END_VAR
+
+VAR
+    ToLinkVar : BOOL := TRUE { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('9fb6d1ca-33f8-4f92-9c1e-6576c7274cf7')};
+END_VAR
+
+VAR_EXTERNAL
+    SecuredArea : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('3db9dda4-87c8-4566-a346-8da7acd14f45')};
+END_VAR
+
+VAR
+    fbKPI : FB_KPI { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('76b60380-46bd-4255-b67a-92d14a1843a3')};
+END_VAR
+
+VAR_EXTERNAL
+    G_xKPI_ResetShift : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('5a72c5e1-873b-401a-87d4-c4103fee5368')};
+END_VAR

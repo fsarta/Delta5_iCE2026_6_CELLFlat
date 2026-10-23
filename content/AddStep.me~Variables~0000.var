@@ -1,0 +1,5 @@
+{ CustomGroupDefinition('b6ea69eb-f76d-4905-a294-e6cbbc5ab5b4', '') }
+
+VAR_INPUT
+    eState : E_PickPlace_State { CustomGroupReference('b6ea69eb-f76d-4905-a294-e6cbbc5ab5b4') } {Id('ecdefe16-02c2-44d3-afe5-ca55eeb99dd5')};
+END_VAR

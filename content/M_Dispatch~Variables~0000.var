@@ -1,0 +1,5 @@
+{ CustomGroupDefinition('10ecd26a-7c24-446d-816c-5cba3b5906d7', '') }
+
+VAR_INPUT
+    StateID : E_PickPlace_State { CustomGroupReference('10ecd26a-7c24-446d-816c-5cba3b5906d7') } {Id('22786318-4e67-45bc-9d02-d320b0e63535')};
+END_VAR

@@ -1,0 +1,20 @@
+{ CustomGroupDefinition('246880ed-7e3c-4f60-8df6-ee161623db1b', 'VAR_INPUT') }
+{ CustomGroupDefinition('3bb7f386-5094-443a-bd12-de7c96898ff4', '') }
+
+VAR_INPUT
+    index : INT { CustomGroupReference('246880ed-7e3c-4f60-8df6-ee161623db1b') } {Id('d714147e-958b-4946-bca8-ce1253a1131b')}; (*index of actual PosTable entry*)
+    loadIndex : INT { CustomGroupReference('246880ed-7e3c-4f60-8df6-ee161623db1b') } {Id('f884850c-4d27-4f50-8db9-c0b5cd0af247')}; (*index for loading next motion(s)*)
+    posTableSize : INT { CustomGroupReference('246880ed-7e3c-4f60-8df6-ee161623db1b') } {Id('930f8ad9-5e8f-499b-85a9-6feaf9287020')}; (*number of entries*)
+    rollOver : BOOL { CustomGroupReference('246880ed-7e3c-4f60-8df6-ee161623db1b') } {Id('274d1678-eb9c-486d-b864-15778038812f')}; (*continue from start after reaching end of table*)
+    conditions : ARRAY_0_CONDITIONS_UBOUND_OF_BOOL { CustomGroupReference('246880ed-7e3c-4f60-8df6-ee161623db1b') } {Id('a53252d4-3850-4361-b96d-25435481a8ab')}; (*bits used as start conditions for a PosTable entry*)
+END_VAR
+
+VAR
+    i1 : INT { CustomGroupReference('3bb7f386-5094-443a-bd12-de7c96898ff4') } {Id('5dc94c5d-456c-4e68-bbb7-89d8f08b8932')};
+    nCount : INT { CustomGroupReference('3bb7f386-5094-443a-bd12-de7c96898ff4') } {Id('4bf618e3-1b35-419e-8386-f315db8a9435')};
+    stConditionResult1 : McePosTableConditions { CustomGroupReference('3bb7f386-5094-443a-bd12-de7c96898ff4') } {Id('96125b51-b736-4773-b57b-8968f1623448')}; (*state if the next motion condition are satisfied*)
+    nNextIndex : INT { CustomGroupReference('3bb7f386-5094-443a-bd12-de7c96898ff4') } {Id('83ddf26a-dfd1-4593-861c-02ed0c7c2d9c')}; (*next valid entry*)
+    nNextLoadIndex : INT { CustomGroupReference('3bb7f386-5094-443a-bd12-de7c96898ff4') } {Id('72a0052c-5d9a-42df-b484-635a0deed6b9')};
+    bWaitForConditions : BOOL { CustomGroupReference('3bb7f386-5094-443a-bd12-de7c96898ff4') } {Id('6f42a15d-070e-4b4e-815e-151168f9b164')};
+    Out1 : UINT { CustomGroupReference('3bb7f386-5094-443a-bd12-de7c96898ff4') } {Id('edbe671c-921a-4ace-8040-d627e18151bf')};
+END_VAR

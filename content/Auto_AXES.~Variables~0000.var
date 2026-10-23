@@ -1,0 +1,143 @@
+{ CustomGroupDefinition('600910a0-e55a-4369-8ac4-ea08f463faad', 'Linear AXIS') }
+{ CustomGroupDefinition('814f727d-947c-4e6f-8782-da50e7c16c89', 'Rotary AXIS') }
+{ CustomGroupDefinition('c230c1c8-80bc-4fef-aff2-cc666261ad2e', 'Virtual AXIS') }
+{ CustomGroupDefinition('db71b88c-e284-4881-a898-b9c51989d7ba', 'Camming') }
+{ CustomGroupDefinition('a04e0da4-75a3-431c-a769-2ffcda83b779', '') }
+
+VAR
+    MC_MoveAbsolute3 : MC_MoveAbsolute { CustomGroupReference('600910a0-e55a-4369-8ac4-ea08f463faad') } {Id('fc334dae-a28c-47ed-8896-497ed06f9258')};
+    MC_MoveAbsolute4 : MC_MoveAbsolute { CustomGroupReference('600910a0-e55a-4369-8ac4-ea08f463faad') } {Id('bf5756f8-8102-4ce0-871d-939527ffc93b')};
+END_VAR
+
+VAR_EXTERNAL
+    LIN_Axis : AXIS_REF { CustomGroupReference('600910a0-e55a-4369-8ac4-ea08f463faad') } {Id('02900869-fec6-465d-aaa7-9bd2f4a7efe9')}; (* (!!! DO NOT MODIFY !!! - Variable is automatically linked to device)*)
+END_VAR
+
+VAR
+    DoneLin1 : BOOL { CustomGroupReference('600910a0-e55a-4369-8ac4-ea08f463faad') } {Id('1a711af6-6303-41a3-bad5-910f0377e52c')};
+    ActiveLin1 : BOOL { CustomGroupReference('600910a0-e55a-4369-8ac4-ea08f463faad') } {Id('0a7f4bd3-4c0f-48dd-b2c6-46b175305b76')};
+    DoneLin2 : BOOL { CustomGroupReference('600910a0-e55a-4369-8ac4-ea08f463faad') } {Id('687379b2-67ac-4de1-8db5-caaca569605b')};
+    ActiveLin2 : BOOL { CustomGroupReference('600910a0-e55a-4369-8ac4-ea08f463faad') } {Id('5663c297-e868-4130-85e8-7e3423226a57')};
+    PosALin : LREAL { CustomGroupReference('600910a0-e55a-4369-8ac4-ea08f463faad') } {Id('3cab1926-38fa-418e-bbb3-05808d635cf1')};
+    PosBLin : LREAL := LREAL#300.0 { CustomGroupReference('600910a0-e55a-4369-8ac4-ea08f463faad') } {Id('ee2902ac-9788-4658-b20b-38aa4a7fbaf7')};
+    MC_MoveAbsolute1 : MC_MoveAbsolute { CustomGroupReference('814f727d-947c-4e6f-8782-da50e7c16c89') } {Id('e9b15b59-9c90-464d-ad13-4d71bb6dfbe9')};
+    MC_MoveAbsolute2 : MC_MoveAbsolute { CustomGroupReference('814f727d-947c-4e6f-8782-da50e7c16c89') } {Id('82320e86-cbed-430a-8515-dab45a7233b1')};
+END_VAR
+
+VAR_EXTERNAL
+    ROT_Axis : AXIS_REF { CustomGroupReference('814f727d-947c-4e6f-8782-da50e7c16c89') } {Id('13b72155-4f2c-4485-b6be-803e863dd9c8')}; (* (!!! DO NOT MODIFY !!! - Variable is automatically linked to device)*)
+END_VAR
+
+VAR
+    DoneRot1 : BOOL { CustomGroupReference('814f727d-947c-4e6f-8782-da50e7c16c89') } {Id('6533f86c-e6f7-4771-85af-d0d91507ee29')};
+    ActiveRot1 : BOOL { CustomGroupReference('814f727d-947c-4e6f-8782-da50e7c16c89') } {Id('48039a99-993f-4af9-be26-65f7a48d87e9')};
+    DoneRot2 : BOOL { CustomGroupReference('814f727d-947c-4e6f-8782-da50e7c16c89') } {Id('2e5d2384-7e90-4910-a9ed-eda11b3b5498')};
+    ActiveRot2 : BOOL { CustomGroupReference('814f727d-947c-4e6f-8782-da50e7c16c89') } {Id('10ed9d05-d928-4f4f-b4c2-2c825ed79b74')};
+    PosARot : LREAL { CustomGroupReference('814f727d-947c-4e6f-8782-da50e7c16c89') } {Id('c27a96b6-04f2-4716-b658-0f76717369ec')};
+    PosBRot : LREAL := LREAL#600.0 { CustomGroupReference('814f727d-947c-4e6f-8782-da50e7c16c89') } {Id('573900bd-97f9-4d5d-9a2f-b36f49f6cc5b')};
+    MC_MoveAbsolute5 : MC_MoveAbsolute { CustomGroupReference('c230c1c8-80bc-4fef-aff2-cc666261ad2e') } {Id('358e2e3b-b25e-4652-a33a-3ae208941ba5')};
+    MC_MoveAbsolute6 : MC_MoveAbsolute { CustomGroupReference('c230c1c8-80bc-4fef-aff2-cc666261ad2e') } {Id('48b0bf37-8226-474c-9e88-b0af62c9ddf7')};
+END_VAR
+
+VAR_EXTERNAL
+    VIRTUAL_AXIS : AXIS_REF { CustomGroupReference('c230c1c8-80bc-4fef-aff2-cc666261ad2e') } {Id('510dd044-2ee5-48e6-a68b-aefed98b1593')}; (* (!!! DO NOT MODIFY !!! - Variable is automatically linked to device)*)
+END_VAR
+
+VAR
+    DoneVirt1 : BOOL { CustomGroupReference('c230c1c8-80bc-4fef-aff2-cc666261ad2e') } {Id('1b7b39aa-202b-438c-ac01-6c5f32165a87')};
+    ActiveVirt1 : BOOL { CustomGroupReference('c230c1c8-80bc-4fef-aff2-cc666261ad2e') } {Id('972a41b1-a70f-4de2-9227-3e0ec4531c2c')};
+    DoneVirt2 : BOOL { CustomGroupReference('c230c1c8-80bc-4fef-aff2-cc666261ad2e') } {Id('c2fce5df-c152-4ef6-ba61-289a5a1b8dad')};
+    ActiveVirt2 : BOOL { CustomGroupReference('c230c1c8-80bc-4fef-aff2-cc666261ad2e') } {Id('269b7259-44b8-484f-8809-d2fceecc5714')};
+    PosAVirt : LREAL { CustomGroupReference('c230c1c8-80bc-4fef-aff2-cc666261ad2e') } {Id('9719dd6a-bb6b-4c30-aacc-587d3a34ec4d')};
+    PosBVirt : LREAL := LREAL#360.0 { CustomGroupReference('c230c1c8-80bc-4fef-aff2-cc666261ad2e') } {Id('0c348481-3904-491c-8b74-e59ea37a540b')};
+    Y_CA_CamGenerator1 : Y_CA_CamGenerator { CustomGroupReference('db71b88c-e284-4881-a898-b9c51989d7ba') } {Id('0b8e2027-f3a9-4be7-ac49-549cba9189f7')};
+    Y_CamStructSelect1 : Y_CamStructSelect { CustomGroupReference('db71b88c-e284-4881-a898-b9c51989d7ba') } {Id('8e674228-e88b-4cff-b179-7180c49d1911')};
+    Y_CamIn1 : Y_CamIn { CustomGroupReference('db71b88c-e284-4881-a898-b9c51989d7ba') } {Id('9eead855-878a-47b8-b998-7060c35c80fd')};
+    Y_CamOut1 : Y_CamOut { CustomGroupReference('db71b88c-e284-4881-a898-b9c51989d7ba') } {Id('47911bfe-a749-4fac-a01e-68b69f8c3600')};
+    Y_CamShift1 : Y_CamShift { CustomGroupReference('db71b88c-e284-4881-a898-b9c51989d7ba') } {Id('e31a8fb5-a24e-4f04-95fb-193754515a26')};
+    Y_CA_CamGenerator2 : Y_CA_CamGenerator { CustomGroupReference('db71b88c-e284-4881-a898-b9c51989d7ba') } {Id('b7956750-4c2e-4431-93b2-85ff968b8ca3')};
+    Y_CamStructSelect2 : Y_CamStructSelect { CustomGroupReference('db71b88c-e284-4881-a898-b9c51989d7ba') } {Id('d48612aa-bcb0-46b8-8024-c99832ca9da0')};
+    Y_CamIn2 : Y_CamIn { CustomGroupReference('db71b88c-e284-4881-a898-b9c51989d7ba') } {Id('078e1b6e-1d90-4047-b345-c3fe2007aa5a')};
+    Y_CamOut2 : Y_CamOut { CustomGroupReference('db71b88c-e284-4881-a898-b9c51989d7ba') } {Id('f8003363-3204-4bb4-8136-bae9f11f156f')};
+    Y_CamShift2 : Y_CamShift { CustomGroupReference('db71b88c-e284-4881-a898-b9c51989d7ba') } {Id('885a1938-971e-41ff-890c-f4ceef430b40')};
+END_VAR
+
+VAR_EXTERNAL
+    CamRot : DT_CamData { CustomGroupReference('db71b88c-e284-4881-a898-b9c51989d7ba') } {Id('afcc69ec-b481-4618-afa7-386d7b20e8ff')};
+END_VAR
+
+VAR
+    CamLin : DT_CamData { CustomGroupReference('db71b88c-e284-4881-a898-b9c51989d7ba') } {Id('6bfb7e5b-a81a-4324-bc8c-59aa9fb3132d')};
+END_VAR
+
+VAR_EXTERNAL
+    CamRot_SegmentTable : Yt_CA_CamSegmentStruct { CustomGroupReference('db71b88c-e284-4881-a898-b9c51989d7ba') } {Id('a14238a9-9a03-4b18-aedf-3e1bd45d4d8f')};
+    CamRot_DataTable : Yt_MS_CamStruct { CustomGroupReference('db71b88c-e284-4881-a898-b9c51989d7ba') } {Id('c1dbc726-b627-42b1-ac9d-a36031f7829a')};
+    CamLin_SegmentTable : Yt_CA_CamSegmentStruct { CustomGroupReference('db71b88c-e284-4881-a898-b9c51989d7ba') } {Id('0f754b3d-1227-495a-89fe-4e129d71c626')};
+    CamLin_DataTable : Yt_MS_CamStruct { CustomGroupReference('db71b88c-e284-4881-a898-b9c51989d7ba') } {Id('da058c54-46f0-4724-bff6-3fb337ee51f2')};
+END_VAR
+
+VAR
+    State_CamController : E_CamStateMachineState { CustomGroupReference('db71b88c-e284-4881-a898-b9c51989d7ba') } {Id('52c364cb-68a2-45ca-a3a8-e3b7a6f63d2a')};
+    bCamSequenceComplete : BOOL { CustomGroupReference('db71b88c-e284-4881-a898-b9c51989d7ba') } {Id('9592f681-5346-4ba4-9164-4f677b6dfa8b')};
+    bCamSequenceError : BOOL { CustomGroupReference('db71b88c-e284-4881-a898-b9c51989d7ba') } {Id('8057bc77-15da-437f-81ad-fae38fc12b58')};
+    bResetCamStateMachine : BOOL { CustomGroupReference('db71b88c-e284-4881-a898-b9c51989d7ba') } {Id('0c306ee3-9cab-4f1f-9921-6c61fe63db9a')};
+    eState : DT_eState { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('4ea45eb2-9a40-4117-a4dd-9d87b78393eb')};
+END_VAR
+
+VAR_EXTERNAL
+    bAutoModeSelected : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('2bea98d9-eba0-41ce-b799-0ce1b7b50c23')};
+    bManualModeSelected : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('8fff867c-7889-485c-9777-0f94951ebeb4')};
+    ContinousMode : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('c0de9a7b-3079-4d57-9e2d-68cd759cab19')};
+    DATA_Axes : DT_AutoAxes { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('44b77815-bbb6-4b65-947e-440e3904ba49')};
+END_VAR
+
+VAR
+    FB_CamController1 : FB_CamController { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('1597e398-f355-4ef0-87ee-7aff483b91a6')};
+    FB_CamController2 : FB_CamController { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('d35416d3-6dde-4289-a872-502c3bea21c0')};
+    EngageDataRot : Yt_EngageData { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('741bc73c-9b5c-4f5b-bc1b-9576a36e1f9e')};
+    DisengageDataRot : Yt_DisengageData { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('bfe9a2e8-f155-46df-a4cd-410b1ead9918')};
+    TriggerInputRot : MC_TRIGGER_REF { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('d2bf420c-5e0b-43d9-8553-32c94c2477f4')};
+    EngageDataLin : Yt_EngageData { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('d87a033c-6593-434c-92f2-a7667fa6a7f1')};
+    DisengageDataLin : Yt_DisengageData { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('0cf9d058-7688-43ea-a36c-8bafe81a9543')};
+    TriggerInputLin : MC_TRIGGER_REF { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('26dd7c15-090c-4cbb-aa37-895aa5cdcd4b')};
+    FB_VirtualMovement1 : FB_VirtualMovement { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('8ccbbbf8-b91d-4b82-a2e0-8deb8bd42cdf')};
+END_VAR
+
+VAR_EXTERNAL
+    CurrentState_VirtualMovement : E_OscillationState { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('357fbe67-7f3c-4796-bf90-16890ec5a5c4')};
+END_VAR
+
+VAR
+    IsOscillating : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('0f29a0c9-7809-44e0-b1fd-95013b81fe4c')};
+END_VAR
+
+VAR_EXTERNAL
+    xIsOscillating : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('93d5a2eb-bc29-4518-b758-94fcece2d341')};
+END_VAR
+
+VAR
+    xError_VirtualMovement : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('7517df00-1bfd-48fd-89de-497cd6f0ed9d')};
+    uiErrorID_VirtualMovement : UINT { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('f47b7fc4-a842-4552-ae0e-45f89bb8c496')};
+    EnableSequence_TEST : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('30b863d4-2e25-45c0-b46d-1f04ed75e7df')};
+    Reset_TEST : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('85d2ce6c-1b9c-4e37-9636-927271b58de9')};
+END_VAR
+
+VAR_EXTERNAL
+    DATA_VirtAxis : ST_AxisData { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('449861b1-de47-45a3-adb2-44929ef75a67')};
+    Velocity_TEST : LREAL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('9494ab77-42df-4bf2-a999-6c78ed314dbc')};
+    MaxConvLength : LREAL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('22d9b951-c395-4845-9b26-7deaa27b03c4')};
+    DATA_RotAxis : ST_AxisData { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('11f08aa0-64b9-4d21-873e-989bb47fd5b4')};
+    DATA_LinAxis : ST_AxisData { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('75f9e8f8-fd74-4dfd-ab62-894ada2d1ba3')};
+END_VAR
+
+VAR
+    Rot_CamStateMachineState : E_CamStateMachineState { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('723a5f3a-f26d-4b80-99fc-7dddfcb62569')};
+    Lin_CamStateMachineState : E_CamStateMachineState { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('b923c9fa-8e3c-4de3-b763-6a6f6ae677eb')};
+    R_TRIG1 : R_TRIG { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('1ba2ce45-6be0-45b8-a375-c1f90519160e')};
+    STOP_VirtualMovement : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('d9eac50d-6576-4065-af0d-ecbd0bbb95e5')};
+END_VAR
+
+VAR_EXTERNAL
+    RobotJog : ST_Robot_Command { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('2792c975-7edd-49dd-a6c6-f20632c875c5')};
+END_VAR

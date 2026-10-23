@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RestoreDataItem Version="1" DeletionDate="2026-07-30 12:34:46Z" DisplayName="Auto_AXES">
+    <NodeData DomainId="e639c0f9-db09-46f4-abf7-50216a13f220" SolutionId="606e2993-1c57-411c-b0d2-c57a13c52bbf" NodeId="c004b914-70ff-4fd2-a406-675a869c83a4" ParentId="b5c9407f-7842-46b5-8615-b2d4316fbecf" PredecessorId="6e1215c2-6b11-43f1-9d29-a73eba1ac7cc" Position="2" Kind="Type" />
+</RestoreDataItem>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RestoreDataItem Version="1" DeletionDate="2026-07-30 12:54:13Z" DisplayName="ErrorHandlerInit">
+    <NodeData DomainId="e639c0f9-db09-46f4-abf7-50216a13f220" SolutionId="606e2993-1c57-411c-b0d2-c57a13c52bbf" NodeId="0c953e06-26f1-4417-a7c2-c646a04a6616" ParentId="95c3664e-f820-4b6c-876d-169a2cd3f9ab" PredecessorId="1d25258f-a7ba-4ca9-b3a1-278451526634" Position="3" Kind="Type" />
+</RestoreDataItem>

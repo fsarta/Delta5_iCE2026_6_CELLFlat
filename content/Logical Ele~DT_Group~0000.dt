@@ -1,0 +1,765 @@
+VAR CONSTANT
+    NUM_AXES_GROUP :INT := 4;
+END_VAR
+
+TYPE
+    
+    _SetPosition : STRUCT
+        Execute     : BOOL;
+        Position    : LREAL;
+        Mode        : BOOL; 
+        Done        : BOOL; 
+        Busy        : BOOL;
+        Error       : BOOL; 
+        ErrorID     : UINT;
+    END_STRUCT
+    
+    // ENUM for state machine states related check absolute encoder offset
+    E_checkAbsEncOffset : ( 
+        IDLE,          // Initial/idle state
+        READ_PARAM,    // Parameter read state
+        VERIFY_READ,   // Read verification
+        WRITE_PARAM,   // Parameter write state
+        COMPLETE       // Final state
+    );
+    
+    // Struct for axis configuration related check absolute encoder offset
+    ST_checkAbsEncOffset : STRUCT
+        axisRef: AXIS_REF;    // Reference to axis ID
+        targetValue: LREAL;   // Expected offset value
+    END_STRUCT;
+    
+    // ENUM for blend state machine
+    E_BlendStateMachine : (
+        IDLE := 0,                  // Initial state, waiting for command
+        LOAD_PARAMS := 1,           // Load motion parameters for the current test step
+        EXECUTE_BLEND1 := 10,       // Execute the first blend movement
+        WAIT_AFTER_BLEND1 := 20,    // Wait for a delay after Blend 1 completion
+        EXECUTE_BLEND2 := 30,       // Execute the second blend movement
+        WAIT_AFTER_BLEND2 := 40,    // Wait for a delay after Blend 2 completion
+        EXECUTE_BLEND3 := 50,       // Execute the third blend movement
+        WAIT_AFTER_BLEND3 := 60,    // Wait for a delay after Blend 3 completion
+        ADVANCE_SETTING := 70       // Advance to the next setting in the array or loop
+    );
+    
+    E_TestGroupState : (
+        IDLE,
+        LOAD_PARAMS,
+        EXECUTE_MOVE,
+        WAIT_DELAY,
+        ADVANCE_INDEX
+    ) := IDLE;
+    
+    E_TeachTarget : (
+        NONE, 
+        INFEED, 
+        OUTFEED
+    ) := NONE;
+
+    // Copy of GroupControl FB, to avoid the override the variable type "VAR_IN_OUT"
+	_GroupControl					:STRUCT
+		Enable						:BOOL;
+		EnableGroup					:BOOL;
+		EnablePower					:BOOL;
+		AlarmClear					:BOOL;
+		Valid						:BOOL;
+		Busy						:BOOL;
+		GroupStatus					:BOOL;
+		PowerStatus					:BOOL;
+		ControllerAlarm				:BOOL;
+		ControllerAlarmID			:UDINT;
+		GroupError					:BOOL;
+		GroupErrorClass				:UINT;
+		GroupErrorID				:UINT;
+		GroupErrorSubCode			:UDINT;
+		AxisAlarms					:BOOL;
+		AxisErrorClass				:UINT;
+		AxisErrorID					:UINT;
+		AxisWarnings				:BOOL;
+		AxisWarningID				:UINT;
+        AuxiliaryError              :BOOL;
+        AuxiliaryErrorID            :UINT;
+        Error                       :BOOL;
+        ErrorID                     :UINT;
+	END_STRUCT;
+
+    // Copy of MC_GroupReadStatus FB, to avoid the override the variable type "VAR_IN_OUT"
+	_GroupReadStatus       :STRUCT
+        Enable             :BOOL; 
+        Valid              :BOOL; 
+        Busy               :BOOL; 
+        GroupMoving        :BOOL; 
+        GroupHoming        :BOOL; 
+        GroupErrorStop     :BOOL; 
+        GroupStandby       :BOOL; 
+        GroupStopping      :BOOL; 
+        GroupDisabled      :BOOL; 
+        ConstantVelocity   :BOOL; 
+        Accelerating       :BOOL; 
+        Decelerating       :BOOL; 
+        InPosition         :BOOL; 
+        StandStill         :BOOL; 
+        Interrupted        :BOOL; 
+        SynchronizedMotion :BOOL; 
+        DiscreteMotion     :BOOL; 
+        ContinuousMotion   :BOOL; 
+        Error              :BOOL; 
+        ErrorID            :UINT;
+    END_STRUCT;
+	
+	// Copy of GroupStop FB, to avoid the override the variable type "VAR_IN_OUT"
+	_GroupStop                      :STRUCT
+        Execute                     :BOOL;
+        Deceleration                :LREAL;
+        Done                        :BOOL;
+        Busy                        :BOOL;
+        CommandAborted              :BOOL;
+        Error                       :BOOL;
+        ErrorID                     :UINT;
+    END_STRUCT;
+    
+    // Copy of MoveLinearAbsolute FB, to avoid the override the variable type "VAR_IN_OUT"
+    _MoveLinearAbsolute             :STRUCT
+        Execute                     :BOOL;
+        Position                    :VECTOR;
+        Velocity                    :LREAL;
+        Acceleration                :LREAL;
+        Deceleration                :LREAL;
+        Jerk                        :LREAL;
+        MoveOptions                 :Yt_GroupMoveOptions;
+        CoordSystem                 :MC_CoordinateSystem;
+        BufferMode                  :MC_BufferMode;
+        TransitionMode              :MC_TransitionMode;
+        TransitionParameter         :VECTOR;
+        Done                        :BOOL;
+        Busy                        :BOOL;
+        Active                      :BOOL;
+        CommandAborted              :BOOL;
+        Error                       :BOOL;
+        ErrorID                     :UINT;
+    END_STRUCT;
+    
+    // Copy of MoveLinearRelative FB, to avoid the override the variable type "VAR_IN_OUT"
+    _MoveLinearRelative             :STRUCT
+        Execute                     :BOOL;
+        Distance                    :VECTOR;
+        Velocity                    :LREAL;
+        Acceleration                :LREAL;
+        Deceleration                :LREAL;
+        Jerk                        :LREAL;
+        MoveOptions                 :Yt_GroupMoveOptions;
+        CoordSystem                 :MC_CoordinateSystem;
+        BufferMode                  :MC_BufferMode;
+        TransitionMode              :MC_TransitionMode;
+        TransitionParameter         :VECTOR;
+        Done                        :BOOL;
+        Busy                        :BOOL;
+        Active                      :BOOL;
+        CommandAborted              :BOOL;
+        Error                       :BOOL;
+        ErrorID                     :UINT;
+    END_STRUCT;
+
+    // Copy of Y_GroupJogJoint FB, to avoid the override the variable type "VAR_IN_OUT"
+    _GroupJogJoint                  :STRUCT
+        Enable                      :BOOL;
+        JointIndex                  :UINT;
+        Velocity                    :LREAL;
+        Acceleration                :LREAL;
+        Deceleration                :LREAL;
+        Jerk                        :LREAL;
+        MoveOptions                 :Yt_GroupMoveOptions;
+        Direction                   :MC_Direction;
+        BufferMode                  :MC_BufferMode;
+        InVelocity                  :BOOL;
+        Valid                       :BOOL;
+        Busy                        :BOOL;
+        Active                      :BOOL;
+        CommandAborted              :BOOL;
+        Error                       :BOOL;
+        ErrorID                     :UINT;
+    END_STRUCT;
+
+    // Copy of Y_GroupJogLinear FB, to avoid the override the variable type "VAR_IN_OUT"
+    _GroupJogLinear                 :STRUCT
+        Enable                      :BOOL;
+        Position                    :VECTOR;
+        Velocity                    :LREAL;
+        Acceleration                :LREAL;
+        Deceleration                :LREAL;
+        Jerk                        :LREAL;
+        MoveOptions                 :Yt_GroupMoveOptions;
+        CoordSystem                 :MC_CoordinateSystem;
+        BufferMode                  :MC_BufferMode;
+        Valid                       :BOOL;
+        Done                        :BOOL;
+        Busy                        :BOOL;
+        Active                      :BOOL;
+        CommandAborted              :BOOL;
+        Error                       :BOOL;
+        ErrorID                     :UINT;
+    END_STRUCT;
+
+    (*    Copy of CalcFrameOffset FB, to avoid the override the variable type "VAR_IN_OUT" *)
+	_CalcFrameOffset				:STRUCT
+		InputFrame					:VECTOR;
+		Offset						:VECTOR;
+		OutputFrame					:VECTOR;
+		Enable                      :BOOL;
+		Valid                       :BOOL;
+		Error                       :BOOL;
+		ErrorID                     :UINT;
+	END_STRUCT;
+
+    (*    Copy of FrameTypeTransform FB, to avoid the override the variable type "VAR_IN_OUT" *)
+    _FrameTypeTransform              :STRUCT
+        FrameCoordinates             :VECTOR;
+        Execute                      :BOOL;
+        OO                           :MC_CARTESIAN_REF;
+        XX                           :MC_CARTESIAN_REF;
+        XY                           :MC_CARTESIAN_REF;
+        Done                         :BOOL;
+        Singularity                  :BOOL;
+        Error                        :BOOL;
+        ErrorID                      :UINT;
+    END_STRUCT;
+
+    (*    Copy of GroupSetFrameOffset FB, to avoid the override the variable type "VAR_IN_OUT" *)
+    _GroupSetFrameOffset             :STRUCT
+        Execute                      :BOOL;
+        Offset                       :MC_CARTESIAN_REF;        
+        ExecutionMode                :MC_ExecutionMode;
+        RefCoordSystem               :MC_CoordinateSystem;
+        SetCoordSystem               :MC_CoordinateSystem;
+        Done                         :BOOL;
+        Busy                         :BOOL;
+        Error                        :BOOL;
+        ErrorID                      :UINT;
+    END_STRUCT;
+    
+    (*    Copy of MC_GroupSetPosition FB, to avoid the override the variable type "VAR_IN_OUT" *)    
+    _GroupSetPosition    :STRUCT
+        Execute             :BOOL;
+        Position            :VECTOR;
+        Relative            :BOOL;
+        CoordSystem         :MC_CoordinateSystem;
+        SetMode             :INT;
+        BufferMode          :MC_BufferMode;
+        Done                :BOOL;
+        Busy                :BOOL;
+        Active              :BOOL;
+        CommandAborted      :BOOL;
+        Error               :BOOL;
+        ErrorID             :UINT;
+    END_STRUCT
+
+	(*	Copy of MC_TrackConveyorBelt FB, to avoid the override the variable type "VAR_IN_OUT" *)
+	_MC_TrackConveyorBelt			:STRUCT
+		AxesGroup					:AXES_GROUP_REF;
+		ConveyorBelt				:AXIS_REF;
+		Execute						:BOOL;
+		ConveyorBeltOrigin			:VECTOR;
+		InitialObjectPosition		:VECTOR;
+		RecordedPosition			:LREAL;
+		StartDistance				:LREAL;
+		EndDistance					:LREAL;
+		TrackOptions				:Yt_TrackOptions;
+		ExecutionMode				:INT;
+		Done						:BOOL;
+		Busy						:BOOL;
+		Active						:BOOL;
+		InSync						:BOOL;
+		CommandAborted				:BOOL;
+		Error						:BOOL;
+		ErrorID						:UINT;
+	END_STRUCT;
+
+	LREAL_ARRAY3					:ARRAY [0..2] OF LREAL;
+
+	_MC_MovePath	    			:STRUCT
+		Abort						:BOOL;
+		AxesGroup					:AXES_GROUP_REF;
+		Busy						:BOOL;
+		CommandAborted				:BOOL;
+		Done						:BOOL;
+		Error						:BOOL;
+		ErrorID						:UINT;
+		Execute						:BOOL;
+		ExecutedLabel				:Yt_String16;
+		ExecutedTotal				:UDINT;
+		InputFlags					:DWORD;
+		InputFlagsRequired			:DWORD;
+		MachineData					:Yt_GP_MachineStruct;
+		OperationMode				:INT;
+		OutputFlags					:DWORD;
+		PathData					:MC_PATH_DATA_REF;
+		Pause						:BOOL;
+		ProcessedLabel				:Yt_String16;
+		ProcessedTotal				:UDINT;
+		SingleStep					:BOOL;
+		StartSegment				:INT;
+		VarData						:Yt_LrealArray1000;
+		VelocityScaler				:REAL;
+	END_STRUCT;
+
+
+(*********************************************************************************************************************************************)
+
+	TestGroup						:STRUCT
+		Position					:VECTOR;
+		Speed						:LREAL;
+		Acc							:LREAL;
+		Dec							:LREAL;
+		Delay						:INT;
+		CoordSystem					:MC_CoordinateSystem;
+		BufferMode					:MC_BufferMode;
+		TransitionMode				:MC_TransitionMode;
+		TransitionParameter			:VECTOR;
+		MoveOptions_VelocityUnit	:INT;
+		Gripper						:BOOL;
+		LastItem					:BOOL;
+	END_STRUCT;
+
+	ARRAY_TestGroup					:ARRAY [0..999] OF TestGroup;	
+
+	PosAxis_LREAL					:STRUCT
+		Axis_S						:LREAL;			(**)
+		Axis_L						:LREAL;			(**)
+		Axis_U						:LREAL;			(**)
+		Axis_T						:LREAL;			(**)
+		Axis_B						:LREAL;			(**)
+	END_STRUCT;
+
+	Axes							:STRUCT
+		Axis_S						:BOOL;			(**)
+		Axis_L						:BOOL;			(**)
+		Axis_U						:BOOL;			(**)
+		Axis_T						:BOOL;			(**)
+		Axis_B						:BOOL;			(**)
+	END_STRUCT;
+
+(*********************************************************************************************************************************************)
+(*********************************************************           COMMAND         *********************************************************)
+(*********************************************************************************************************************************************)
+
+	GroupControl_Command				:STRUCT
+	    Enable                          :BOOL;  
+		En_Group		 				:BOOL;	(*	If TRUE, the MC_GroupEnable function block will be executed. If FALSE, the MC_GroupDisable function block will be executed. *)
+		En_Power		 				:BOOL;	(*	If TRUE, all the axes belonging to the AxesGroup will be powered *)
+		AlarmClear		 				:BOOL;	(*	Executes MC_GroupReset, MC_Reset, and Y_ClearAlarms *)
+	END_STRUCT;
+
+	GroupCommand						:STRUCT
+		GroupControl					:GroupControl_Command;	(*	Commands releated to GroupControl FB *)
+		En_MoveLinearAbsolute			:BOOL;					(*	Execute command releated to MC_MoveLinearAbsolute FB *)
+		En_MoveLinearAbsolute_Blend1	:BOOL;					(*	Execute command releated to MC_MoveLinearAbsolute FB (BLEND) *)
+		En_MoveLinearAbsolute_Blend2	:BOOL;					(*	Execute command releated to MC_MoveLinearAbsolute FB (BLEND) *)
+		En_MoveLinearAbsolute_Blend3	:BOOL;					(*	Execute command releated to MC_MoveLinearAbsolute FB (BLEND) *)
+		En_MoveLinearAbsolute_Perf1		:BOOL;
+		En_MoveLinearAbsolute_Perf2		:BOOL;
+		En_MoveLinearAbsolute_Perf3		:BOOL;
+		En_MoveLinearAbsolute_Perf4		:BOOL;
+		En_MoveLinearAbsolute_Perf5		:BOOL;
+		En_MoveLinearAbsolute_Perf6		:BOOL;
+		En_MoveLinearAbsolute_Perf7		:BOOL;
+		En_MoveLinearAbsolute_Perf8		:BOOL;
+		En_MoveLinearAbsolute_Perf9		:BOOL;
+		En_MoveLinearAbsolute_Perf10	:BOOL;
+		En_MoveLinearRelative			:BOOL;					(*	Execute command releated to MC_MoveLinearRelative FB *)
+		En_GroupJogJoint				:BOOL;					(*	Execute command releated to Y_GroupJogJoint FB *)
+		En_GroupJogLinear				:BOOL;					(*	Execute command releated to YGroupJogLinear FB *)
+		SetPosition						:Axes;					(*	Execute command releated to MC_SetPosition FB *)
+		En_GroupSetFrameOffset			:BOOL;					(*	 *)
+		En_EmergencyGroupStop			:BOOL;					(*	Execute command releated to MC_GroupStop FB *)
+		En_TrackConveyorBelt			:BOOL;
+		ResetAbsEnc						:Axes;					(*	Execute command releated to FB_ResetAbsEnc FB *)
+		GroupBrakeRelease				:Axes;					(*	Execute command releated to Y_GroupBrakeRelease FB *)
+		En_FrameTypeTransform			:BOOL;
+		En_CalcFrameOffset				:BOOL;
+		En_GroupSetPosition             :BOOL;
+		Gripper							:BOOL;
+		TestGroup 						:BOOL;					(*	Execute command to start a point-to-point test *)
+		TestGroupBlend					:BOOL;					(*	Execute command to start a point-to-point test with blend *)
+		TestGroupPerf					:BOOL;
+		TestGroupPath					:BOOL;
+		CheckAbsEncoder                 :BOOL;
+	END_STRUCT;
+
+
+(*********************************************************************************************************************************************)
+(*********************************************************           SETTING         *********************************************************)
+(*********************************************************************************************************************************************)
+
+	MoveLinearAbsolute_Setting		:STRUCT
+		Position					:VECTOR;
+		Velocity					:LREAL;
+		Acceleration				:LREAL;
+		Deceleration				:LREAL;
+		Jerk						:LREAL;
+		MoveOptions					:Yt_GroupMoveOptions;
+		CoordSystem					:MC_CoordinateSystem;
+		BufferMode					:MC_BufferMode;
+		TransitionMode				:MC_TransitionMode;
+		TransitionParameter			:VECTOR;
+	END_STRUCT;
+
+	MoveLinearRelative_Setting		:STRUCT
+		Distance					:VECTOR;
+		Velocity					:LREAL;
+		Acceleration				:LREAL;
+		Deceleration				:LREAL;
+		Jerk						:LREAL;
+		MoveOptions					:Yt_GroupMoveOptions;
+		CoordSystem					:MC_CoordinateSystem;
+		BufferMode					:MC_BufferMode;
+		TransitionMode				:MC_TransitionMode;
+		TransitionParameter			:VECTOR;
+	END_STRUCT;
+
+	GroupJogJoint_Setting			:STRUCT
+		JointIndex					:UINT;
+		Velocity					:LREAL;
+		Acceleration				:LREAL;
+		Deceleration				:LREAL;
+		Jerk						:LREAL;
+		MoveOptions					:Yt_GroupMoveOptions;
+		Direction					:MC_Direction;
+		BufferMode					:MC_BufferMode;
+	END_STRUCT;
+
+	GroupJogLinear_Setting			:STRUCT
+		Position					:VECTOR;
+		Velocity					:LREAL;
+		Acceleration				:LREAL;
+		Deceleration				:LREAL;
+		Jerk						:LREAL;
+		MoveOptions					:Yt_GroupMoveOptions;
+		CoordSystem					:MC_CoordinateSystem;
+		BufferMode					:MC_BufferMode;
+	END_STRUCT;
+	
+	GroupSetPosition_Setting        :STRUCT
+        Position                    :VECTOR;
+        Relative                    :BOOL;
+        CoordSystem                 :MC_CoordinateSystem;
+        SetMode                     :INT;
+        BufferMode                  :MC_BufferMode;
+    END_STRUCT
+
+	TrackConveyorBelt_Setting		:STRUCT
+		ConveyorBelt				:AXIS_REF;
+		ConveyorBeltOrigin			:VECTOR;
+		InitialObjectPosition		:VECTOR;
+		RecordedPosition			:LREAL;
+		StartDistance				:LREAL;
+		EndDistance					:LREAL;
+		TrackOptions				:Yt_TrackOptions;
+		ExecutionMode				:INT;
+	END_STRUCT;
+
+	EmergencyGroupStop_Setting		:STRUCT
+		Deceleration				:LREAL;
+		Jerk						:LREAL;
+		BufferMode					:MC_BufferMode;
+	END_STRUCT;
+
+	Position_Setting				:STRUCT
+		Position					:LREAL;
+		Mode						:BOOL;
+	END_STRUCT;
+
+	SetPosition_Setting				:STRUCT
+		Axis_S						:Position_Setting;			(**)
+		Axis_L						:Position_Setting;			(**)
+		Axis_U						:Position_Setting;			(**)
+		Axis_T						:Position_Setting;			(**)
+		Axis_B						:Position_Setting;			(**)
+	END_STRUCT;
+
+
+	FrameTypeTransform_Setting		:STRUCT
+		OO							:MC_CARTESIAN_REF;
+		XX							:MC_CARTESIAN_REF;
+		XY							:MC_CARTESIAN_REF;
+	END_STRUCT;
+
+	GroupSetFrameOffset_Setting		:STRUCT
+		Offset						:MC_CARTESIAN_REF;
+		ExecutionMode				:MC_ExecutionMode;
+		RefCoordSystem				:MC_CoordinateSystem;
+		SetCoordSystem				:MC_CoordinateSystem;
+	END_STRUCT;
+
+	fifthAxis_Setting				:STRUCT
+		theta						:LREAL;
+		alpha						:LREAL;
+		lenght_endEffector			:LREAL;
+	END_STRUCT;
+
+ 	GroupSetting					:STRUCT
+		fifthAxis					:fifthAxis_Setting;
+		MoveLinearAbsolute			:MoveLinearAbsolute_Setting;	(*	Settings releated to MC_MoveLinearAbsolute FB *)
+		MoveLinearAbsolute_Blend1	:MoveLinearAbsolute_Setting;	(*	Settings releated to MC_MoveLinearAbsolute FB (BLEND) *)
+		MoveLinearAbsolute_Blend2	:MoveLinearAbsolute_Setting;	(*	Settings releated to MC_MoveLinearAbsolute FB (BLEND) *)
+		MoveLinearAbsolute_Blend3	:MoveLinearAbsolute_Setting;	(*	Settings releated to MC_MoveLinearAbsolute FB (BLEND) *)
+		MoveLinearRelative			:MoveLinearRelative_Setting;	(*	Settings releated to MC_MoveLinearRelative FB *)
+		GroupJogJoint				:GroupJogJoint_Setting;			(*	Settings releated to Y_GroupJogJoint FB *)
+		GroupJogLinear				:GroupJogLinear_Setting;		(*	Settings releated to Y_GroupJogLinear FB *)
+		SetPosition					:SetPosition_Setting;			(*	Settings releated to MC_SetPosition FB *)
+		ResetAbsEncPos				:PosAxis_LREAL;					(*	Position values to do a reset of absolute encoder *)
+		EmergencyGroupStop			:EmergencyGroupStop_Setting;	(*	Settings releated to MC_GroupStop FB*)
+		GroupBrakeRelease			:Axes;							(*	Settings releated to Y_GroupBrakeRelease FB*)
+		FrameTypeTransform			:FrameTypeTransform_Setting;
+		GroupSetFrameOffset			:GroupSetFrameOffset_Setting;	(*	Setting releated to Y_GroupSetFrameOffset_Setting *)
+		GroupSetPosition            :GroupSetPosition_Setting;
+		TrackConveyorBelt			:TrackConveyorBelt_Setting;
+		TestGroupSetting			:ARRAY_TestGroup;				(*	Array values used to perform a automatic point-to-point test *)
+		arrCheckAbsEncOffset        :ARRAY [1..NUM_AXES_GROUP] OF ST_checkAbsEncOffset;
+	END_STRUCT;
+
+
+(*********************************************************************************************************************************************)
+(*********************************************************           STATUS         **********************************************************)
+(*********************************************************************************************************************************************)
+
+	GroupControl_Status				:STRUCT
+		Valid						:BOOL;			(**)
+		Busy						:BOOL;			(**)
+		GroupStatus					:BOOL;			(**)
+		PowerStatus					:BOOL;			(**)
+		ControllerAlarm				:BOOL;			(**)
+		ControllerAlarmID			:UDINT;			(**)
+		GroupError					:BOOL;			(**)
+		GroupErrorClass				:UINT;			(**)
+		GroupErrorID				:UINT;			(**)
+		GroupErrorSubCode			:UDINT;			(**)
+		AxisAlarms					:BOOL;			(**)
+		AxisErrorClass				:UINT;			(**)
+		AxisErrorID					:UINT;			(**)
+		AxisWarnings				:BOOL;			(**)
+		AxisWarningID				:UINT;			(**)
+	END_STRUCT;
+	
+	GroupReadStatus_Status :STRUCT
+        Valid              :BOOL; 
+        Busy               :BOOL; 
+        GroupMoving        :BOOL; 
+        GroupHoming        :BOOL; 
+        GroupErrorStop     :BOOL; 
+        GroupStandby       :BOOL; 
+        GroupStopping      :BOOL; 
+        GroupDisabled      :BOOL; 
+        ConstantVelocity   :BOOL; 
+        Accelerating       :BOOL; 
+        Decelerating       :BOOL; 
+        InPosition         :BOOL; 
+        StandStill         :BOOL; 
+        Interrupted        :BOOL; 
+        SynchronizedMotion :BOOL; 
+        DiscreteMotion     :BOOL; 
+        ContinuousMotion   :BOOL; 
+    END_STRUCT;
+
+	FbDefault1_Status				:STRUCT
+		Done						:BOOL;			(**)
+		Busy						:BOOL;			(**)
+		Active						:BOOL;			(**)
+		CommandAborted				:BOOL;			(**)
+	END_STRUCT;
+
+	GroupJogJoint_Status			:STRUCT
+		Valid						:BOOL;			(**)
+		Busy						:BOOL;			(**)
+		Active						:BOOL;			(**)
+		CommandAborted				:BOOL;			(**)
+	END_STRUCT;
+
+	GroupJogLinear_Status			:STRUCT
+		Valid						:BOOL;			(**)
+		Done						:BOOL;			(**)
+		Busy						:BOOL;			(**)
+		Active						:BOOL;			(**)
+		CommandAborted				:BOOL;			(**)
+	END_STRUCT;
+	
+	GroupSetPosition_Status         :STRUCT
+        Done                        :BOOL;
+        Busy                        :BOOL;
+        Active                      :BOOL;
+        CommandAborted              :BOOL;
+    END_STRUCT
+
+	TrackConveyorBelt_Status		:STRUCT
+		Done						:BOOL;			(**)
+		Busy						:BOOL;			(**)
+		Active						:BOOL;			(**)
+		InSync						:BOOL;
+		CommandAborted				:BOOL;			(**)
+	END_STRUCT;
+
+	FbDefault2_Status				:STRUCT
+		Done						:BOOL;			(**)
+		Busy						:BOOL;			(**)
+	END_STRUCT;
+	GroupFbDefault2_Status			:STRUCT
+		Axis_S						:FbDefault2_Status;
+		Axis_L						:FbDefault2_Status;
+		Axis_U						:FbDefault2_Status;
+		Axis_T						:FbDefault2_Status;
+		Axis_B						:FbDefault2_Status;
+	END_STRUCT;
+
+	ControllerAlarm_Status			:STRUCT
+		Valid						:BOOL;
+		Alarm						:BOOL;
+		AlarmID						:UDINT;
+	END_STRUCT;
+
+	FrameTypeTransform_Status		:STRUCT
+		Done						:BOOL;
+		Singularity					:BOOL;
+	END_STRUCT;
+
+    GroupStatus				        :STRUCT
+		GroupControl				:GroupControl_Status;	(*	Status releated to GroupControl FB *)
+		GroupReadStatus             :GroupReadStatus_Status;
+		MoveLinearAbsolute			:FbDefault1_Status;		(*	Status releated to MC_MoveLinearAbsolute FB *)
+		MoveLinearAbsolute_Blend1	:FbDefault1_Status;		(*	Status releated to MC_MoveLinearAbsolute FB (BLEND) *)
+		MoveLinearAbsolute_Blend2	:FbDefault1_Status;		(*	Status releated to MC_MoveLinearAbsolute FB (BLEND) *)
+		MoveLinearAbsolute_Blend3	:FbDefault1_Status;		(*	Status releated to MC_MoveLinearAbsolute FB (BLEND) *)
+		MoveLinearAbsolute_Perf1	:FbDefault1_Status;
+		MoveLinearAbsolute_Perf2	:FbDefault1_Status;
+		MoveLinearAbsolute_Perf3	:FbDefault1_Status;
+		MoveLinearAbsolute_Perf4	:FbDefault1_Status;
+		MoveLinearAbsolute_Perf5	:FbDefault1_Status;
+		MoveLinearAbsolute_Perf6	:FbDefault1_Status;
+		MoveLinearAbsolute_Perf7	:FbDefault1_Status;
+		MoveLinearAbsolute_Perf8	:FbDefault1_Status;
+		MoveLinearAbsolute_Perf9	:FbDefault1_Status;
+		MoveLinearAbsolute_Perf10	:FbDefault1_Status;
+		MoveLinearRelative			:FbDefault1_Status;		(*	Status releated to MC_MoveLinearRelative FB *)
+		GroupJogJoint				:GroupJogJoint_Status;	(*	Status releated to Y_GroupJogJoint FB *)
+		GroupJogLinear				:GroupJogLinear_Status;	(*	Status releated to Y_GroupJogLinear FB *)
+		GroupSetPosition            :GroupSetPosition_Status;
+		ResetAbsEncDone				:Axes;					(*	Status releated to FB_ResetAbsEnc FB *)
+		EmergencyGroupStop			:FbDefault1_Status;		(*	Status releated to MC_GroupStopFB *)
+		GroupBrakeRelease			:GroupFbDefault2_Status;(*	Status releated to Y_GroupBrakeRelease FB *)
+		ControllerAlarm				:ControllerAlarm_Status;(*	Status releated to ControllerAlarm FB *)
+		SetPosition					:GroupFbDefault2_Status;(*	Status releated to MC_SetPosition FB *)
+		TestGroupRunning			:BOOL;					(*	Status releated to TestGroupRunning *)
+		TestGroupRunningBlend		:BOOL;					(*	Status releated to TestGroupRunningBlend *)
+		TestGroupRunningPerf		:BOOL;
+		TestGroupRunningPath		:BOOL;
+		FrameTypeTransform			:FrameTypeTransform_Status;
+		GroupSetFrameOffset			:FbDefault2_Status;		(*	Status releated to Y_GroupSetFrameOffset FB *)
+		CalcFrameOffset_ENO			:BOOL;
+		TrackConveyorBelt			:TrackConveyorBelt_Status;
+		Errors						:BOOL;					(*	Errors *)
+	END_STRUCT;
+
+
+(*********************************************************************************************************************************************)
+(********************************************************           FEEDBACK         *********************************************************)
+(*********************************************************************************************************************************************)
+
+	Value_Group_Feedback	:STRUCT
+		ACS					:VECTOR;		(**)
+		MCS					:VECTOR;		(**)
+		PCS					:MC_COORD_REF;	(**)
+		TCS					:MC_COORD_REF;	(**)
+		WCS					:MC_COORD_REF;	(**)
+		TPCS				:MC_COORD_REF;	(**)
+	END_STRUCT;
+
+
+	GroupFeedback			:STRUCT
+		ActualPos_Group		:Value_Group_Feedback;	(*	Actual position value of Group in different coordinate system *)
+		ActualVel_Group		:Value_Group_Feedback;	(*	Actual velocity value of Group in different coordinate system *)
+		ActualAccel_Group	:Value_Group_Feedback;	(*	Actual acceleration value of Group in different coordinate system *)
+		ActualPos_Axis		:PosAxis_LREAL;			(*	Actual position value of axis *)
+		TrackState			:LREAL;
+	END_STRUCT;
+
+
+(*********************************************************************************************************************************************)
+(**********************************************************           ERROR         **********************************************************)
+(*********************************************************************************************************************************************)
+
+	Error							:STRUCT
+		Error						:BOOL;			
+		ErrorID						:UINT;			
+	END_STRUCT;
+
+	Axes_Error						:STRUCT
+		Axis_S						:Error;
+		Axis_L						:Error;
+		Axis_U						:Error;
+		Axis_T						:Error;
+		Axis_B						:Error;
+	 END_STRUCT;
+
+	Coordinate_Error				:STRUCT
+		ACS							:Error;
+		MCS							:Error;
+		PCS							:Error;
+		TCS							:Error;
+		WCS							:Error;
+		TPCS						:Error;
+	END_STRUCT;
+
+	CalcFrameOffset_InOut			:STRUCT
+		InputFrame					:VECTOR;
+		Offset						:VECTOR;
+		OutputFrame					:VECTOR;
+	END_STRUCT;
+
+	FrameTypeTransform_InOut		:STRUCT
+		FrameCoordinates			:VECTOR;
+	END_STRUCT;
+
+	GroupInOut						:STRUCT
+		CalcFrameOffset				:CalcFrameOffset_InOut;
+		FrameTypeTransform			:FrameTypeTransform_InOut;
+	END_STRUCT;
+
+
+	GroupError						:STRUCT
+		GroupControl				:Error;
+		GroupReadStatus             :Error;
+		MoveLinearAbsolute			:Error;
+		MoveLinearAbsolute_Blend1	:Error;	(*	BLEND *)
+		MoveLinearAbsolute_Blend2	:Error;	(*	BLEND *)
+		MoveLinearAbsolute_Blend3	:Error;	(*	BLEND *)
+		MoveLinearRelative			:Error;
+		GroupJogJoint				:Error;
+		GroupJogLinear				:Error;
+		ResetAbsEnc					:Axes_Error;
+		EmergencyGroupStop			:Error;
+		GroupBrakeRelease			:Axes_Error;
+		GroupReadActualPos 			:Coordinate_Error;
+		ReadActualPos				:Axes_Error;
+		SetPosition					:Axes_Error;
+		ControllerAlarm				:Error;	
+		FrameTypeTransform			:Error;	
+		GroupSetFrameOffset			:Error;	
+		GroupSetPosition            :Error;
+		TrackConveyorBelt			:Error;
+	END_STRUCT;
+
+
+(*********************************************************************************************************************************************)
+(**********************************************************           GROUP         **********************************************************)
+(*********************************************************************************************************************************************)
+
+	DT_Group		:STRUCT
+		Command		:GroupCommand;	(*	Commands releated to Group management *)
+		Setting		:GroupSetting;	(*	Settings releated to Group management *)
+		Status		:GroupStatus;	(*	Status releated to Group management *)
+		Feedback	:GroupFeedback;	(*	Feedbacks releated to Group management *)
+		InOut		:GroupInOut;
+		Error		:GroupError;	(*	Errors releated to Group management *)
+	END_STRUCT;
+END_TYPE
+(**)
+
+

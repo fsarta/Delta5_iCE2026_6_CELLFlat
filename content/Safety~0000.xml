@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<content>
+  <folder name="PROJECT">
+    <file name="Safety.area" id="PROJECT~Safety~0000.area" />
+    <folder name="Inventories">
+      <file name="SafetyInventory.xml" id="Inventori~SafetyInve~0000.xml" />
+    </folder>
+    <folder name="Logs">
+      <file name="SafetyMessageLog.xml" id="Logs~SafetyMessageLo~0000.xml" />
+    </folder>
+    <folder name="Logical Elements">
+      <folder name="S_Main.pou">
+        <file name="Description.html" id="S_Main.po~Descriptio~0000.html" />
+        <file name="Description.rtf" id="S_Main.po~Descriptio~0001.rtf" />
+        <file name="Metadata.meta" id="S_Main.pou~Metadata~0000.meta" />
+        <file name="Variables.var" id="S_Main.pou~Variables~0000.var" />
+        <file name="VersionHistory.usermeta" id="S_Main.po~VersionHis~0000.usermeta" />
+        <file name="Code1.snold" id="S_Main.pou~Code1~0000.snold" />
+      </folder>
+    </folder>
+    <folder name="Hardware">
+      <folder name="CFG_DAD2D2864F6B4807B38187D03BBF955E">
+        <folder name="RES_9744F38493744A68ADA88550937D3A0E">
+          <file name="EsmConfiguration.esmc" id="RES_9744F~EsmConfigu~0000.esmc" />
+          <file name="GlobalVariables.var" id="RES_9744F~GlobalVari~0000.var" />
+        </folder>
+        <folder name="SliceBus_Master">
+          <folder name="DI_4xDC24V_Safety_(021-1SD10)">
+            <file name="b4de795e-05a6-44aa-9435-21389ce99e4e.spar" id="DI_4xDC24~b4de795e-0~0000.spar" />
+          </folder>
+          <folder name="DI_4xDC24V_Safety_(021-1SD10)1">
+            <file name="166af565-b7ed-4b96-be0f-3c8b52c96e70.spar" id="DI_4xDC24~166af565-b~0000.spar" />
+          </folder>
+          <folder name="DO_4xDC24V_0_5A_Safety_(022-1SD10)">
+            <file name="91264b7c-b326-4c03-ae35-69ac9e1359ad.spar" id="DO_4xDC24~91264b7c-b~0000.spar" />
+          </folder>
+          <folder name="DO_4xDC24V_0_5A_Safety_(022-1SD10)1">
+            <file name="77e0e083-0fb1-47e2-9c60-38a6b5528a4a.spar" id="DO_4xDC24~77e0e083-0~0000.spar" />
+          </folder>
+        </folder>
+      </folder>
+    </folder>
+    <folder name="LanguageProfile">
+      <file name="LanguageProfile.lprofile" id="LanguageP~LanguagePr~0000.lprofile" />
+    </folder>
+  </folder>
+</content>

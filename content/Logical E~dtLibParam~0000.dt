@@ -1,0 +1,42 @@
+//================================================================================
+// Yaskawa Italia srl
+//(c)Copyright Yaskawa Italia srl All Rights Reserved
+//--------------------------------------------------------------------------------
+// Library: libParamSDO
+// DataType: dtlibParamSDO
+// Tested with: iC9226M-FSoE
+// Engineering: iCube Engineer 2024.9  (Build 6.0.15981.0)
+// Requirements: iC9226M-EC / iC9226M-FSoE
+// Functionality: manage reading/writing SDO parameter to servopacks
+//--------------------------------------------------------------------------------
+// Change log table:
+// Version Date           Expert in charge                    Changes applied
+// 1.0     30-03-2025     FZa(Francesco.Zanette@yaskawa.eu)   New Version Released
+//================================================================================
+
+TYPE
+    
+dtLibParamSdo : STRUCT
+    Status : dtLibParamSdoStatus;
+    Setup : dtLibParamSdoSetup;
+END_STRUCT
+
+dtLibParamSdoStatus : STRUCT
+    Done : BOOL;
+    Error : BOOL;
+    ErrorID : UINT;
+    ReadValue : DINT;
+END_STRUCT
+    
+dtLibParamSdoSetup : STRUCT
+    Param : WORD;
+    Value : DINT;
+    ReadWrite : UINT;  // 0=Read, 1=Write
+    Format : dtLibParamFormat;
+    SubIndex: BYTE := 0;   
+END_STRUCT
+    
+dtLibParamFormat : (Integer, UnsignedInt, DoubleInt, UnsignedDInt) OF INT;
+
+
+END_TYPE

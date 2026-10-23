@@ -1,0 +1,47 @@
+{ CustomGroupDefinition('a4f4c48b-e39b-4ad9-a287-710e3c77c767', 'VAR_INPUT') }
+{ CustomGroupDefinition('f237ee34-f044-4d41-b3f1-c41d943873b9', 'VAR_OUTPUT') }
+{ CustomGroupDefinition('a00bf8c4-6445-46ca-9d6a-9bc0a0bab4ce', '') }
+
+VAR_INPUT
+    Visor_Receive : Yt_ByteArray72 { CustomGroupReference('a4f4c48b-e39b-4ad9-a287-710e3c77c767') } {Id('86f86074-d8cd-4e69-85f9-d41c52028d4d')};
+    xTrigger : BOOL { CustomGroupReference('a4f4c48b-e39b-4ad9-a287-710e3c77c767') } {Id('61065f52-0e0c-40cd-8438-92eaa29d74c1')}; (*Rising edge to trigger an image*)
+    xResetError : BOOL { CustomGroupReference('a4f4c48b-e39b-4ad9-a287-710e3c77c767') } {Id('3bebbd7c-7ec5-4d90-9a47-4da2532ef26b')}; (*Rising edge to reset an error*)
+    xChangeJob : BOOL { CustomGroupReference('a4f4c48b-e39b-4ad9-a287-710e3c77c767') } {Id('60a9d379-747e-4e9f-b949-7dce72119fbd')}; (*Rising edge to change the job*)
+    iJobToChange : USINT { CustomGroupReference('a4f4c48b-e39b-4ad9-a287-710e3c77c767') } {Id('22d96144-cea3-40fb-a31f-e740c9df99df')}; (*Job number (1-255) to switch to*)
+    xSwitchToRun : BOOL { CustomGroupReference('a4f4c48b-e39b-4ad9-a287-710e3c77c767') } {Id('c0e549d4-8b03-4e8e-8546-fed94c43361f')}; (*Rising edge to switch to RUN mode*)
+    i_stConnectionStatus : EIP_STATUS_REF { CustomGroupReference('a4f4c48b-e39b-4ad9-a287-710e3c77c767') } {Id('320b7370-e82c-446e-b094-85159381f1e6')};
+END_VAR
+
+VAR_OUTPUT
+    Visor_Transmit : Yt_ByteArray3 { CustomGroupReference('f237ee34-f044-4d41-b3f1-c41d943873b9') } {Id('8a6472a7-04f3-4f6b-9779-a578fafd8627')};
+    xConnected : BOOL { CustomGroupReference('f237ee34-f044-4d41-b3f1-c41d943873b9') } {Id('39a85191-83d3-4b09-9c16-b781d576a767')}; (*True if EIP connection is 'Running'*)
+    xReady : BOOL { CustomGroupReference('f237ee34-f044-4d41-b3f1-c41d943873b9') } {Id('bb972dbb-4d18-4a33-b462-8b56348abde9')}; (*VISOR is ready for a new trigger*)
+    xTriggerAck : BOOL { CustomGroupReference('f237ee34-f044-4d41-b3f1-c41d943873b9') } {Id('ee8a1c77-2b23-49b3-ad19-9c41cffa4373')}; (*VISOR trigger acknowledge*)
+    xInRunMode : BOOL { CustomGroupReference('f237ee34-f044-4d41-b3f1-c41d943873b9') } {Id('3693330d-069f-4a22-8fc0-b335314ad63d')}; (*VISOR is in Operation (Run) Mode*)
+    xError : BOOL { CustomGroupReference('f237ee34-f044-4d41-b3f1-c41d943873b9') } {Id('44cd029c-caf8-489f-9d61-5e37e77956a2')}; (*An error is active*)
+    iErrorCode : BYTE { CustomGroupReference('f237ee34-f044-4d41-b3f1-c41d943873b9') } {Id('6acd6312-bd7c-4de0-bbda-5c173b44bd9d')}; (*Current 4-bit error code*)
+    iActiveJob : USINT { CustomGroupReference('f237ee34-f044-4d41-b3f1-c41d943873b9') } {Id('28460ee4-0c36-42c0-bfca-79ad10ab1e53')}; (*Current active job number*)
+    xTriggerBusy : BOOL { CustomGroupReference('f237ee34-f044-4d41-b3f1-c41d943873b9') } {Id('8338cb65-0455-4254-a24e-4be37f62d534')}; (*Trigger command is in progress*)
+    xChangeJobBusy : BOOL { CustomGroupReference('f237ee34-f044-4d41-b3f1-c41d943873b9') } {Id('e7f8adc5-d3a8-4adc-9e2e-56803d76384d')}; (*Change Job command is in progress*)
+    xSwitchToRunBusy : BOOL { CustomGroupReference('f237ee34-f044-4d41-b3f1-c41d943873b9') } {Id('908832e7-a5b8-41e2-b282-073d5c463680')}; (*Switch to Run command is in progress*)
+    o_stResultData : DT_VISOR_Assem5_ResultData { CustomGroupReference('f237ee34-f044-4d41-b3f1-c41d943873b9') } {Id('38da11ec-3021-46f9-b43f-19dff22b1751')};
+END_VAR
+
+VAR
+    rtTrigger : R_TRIG { CustomGroupReference('a00bf8c4-6445-46ca-9d6a-9bc0a0bab4ce') } {Id('adc8705c-b831-4e09-bc1d-bd60b85673e4')};
+    rtChangeJob : R_TRIG { CustomGroupReference('a00bf8c4-6445-46ca-9d6a-9bc0a0bab4ce') } {Id('1b1b3916-b91d-4331-9c05-2c3f58cedae4')};
+    rtResetError : R_TRIG { CustomGroupReference('a00bf8c4-6445-46ca-9d6a-9bc0a0bab4ce') } {Id('c292ee57-fe3a-43b5-9965-618eb9bf42b5')};
+    rtSwitchToRun : R_TRIG { CustomGroupReference('a00bf8c4-6445-46ca-9d6a-9bc0a0bab4ce') } {Id('4d848f9e-e19a-4f36-8146-4ce61ff9d471')};
+    eTriggerState : E_VisorControlState { CustomGroupReference('a00bf8c4-6445-46ca-9d6a-9bc0a0bab4ce') } {Id('ea8e4f62-2920-412e-91bb-d86d1c391476')};
+    eChangeJobState : E_VisorControlState { CustomGroupReference('a00bf8c4-6445-46ca-9d6a-9bc0a0bab4ce') } {Id('1497369a-e6d5-4982-9fa7-f2125b6cd125')};
+    eSwitchToRunState : E_VisorControlState { CustomGroupReference('a00bf8c4-6445-46ca-9d6a-9bc0a0bab4ce') } {Id('d2c72e08-a7e1-455d-98f3-1024dc88df85')};
+END_VAR
+
+VAR_EXTERNAL
+    stInput : DT_VISOR_Assem5_Input { CustomGroupReference('a00bf8c4-6445-46ca-9d6a-9bc0a0bab4ce') } {Id('78f45d73-d802-4736-9f95-bd4dda07120a')};
+END_VAR
+
+VAR
+    stOutput : DT_VISOR_Output { CustomGroupReference('a00bf8c4-6445-46ca-9d6a-9bc0a0bab4ce') } {Id('e08e04b0-aab5-4374-af97-eaa76fd8780b')};
+    xInitialized : BOOL { CustomGroupReference('a00bf8c4-6445-46ca-9d6a-9bc0a0bab4ce') } {Id('85407ba3-cfce-495c-a8b1-047a64f20d8f')};
+END_VAR

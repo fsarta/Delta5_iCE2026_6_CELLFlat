@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RestoreDataItem Version="1" DeletionDate="2026-07-28 09:13:46Z" DisplayName="VisorSensoPart-1 : Generic Adapter Device">
+    <NodeData DomainId="e639c0f9-db09-46f4-abf7-50216a13f220" SolutionId="606e2993-1c57-411c-b0d2-c57a13c52bbf" NodeId="e1754079-9200-4df4-95ec-112f7bcb3509" ParentId="db952e51-6e33-49bd-92ee-d86cccdb234f" PredecessorId="c3e03f1a-8ae4-4b08-9a4e-9731ea39a489" Position="1" Kind="Instance" />
+</RestoreDataItem>

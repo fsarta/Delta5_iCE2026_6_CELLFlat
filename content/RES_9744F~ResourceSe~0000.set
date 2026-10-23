@@ -1,0 +1,15 @@
+{ Type('Cortex SafetyPLC') }
+RESOURCE Safety PLC
+{ DeviceProfileWorksheet('DeviceProfile', Id := '9a893afe-922a-42e3-afd7-7bd73d2e19f8') }
+{ DeviceProfile(
+    Name := 'RES_9744F38493744A68ADA88550937D3A0E',
+    Parent := ( Name := 'Cortex SafetyPLC', Version := '1.0.0'), 
+    UpdateType := 'AskUser'
+)}
+
+
+TASK SafetyTask (INTERVAL := T#5ms, PRIORITY := 0) { Watchdog(T#100ms), Id('d6537923-5f9a-44fe-aab6-4d3148059339') };
+
+PROGRAM S_Main WITH SafetyTask : S_Main { Id('54e6060a-76eb-4234-8309-1c76af88230f') };
+
+END_RESOURCE

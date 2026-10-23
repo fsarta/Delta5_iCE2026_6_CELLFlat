@@ -1,0 +1,15 @@
+{ CustomGroupDefinition('66ce541d-d63f-4d63-9076-8740f4e8d786', 'VAR_INPUT') }
+{ CustomGroupDefinition('417043c7-1c0f-48d8-870c-5b3e6714f03f', 'NewGroup') }
+{ CustomGroupDefinition('d49c54cd-e946-4bfb-a58d-8dd63c5f3071', '') }
+
+VAR_INPUT
+    index : INT { CustomGroupReference('66ce541d-d63f-4d63-9076-8740f4e8d786') } {Id('4946c063-36c7-4f34-8d6f-222200b1aa59')}; (*PosTable entry for which the start conditions should be checked*)
+    posTableSize : INT { CustomGroupReference('66ce541d-d63f-4d63-9076-8740f4e8d786') } {Id('f0b36122-32f8-4bf6-8c2c-87ffed6edeb7')}; (*number of entries*)
+    conditions : ARRAY_0_CONDITIONS_UBOUND_OF_BOOL { CustomGroupReference('66ce541d-d63f-4d63-9076-8740f4e8d786') } {Id('b8e8e3a9-a82c-4cbf-8b32-e36cc22c29cd')}; (*bits used as start conditions for a PosTable entry*)
+END_VAR
+
+VAR
+    i1 : DINT { CustomGroupReference('417043c7-1c0f-48d8-870c-5b3e6714f03f') } {Id('2a1e2833-2502-43b9-8c35-3c4943506e16')}; (*index for FOR loops*)
+    stConditionResult1 : McePosTableConditions { CustomGroupReference('417043c7-1c0f-48d8-870c-5b3e6714f03f') } {Id('72941cc9-3cc8-47bd-bc27-d64db0e92212')}; (*state if the next motion condition are satisfied*)
+    OutM : UINT { CustomGroupReference('417043c7-1c0f-48d8-870c-5b3e6714f03f') } {Id('aa2de1c3-5729-43de-9061-2b6d70b0520f')};
+END_VAR

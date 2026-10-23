@@ -1,0 +1,88 @@
+TYPE 
+        
+(*  -------------------------------------------------------------------------
+      Data Structure (UDT) for VISOR Assem1 (3 Byte Output)
+      Maps the 'CTRL' assembly (O->T / PLC-to-Sensor)
+    -------------------------------------------------------------------------
+*)
+    // DT for Control Bits (Byte 0) 
+    DT_VISOR_ControlBits : STRUCT
+        ResetError      : BOOL; // Param1: Pulse to reset an error
+        TriggerDisable  : BOOL; // Param2: Set HIGH to disable software trigger
+        Trigger         : BOOL; // Param3: Rising edge to trigger an image
+        ChangeJob       : BOOL; // Param4: Rising edge to activate job change
+        SwitchToRun     : BOOL; // Param5: Rising edge to switch to RUN mode
+        RepeatEnable    : BOOL; // Param54: Enables repeat of last result
+        Spare0_6        : BOOL; // Reserved 
+        Spare0_7        : BOOL; // Reserved 
+    END_STRUCT;
+    
+    
+    // MAIN STRUCTURE (3 BYTES TOTAL) - This is the complete DT to use for your Assem1 output tag
+    DT_VISOR_Output : STRUCT
+        Control_Bits    : DT_VISOR_ControlBits; // Byte 0: Control Bits
+        Spare_Byte1     : BYTE;     // Byte 1: Reserved/Spare        
+        JobNumberOut    : USINT;    // Byte 2: JobNumberOut (Param6)
+    END_STRUCT;
+    
+(* 
+    -------------------------------------------------------------------------
+      Data Structure (DT) for VISOR Assem5 (40 Byte Input)
+      Maps the 'STAT & DATA (2+ 32 bytes)' assembly (T->O / Sensor-to-PLC)
+    -------------------------------------------------------------------------
+*)    
+    // DT for Status Bits (Byte 0)
+    DT_VISOR_StatusBits : STRUCT
+        Ready           : BOOL; // Param7
+        Spare0_1        : BOOL; // Reserved 
+        TriggerAck      : BOOL; // Param8 
+        ChangeJobAck    : BOOL; // Param9 
+        SwitchToRunAck  : BOOL; // Param10 
+        Spare0_5        : BOOL; // Reserved 
+        Spare0_6        : BOOL; // Reserved 
+        Spare0_7        : BOOL; // Reserved 
+    END_STRUCT;
+    
+    // UDT for Result Data (64 Bytes) - This maps the 'ResultData64' block (Param23)
+    DT_VISOR_Assem5_ResultData : STRUCT
+    
+        //Part_Index      : INT;  // 2 bytes - The ID of the found part (e.g., 1) 
+        //Part_Type       : INT;  // 2 bytes - The product type (e.g., 1=A, 2=B)
+        Pos_X           : ARRAY[0..3] OF REAL; // 4 bytes - Position X 
+        Pos_Y           : ARRAY[0..3] OF REAL; // 4 bytes - Position Y 
+        Angle_Rz        : ARRAY[0..3] OF REAL; // 4 bytes - Angle Rz 
+        Part_Count      : BYTE;  // 1 bytes - Total number of parts found 
+        
+        // Remaining space in the 32-byte block 
+        Spare_Bytes     : ARRAY[14..71] OF BYTE; // 58 bytes - Reserved 
+    END_STRUCT;
+    
+    // MAIN STRUCTURE (72 BYTES TOTAL) - This is the complete DT to use for your Assem5 input tag
+    DT_VISOR_Assem5_Input : STRUCT
+        Status_Bits         : DT_VISOR_StatusBits; // Byte 0: Status Bits 
+        Spare_Byte1         : BYTE;     // Byte 1: Reserved 
+        DigitalResults      : BYTE;     // Byte 2: DigitalResults (Param11)
+        JobNumber           : USINT;    // Byte 3: JobNumber (Param12)           
+        ImageId             : USINT;    // Byte 4: ImageId (Param13)         
+        Status_Byte5        : BYTE;     // Byte 5: Mixed Status (Error, TriggerMode, OpMode)
+        Data_ImageId        : USINT;    // Byte 6: Data_ImageId (Param19)
+        DataStatus_Byte7    : BYTE;     // Byte 7: Mixed Data Status (Data_ResultOverrun)
+        ResultData          : DT_VISOR_Assem5_ResultData; // Byte 8..71: Result data block (64 bytes)
+    END_STRUCT;
+    
+    
+    E_VisorControlState : (IDLE, WAIT_FOR_ACK, WAIT_FOR_NO_ACK) OF INT;
+    E_VisorRequestState : (IDLE, SEND_REQUEST, WAIT_FOR_RESPONSE) OF INT;
+    
+    E_VisionMgr_State : (
+        IDLE,               // 0: Waiting for a new start request
+        WAIT_FOR_READY,
+        TRIGGER_CAMERA,     // 2: Sending the trigger pulse to the driver
+        TRIGGER_ACKNOWLEDGE,// 3: Waiting the trigger acknowledge
+        WAIT_FOR_RESULTS,   // 4: Waiting for the driver to signal completion (xTriggerBusy = FALSE)
+        PROCESS_RESULTS,    // 5: Got results, checking for errors and saving data
+        ERROR               // 6: An error occurred (either from driver or timeout)
+    ) OF INT;
+    
+        
+END_TYPE

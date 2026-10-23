@@ -1,0 +1,9 @@
+{ CustomGroupDefinition('9266c827-89f3-44ea-b935-79e1e793a0c8', '') }
+
+VAR
+    lrOffX : LREAL { CustomGroupReference('9266c827-89f3-44ea-b935-79e1e793a0c8') } {Id('a410a1be-90e6-4376-9dfe-6bebfaba0ffa')};
+    lrOffY : LREAL { CustomGroupReference('9266c827-89f3-44ea-b935-79e1e793a0c8') } {Id('bfc66aa6-612a-4c2d-85ee-983397b51e38')};
+    lrPlaceAngleRad : LREAL { CustomGroupReference('9266c827-89f3-44ea-b935-79e1e793a0c8') } {Id('8760bd9a-bb22-4de6-8f93-1524389e11f9')};
+    lrSinPlace : LREAL { CustomGroupReference('9266c827-89f3-44ea-b935-79e1e793a0c8') } {Id('8a390502-bb07-4da4-b5d6-ccd2793a311f')};
+    lrCosPlace : LREAL { CustomGroupReference('9266c827-89f3-44ea-b935-79e1e793a0c8') } {Id('2e8db1e9-5ac0-4cd2-a04c-93bf368e34c6')};
+END_VAR

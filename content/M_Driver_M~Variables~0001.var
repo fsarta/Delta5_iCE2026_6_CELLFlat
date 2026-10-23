@@ -1,0 +1,7 @@
+{ CustomGroupDefinition('dddcfe02-e87b-4afc-8ee3-b213a4081086', '') }
+
+VAR
+    bLocalActive : BOOL { CustomGroupReference('dddcfe02-e87b-4afc-8ee3-b213a4081086') } {Id('3de29e38-4d89-45c0-996c-aa5cb30c70d1')};
+    bLocalDone : BOOL { CustomGroupReference('dddcfe02-e87b-4afc-8ee3-b213a4081086') } {Id('cffbe9a3-0e1a-4351-9797-47a75e2473a9')};
+    bLocalError : BOOL { CustomGroupReference('dddcfe02-e87b-4afc-8ee3-b213a4081086') } {Id('88615a9c-4a8a-4e7a-9129-78c8b0f75725')};
+END_VAR

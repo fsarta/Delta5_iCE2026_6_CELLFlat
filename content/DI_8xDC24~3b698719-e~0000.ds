@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DevInstDoc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Projekte/PC_Worx_Next/XML/Schemas/DevInst.xsd" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <DevInst uuid="3b698719-e2f9-4510-8fa4-05bd3c838361">
+    <TInfo uri="adeprojectref:///e639c0f9-db09-46f4-abf7-50216a13f220/cda306f5-f682-4871-b688-a10accb5b712/4ccb2f97-aec4-5e02-bcc0-d3c79a51f4d2" />
+    <InstVal xPath="/InstanceObjList/Obj[@uID='base00' type='Generic:Function']" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="/InstanceObjList/Obj[@uID='base01' type='Generic:Location']" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="/InstanceObjList/Obj[@uID='base02' type='AmlApcStationName']" Type="Ade.Fdcml.Core.String">[UTF-8;]</InstVal>
+    <InstVal xPath="Generic:Uri" Type="System.String">adeprojectref:///e639c0f9-db09-46f4-abf7-50216a13f220/606e2993-1c57-411c-b0d2-c57a13c52bbf/d9110a7a-ce19-49a8-b32b-532e71657de0</InstVal>
+    <InstVal xPath="Generic:FormattedTypeNameWithoutVersion" Type="System.String">DI 8xDC24V (021-1BF00)</InstVal>
+    <InstVal xPath="Generic:FormattedTypeName" Type="System.String">DI 8xDC24V (021-1BF00) Rev. &gt;= 00/1.00</InstVal>
+    <InstVal xPath="linkedVarID" Type="System.String">f42704f7-81bd-4bdc-945c-ba7b2ab8c797</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7']/InstanceObjList/Obj[@uID='sliceBusd00' type='SliceBus:ConsecutiveNumber']" Type="Ade.Fdcml.Core.Signed32">0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7']/InstanceObjList/Obj[@uID='sliceBusd01' type='SlotNumber']" Type="Ade.Fdcml.Core.Unsigned16">1</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7']/InstanceObjList/Obj[@uID='sliceBusd02' type='Name']" Type="Ade.Fdcml.Core.StringAscii">Name</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7']/L7ObjList/Obj[@uID='obj6' type='SliceBus:GenerateGlobalVar']" Type="Ade.Fdcml.Core.Boolean">True</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7']/L7ObjList/Obj[@uID='obj7' type='SliceBus:LinkedGlobalVarName']" Type="Ade.Fdcml.Core.String">[utf-8;53425F646931]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7']/L7ObjList/Obj[@uID='obj8' type='SliceBus:PortMappingSelectedVariable']" Type="Ade.Fdcml.Core.String">[UTF-8;66343237303466372D383162642D346264632D393435632D626137623261623863373937]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7']/PDList/PD[@uid=ioDefaultIn]" Type="System.String">~IN</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7']/PDList/PD[@uid=io1]" Type="System.String">Channel 0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7']/PDList/PD[@uid=io2]" Type="System.String">Channel 1</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7']/PDList/PD[@uid=io3]" Type="System.String">Channel 2</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7']/PDList/PD[@uid=io4]" Type="System.String">Channel 3</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7']/PDList/PD[@uid=io5]" Type="System.String">Channel 4</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7']/PDList/PD[@uid=io6]" Type="System.String">Channel 5</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7']/PDList/PD[@uid=io7]" Type="System.String">Channel 6</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7']/PDList/PD[@uid=io8]" Type="System.String">Channel 7</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7']/Generic:FormattedTypeNameWithoutVersion" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7']/Generic:FormattedTypeName" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7']/NodeId" Type="Ade.Fdcml.Core.Unsigned32">1</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7']/LinkedVarHasDefaultName" Type="System.String">True</InstVal>
+  </DevInst>
+</DevInstDoc>

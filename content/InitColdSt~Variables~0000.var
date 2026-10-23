@@ -1,0 +1,9 @@
+{ CustomGroupDefinition('a04e0da4-75a3-431c-a769-2ffcda83b779', '') }
+
+VAR_EXTERNAL
+    HMI_Data : ST_HMI_Interface { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('4dc22e58-37d3-4435-8508-03d4f632b529')};
+END_VAR
+
+VAR
+    zeroVector : VECTOR := [32(LREAL#0.0)] { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('027aa935-8d43-4054-830a-405b2f1163b9')};
+END_VAR

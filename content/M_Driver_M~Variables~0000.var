@@ -1,0 +1,20 @@
+{ CustomGroupDefinition('8667fe8c-52ea-4cdb-9ef9-7ef0c1bebdf1', '') }
+
+VAR_INPUT
+    fX : LREAL { CustomGroupReference('8667fe8c-52ea-4cdb-9ef9-7ef0c1bebdf1') } {Id('3cd67b9d-e581-4a8c-bc67-2dac930df77a')};
+    fY : LREAL { CustomGroupReference('8667fe8c-52ea-4cdb-9ef9-7ef0c1bebdf1') } {Id('df81d953-62d2-4be7-9d22-1a48b39240e2')};
+    fZ : LREAL { CustomGroupReference('8667fe8c-52ea-4cdb-9ef9-7ef0c1bebdf1') } {Id('331072f7-9f27-4296-a3c9-0e27a8790991')};
+    fRx : LREAL { CustomGroupReference('8667fe8c-52ea-4cdb-9ef9-7ef0c1bebdf1') } {Id('5a0d3fae-914e-4329-a72e-65c31c42450b')};
+    fRy : LREAL { CustomGroupReference('8667fe8c-52ea-4cdb-9ef9-7ef0c1bebdf1') } {Id('f9c47726-6048-446f-a965-331b1733e707')};
+    fRz : LREAL { CustomGroupReference('8667fe8c-52ea-4cdb-9ef9-7ef0c1bebdf1') } {Id('92a4e38c-8921-4134-af6f-78f3c57ce678')};
+    fVel : LREAL { CustomGroupReference('8667fe8c-52ea-4cdb-9ef9-7ef0c1bebdf1') } {Id('416156d6-2c22-4399-99b3-c7c712250671')};
+    fAcc : LREAL { CustomGroupReference('8667fe8c-52ea-4cdb-9ef9-7ef0c1bebdf1') } {Id('d42db0d6-ead0-4a9b-b462-65f8c4b2a78b')};
+    fDec : LREAL { CustomGroupReference('8667fe8c-52ea-4cdb-9ef9-7ef0c1bebdf1') } {Id('489dea43-95e2-4637-8edc-41d6c2d40eae')};
+    eCoordSys : MC_CoordinateSystem { CustomGroupReference('8667fe8c-52ea-4cdb-9ef9-7ef0c1bebdf1') } {Id('e505b995-1b6f-4ad0-995c-409820e6aef0')};
+    eBufferMode : MC_BufferMode { CustomGroupReference('8667fe8c-52ea-4cdb-9ef9-7ef0c1bebdf1') } {Id('99b32a90-99cc-4747-bacf-b804c67b7c5b')};
+    eTransMode : MC_TransitionMode { CustomGroupReference('8667fe8c-52ea-4cdb-9ef9-7ef0c1bebdf1') } {Id('4723ccf5-b552-465c-8a03-fae588d0f692')};
+    param : INT { CustomGroupReference('8667fe8c-52ea-4cdb-9ef9-7ef0c1bebdf1') } {Id('70671ab5-b644-43f9-bf10-16f4b0da2a83')};
+    aTransParam : LREAL { CustomGroupReference('8667fe8c-52ea-4cdb-9ef9-7ef0c1bebdf1') } {Id('fd291a5c-d887-46be-8fe8-bfe85b8ddc28')};
+    stMoveOption : Yt_GroupMoveOptions { CustomGroupReference('8667fe8c-52ea-4cdb-9ef9-7ef0c1bebdf1') } {Id('7b0a6e79-274e-4fe9-bfef-f15622c659a9')};
+    bExecute : BOOL { CustomGroupReference('8667fe8c-52ea-4cdb-9ef9-7ef0c1bebdf1') } {Id('0748cd63-7fbb-4d84-b088-7a9d8afa15dd')};
+END_VAR

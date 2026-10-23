@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, user-scalable=yes">
+    <title>FB_ErrorHandler User Guide</title>
+    <link href="Styles.css" type="text/css" media="screen" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Basic inline styles for better readability without external CSS, assumed Styles.css will enhance this */
+        body {
+            font-family: 'IBM Plex Sans', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 20px;
+            background-color: #f4f7f6;
+        }
+        #main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        h1, h2, h3 {
+            color: #0056b3;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        h1 { font-size: 2.2em; }
+        h2 { font-size: 1.8em; }
+        h3 { font-size: 1.4em; }
+        pre {
+            background-color: #e9ecef;
+            border: 1px solid #ced4da;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'IBM Plex Mono', monospace; /* Preferred for code */
+            font-size: 0.9em;
+        }
+        .highlight {
+            background-color: #fff3cd; /* Light yellow for highlights */
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .tip, .important {
+            background-color: #d1ecf1; /* Light blue for tips */
+            border-left: 5px solid #007bff;
+            padding: 10px 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .important {
+            background-color: #f8d7da; /* Light red for important notes */
+            border-left: 5px solid #dc3545;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            padding-left: 0;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .section-header {
+            font-size: 1.5em;
+            margin-top: 40px;
+            color: #0056b3;
+        }
+        .method-signature {
+            font-family: monospace;
+            font-size: 1.1em;
+            color: #007bff;
+        }
+        .parameter-table {
+            margin-top: 10px;
+        }
+        .parameter-table td:first-child {
+            font-weight: bold;
+            width: 120px; /* Adjust as needed */
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h1>FB_ErrorHandler User Guide</h1>
+
+        <p>This guide provides detailed instructions on how to implement and use the **`FB_ErrorHandler` Function Block** in your PLC project. It offers a robust and standardized solution for comprehensive error monitoring and seamless HMI integration.</p>
+
+        ---
+
+        <h2 class="section-header">1. Overview</h2>
+        <p>The `FB_ErrorHandler` is designed to centralize alarm and error management within a PLC system. It simplifies the process of handling machine states and operator feedback.</p>
+        <p><strong>Key features include:</strong></p>
+        <ul>
+            <li>**Circular Buffer Logging:** Stores a configurable number of errors, maintaining a historical record.</li>
+            <li>**Active/Resolved Status:** Clearly distinguishes between currently active (ongoing) errors and those that have been resolved.</li>
+            <li>**Operator Acknowledgment (ACK):** Supports HMI commands for operators to acknowledge alarms.</li>
+            <li>**Standardized Interface:** Provides a clear and consistent way for other Function Blocks to report errors.</li>
+            <li>**Overall Status:** Offers a summary of the system's error state for quick HMI dashboards.</li>
+        </ul>
+
+        ---
+
+        <h2 class="section-header">2. Prerequisites</h2>
+        <p>Before integrating `FB_ErrorHandler`, ensure your PLC project includes the following custom data types (DUTs) and Global Variables (GVLs).</p>
+
+        <h3>2.1. Custom Data Types (DUTs)</h3>
+        <p>Define these in your PLC project's DUT section:</p>
+
+        <h4>`ST_ErrorSeverity` (Enumeration)</h4>
+        <p>Defines the severity levels for different errors.</p>
+        <pre>
+TYPE ST_ErrorSeverity :
+(
+    eSeverity_None      := 0,  (* No severity / Error cleared *)
+    eSeverity_Information := 1, (* Informational only *)
+    eSeverity_Warning   := 2,  (* Warning, does not stop operation *)
+    eSeverity_Minor     := 3,  (* Minor error, requires attention *)
+    eSeverity_Major     := 4,  (* Major error, may stop functionality *)
+    eSeverity_Critical  := 5   (* Critical error, immediate process shutdown *)
+);
+END_TYPE
+</pre>
+
+        <h4>`ST_ErrorEntry` (Structure)</h4>
+        <p>This structure defines a single entry in the error buffer, holding all relevant information about an error event.</p>
+        <pre>
+TYPE ST_ErrorEntry :
+STRUCT
+    ErrorCode      : UDINT;           (* Numeric error code (from lookup table) *)
+    ErrorSource    : STRING(80);      (* Origin of the error (e.g., 'FB_MotorControl.Motor1') *)
+    ErrorMessage   : STRING(255);     (* Descriptive error message *)
+    Severity       : ST_ErrorSeverity; (* Severity level *)
+    IsActive       : BOOL;            (* TRUE if the error is currently present *)
+    Acknowledged   : BOOL;            (* TRUE if the error has been acknowledged by the operator *)
+    Timestamp      : LTIME;           (* Timestamp of the error occurrence *)
+END_STRUCT
+END_TYPE
+</pre>
+
+        <h4>`ST_OverallErrorStatus` (Structure)</h4>
+        <p>Provides a summary of the system's current error state.</p>
+        <pre>
+TYPE ST_OverallErrorStatus :
+STRUCT
+    udiTotalErrorCount   : UDINT; (* Total number of errors logged in the buffer (active or historical) *)
+    udiActiveErrorCount  : UDINT; (* Number of errors currently active (IsActive = TRUE) *)
+    bCriticalErrorActive : BOOL;  (* TRUE if at least one critical error is active *)
+    bMajorErrorActive    : BOOL;  (* TRUE if at least one major error is active *)
+    bAnyErrorActive      : BOOL;  (* TRUE if any error is currently active *)
+    bAnyUnacknowledged   : BOOL;  (* TRUE if at least one active error is NOT acknowledged *)
+END_STRUCT
+END_TYPE
+</pre>
+
+        <h4>`ST_ErrorLookup` (Structure for Lookup Table)</h4>
+        <p>Used to define entries for the global error message lookup table.</p>
+        <pre>
+TYPE ST_ErrorLookup :
+STRUCT
+    ErrorCode : UDINT;
+    Message   : STRING(255);
+END_STRUCT
+END_TYPE
+</pre>
+
+        <h3>2.2. Global Variables (GVLs)</h3>
+        <p>Create a Global Variables List (GVL) in your project to declare these variables. They are essential for inter-program communication and HMI access.</p>
+
+        <h4>Constants</h4>
+        <pre>
+VAR_GLOBAL CONSTANT
+    C_ERROR_BUFFER_SIZE      : UDINT := 50;  (* Size of the circular error buffer *)
+    C_MAX_ERROR_LOOKUP_ENTRIES : UDINT := 100; (* Max entries in the error message lookup table *)
+END_VAR_GLOBAL
+</pre>
+        <div class="tip">
+            <strong>Tip:</strong> Adjust `C_ERROR_BUFFER_SIZE` based on your application's needs for historical error logging. A larger size retains more history but consumes more memory.
+        </div>
+
+        <h4>Global Variables</h4>
+        <pre>
+VAR_GLOBAL
+    GA_ErrorBuffer      : ARRAY[1..C_ERROR_BUFFER_SIZE] OF ST_ErrorEntry;    (* Circular error buffer *)
+    GA_ErrorLookupTable : ARRAY[1..C_MAX_ERROR_LOOKUP_ENTRIES] OF ST_ErrorLookup; (* Error message lookup table *)
+
+    G_udiErrorHead      : UDINT := 1;    (* Internal pointer to the next free buffer position *)
+    G_udiErrorTail      : UDINT := 1;    (* Internal pointer to the oldest error in the buffer *)
+    G_bBufferFull       : BOOL := FALSE; (* Internal flag: TRUE if the buffer is full *)
+
+    G_bResetAllErrors   : BOOL := FALSE; (* Global command to reset/clear all errors *)
+    G_bAcknowledgeAllErrors : BOOL := FALSE; (* Global command to acknowledge all active errors *)
+
+    G_stOverallErrorStatus : ST_OverallErrorStatus; (* Summary status of all errors *)
+
+    (* Example variable for HMI communication, if needed *)
+    G_bHMI_ErrorScreenActive : BOOL := FALSE; (* Example: Indicates to HMI that error screen should be active *)
+END_VAR_GLOBAL
+</pre>
+        <div class="important">
+            <strong>Important:</strong> Do not directly manipulate `G_udiErrorHead`, `G_udiErrorTail`, or `G_bBufferFull`. These are managed internally by `FB_ErrorHandler`.
+        </div>
+
+        ---
+
+        <h2 class="section-header">3. Integrating `FB_ErrorHandler`</h2>
+        <p>The `FB_ErrorHandler` should be instantiated and called only once in your PLC program, ideally in the `MAIN` POU.</p>
+
+        <h3>3.1. `FB_ErrorHandler` Code</h3>
+        <p>Place this Function Block code in your PLC project.</p>
+        <pre>
+FUNCTION_BLOCK FB_ErrorHandler
+VAR
+    xResetErrorsR_TRIG      : R_TRIG;
+    xAcknowledgeErrorsR_TRIG: R_TRIG;
+    i                       : UDINT;
+END_VAR
+
+(* Method: F_GetErrorMessage *)
+(* Returns the error message corresponding to the ErrorCode. *)
+METHOD PUBLIC F_GetErrorMessage : STRING(255)
+VAR_INPUT
+    udiErrorID : UDINT;
+END_VAR
+VAR
+    i : UDINT;
+END_VAR
+    F_GetErrorMessage := 'Unknown Error ID. Please refer to documentation.';
+    FOR i := 1 TO C_MAX_ERROR_LOOKUP_ENTRIES DO
+        IF GA_ErrorLookupTable[i].ErrorCode = udiErrorID THEN
+            F_GetErrorMessage := GA_ErrorLookupTable[i].Message;
+            EXIT;
+        END_IF;
+    END_FOR;
+END_METHOD
+
+(* Method: AddUpdateError *)
+(* Manages adding new errors and deactivating existing ones based on bErrorDetected. *)
+METHOD AddUpdateError : BOOL
+VAR_INPUT
+    bErrorDetected       : BOOL;         (* Current state (TRUE/FALSE) of the error condition *)
+    udiErrorID_In        : UDINT;        (* Error code (from lookup table or custom) *)
+    sErrorSource_In      : STRING(80);   (* Origin of the error (e.g., 'FB_MotorControl.Axis1') *)
+    sCustomErrorMessage_In : STRING(255);  (* Custom message (optional, overrides lookup) *)
+    eSeverity_In         : ST_ErrorSeverity; (* Error severity *)
+END_VAR
+VAR
+    bActionPerformed     : BOOL := FALSE;
+    sFinalErrorMessage   : STRING(255);
+    i                    : UDINT;
+    udiActiveMatchIndex  : UDINT := 0; (* Index of the currently ACTIVE error entry (if any) *)
+END_VAR
+
+    (* 1. Determine the final error message (only if bErrorDetected is TRUE for a new addition) *)
+    IF bErrorDetected THEN
+        IF LEN(sCustomErrorMessage_In) > 0 THEN
+            sFinalErrorMessage := sCustomErrorMessage_In;
+        ELSE
+            sFinalErrorMessage := THIS^.F_GetErrorMessage(udiErrorID_In);
+        END_IF;
+    END_IF;
+
+    (* 2. Search for the error in the buffer: We need to know if there's an ACTIVE version *)
+    FOR i := 1 TO C_ERROR_BUFFER_SIZE DO
+        IF GA_ErrorBuffer[i].ErrorCode = udiErrorID_In AND
+           GA_ErrorBuffer[i].ErrorSource = sErrorSource_In THEN
+            IF GA_ErrorBuffer[i].IsActive THEN
+                udiActiveMatchIndex := i; (* Found an active entry *)
+                BREAK; (* If an active entry is found, exit the loop. There should be at most one active entry per ID+Source. *)
+            END_IF;
+        END_IF;
+    END FOR;
+
+    (* 3. Logic based on the state of bErrorDetected *)
+    IF bErrorDetected THEN (* Error condition is currently TRUE *)
+        IF udiActiveMatchIndex = 0 THEN
+            (* Case 1: The error is NOT currently active in the buffer. *)
+            (* This means it's a NEW error (or a False->True transition). *)
+            (* Always add a new entry to the circular buffer. *)
+            GA_ErrorBuffer[G_udiErrorHead].ErrorCode := udiErrorID_In;
+            GA_ErrorBuffer[G_udiErrorHead].ErrorSource := sErrorSource_In;
+            GA_ErrorBuffer[G_udiErrorHead].ErrorMessage := sFinalErrorMessage;
+            GA_ErrorBuffer[G_udiErrorHead].Severity := eSeverity_In;
+            GA_ErrorBuffer[G_udiErrorHead].IsActive := TRUE;
+            GA_ErrorBuffer[G_udiErrorHead].Timestamp := SYSTIME();
+            GA_ErrorBuffer[G_udiErrorHead].Acknowledged := FALSE;
+
+            G_udiErrorHead := G_udiErrorHead + 1;
+            IF G_udiErrorHead > C_ERROR_BUFFER_SIZE THEN
+                G_udiErrorHead := 1;
+            END_IF;
+
+            IF G_udiErrorHead = G_udiErrorTail THEN
+                G_bBufferFull := TRUE;
+                G_udiErrorTail := G_udiErrorTail + 1; (* Overwrite the oldest element *)
+                IF G_udiErrorTail > C_ERROR_BUFFER_SIZE THEN
+                    G_udiErrorTail := 1;
+                END_IF;
+            END IF;
+            bActionPerformed := TRUE;
+        ELSE
+            (* Case 2: The error is ALREADY ACTIVE in the buffer (udiActiveMatchIndex <> 0). *)
+            (* The condition is TRUE, and the error is already logged as active. *)
+            (* Do not add a new error. If it was ACKed and persists/reappears, reset ACK and update timestamp. *)
+            IF GA_ErrorBuffer[udiActiveMatchIndex].Acknowledged THEN
+                GA_ErrorBuffer[udiActiveMatchIndex].Acknowledged := FALSE; (* Remove ACK *)
+                GA_ErrorBuffer[udiActiveMatchIndex].Timestamp := SYSTIME(); (* Update timestamp *)
+            END_IF;
+            GA_ErrorBuffer[udiActiveMatchIndex].Severity := eSeverity_In; (* Update severity in case it changed *)
+            bActionPerformed := TRUE; (* Error was "handled" by remaining active *)
+        END_IF;
+    ELSE (* bErrorDetected is FALSE. The error condition is no longer TRUE. *)
+        IF udiActiveMatchIndex <> 0 THEN
+            (* Case 3: The error was ACTIVE (udiActiveMatchIndex <> 0) and now the condition is FALSE. *)
+            (* Deactivate this specific active instance in the buffer. *)
+            GA_ErrorBuffer[udiActiveMatchIndex].IsActive := FALSE;
+            GA_ErrorBuffer[udiActiveMatchIndex].Acknowledged := FALSE; (* Reset ACK for next occurrence *)
+            (* DO NOT ZERO OUT OTHER FIELDS! They must remain for historical record. *)
+            bActionPerformed := TRUE;
+        ELSE
+            (* Case 4: The error is not active in the buffer AND the condition is FALSE. *)
+            (* Nothing to do. The error was not present or was already deactivated. *)
+            bActionPerformed := FALSE;
+        END IF;
+    END_IF;
+
+    AddUpdateError := bActionPerformed;
+END_METHOD
+
+(* Main Body of the Function Block *)
+(* This is executed every PLC cycle for the global instance. *)
+(* It handles global Reset/Acknowledge commands and updates the summary status. *)
+PROGRAM F_FB_ErrorHandler_MainCycle (* This PROGRAM_NAME is just a placeholder to indicate where the body code should be*)
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+END_VAR
+    (* Detect rising edge for reset command *)
+    xResetErrorsR_TRIG(CLK := G_bResetAllErrors);
+    IF xResetErrorsR_TRIG.Q THEN
+        FOR i := 1 TO C_ERROR_BUFFER_SIZE DO
+            GA_ErrorBuffer[i].IsActive := FALSE;
+            GA_ErrorBuffer[i].Acknowledged := FALSE;
+            GA_ErrorBuffer[i].ErrorCode := 0;
+            GA_ErrorBuffer[i].ErrorSource := '';
+            GA_ErrorBuffer[i].ErrorMessage := '';
+            GA_ErrorBuffer[i].Severity := eSeverity_None;
+            GA_ErrorBuffer[i].Timestamp := LTIME#0s;
+        END_FOR;
+        G_udiErrorHead := 1;
+        G_udiErrorTail := 1;
+        G_bBufferFull := FALSE;
+        G_bResetAllErrors := FALSE; (* Reset the global command *)
+    END_IF;
+
+    (* Detect rising edge for acknowledge command *)
+    xAcknowledgeErrorsR_TRIG(CLK := G_bAcknowledgeAllErrors);
+    IF xAcknowledgeErrorsR_TRIG.Q THEN
+        FOR i := 1 TO C_ERROR_BUFFER_SIZE DO
+            IF GA_ErrorBuffer[i].IsActive THEN
+                GA_ErrorBuffer[i].Acknowledged := TRUE; (* Only active errors can be acknowledged *)
+            END_IF;
+        END FOR;
+        G_bAcknowledgeAllErrors := FALSE; (* Reset the global command *)
+    END_IF;
+
+    (* Update the overall error status *)
+    G_stOverallErrorStatus.udiTotalErrorCount := 0;
+    G_stOverallErrorStatus.udiActiveErrorCount := 0;
+    G_stOverallErrorStatus.bCriticalErrorActive := FALSE;
+    G_stOverallErrorStatus.bMajorErrorActive := FALSE;
+    G_stOverallErrorStatus.bAnyErrorActive := FALSE;
+    G_stOverallErrorStatus.bAnyUnacknowledged := FALSE;
+
+    FOR i := 1 TO C_ERROR_BUFFER_SIZE DO
+        (* Calculate the total number of errors (active or inactive but not cleared) *)
+        IF GA_ErrorBuffer[i].ErrorCode <> 0 THEN
+            G_stOverallErrorStatus.udiTotalErrorCount := G_stOverallErrorStatus.udiTotalErrorCount + 1;
+        END IF;
+
+        (* Calculate active errors and their properties *)
+        IF GA_ErrorBuffer[i].IsActive THEN
+            G_stOverallErrorStatus.udiActiveErrorCount := G_stOverallErrorStatus.udiActiveErrorCount + 1;
+            G_stOverallErrorStatus.bAnyErrorActive := TRUE;
+
+            IF GA_ErrorBuffer[i].Severity = eSeverity_Critical THEN
+                G_stOverallErrorStatus.bCriticalErrorActive := TRUE;
+            END_IF;
+            IF GA_ErrorBuffer[i].Severity = eSeverity_Major THEN
+                G_stOverallErrorStatus.bMajorErrorActive := TRUE;
+            END_IF;
+
+            IF NOT GA_ErrorBuffer[i].Acknowledged THEN
+                G_stOverallErrorStatus.bAnyUnacknowledged := TRUE;
+            END_IF;
+        END IF;
+    END FOR;
+
+END_FUNCTION_BLOCK
+</pre>
+
+        <h3>3.2. Integration in Your Main Program (MAIN POU)</h3>
+        <p>You must declare and call the `FB_ErrorHandler` instance **once** in your main PLC program (e.g., `MAIN`). This instance handles global commands and updates the overall status.</p>
+        <pre>
+PROGRAM MAIN
+VAR
+    fbSystemErrorHandler : FB_ErrorHandler; (* Declaration of the global instance *)
+END_VAR
+
+(* Call the Function Block in the MAIN POU *)
+(* This handles global Reset/Acknowledge commands and updates G_stOverallErrorStatus. *)
+fbSystemErrorHandler();
+
+(* ... Call your other control POUs here ... *)
+(* Example: *)
+(* fbMyMachineControl(); *)
+(* fbValveControl(); *)
+</pre>
+
+        <h3>3.3. Reporting Errors from Other Function Blocks/Programs</h3>
+        <p>Whenever you need to report an error condition (or its resolution) from another Function Block or Program, use the `AddUpdateError` method of the **global** `FB_ErrorHandler` instance.</p>
+        <pre>
+FUNCTION_BLOCK FB_MyMotorControl (* Example FB detecting an error *)
+VAR_INPUT
+    bMotorOverloadInput : BOOL; (* Raw input indicating motor overload condition *)
+    (* ... other inputs/outputs ... *)
+END_VAR
+VAR
+    (* It is crucial to refer to the GLOBAL instance of FB_ErrorHandler (e.g., fbSystemErrorHandler in MAIN). *)
+    (* If not passed as VAR_IN_OUT, use a REFERENCE TO: *)
+    f_errorHandler_ref : REFERENCE TO FB_ErrorHandler;
+END_VAR
+
+PROGRAM_INIT
+    (* Initialize the reference to the global Error Handler instance *)
+    f_errorHandler_ref REF= fbSystemErrorHandler; (* Assuming 'fbSystemErrorHandler' is the global instance in MAIN *)
+END_PROGRAM_INIT
+
+(* Main logic of FB_MyMotorControl *)
+(* ... (your motor control logic) ... *)
+
+(* Report the motor overload error to the centralized handler *)
+(* Pass the RAW state of the error condition (bMotorOverloadInput). *)
+(* The AddUpdateError method automatically handles "rising edge" detection and deactivation. *)
+f_errorHandler_ref.AddUpdateError(
+    bErrorDetected       := bMotorOverloadInput,
+    udiErrorID_In        := 1001, (* Unique error code (must be defined in GA_ErrorLookupTable) *)
+    sErrorSource_In      := 'MotorControl.Axis1', (* Unique name for the error source *)
+    sCustomErrorMessage_In := '', (* Leave empty to use message from lookup table, or specify a custom message *)
+    eSeverity_In         := ST_ErrorSeverity#eSeverity_Major (* Severity of the error *)
+);
+
+(* ... Other specific error detections/reporting ... *)
+</pre>
+
+        ---
+
+        <h2 class="section-header">4. Populating the Error Message Lookup Table (`GA_ErrorLookupTable`)</h2>
+        <p>To ensure `F_GetErrorMessage` provides meaningful messages, you must populate the `GA_ErrorLookupTable` with your error codes and corresponding messages. Do this in a POU that runs **only once** at PLC startup (e.g., a `PROGRAM_INIT` or a dedicated initialization program).</p>
+        <pre>
+PROGRAM PRG_InitErrorMessages
+VAR
+END_VAR
+(* Initialize the error message lookup table *)
+GA_ErrorLookupTable[1].ErrorCode := 1001;
+GA_ErrorLookupTable[1].Message := 'Motor Axis 1 Overload detected. Check load or power supply.';
+
+GA_ErrorLookupTable[2].ErrorCode := 1002;
+GA_ErrorLookupTable[2].Message := 'Proximity sensor XYZ error. Check wiring or positioning.';
+
+GA_ErrorLookupTable[3].ErrorCode := 2001;
+GA_ErrorLookupTable[3].Message := 'Tank pressure low. Check pump or inlet valve.';
+
+(* ... Add all your error codes and messages here ... *)
+</pre>
+
+        ---
+
+        <h2 class="section-header">5. HMI (Human Machine Interface) Interfacing</h2>
+        <p>Your HMI can leverage the global variables to display error status and send commands:</p>
+        <ul>
+            <li>**`GA_ErrorBuffer`**: Display the full list of errors. The HMI should filter and display errors based on `IsActive` (for current errors) and `Acknowledged` (for acknowledgment status).
+                <ul>
+                    <li><strong>HMI Display Tip:</strong> Show errors with `IsActive = TRUE` in an "Active Alarms" list. Show errors with `IsActive = FALSE` in an "Alarm History" list.</li>
+                    <li><strong>Visual Cues:</strong> Use different colors for clarity:
+                        <ul>
+                            <li>Active & Unacknowledged: Flashing Red</li>
+                            <li>Active & Acknowledged: Solid Red or Orange</li>
+                            <li>Inactive (Historical): Grey or Green (if fully resolved)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>**`G_stOverallErrorStatus`**: Use fields from this structure for quick status indicators on your HMI dashboard (e.g., alarm lights, error counts).</li>
+            <li>**`G_bResetAllErrors` & `G_bAcknowledgeAllErrors`**: Link these booleans to HMI buttons. When the operator presses the button, the HMI sets the variable to `TRUE` for a single cycle (or until the FB resets it).</li>
+        </ul>
+
+        ---
+
+        <h2 class="section-header">6. Best Practices & Important Notes</h2>
+        <ul>
+            <li>**Unique Error Codes:** Ensure each `udiErrorID_In` is unique across your system.</li>
+            <li>**Unique Source Names:** Use descriptive and unique names for `sErrorSource_In` (e.g., `MotorControl.Axis1`, `Valve_Line3`, `SafetyRelay_Door`). This helps quickly pinpoint the error's origin.</li>
+            <li>**PLC Cycle Time Impact:** The buffer search and update operations take time. For very large `C_ERROR_BUFFER_SIZE` values, evaluate the impact on your PLC's cycle time. For most industrial applications, a buffer of 50-100 elements is typically manageable.</li>
+            <li>**Persistent Errors:** The system is designed for errors to remain active (`IsActive := TRUE`) as long as `bErrorDetected` remains `TRUE`. Acknowledging an error does not "hide" an active error but simply indicates the operator has seen it.</li>
+            <li>**Safety Disclaimer:** This system is for operational and diagnostic alarms. It **should not be used as the sole component for safety functions.** Safety-critical functions must be implemented with certified hardware and appropriate safety logic.</li>
+        </ul>
+
+        <p style="margin-top: 40px; text-align: center; font-size: 0.9em; color: #666;">
+            For further support, please refer to the comprehensive documentation provided with this Function Block.
+        </p>
+
+    </div>
+</body>
+</html>

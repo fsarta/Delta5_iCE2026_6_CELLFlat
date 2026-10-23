@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Metadata>
+   <FolderType>PouFolder</FolderType>
+   <ContentType>Program</ContentType>
+   <Kind>Program</Kind>
+   <Usings></Usings>
+   <Id>c004b914-70ff-4fd2-a406-675a869c83a4</Id>
+   <ItemGroup>
+      <VariableWorksheet>
+         <Id>f262700c-61d5-41d3-ad7f-c808010f1c3a</Id>
+      </VariableWorksheet>
+      <CodeWorksheet Include="Code1.st">
+         <Id>6e290e21-8906-4011-aea5-de4c611b9fd1</Id>
+         <Extension>.st</Extension>
+         <Type>.st</Type>
+         <ParentIndex>0</ParentIndex>
+      </CodeWorksheet>
+      <CodeWorksheet Include="MOTION.st">
+         <Id>e737755f-1e91-4885-895d-0967c214a454</Id>
+         <Extension>.st</Extension>
+         <Type>.st</Type>
+         <ParentIndex>1</ParentIndex>
+      </CodeWorksheet>
+   </ItemGroup>
+</Metadata>

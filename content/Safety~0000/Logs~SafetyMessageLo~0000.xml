@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SafetyMessageLog xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="Ade.Safety.Utilities.MessageLog/v1">
+  <HashAlgorithmName>SHA256</HashAlgorithmName>
+  <Signature>EYlxChrUUYCWC1FxsZPojsZkdfVN9i9tDrwHGdOKwEc=</Signature>
+  <Entries>
+    <LogEntry>
+      <SeqNo>0</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2025-06-27T12:21:39.1250727+02:00</TimeStamp>
+        <UserName>TestAgent</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>SCSA1000</MessageId>
+        <CompleteMessage>Password has been created</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>1</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2025-06-27T12:21:39.4291269+02:00</TimeStamp>
+        <UserName>TestAgent</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>SCSM1002</MessageId>
+        <CompleteMessage>The POU S_Main was inserted into the folder Logical Elements.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>2</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2025-06-27T12:21:39.4770283+02:00</TimeStamp>
+        <UserName>TestAgent</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>SCDP1003</MessageId>
+        <CompleteMessage>The device 'ic9226m-fsoe-1' has been inserted.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>3</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-07-15T11:22:41.9540634+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>PARA1008</MessageId>
+        <CompleteMessage>The device '{LongDeviceName}' has been inserted because of a replace of a parent device.
+The device parameters are initialized with default values!</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>4</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-07-15T11:22:41.9710610+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>PARA1009</MessageId>
+        <CompleteMessage>The device 'ic9226m-fsoe' has been removed because of a replace of a parent device.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>5</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-09-24T13:55:18.8521359+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>PARA1004</MessageId>
+        <CompleteMessage>The device 'ic9226m-fsoe / sdi-1' has been inserted.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>6</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-09-24T13:55:28.0884831+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>PARA1004</MessageId>
+        <CompleteMessage>The device 'ic9226m-fsoe / sdi-2' has been inserted.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>7</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-09-24T13:55:39.5532407+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>PARA1004</MessageId>
+        <CompleteMessage>The device 'ic9226m-fsoe / sdo-1' has been inserted.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>8</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-09-24T13:55:45.1256188+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>PARA1004</MessageId>
+        <CompleteMessage>The device 'ic9226m-fsoe / sdo-2' has been inserted.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>9</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-09-24T14:10:04.1466787+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>SCDP1000</MessageId>
+        <CompleteMessage>The value of parameter 'FSoE Parameter Set: Diagnostic Interrupt' of device 'ic9226m-fsoe / sdi-1' has been changed to 'deactivated'.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>10</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-09-24T14:10:10.1156095+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>SCDP1000</MessageId>
+        <CompleteMessage>The value of parameter 'FSoE Parameter Set: Behaviour after Channel Errors' of device 'ic9226m-fsoe / sdi-1' has been changed to 'Passivate the affected channel'.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>11</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-09-24T14:10:49.7283990+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>SCDP1000</MessageId>
+        <CompleteMessage>The value of parameter 'FSoE Parameter Set: Ch0,1: Discrepancy timeout [ms]' of device 'ic9226m-fsoe / sdi-1' has been changed to '100'.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>12</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-09-24T14:10:55.2588505+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>SCDP1000</MessageId>
+        <CompleteMessage>The value of parameter 'FSoE Parameter Set: Ch2,3: Discrepancy timeout [ms]' of device 'ic9226m-fsoe / sdi-1' has been changed to '100'.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>13</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-09-24T14:11:34.6222248+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>SCDP1000</MessageId>
+        <CompleteMessage>The value of parameter 'FSoE Parameter Set: Ch0,1: Test pulse activation' of device 'ic9226m-fsoe / sdi-2' has been changed to 'deactivated'.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>14</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-09-24T14:11:36.9081512+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>SCDP1000</MessageId>
+        <CompleteMessage>The value of parameter 'FSoE Parameter Set: Ch2,3: Test pulse activation' of device 'ic9226m-fsoe / sdi-2' has been changed to 'deactivated'.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>15</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-09-24T14:11:50.7777459+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>SCDP1000</MessageId>
+        <CompleteMessage>The value of parameter 'FSoE Parameter Set: Diagnostic Interrupt' of device 'ic9226m-fsoe / sdi-2' has been changed to 'deactivated'.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>16</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-09-24T14:11:53.0821570+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>SCDP1000</MessageId>
+        <CompleteMessage>The value of parameter 'FSoE Parameter Set: Behaviour after Channel Errors' of device 'ic9226m-fsoe / sdi-2' has been changed to 'Passivate the affected channel'.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>17</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-09-24T14:11:56.8077760+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>SCDP1000</MessageId>
+        <CompleteMessage>The value of parameter 'FSoE Parameter Set: Ch0,1: Discrepancy timeout [ms]' of device 'ic9226m-fsoe / sdi-2' has been changed to '100'.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>18</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-09-24T14:11:58.1178360+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>SCDP1000</MessageId>
+        <CompleteMessage>The value of parameter 'FSoE Parameter Set: Ch2,3: Discrepancy timeout [ms]' of device 'ic9226m-fsoe / sdi-2' has been changed to '100'.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>19</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-09-24T14:12:36.8445086+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>SCDP1000</MessageId>
+        <CompleteMessage>The value of parameter 'FSoE Parameter Set: Ch0,1: Activation mode' of device 'ic9226m-fsoe / sdo-1' has been changed to '1 channel'.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>20</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-09-24T14:12:39.1303426+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>SCDP1000</MessageId>
+        <CompleteMessage>The value of parameter 'FSoE Parameter Set: Ch2,3: Activation mode' of device 'ic9226m-fsoe / sdo-1' has been changed to '1 channel'.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>21</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-09-24T14:12:48.8700976+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>SCDP1000</MessageId>
+        <CompleteMessage>The value of parameter 'FSoE Parameter Set: Diagnostic Interrupt' of device 'ic9226m-fsoe / sdo-1' has been changed to 'deactivated'.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>22</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-09-24T14:12:59.2878256+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>SCDP1000</MessageId>
+        <CompleteMessage>The value of parameter 'FSoE Parameter Set: Ch0,1: Activation mode' of device 'ic9226m-fsoe / sdo-2' has been changed to '1 channel'.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>23</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-09-24T14:13:01.0024196+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>SCDP1000</MessageId>
+        <CompleteMessage>The value of parameter 'FSoE Parameter Set: Ch2,3: Activation mode' of device 'ic9226m-fsoe / sdo-2' has been changed to '1 channel'.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>24</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-09-24T14:13:02.3497618+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>SCDP1000</MessageId>
+        <CompleteMessage>The value of parameter 'FSoE Parameter Set: Diagnostic Interrupt' of device 'ic9226m-fsoe / sdo-2' has been changed to 'deactivated'.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>25</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-09-24T15:33:02.0142409+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>SCSM1002</MessageId>
+        <CompleteMessage>The code worksheet Code1 was inserted into the POU S_Main.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>26</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-09-24T15:33:11.2171947+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>SCSM1001</MessageId>
+        <CompleteMessage>The code worksheet Code was deleted from POU S_Main.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>27</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-09-24T15:33:27.8632474+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>SCDP1000</MessageId>
+        <CompleteMessage>The value of parameter 'FSoE Parameter Set: Ch0: Test pulse length [us]' of device 'ic9226m-fsoe / sdo-1' has been changed to '3ms'.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>28</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-09-24T15:33:29.8112145+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>SCDP1000</MessageId>
+        <CompleteMessage>The value of parameter 'FSoE Parameter Set: Ch1: Test pulse length [us]' of device 'ic9226m-fsoe / sdo-1' has been changed to '3ms'.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>29</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-09-24T15:33:31.5127197+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>SCDP1000</MessageId>
+        <CompleteMessage>The value of parameter 'FSoE Parameter Set: Ch2: Test pulse length [us]' of device 'ic9226m-fsoe / sdo-1' has been changed to '3ms'.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>30</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-09-24T15:33:33.3950595+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>SCDP1000</MessageId>
+        <CompleteMessage>The value of parameter 'FSoE Parameter Set: Ch3: Test pulse length [us]' of device 'ic9226m-fsoe / sdo-1' has been changed to '3ms'.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>31</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-09-24T15:39:55.9793983+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>SCDP1000</MessageId>
+        <CompleteMessage>The value of parameter 'FSoE Parameter Set: Ch0: Test pulse length [us]' of device 'ic9226m-fsoe / sdo-1' has been changed to '10ms'.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>32</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-09-24T15:39:57.4177191+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>SCDP1000</MessageId>
+        <CompleteMessage>The value of parameter 'FSoE Parameter Set: Ch1: Test pulse length [us]' of device 'ic9226m-fsoe / sdo-1' has been changed to '10ms'.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>33</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-09-24T15:39:58.6925656+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>SCDP1000</MessageId>
+        <CompleteMessage>The value of parameter 'FSoE Parameter Set: Ch2: Test pulse length [us]' of device 'ic9226m-fsoe / sdo-1' has been changed to '10ms'.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>34</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-09-24T15:39:59.7349761+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>SCDP1000</MessageId>
+        <CompleteMessage>The value of parameter 'FSoE Parameter Set: Ch3: Test pulse length [us]' of device 'ic9226m-fsoe / sdo-1' has been changed to '10ms'.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>35</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-09-24T15:42:27.5792731+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>SCDP1000</MessageId>
+        <CompleteMessage>The value of parameter 'FSoE Parameter Set: Ch0: Test pulse length [us]' of device 'ic9226m-fsoe / sdo-1' has been changed to '4ms'.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>36</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-09-24T15:42:29.7801476+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>SCDP1000</MessageId>
+        <CompleteMessage>The value of parameter 'FSoE Parameter Set: Ch1: Test pulse length [us]' of device 'ic9226m-fsoe / sdo-1' has been changed to '4ms'.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>37</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-09-24T15:42:31.4976440+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>SCDP1000</MessageId>
+        <CompleteMessage>The value of parameter 'FSoE Parameter Set: Ch2: Test pulse length [us]' of device 'ic9226m-fsoe / sdo-1' has been changed to '4ms'.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>38</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-09-24T15:42:33.5309225+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>SCDP1000</MessageId>
+        <CompleteMessage>The value of parameter 'FSoE Parameter Set: Ch3: Test pulse length [us]' of device 'ic9226m-fsoe / sdo-1' has been changed to '4ms'.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>39</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-09-24T15:45:19.3796741+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>SCDP1000</MessageId>
+        <CompleteMessage>The value of parameter 'FSoE Parameter Set: Ch0: Test pulse length [us]' of device 'ic9226m-fsoe / sdo-2' has been changed to '4ms'.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>40</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-09-24T15:45:21.6824989+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>SCDP1000</MessageId>
+        <CompleteMessage>The value of parameter 'FSoE Parameter Set: Ch1: Test pulse length [us]' of device 'ic9226m-fsoe / sdo-2' has been changed to '4ms'.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>41</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-09-24T15:45:23.3372419+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>SCDP1000</MessageId>
+        <CompleteMessage>The value of parameter 'FSoE Parameter Set: Ch2: Test pulse length [us]' of device 'ic9226m-fsoe / sdo-2' has been changed to '4ms'.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>42</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-09-24T15:45:25.3697578+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>SCDP1000</MessageId>
+        <CompleteMessage>The value of parameter 'FSoE Parameter Set: Ch3: Test pulse length [us]' of device 'ic9226m-fsoe / sdo-2' has been changed to '4ms'.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>43</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Error</Type>
+        <TimeStamp>2026-10-09T12:43:01.4714721+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>SLPP3006</MessageId>
+        <CompleteMessage>The language profile 'Full Variability Language (FBD)' has been activated.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>44</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-10-09T14:17:33.5229922+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>SCDP1000</MessageId>
+        <CompleteMessage>The value of parameter 'FSoE Parameter Set: Ch0,1: Input signal-smoothing [ms]' of device 'ic9226m-fsoe / sdi-2' has been changed to '10'.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>45</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-10-09T14:17:40.1806734+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>SCDP1000</MessageId>
+        <CompleteMessage>The value of parameter 'FSoE Parameter Set: Ch2,3: Input signal-smoothing [ms]' of device 'ic9226m-fsoe / sdi-2' has been changed to '10'.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>46</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-10-09T15:22:33.7239383+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>SCDP1000</MessageId>
+        <CompleteMessage>The value of parameter 'FSoE Parameter Set: Ch0,1: Re-integration after discrepancy fault' of device 'ic9226m-fsoe / sdi-2' has been changed to 'Test 0-signal not required'.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>47</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-10-09T16:32:49.8919129+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>SCDP1000</MessageId>
+        <CompleteMessage>The value of parameter 'FSoE Parameter Set: Ch2,3: Re-integration after discrepancy fault' of device 'ic9226m-fsoe / sdi-2' has been changed to 'Test 0-signal not required'.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+    <LogEntry>
+      <SeqNo>48</SeqNo>
+      <Entry xmlns:d4p1="http://schemas.datacontract.org/2004/07/Sep.Persistence.Messaging">
+        <Type>Information</Type>
+        <TimeStamp>2026-10-15T16:30:06.5989085+02:00</TimeStamp>
+        <UserName>Sarta</UserName>
+        <DomainId>0B05D85D-74EB-4C04-BAE5-29B45D5D933F</DomainId>
+        <MessageId>SCDP1000</MessageId>
+        <CompleteMessage>The value of parameter 'FSoE Parameter Set: Ch2,3: Activation' of device 'ic9226m-fsoe / sdo-2' has been changed to 'deactivated'.</CompleteMessage>
+      </Entry>
+    </LogEntry>
+  </Entries>
+</SafetyMessageLog>

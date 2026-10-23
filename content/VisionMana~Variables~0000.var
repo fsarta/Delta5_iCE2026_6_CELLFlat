@@ -1,0 +1,160 @@
+{ CustomGroupDefinition('5309a526-e02c-431c-b360-bf76436831ac', 'GESTIONE BUFFER') }
+{ CustomGroupDefinition('a04e0da4-75a3-431c-a769-2ffcda83b779', '') }
+
+VAR_EXTERNAL
+    aBuffer_X : Yt_RealArray50 { CustomGroupReference('5309a526-e02c-431c-b360-bf76436831ac') } {Id('47a437a3-497d-4339-9c34-9d420c5463a7')};
+    aBuffer_Y : Yt_RealArray50 { CustomGroupReference('5309a526-e02c-431c-b360-bf76436831ac') } {Id('18955d7e-916a-4ea8-94c8-35630417a294')};
+    aBuffer_Rz : Yt_RealArray50 { CustomGroupReference('5309a526-e02c-431c-b360-bf76436831ac') } {Id('60d37bbb-f787-4092-b248-5fe3505884cf')};
+    aBuffer_Pos : Yt_RealArray50 { CustomGroupReference('5309a526-e02c-431c-b360-bf76436831ac') } {Id('c199f7fa-3839-49bb-b32e-623678055053')};
+    aBuffer_Valid : ARRAY[0..20] OF BOOL { CustomGroupReference('5309a526-e02c-431c-b360-bf76436831ac') } {Id('290ebf98-9709-40e0-a413-d560f200cb68')};
+END_VAR
+
+VAR
+    iWriteIndex : INT { CustomGroupReference('5309a526-e02c-431c-b360-bf76436831ac') } {Id('a64273ad-0a72-4504-9637-3a98ba76e1a2')};
+END_VAR
+
+VAR_EXTERNAL
+    iReadIndex : INT { CustomGroupReference('5309a526-e02c-431c-b360-bf76436831ac') } {Id('02316ccc-7b99-42c3-b094-0db1d2a02759')};
+END_VAR
+
+VAR
+    xBufferInit : BOOL { CustomGroupReference('5309a526-e02c-431c-b360-bf76436831ac') } {Id('9ea2169b-a6bc-4fa7-afe6-e1b168f293a2')};
+END_VAR
+
+VAR_EXTERNAL
+    ProductBufferLevel : INT { CustomGroupReference('5309a526-e02c-431c-b360-bf76436831ac') } {Id('332bb75e-cde4-4a61-9704-8ec11d621ba9')};
+END_VAR
+
+VAR
+    fbVisionApp : FB_VisionApplication { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('806342de-f604-4bbe-8011-a65ac01d5cda')};
+    xPartInPosition : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('698f6447-8b8a-49df-b336-c71ccb5392d9')};
+END_VAR
+
+VAR_EXTERNAL
+    xVision_Reset : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('7d569e41-9aa2-43c6-aa8a-ee095c8f026c')};
+    xVision_StartCycle : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('ac2ab98e-5cd2-452f-ab49-a99bd42c1a47')};
+END_VAR
+
+VAR
+    xEnableCyclicMode : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('758de7cc-ce6a-4327-8ffa-765cb39d45dd')}; (*Set TRUE for timed, FALSE for external*)
+    tMyCyclicTime : TIME := TIME#500MS { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('5e166ac3-3b42-47ef-af0e-f671a5c89176')}; (*Cyclic trigger*)
+    stMyVisionResults : DT_VISOR_Assem5_ResultData { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('af1d5225-ed49-4b8c-ae98-a5db1292fd60')};
+    xVisionCycleDone : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('e1d31f09-34c4-4909-b913-2e00498172ed')};
+END_VAR
+
+VAR_EXTERNAL
+    VisorEIP_Receive : Yt_ByteArray72 { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('09b45148-10d0-4044-ab33-06d20fe26e61')};
+    VisorEIP_Transmit : Yt_ByteArray3 { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('f3ae7a5f-a2f2-45e2-86a8-6eea463a3c1d')};
+    VisorSensoPart_1_ConnectionState : EIP_STATUS_REF { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('3940691b-234d-4801-bda9-456985422501')};
+    DATA_FeedInAxis : ST_AxisData { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('be231a4d-e181-4420-bd79-338ec2257c44')};
+    xEnableEncoderTrigger : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('e8310139-9a85-4a7c-ba56-0952b32acf9e')};
+    rTriggeredPosition : LREAL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('a64728ec-8b26-4c10-8254-a727ff7744c5')};
+    rTriggeredPos : LREAL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('2dd31d41-6e5f-4686-b54a-c45b5db1bc0d')};
+    FeedIn_Axis : AXIS_REF { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('ab62d5b9-810f-4afd-af9a-5fadaf5db74c')}; (* (!!! DO NOT MODIFY !!! - Variable is automatically linked to device)*)
+END_VAR
+
+VAR
+    iDebug_VisionCycles : INT { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('72786196-a7f3-4cd0-a349-d09f02c1e279')};
+    iDebug_LastPartCount : BYTE { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('52f8f1eb-858a-44d9-85d3-6a0c9baf8a41')};
+    iDebug_PartsBuffered : INT { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('89c17af9-945b-4aa4-a70e-fa7281228f00')};
+    iDebug_EmptyPhotos : INT { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('f8892d4b-0ef2-439e-b490-ebaad3522a70')};
+    iDebug_BufferValidCount : INT { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('a198e18b-40bd-4af9-8b49-1f44a0466e05')};
+    iDebug_StorePointer : INT { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('a476e928-3135-4ae7-be6b-032a984c83d9')};
+    iDebug_UsePointer : INT { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('f5c11029-4609-41ed-82e2-eb32aed85a31')};
+    iDebug_BufferLevel : INT { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('cc28269e-139f-4ec8-9d27-b03dd5ec93cb')};
+    xUpdateUsePointer : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('e19923a3-846b-44d5-aeff-a1aeee035d17')};
+    rtUpdateUsePointer : R_TRIG { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('36a07cc9-7fab-4e27-9749-f7f40f91403a')};
+END_VAR
+
+VAR_EXTERNAL
+    xRobot_DataConsumed : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('61a6845b-002e-4321-b14c-9b472009853d')};
+    xRobot_DataSkipped : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('e5af0628-e885-43e6-a63c-176a0d007e83')};
+END_VAR
+
+VAR
+    fbFormatProductData : MyFormatProductData { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('64a5c855-acb1-47d9-810b-f2035f877e5c')};
+END_VAR
+
+VAR_EXTERNAL
+    bFormatDone : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('658ca564-b759-42df-bb23-1013b41c2741')};
+END_VAR
+
+VAR
+    InputProductData : Yt_RealArray401 { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('6d68ac91-543f-4819-8c0a-535fe44a737a')};
+    fbSequenceDistribution : SequenceDistribution { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('2217d709-b3ae-40a5-b532-dd7e4eeb5eca')};
+    PartOptions : Yt_GP_ProductOptions { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('54f646e8-8508-4e1f-9c8f-59b54cf85865')};
+END_VAR
+
+VAR_EXTERNAL
+    MultiGrpProductData : Yt_GP_MultiGrpProductStruct { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('b8c0867d-334e-4fac-9f2d-7879ddb2748b')};
+END_VAR
+
+VAR
+    DistributionConfig : Yt_GP_DistributionStruct { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('79ad88c3-c9ae-4fb1-81db-3cf052e5e5ed')};
+    fbMultiGrpProductMonitor : MultiGrpProductMonitor { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('627fb0cb-a0fd-4369-b852-c33ec706674f')};
+    MonitorValid : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('30dfefdf-38fe-4cc8-a666-fd4464731159')};
+END_VAR
+
+VAR_EXTERNAL
+    MonitorStatusData : Yt_GP_MultiGrpMonitorStatusStruct { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('692afc71-6c32-4500-b80f-2c735efc7ec4')};
+END_VAR
+
+VAR
+    MonitorThresholdData : Yt_GP_MultiGrpMonitorThrehholdStruct { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('de4726c8-621f-41ac-94ac-f916d22f23ee')};
+    i : INT { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('f61aae4a-0629-4e34-80f5-38e57395debc')};
+END_VAR
+
+VAR_EXTERNAL
+    PartsInBuffer : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('4170707a-773a-4950-a2ff-e036dd918b86')};
+END_VAR
+
+VAR
+    bNewVisionDataReady : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('07e620a4-662c-431f-a4eb-7779a3c126da')};
+    rTrigVisionDone : R_TRIG { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('abb79f41-a544-4b54-b6c8-793800c9ad7c')};
+    bFormatBusy : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('3101a0d4-7023-4673-9ef0-b2bf726352c8')};
+    bFormatError : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('2c3d99ea-a30e-431a-9b7a-b38f34cd14ad')};
+    uiFormatErrorID : UINT { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('848ad2c1-a3ae-417f-b716-c0632a455ee9')};
+    rTrigFormatDone : R_TRIG { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('8cb8d227-f51a-437a-9a3b-dbf4c769cb3a')};
+    bDistributionDone : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('e678c4ba-5b78-42f0-9284-fcc45c4b531e')};
+    bDistributionBusy : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('19b59e76-1c63-49dc-b837-c633777a27c2')};
+    bDistributionError : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('e899ea61-97e3-4bad-8df8-c229ee5ec977')};
+    uiDistributionErrorID : UINT { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('76a02987-b865-482b-bf21-8534e0dbb31c')};
+    rTrigDistributionDone : R_TRIG { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('2cccff1d-fbf3-47a4-b346-af0ed6ad3c09')};
+    rDistanceSetpoint : REAL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('c5d64bf5-3331-458d-a913-8047884eeb2f')};
+END_VAR
+
+VAR_EXTERNAL
+    G_bResetAllErrors : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('02c0f0e0-cad0-465d-9da6-a4a4c33038a2')}; (*Global command to reset all errors (acknowledge and mark inactive)*)
+END_VAR
+
+VAR
+    xUsePhysTrigger : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('05298455-1025-4113-9970-c98edc6be8c9')};
+    tPhysTriggerPulse : TIME { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('eb5021be-24d5-4a11-b2f5-cbe25defedb9')};
+    xSyncInit : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('73fd5313-b5f1-44b9-989e-a33d5b023cc5')};
+    rtTouchProbeDone : R_TRIG { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('f691c5e4-f9d3-4ba9-b185-db141000a5a9')};
+    rLatchedBeltPos : LREAL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('9eb055ef-c970-4886-b258-2db14e6e15f3')};
+END_VAR
+
+VAR_EXTERNAL
+    xPhysTriggerCamera : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('a10f77af-0739-42f0-b89c-2328e2ee1905')};
+    G_udiVisionCycles : UDINT { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('5d367cc1-0e6e-4498-941a-03d13c82a24f')};
+END_VAR
+
+VAR
+    iPartCount : BYTE { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('b3306971-636c-48b5-8459-18bd01f85889')};
+END_VAR
+
+VAR_EXTERNAL
+    G_udiVisionEmptyPhotos : UDINT { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('1ad656af-03b2-455b-8578-c8bb868ab5d6')};
+    G_udiProductsDetected : UDINT { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('3c8cb7cf-830f-4928-b26f-bd69b93ac4bb')};
+END_VAR
+
+VAR
+    rtTrigPhys : R_TRIG { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('710ed4a2-9e5f-4245-bba2-438435a68a26')};
+    tonVisionProc : TON { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('95ce2f56-855d-4238-9f2b-e642ac221350')};
+    bVisionProcMeas : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('2a67a0a9-5b39-47d4-b107-2d71d4af61ae')};
+END_VAR
+
+VAR_EXTERNAL
+    G_tVisionLastProcTime : TIME { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('bbab8b63-2f47-4cde-89e7-efe558e8b68d')};
+END_VAR

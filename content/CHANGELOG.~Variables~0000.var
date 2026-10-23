@@ -1,0 +1,7 @@
+﻿VAR_INPUT
+    In1 : BOOL {Id('acdbddae-a692-4e5d-9dbe-b74ee2dc18a1')};
+END_VAR
+
+VAR
+
+END_VAR

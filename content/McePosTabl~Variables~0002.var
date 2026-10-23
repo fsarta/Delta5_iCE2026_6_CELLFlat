@@ -1,0 +1,14 @@
+{ CustomGroupDefinition('c7b5fc5e-cb15-48b7-bbaf-ac7298d5acdd', 'VAR_INPUT') }
+{ CustomGroupDefinition('85310168-d0af-45ce-87e4-c624149f00da', '') }
+
+VAR_INPUT
+    index : INT { CustomGroupReference('c7b5fc5e-cb15-48b7-bbaf-ac7298d5acdd') } {Id('d592b886-f556-4f3a-86cb-54b696b68b84')}; (*index of actual PosTable entry*)
+    offset : INT { CustomGroupReference('c7b5fc5e-cb15-48b7-bbaf-ac7298d5acdd') } {Id('9b2d24bf-5e9e-4ab6-be8c-207a04608027')}; (*0=first result, 1=second result, 2=third result*)
+    posTableSize : INT { CustomGroupReference('c7b5fc5e-cb15-48b7-bbaf-ac7298d5acdd') } {Id('a0376d33-cf67-47f4-84bc-d939df713dda')}; (*number of entries*)
+    rollOver : BOOL { CustomGroupReference('c7b5fc5e-cb15-48b7-bbaf-ac7298d5acdd') } {Id('911f40a7-1f8e-4d6d-a233-c5777d92f72c')}; (*continue from start after reaching end of table*)
+END_VAR
+
+VAR
+    nEntriesFound : INT { CustomGroupReference('85310168-d0af-45ce-87e4-c624149f00da') } {Id('2fb755e0-25cf-43d9-a34b-a9d32d39e32e')};
+    i1 : INT { CustomGroupReference('85310168-d0af-45ce-87e4-c624149f00da') } {Id('b9b8b636-7bbb-48da-9641-3ccef562dd0e')};
+END_VAR

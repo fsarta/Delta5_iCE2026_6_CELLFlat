@@ -1,0 +1,5 @@
+{ CustomGroupDefinition('e4596b26-f9d9-4b3d-a779-e4f201a0db91', '') }
+
+VAR
+    stMoveOption : Yt_GroupMoveOptions { CustomGroupReference('e4596b26-f9d9-4b3d-a779-e4f201a0db91') } {Id('7b84c6d9-b434-4d30-919b-d9c5b780a12c')};
+END_VAR

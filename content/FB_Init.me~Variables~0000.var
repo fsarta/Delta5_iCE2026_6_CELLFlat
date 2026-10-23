@@ -1,0 +1,10 @@
+{ CustomGroupDefinition('f85fe0a1-9131-47e0-a0e3-71c678cd64bd', 'Input') }
+{ CustomGroupDefinition('c489a746-ebda-44d3-85f3-e8e104f50884', '') }
+
+VAR_INPUT
+    bInitRetains : BOOL { CustomGroupReference('f85fe0a1-9131-47e0-a0e3-71c678cd64bd') } {Id('8dfd4982-cd7d-402f-971b-b4fe4a32bf5a')}; (*TRUE if retain variables should be initialized*)
+END_VAR
+
+VAR
+    bInCopyCode : BOOL { CustomGroupReference('f85fe0a1-9131-47e0-a0e3-71c678cd64bd') } {Id('84a72d5c-9e64-41db-bc69-85f23f2753b9')}; (*TRUE if called during copy/paste*)
+END_VAR

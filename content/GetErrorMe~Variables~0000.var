@@ -1,0 +1,10 @@
+{ CustomGroupDefinition('0ef5313a-486b-499e-86ec-dd8d67bed824', 'Input') }
+{ CustomGroupDefinition('d8de49e1-ec7d-44b3-9b9e-688f3fb3dd47', '') }
+
+VAR_INPUT
+    udiErrorID : UDINT { CustomGroupReference('0ef5313a-486b-499e-86ec-dd8d67bed824') } {Id('6abc201c-03a2-431c-b36b-17cf91520daa')}; (*The error ID to look up*)
+END_VAR
+
+VAR
+    i1 : UDINT { CustomGroupReference('d8de49e1-ec7d-44b3-9b9e-688f3fb3dd47') } {Id('a4e0a886-4956-4f8f-8fe2-201631840813')}; (*Loop counter*)
+END_VAR

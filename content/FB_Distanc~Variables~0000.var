@@ -1,0 +1,19 @@
+{ CustomGroupDefinition('fb97a5b6-f48d-4a20-8b2a-93142c204622', '') }
+
+VAR_INPUT
+    rCurrentPosition : LREAL { CustomGroupReference('fb97a5b6-f48d-4a20-8b2a-93142c204622') } {Id('e645026d-fb2a-4c4e-90b6-9696cba3021c')}; (*Current position from the encoder (e.g., in mm)*)
+    rTriggerInterval : LREAL { CustomGroupReference('fb97a5b6-f48d-4a20-8b2a-93142c204622') } {Id('bd4393fc-a2e9-45d8-a05c-026e73628117')}; (*Distance interval for triggering (e.g., 10.0 mm)*)
+    bEnable : BOOL := TRUE { CustomGroupReference('fb97a5b6-f48d-4a20-8b2a-93142c204622') } {Id('f6062f8f-7358-45f5-8f69-16726c07e362')};
+    bReset : BOOL { CustomGroupReference('fb97a5b6-f48d-4a20-8b2a-93142c204622') } {Id('44a972d5-0800-4b1f-aaa9-88fe749bfddb')};
+END_VAR
+
+VAR_OUTPUT
+    bTrigger : BOOL { CustomGroupReference('fb97a5b6-f48d-4a20-8b2a-93142c204622') } {Id('e546ce9e-afd8-41ad-a661-989aac4b0338')}; (*Goes TRUE for one PLC scan every 'rTriggerInterval' mm*)
+END_VAR
+
+VAR
+    rLastPosition : LREAL { CustomGroupReference('fb97a5b6-f48d-4a20-8b2a-93142c204622') } {Id('f334e467-be61-418c-886e-a1aec526e001')};
+    rAccumulatedDistance : LREAL { CustomGroupReference('fb97a5b6-f48d-4a20-8b2a-93142c204622') } {Id('ebe0ce97-c3bb-43af-9c4f-43142f63b848')};
+    rDelta : LREAL { CustomGroupReference('fb97a5b6-f48d-4a20-8b2a-93142c204622') } {Id('45d96f83-a958-4c86-84fc-8c6938508f2f')};
+    bInitialized : BOOL { CustomGroupReference('fb97a5b6-f48d-4a20-8b2a-93142c204622') } {Id('12b654bb-d08d-4f71-9ce7-730a17d715f3')};
+END_VAR

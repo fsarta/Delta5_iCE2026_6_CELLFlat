@@ -1,0 +1,5 @@
+{ CustomGroupDefinition('a04e0da4-75a3-431c-a769-2ffcda83b779', '') }
+
+VAR_EXTERNAL
+    fbErrorHandler : FB_ErrorHandler { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('249d7a96-1601-4564-b229-82f3cf9e9967')};
+END_VAR

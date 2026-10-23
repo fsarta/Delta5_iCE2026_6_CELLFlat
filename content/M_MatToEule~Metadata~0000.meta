@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Metadata>
+   <FolderType>MethodFolder</FolderType>
+   <Kind>Method</Kind>
+   <ContentType>Method</ContentType>
+   <ReturnType>ST_EulerResult</ReturnType>
+   <AccessSpecifier>PUBLIC</AccessSpecifier>
+   <Id>7f505dc4-d12f-4b4e-9f44-a7fbacc2eca0</Id>
+   <ItemGroup>
+      <VariableWorksheet>
+         <Id>b65b9b10-6891-4ba4-a78f-6b588a2a1449</Id>
+      </VariableWorksheet>
+      <CodeWorksheet Include="Code.st">
+         <Id>d830923a-9c83-43c6-a4cb-e0c011fcf5ef</Id>
+         <Extension>.st</Extension>
+         <Type>.st</Type>
+         <ParentIndex>0</ParentIndex>
+      </CodeWorksheet>
+   </ItemGroup>
+</Metadata>

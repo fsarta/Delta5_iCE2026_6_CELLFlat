@@ -1,0 +1,9 @@
+{ CustomGroupDefinition('e5e4cbbc-a62a-4b0b-be55-14eca5793e6e', '') }
+
+VAR_INPUT
+    eTargetState : E_PickPlace_State { CustomGroupReference('e5e4cbbc-a62a-4b0b-be55-14eca5793e6e') } {Id('c7c4999b-3629-46c1-9c13-b3910a3fcae2')};
+END_VAR
+
+VAR
+    i : INT { CustomGroupReference('e5e4cbbc-a62a-4b0b-be55-14eca5793e6e') } {Id('833eccc2-ecda-42ca-995b-3a89eeecf3e0')};
+END_VAR

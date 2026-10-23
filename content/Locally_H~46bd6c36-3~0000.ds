@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DevInstDoc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Projekte/PC_Worx_Next/XML/Schemas/DevInst.xsd" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <DevInst uuid="46bd6c36-33f1-429f-9c2b-a273e464ac7e">
+    <TInfo uri="adeprojectref:///e639c0f9-db09-46f4-abf7-50216a13f220/cda306f5-f682-4871-b688-a10accb5b712/f4926f62-c904-48a8-9a5c-971ad3497092" />
+    <InstVal xPath="/InstanceObjList/Obj[@uID='base00' type='Generic:Function']" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="/InstanceObjList/Obj[@uID='base01' type='Generic:Location']" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="/InstanceObjList/Obj[@uID='base02' type='AmlApcStationName']" Type="Ade.Fdcml.Core.String">[UTF-8;]</InstVal>
+    <InstVal xPath="Generic:Uri" Type="System.String">adeprojectref:///e639c0f9-db09-46f4-abf7-50216a13f220/606e2993-1c57-411c-b0d2-c57a13c52bbf/b223b52b-49f0-4954-8b1a-9fdcf2178cb7</InstVal>
+    <InstVal xPath="Generic:FormattedTypeNameWithoutVersion" Type="System.String">Locally Hosted Group</InstVal>
+    <InstVal xPath="Generic:FormattedTypeName" Type="System.String">Locally Hosted Group Rev. &gt;= 1.0.0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/InstanceObjList/Obj[@uID='cmnName' type='Name']" Type="Ade.Fdcml.Core.StringAscii">DELTA</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/InstanceObjList/Obj[@uID='cmnHostType' type='HostType']" Type="Ade.Fdcml.Core.Signed32">0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/InstanceObjList/Obj[@uID='cmnMechanismType' type='MechanismType']" Type="Ade.Fdcml.Core.Signed32">6</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/InstanceObjList/Obj[@uID='cmnMechanismVariantType' type='MechanismVariantType']" Type="Ade.Fdcml.Core.Signed32">-1</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/InstanceObjList/Obj[@uID='cmnHandle' type='Handle']" Type="Ade.Fdcml.Core.Unsigned64">1</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/InstanceObjList/Obj[@uID='cmnConsecutiveNumber' type='MotionGroups:ConsecutiveNumber']" Type="Ade.Fdcml.Core.Signed32">1</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/InstanceObjList/Obj[@uID='cmnAxesGroupRefVarUri' type='LinkedVariables:axesGroupRefVar']" Type="Ade.Fdcml.Core.StringAscii">bb04fa23-5320-40c0-a04a-1537ea22884c</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Name]" Type="System.String">Name</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Handle]" Type="System.String">Handle</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Mechanism]" Type="System.String">Mechanism</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_AxisRef]" Type="System.String">AxisRef</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Status_Active]" Type="System.String">Status.Active</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Status_State]" Type="System.String">Status.State</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Status_Alarm]" Type="System.String">Status.Alarm</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Status_NumMotionSegments]" Type="System.String">Status.NumMotionSegments</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Status_FreeMotionSegments]" Type="System.String">Status.FreeMotionSegments</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Status_AxisStatus_1_Enabled]" Type="System.String">Status.AxisStatus[1].Enabled</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Status_AxisStatus_2_Enabled]" Type="System.String">Status.AxisStatus[2].Enabled</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Status_AxisStatus_3_Enabled]" Type="System.String">Status.AxisStatus[3].Enabled</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Status_AxisStatus_4_Enabled]" Type="System.String">Status.AxisStatus[4].Enabled</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Status_AxisStatus_5_Enabled]" Type="System.String">Status.AxisStatus[5].Enabled</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Status_AxisStatus_6_Enabled]" Type="System.String">Status.AxisStatus[6].Enabled</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Status_AxisStatus_7_Enabled]" Type="System.String">Status.AxisStatus[7].Enabled</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Status_AxisStatus_8_Enabled]" Type="System.String">Status.AxisStatus[8].Enabled</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Status_AxisStatus_9_Enabled]" Type="System.String">Status.AxisStatus[9].Enabled</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Status_AxisStatus_10_Enabled]" Type="System.String">Status.AxisStatus[10].Enabled</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Status_AxisStatus_11_Enabled]" Type="System.String">Status.AxisStatus[11].Enabled</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Status_AxisStatus_12_Enabled]" Type="System.String">Status.AxisStatus[12].Enabled</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Status_AxisStatus_13_Enabled]" Type="System.String">Status.AxisStatus[13].Enabled</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Status_AxisStatus_14_Enabled]" Type="System.String">Status.AxisStatus[14].Enabled</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Status_AxisStatus_15_Enabled]" Type="System.String">Status.AxisStatus[15].Enabled</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Status_AxisStatus_16_Enabled]" Type="System.String">Status.AxisStatus[16].Enabled</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Status_AxisStatus_17_Enabled]" Type="System.String">Status.AxisStatus[17].Enabled</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Status_AxisStatus_18_Enabled]" Type="System.String">Status.AxisStatus[18].Enabled</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Status_AxisStatus_19_Enabled]" Type="System.String">Status.AxisStatus[19].Enabled</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Status_AxisStatus_20_Enabled]" Type="System.String">Status.AxisStatus[20].Enabled</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Status_AxisStatus_21_Enabled]" Type="System.String">Status.AxisStatus[21].Enabled</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Status_AxisStatus_22_Enabled]" Type="System.String">Status.AxisStatus[22].Enabled</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Status_AxisStatus_23_Enabled]" Type="System.String">Status.AxisStatus[23].Enabled</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Status_AxisStatus_24_Enabled]" Type="System.String">Status.AxisStatus[24].Enabled</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Status_AxisStatus_25_Enabled]" Type="System.String">Status.AxisStatus[25].Enabled</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Status_AxisStatus_26_Enabled]" Type="System.String">Status.AxisStatus[26].Enabled</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Status_AxisStatus_27_Enabled]" Type="System.String">Status.AxisStatus[27].Enabled</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Status_AxisStatus_28_Enabled]" Type="System.String">Status.AxisStatus[28].Enabled</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Status_AxisStatus_29_Enabled]" Type="System.String">Status.AxisStatus[29].Enabled</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Status_AxisStatus_30_Enabled]" Type="System.String">Status.AxisStatus[30].Enabled</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Status_AxisStatus_31_Enabled]" Type="System.String">Status.AxisStatus[31].Enabled</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Status_AxisStatus_32_Enabled]" Type="System.String">Status.AxisStatus[32].Enabled</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Dim]" Type="System.String">Axis.Dim</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Label_1]" Type="System.String">Axis.Label[1]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Label_2]" Type="System.String">Axis.Label[2]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Label_3]" Type="System.String">Axis.Label[3]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Label_4]" Type="System.String">Axis.Label[4]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Label_5]" Type="System.String">Axis.Label[5]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Label_6]" Type="System.String">Axis.Label[6]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Label_7]" Type="System.String">Axis.Label[7]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Label_8]" Type="System.String">Axis.Label[8]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Label_9]" Type="System.String">Axis.Label[9]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Label_10]" Type="System.String">Axis.Label[10]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Label_11]" Type="System.String">Axis.Label[11]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Label_12]" Type="System.String">Axis.Label[12]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Label_13]" Type="System.String">Axis.Label[13]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Label_14]" Type="System.String">Axis.Label[14]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Label_15]" Type="System.String">Axis.Label[15]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Label_16]" Type="System.String">Axis.Label[16]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Label_17]" Type="System.String">Axis.Label[17]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Label_18]" Type="System.String">Axis.Label[18]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Label_19]" Type="System.String">Axis.Label[19]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Label_20]" Type="System.String">Axis.Label[20]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Label_21]" Type="System.String">Axis.Label[21]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Label_22]" Type="System.String">Axis.Label[22]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Label_23]" Type="System.String">Axis.Label[23]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Label_24]" Type="System.String">Axis.Label[24]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Label_25]" Type="System.String">Axis.Label[25]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Label_26]" Type="System.String">Axis.Label[26]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Label_27]" Type="System.String">Axis.Label[27]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Label_28]" Type="System.String">Axis.Label[28]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Label_29]" Type="System.String">Axis.Label[29]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Label_30]" Type="System.String">Axis.Label[30]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Label_31]" Type="System.String">Axis.Label[31]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Label_32]" Type="System.String">Axis.Label[32]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Unit_1]" Type="System.String">Axis.Unit[1]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Unit_2]" Type="System.String">Axis.Unit[2]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Unit_3]" Type="System.String">Axis.Unit[3]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Unit_4]" Type="System.String">Axis.Unit[4]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Unit_5]" Type="System.String">Axis.Unit[5]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Unit_6]" Type="System.String">Axis.Unit[6]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Unit_7]" Type="System.String">Axis.Unit[7]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Unit_8]" Type="System.String">Axis.Unit[8]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Unit_9]" Type="System.String">Axis.Unit[9]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Unit_10]" Type="System.String">Axis.Unit[10]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Unit_11]" Type="System.String">Axis.Unit[11]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Unit_12]" Type="System.String">Axis.Unit[12]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Unit_13]" Type="System.String">Axis.Unit[13]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Unit_14]" Type="System.String">Axis.Unit[14]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Unit_15]" Type="System.String">Axis.Unit[15]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Unit_16]" Type="System.String">Axis.Unit[16]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Unit_17]" Type="System.String">Axis.Unit[17]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Unit_18]" Type="System.String">Axis.Unit[18]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Unit_19]" Type="System.String">Axis.Unit[19]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Unit_20]" Type="System.String">Axis.Unit[20]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Unit_21]" Type="System.String">Axis.Unit[21]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Unit_22]" Type="System.String">Axis.Unit[22]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Unit_23]" Type="System.String">Axis.Unit[23]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Unit_24]" Type="System.String">Axis.Unit[24]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Unit_25]" Type="System.String">Axis.Unit[25]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Unit_26]" Type="System.String">Axis.Unit[26]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Unit_27]" Type="System.String">Axis.Unit[27]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Unit_28]" Type="System.String">Axis.Unit[28]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Unit_29]" Type="System.String">Axis.Unit[29]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Unit_30]" Type="System.String">Axis.Unit[30]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Unit_31]" Type="System.String">Axis.Unit[31]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Unit_32]" Type="System.String">Axis.Unit[32]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_CmdPos]" Type="System.String">Axis.CmdPos</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_CmdVel]" Type="System.String">Axis.CmdVel</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_CmdAccel]" Type="System.String">Axis.CmdAccel</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_ActualPos]" Type="System.String">Axis.ActualPos</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_ActualVel]" Type="System.String">Axis.ActualVel</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_ActualAccel]" Type="System.String">Axis.ActualAccel</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Axis_Name]" Type="System.String">Axis.Name</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Dim]" Type="System.String">Machine.Dim</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Label_1]" Type="System.String">Machine.Label[1]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Label_2]" Type="System.String">Machine.Label[2]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Label_3]" Type="System.String">Machine.Label[3]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Label_4]" Type="System.String">Machine.Label[4]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Label_5]" Type="System.String">Machine.Label[5]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Label_6]" Type="System.String">Machine.Label[6]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Label_7]" Type="System.String">Machine.Label[7]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Label_8]" Type="System.String">Machine.Label[8]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Label_9]" Type="System.String">Machine.Label[9]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Label_10]" Type="System.String">Machine.Label[10]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Label_11]" Type="System.String">Machine.Label[11]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Label_12]" Type="System.String">Machine.Label[12]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Label_13]" Type="System.String">Machine.Label[13]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Label_14]" Type="System.String">Machine.Label[14]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Label_15]" Type="System.String">Machine.Label[15]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Label_16]" Type="System.String">Machine.Label[16]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Label_17]" Type="System.String">Machine.Label[17]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Label_18]" Type="System.String">Machine.Label[18]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Label_19]" Type="System.String">Machine.Label[19]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Label_20]" Type="System.String">Machine.Label[20]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Label_21]" Type="System.String">Machine.Label[21]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Label_22]" Type="System.String">Machine.Label[22]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Label_23]" Type="System.String">Machine.Label[23]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Label_24]" Type="System.String">Machine.Label[24]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Label_25]" Type="System.String">Machine.Label[25]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Label_26]" Type="System.String">Machine.Label[26]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Label_27]" Type="System.String">Machine.Label[27]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Label_28]" Type="System.String">Machine.Label[28]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Label_29]" Type="System.String">Machine.Label[29]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Label_30]" Type="System.String">Machine.Label[30]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Label_31]" Type="System.String">Machine.Label[31]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Label_32]" Type="System.String">Machine.Label[32]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Unit_1]" Type="System.String">Machine.Unit[1]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Unit_2]" Type="System.String">Machine.Unit[2]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Unit_3]" Type="System.String">Machine.Unit[3]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Unit_4]" Type="System.String">Machine.Unit[4]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Unit_5]" Type="System.String">Machine.Unit[5]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Unit_6]" Type="System.String">Machine.Unit[6]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Unit_7]" Type="System.String">Machine.Unit[7]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Unit_8]" Type="System.String">Machine.Unit[8]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Unit_9]" Type="System.String">Machine.Unit[9]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Unit_10]" Type="System.String">Machine.Unit[10]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Unit_11]" Type="System.String">Machine.Unit[11]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Unit_12]" Type="System.String">Machine.Unit[12]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Unit_13]" Type="System.String">Machine.Unit[13]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Unit_14]" Type="System.String">Machine.Unit[14]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Unit_15]" Type="System.String">Machine.Unit[15]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Unit_16]" Type="System.String">Machine.Unit[16]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Unit_17]" Type="System.String">Machine.Unit[17]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Unit_18]" Type="System.String">Machine.Unit[18]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Unit_19]" Type="System.String">Machine.Unit[19]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Unit_20]" Type="System.String">Machine.Unit[20]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Unit_21]" Type="System.String">Machine.Unit[21]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Unit_22]" Type="System.String">Machine.Unit[22]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Unit_23]" Type="System.String">Machine.Unit[23]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Unit_24]" Type="System.String">Machine.Unit[24]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Unit_25]" Type="System.String">Machine.Unit[25]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Unit_26]" Type="System.String">Machine.Unit[26]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Unit_27]" Type="System.String">Machine.Unit[27]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Unit_28]" Type="System.String">Machine.Unit[28]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Unit_29]" Type="System.String">Machine.Unit[29]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Unit_30]" Type="System.String">Machine.Unit[30]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Unit_31]" Type="System.String">Machine.Unit[31]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Unit_32]" Type="System.String">Machine.Unit[32]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_CmdPos]" Type="System.String">Machine.CmdPos</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_CmdVel]" Type="System.String">Machine.CmdVel</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_CmdAccel]" Type="System.String">Machine.CmdAccel</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_ActualPos]" Type="System.String">Machine.ActualPos</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_ActualVel]" Type="System.String">Machine.ActualVel</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_ActualAccel]" Type="System.String">Machine.ActualAccel</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Machine_Name]" Type="System.String">Machine.Name</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_World_CmdPos]" Type="System.String">World.CmdPos</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_World_CmdVel]" Type="System.String">World.CmdVel</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_World_CmdAccel]" Type="System.String">World.CmdAccel</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_World_ActualPos]" Type="System.String">World.ActualPos</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_World_ActualVel]" Type="System.String">World.ActualVel</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_World_ActualAccel]" Type="System.String">World.ActualAccel</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_World_Name]" Type="System.String">World.Name</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_World_Offset]" Type="System.String">World.Offset</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Part_CmdPos]" Type="System.String">Part.CmdPos</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Part_CmdVel]" Type="System.String">Part.CmdVel</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Part_CmdAccel]" Type="System.String">Part.CmdAccel</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Part_ActualPos]" Type="System.String">Part.ActualPos</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Part_ActualVel]" Type="System.String">Part.ActualVel</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Part_ActualAccel]" Type="System.String">Part.ActualAccel</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Part_Name]" Type="System.String">Part.Name</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Part_Offset]" Type="System.String">Part.Offset</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Tool_CmdPos]" Type="System.String">Tool.CmdPos</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Tool_CmdVel]" Type="System.String">Tool.CmdVel</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Tool_CmdAccel]" Type="System.String">Tool.CmdAccel</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Tool_ActualPos]" Type="System.String">Tool.ActualPos</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Tool_ActualVel]" Type="System.String">Tool.ActualVel</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Tool_ActualAccel]" Type="System.String">Tool.ActualAccel</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Tool_Name]" Type="System.String">Tool.Name</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Tool_Offset]" Type="System.String">Tool.Offset</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Limits_AxisLimits_MinPosition]" Type="System.String">Limits.AxisLimits.MinPosition</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Limits_AxisLimits_MinVelocity]" Type="System.String">Limits.AxisLimits.MinVelocity</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Limits_AxisLimits_MinAcceleration]" Type="System.String">Limits.AxisLimits.MinAcceleration</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Limits_AxisLimits_MinJerk]" Type="System.String">Limits.AxisLimits.MinJerk</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Limits_AxisLimits_MaxPosition]" Type="System.String">Limits.AxisLimits.MaxPosition</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Limits_AxisLimits_MaxVelocity]" Type="System.String">Limits.AxisLimits.MaxVelocity</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Limits_AxisLimits_MaxAcceleration]" Type="System.String">Limits.AxisLimits.MaxAcceleration</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Limits_AxisLimits_MaxJerk]" Type="System.String">Limits.AxisLimits.MaxJerk</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Limits_MachineLimits_MinPosition]" Type="System.String">Limits.MachineLimits.MinPosition</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Limits_MachineLimits_MinVelocity]" Type="System.String">Limits.MachineLimits.MinVelocity</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Limits_MachineLimits_MinAcceleration]" Type="System.String">Limits.MachineLimits.MinAcceleration</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Limits_MachineLimits_MinJerk]" Type="System.String">Limits.MachineLimits.MinJerk</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Limits_MachineLimits_MaxPosition]" Type="System.String">Limits.MachineLimits.MaxPosition</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Limits_MachineLimits_MaxVelocity]" Type="System.String">Limits.MachineLimits.MaxVelocity</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Limits_MachineLimits_MaxAcceleration]" Type="System.String">Limits.MachineLimits.MaxAcceleration</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Limits_MachineLimits_MaxJerk]" Type="System.String">Limits.MachineLimits.MaxJerk</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Limits_WorldLimits_MinPosition]" Type="System.String">Limits.WorldLimits.MinPosition</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Limits_WorldLimits_MinVelocity]" Type="System.String">Limits.WorldLimits.MinVelocity</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Limits_WorldLimits_MinAcceleration]" Type="System.String">Limits.WorldLimits.MinAcceleration</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Limits_WorldLimits_MinJerk]" Type="System.String">Limits.WorldLimits.MinJerk</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Limits_WorldLimits_MaxPosition]" Type="System.String">Limits.WorldLimits.MaxPosition</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Limits_WorldLimits_MaxVelocity]" Type="System.String">Limits.WorldLimits.MaxVelocity</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Limits_WorldLimits_MaxAcceleration]" Type="System.String">Limits.WorldLimits.MaxAcceleration</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Limits_WorldLimits_MaxJerk]" Type="System.String">Limits.WorldLimits.MaxJerk</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Limits_PartLimits_MinPosition]" Type="System.String">Limits.PartLimits.MinPosition</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Limits_PartLimits_MinVelocity]" Type="System.String">Limits.PartLimits.MinVelocity</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Limits_PartLimits_MinAcceleration]" Type="System.String">Limits.PartLimits.MinAcceleration</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Limits_PartLimits_MinJerk]" Type="System.String">Limits.PartLimits.MinJerk</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Limits_PartLimits_MaxPosition]" Type="System.String">Limits.PartLimits.MaxPosition</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Limits_PartLimits_MaxVelocity]" Type="System.String">Limits.PartLimits.MaxVelocity</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Limits_PartLimits_MaxAcceleration]" Type="System.String">Limits.PartLimits.MaxAcceleration</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=groupIO_Limits_PartLimits_MaxJerk]" Type="System.String">Limits.PartLimits.MaxJerk</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/Generic:FormattedTypeNameWithoutVersion" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/Generic:FormattedTypeName" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/LinkedVariables" Type="System.String">{"LinkedVariables:axesGroupRefVar":{"GdsConnections":null,"DataType":"AXES_GROUP_REF","VariableName":"","NameFormat":"{0}","UId":"axesGroupRefVar","StringIdentifier":"bb04fa23-5320-40c0-a04a-1537ea22884c","GroupStringIdentifier":"32d5f575-bd39-4960-b786-e978283c2cb7"}}</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/InstanceObjList/Obj[@uID='ecatdhcsetting03' type='ETHERCAT:DeviceHotConnectGroup']" Type="Ade.Fdcml.Core.Boolean">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/InstanceObjList/Obj[@uID='lhgQueueSize' type='QueueSize']" Type="Ade.Fdcml.Core.Unsigned64">16</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/InstanceObjList/Obj[@uID='lhgAxisNumbers' type='AxisNumbersFlat']" Type="Ade.Fdcml.Core.StringAscii">[1,2,3,4,5]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/InstanceObjList/Obj[@uID='lhgKinematicsParam' type='KinematicsParamFlat']" Type="Ade.Fdcml.Core.StringAscii">{"JointMap":{"JointList":[{"IsValidNullSource":false,"Label":"S","SimpleSource":{"AxisNumber":1},"Scale":1,"Offset":0},{"IsValidNullSource":false,"Label":"L","SimpleSource":{"AxisNumber":2},"Scale":1,"Offset":0},{"IsValidNullSource":false,"Label":"U","SimpleSource":{"AxisNumber":3},"Scale":1,"Offset":0},{"IsValidNullSource":false,"Label":"T","CoupledSource":{"CoupledAxisList":[{"Number":4,"Coefficient":1,"Index":0},{"Number":5,"Coefficient":0,"Index":0}]},"Scale":1,"Offset":0},{"IsValidNullSource":false,"Label":"B","CoupledSource":{"CoupledAxisList":[{"Number":5,"Coefficient":1,"Index":0},{"Number":4,"Coefficient":0.06896551724137931,"Index":0}]},"Scale":1,"Offset":0}]},"XYZRxRyRzTransform":{"InputSize":5,"CoordinateMap":[{"Index":1,"Label":"X","CoordinateAxisType":1,"CoordinateAxisTypeText":"linear","AngularBaseType":0,"AngularBaseTypeText":"degrees","AngularScale":1},{"Index":2,"Label":"Y","CoordinateAxisType":1,"CoordinateAxisTypeText":"linear","AngularBaseType":0,"AngularBaseTypeText":"degrees","AngularScale":1},{"Index":3,"Label":"Z","CoordinateAxisType":1,"CoordinateAxisTypeText":"linear","AngularBaseType":0,"AngularBaseTypeText":"degrees","AngularScale":1},{"Index":0,"Label":"Rx","CoordinateAxisType":2,"CoordinateAxisTypeText":"angular","AngularBaseType":0,"AngularBaseTypeText":"degrees","AngularScale":1},{"Index":4,"Label":"Ry","CoordinateAxisType":2,"CoordinateAxisTypeText":"angular","AngularBaseType":0,"AngularBaseTypeText":"degrees","AngularScale":1},{"Index":5,"Label":"Rz","CoordinateAxisType":2,"CoordinateAxisTypeText":"angular","AngularBaseType":0,"AngularBaseTypeText":"degrees","AngularScale":1}]},"DeltaKinematics":{"BasePhiAngles":{"S":0,"L":120,"U":240},"BaseRadius":100,"BaseOffset":100,"BaseLegLength":240,"PlatformLegLength":500,"PlatformRadius":70,"PlatformOffset":0,"PlatformOffsetLimits":{},"MinTheta":-90,"MaxTheta":145,"zExtensionSense":0,"JointFrame":{"S":{"JointIndex":1,"Units":{"Base":0,"BaseText":"degrees","Scale":0},"TorqueFFCoefficient":0,"Offset":0},"L":{"JointIndex":2,"Units":{"Base":0,"BaseText":"degrees","Scale":0},"TorqueFFCoefficient":0,"Offset":0},"U":{"JointIndex":3,"Units":{"Base":0,"BaseText":"degrees","Scale":0},"TorqueFFCoefficient":0,"Offset":0}},"WorldFrame":{"Frame":{"ToolOffset":{"X":0,"Y":0,"Z":0}},"AugmentedAxes":[],"Units":{"Linear":1,"Angular":{"Base":0,"BaseText":"degrees","Scale":0}}},"EndEffector":{"JointMap":{"JointList":[{"IsValidNullSource":false,"Label":"T","SimpleSource":{"AxisNumber":4},"Scale":1,"Offset":0},{"IsValidNullSource":false,"Label":"B","SimpleSource":{"AxisNumber":5},"Scale":1,"Offset":0}]},"SerialRotaryDH":{"Link1":{"DOffset":48.9,"ROffset":32.1,"Alpha":-90},"Link2":{"DOffset":0,"ROffset":0,"Alpha":90},"JointFrame":{"Joint1":{"JointIndex":1,"Units":{"Base":0,"BaseText":"degrees","Scale":0}},"Joint2":{"JointIndex":2,"Units":{"Base":0,"BaseText":"degrees","Scale":0}}},"WorldFrame":{"Z2":129,"CoordinateFrames":[{"ToolOffset":0,"Index":1,"Label":"X","CoordinateAxisType":1,"CoordinateAxisTypeText":"linear","AngularBaseType":0,"AngularBaseTypeText":"degrees","AngularScale":1},{"ToolOffset":0,"Index":2,"Label":"Y","CoordinateAxisType":1,"CoordinateAxisTypeText":"linear","AngularBaseType":0,"AngularBaseTypeText":"degrees","AngularScale":1},{"ToolOffset":129,"Index":3,"Label":"Z","CoordinateAxisType":1,"CoordinateAxisTypeText":"linear","AngularBaseType":0,"AngularBaseTypeText":"degrees","AngularScale":1},{"ToolOffset":0,"Index":4,"Label":"Ry","CoordinateAxisType":2,"CoordinateAxisTypeText":"angular","AngularBaseType":0,"AngularBaseTypeText":"degrees","AngularScale":1},{"ToolOffset":0,"Index":5,"Label":"Rz","CoordinateAxisType":2,"CoordinateAxisTypeText":"angular","AngularBaseType":0,"AngularBaseTypeText":"degrees","AngularScale":1}],"AugmentedAxes":[],"Units":{"Linear":1,"Angular":{"Base":0,"BaseText":"degrees","Scale":0}}}}}}}</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/InstanceObjList/Obj[@uID='lhgSingleStep' type='SingleStep']" Type="Ade.Fdcml.Core.Bit">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/InstanceObjList/Obj[@uID='lhgSoftLimitJoint' type='SoftLimitJointFlat']" Type="Ade.Fdcml.Core.StringAscii">{"SoftLimitType":0,"SoftLimits":[{"Position":{"NegativeDirection":-25,"PositiveDirection":78,"Enabled":true},"Velocity":{"NegativeDirection":1160,"PositiveDirection":1160,"Enabled":true},"Acceleration":{"NegativeDirection":1.797693E+308,"PositiveDirection":1.797693E+308,"Enabled":true},"Deceleration":{"NegativeDirection":1.797693E+308,"PositiveDirection":1.797693E+308,"Enabled":true},"Torque":{"NegativeDirection":1.797693E+308,"PositiveDirection":1.797693E+308,"Enabled":true}},{"Position":{"NegativeDirection":-25,"PositiveDirection":78,"Enabled":true},"Velocity":{"NegativeDirection":1160,"PositiveDirection":1160,"Enabled":true},"Acceleration":{"NegativeDirection":1.797693E+308,"PositiveDirection":1.797693E+308,"Enabled":true},"Deceleration":{"NegativeDirection":1.797693E+308,"PositiveDirection":1.797693E+308,"Enabled":true},"Torque":{"NegativeDirection":1.797693E+308,"PositiveDirection":1.797693E+308,"Enabled":true}},{"Position":{"NegativeDirection":-25,"PositiveDirection":78,"Enabled":true},"Velocity":{"NegativeDirection":1160,"PositiveDirection":1160,"Enabled":true},"Acceleration":{"NegativeDirection":1.797693E+308,"PositiveDirection":1.797693E+308,"Enabled":true},"Deceleration":{"NegativeDirection":1.797693E+308,"PositiveDirection":1.797693E+308,"Enabled":true},"Torque":{"NegativeDirection":1.797693E+308,"PositiveDirection":1.797693E+308,"Enabled":true}},{"Position":{"NegativeDirection":-1.797693E+308,"PositiveDirection":1.797693E+308,"Enabled":true},"Velocity":{"NegativeDirection":3000,"PositiveDirection":3000,"Enabled":true},"Acceleration":{"NegativeDirection":1.797693E+308,"PositiveDirection":1.797693E+308,"Enabled":true},"Deceleration":{"NegativeDirection":1.797693E+308,"PositiveDirection":1.797693E+308,"Enabled":true},"Torque":{"NegativeDirection":1.797693E+308,"PositiveDirection":1.797693E+308,"Enabled":true}},{"Position":{"NegativeDirection":-3,"PositiveDirection":93,"Enabled":true},"Velocity":{"NegativeDirection":330,"PositiveDirection":330,"Enabled":true},"Acceleration":{"NegativeDirection":1.797693E+308,"PositiveDirection":1.797693E+308,"Enabled":true},"Deceleration":{"NegativeDirection":1.797693E+308,"PositiveDirection":1.797693E+308,"Enabled":true},"Torque":{"NegativeDirection":1.797693E+308,"PositiveDirection":1.797693E+308,"Enabled":true}}]}</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/InstanceObjList/Obj[@uID='lhgSoftLimitWorld' type='SoftLimitWorldFlat']" Type="Ade.Fdcml.Core.StringAscii">{"SoftLimitType":0,"SoftLimits":[{"Position":{"NegativeDirection":-325,"PositiveDirection":325,"Enabled":true},"Velocity":{"NegativeDirection":1.797693E+308,"PositiveDirection":1.797693E+308,"Enabled":true},"Acceleration":{"NegativeDirection":1.797693E+308,"PositiveDirection":1.797693E+308,"Enabled":true},"Deceleration":{"NegativeDirection":1.797693E+308,"PositiveDirection":1.797693E+308,"Enabled":true},"Torque":{"NegativeDirection":1.797693E+308,"PositiveDirection":1.797693E+308,"Enabled":true}},{"Position":{"NegativeDirection":-325,"PositiveDirection":325,"Enabled":true},"Velocity":{"NegativeDirection":1.797693E+308,"PositiveDirection":1.797693E+308,"Enabled":true},"Acceleration":{"NegativeDirection":1.797693E+308,"PositiveDirection":1.797693E+308,"Enabled":true},"Deceleration":{"NegativeDirection":1.797693E+308,"PositiveDirection":1.797693E+308,"Enabled":true},"Torque":{"NegativeDirection":1.797693E+308,"PositiveDirection":1.797693E+308,"Enabled":true}},{"Position":{"NegativeDirection":695,"PositiveDirection":790,"Enabled":true},"Velocity":{"NegativeDirection":1.797693E+308,"PositiveDirection":1.797693E+308,"Enabled":true},"Acceleration":{"NegativeDirection":1.797693E+308,"PositiveDirection":1.797693E+308,"Enabled":true},"Deceleration":{"NegativeDirection":1.797693E+308,"PositiveDirection":1.797693E+308,"Enabled":true},"Torque":{"NegativeDirection":1.797693E+308,"PositiveDirection":1.797693E+308,"Enabled":true}},{"Position":{"NegativeDirection":-1.797693E+308,"PositiveDirection":1.797693E+308,"Enabled":true},"Velocity":{"NegativeDirection":1.797693E+308,"PositiveDirection":1.797693E+308,"Enabled":true},"Acceleration":{"NegativeDirection":1.797693E+308,"PositiveDirection":1.797693E+308,"Enabled":true},"Deceleration":{"NegativeDirection":1.797693E+308,"PositiveDirection":1.797693E+308,"Enabled":true},"Torque":{"NegativeDirection":1.797693E+308,"PositiveDirection":1.797693E+308,"Enabled":true}},{"Position":{"NegativeDirection":-3,"PositiveDirection":93,"Enabled":true},"Velocity":{"NegativeDirection":1.797693E+308,"PositiveDirection":1.797693E+308,"Enabled":true},"Acceleration":{"NegativeDirection":1.797693E+308,"PositiveDirection":1.797693E+308,"Enabled":true},"Deceleration":{"NegativeDirection":1.797693E+308,"PositiveDirection":1.797693E+308,"Enabled":true},"Torque":{"NegativeDirection":1.797693E+308,"PositiveDirection":1.797693E+308,"Enabled":true}},{"Position":{"NegativeDirection":-1.797693E+308,"PositiveDirection":1.797693E+308,"Enabled":true},"Velocity":{"NegativeDirection":3000,"PositiveDirection":3000,"Enabled":true},"Acceleration":{"NegativeDirection":1.797693E+308,"PositiveDirection":1.797693E+308,"Enabled":true},"Deceleration":{"NegativeDirection":1.797693E+308,"PositiveDirection":1.797693E+308,"Enabled":true},"Torque":{"NegativeDirection":1.797693E+308,"PositiveDirection":1.797693E+308,"Enabled":true}}]}</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/InstanceObjList/Obj[@uID='lhgInPositionCheckerMode' type='AtTargetChecker.InPositionChecker.Mode']" Type="Ade.Fdcml.Core.BitString8">00</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/InstanceObjList/Obj[@uID='lhgInPositionCheckerFullStop' type='AtTargetChecker.InPositionChecker.FullStop']" Type="Ade.Fdcml.Core.Bit">True</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/InstanceObjList/Obj[@uID='lhgInPositionCheckerAtTorqueRange' type='AtTargetChecker.InPositionChecker.AtTorqueRange']" Type="Ade.Fdcml.Core.Float64">1</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/InstanceObjList/Obj[@uID='lhgErrorStopStopType' type='ErrorStop.StopType']" Type="Ade.Fdcml.Core.BitString8">00</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/InstanceObjList/Obj[@uID='lhgErrorStopDecelTime' type='ErrorStop.DecelTime']" Type="Ade.Fdcml.Core.Float64">0.5</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/InstanceObjList/Obj[@uID='lhgMaxFilterSamples' type='MaxFilterSamples']" Type="Ade.Fdcml.Core.Unsigned64">50</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/InstanceObjList/Obj[@uID='lhgLinearUnits' type='LinearUnits']" Type="Ade.Fdcml.Core.Signed32">1</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/InstanceObjList/Obj[@uID='lhgRotaryUnits' type='RotaryUnits']" Type="Ade.Fdcml.Core.Signed32">4</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/Generic:FormattedTypeNameWithoutVersion" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/Generic:FormattedTypeName" Type="System.String"></InstVal>
+  </DevInst>
+</DevInstDoc>

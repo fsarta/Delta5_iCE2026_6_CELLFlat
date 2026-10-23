@@ -1,0 +1,5 @@
+{ CustomGroupDefinition('13013b5a-bacc-4e9d-b593-33d9f2d5d89d', '') }
+
+VAR
+    bServoError_Homing : BOOL { CustomGroupReference('13013b5a-bacc-4e9d-b593-33d9f2d5d89d') } {Id('e8147174-2bf4-4e06-a848-ad5f9396c124')};
+END_VAR

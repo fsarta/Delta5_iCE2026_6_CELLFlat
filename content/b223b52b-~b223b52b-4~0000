@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RestoreDataItem Version="1" DeletionDate="2026-07-15 09:55:34Z" DisplayName="DELTA : Locally Hosted Group">
+    <NodeData DomainId="e639c0f9-db09-46f4-abf7-50216a13f220" SolutionId="606e2993-1c57-411c-b0d2-c57a13c52bbf" NodeId="b223b52b-49f0-4954-8b1a-9fdcf2178cb7" ParentId="ed514367-db0a-4693-894c-7207d1840059" PredecessorId="07fdb932-78bc-4374-98bc-de68282402e4" Position="3" Kind="Instance" />
+</RestoreDataItem>

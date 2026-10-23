@@ -1,0 +1,17 @@
+{ CustomGroupDefinition('e42d65c8-7dd6-4cef-9074-672622394275', 'VAR_INPUT') }
+{ CustomGroupDefinition('88e6ff64-007c-45cb-90c3-fa0523885cfb', '') }
+
+VAR_INPUT
+    mR : Yt_MA_Matrix3x3 { CustomGroupReference('e42d65c8-7dd6-4cef-9074-672622394275') } {Id('7f05bede-1951-4ebe-80bd-8014d86d868c')};
+END_VAR
+
+VAR CONSTANT
+    c_R2D : LREAL := LREAL#57.295779513082321 { CustomGroupReference('88e6ff64-007c-45cb-90c3-fa0523885cfb') } {Id('9a70a43c-dc45-40d2-a181-b63f5cc5cf5a')};
+    c_D2R : LREAL := LREAL#0.017453292519943295 { CustomGroupReference('88e6ff64-007c-45cb-90c3-fa0523885cfb') } {Id('a6ad9886-2807-4006-b934-310c81bd10a4')};
+    c_EPS : LREAL := LREAL#1.0E-7 { CustomGroupReference('88e6ff64-007c-45cb-90c3-fa0523885cfb') } {Id('ed3dac73-8df0-4651-b389-90054861cec6')};
+END_VAR
+
+VAR
+    res : ST_EulerResult { CustomGroupReference('88e6ff64-007c-45cb-90c3-fa0523885cfb') } {Id('1e579c21-653e-4283-ab91-cd371d3598fc')};
+    fCosY : LREAL { CustomGroupReference('88e6ff64-007c-45cb-90c3-fa0523885cfb') } {Id('8d3265a6-fec5-4091-8e22-fccbf7c1003b')};
+END_VAR

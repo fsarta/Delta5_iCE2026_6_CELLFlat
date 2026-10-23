@@ -1,0 +1,13 @@
+{ CustomGroupDefinition('258e6e17-19aa-4bf4-bc41-914c886bda34', 'VAR_INPUT') }
+{ CustomGroupDefinition('d3b44761-6139-4b5d-8ad2-7fe4e945dd89', '') }
+
+VAR_INPUT
+    nState : DINT { CustomGroupReference('258e6e17-19aa-4bf4-bc41-914c886bda34') } {Id('c779d21b-bf43-41da-b0cc-b5b3cd52b1c0')}; (*state of a state machine to monitor*)
+    bFreezeTimer : BOOL { CustomGroupReference('258e6e17-19aa-4bf4-bc41-914c886bda34') } {Id('e63e5dde-961d-4cbb-be87-0b5202f4916f')}; (*stop the timer*)
+    stateData : MceStateMonitoringData { CustomGroupReference('258e6e17-19aa-4bf4-bc41-914c886bda34') } {Id('6874ec3e-d38a-4373-bdf8-5e710e6b5eb5')}; (*data for state machine monitoring*)
+END_VAR
+
+VAR
+    nTdiff : DINT { CustomGroupReference('d3b44761-6139-4b5d-8ad2-7fe4e945dd89') } {Id('ad275eb6-7401-43f4-bbfa-4db3649b044d')}; (*time since last call [µs]*)
+    tNow : LTIME { CustomGroupReference('d3b44761-6139-4b5d-8ad2-7fe4e945dd89') } {Id('e0255e8d-c6bf-4856-9f03-cc5f7894cbc7')}; (*plc clock*)
+END_VAR

@@ -1,0 +1,7 @@
+{ CustomGroupDefinition('e8da7361-ff10-4b91-b12f-cb0f3e964906', '') }
+
+VAR
+    bServosNotReady : BOOL { CustomGroupReference('e8da7361-ff10-4b91-b12f-cb0f3e964906') } {Id('6b54d902-4566-417c-9462-ef3861b802af')};
+    bPowerUpStateOldError : BOOL { CustomGroupReference('e8da7361-ff10-4b91-b12f-cb0f3e964906') } {Id('68f4a493-dc1a-45b5-890b-70d252b790a5')};
+    bPowerUpStateEventOldState : BOOL { CustomGroupReference('e8da7361-ff10-4b91-b12f-cb0f3e964906') } {Id('32d8df92-7754-439d-acb2-c6e11203866c')};
+END_VAR

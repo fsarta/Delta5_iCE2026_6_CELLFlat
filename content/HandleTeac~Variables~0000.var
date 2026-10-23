@@ -1,0 +1,18 @@
+{ CustomGroupDefinition('4c14a8f6-1734-4240-b9c9-ea4977a59a86', '') }
+
+VAR
+    bServoError_Commissioning : BOOL { CustomGroupReference('4c14a8f6-1734-4240-b9c9-ea4977a59a86') } {Id('93f4a931-2b56-4ba3-8eee-ba924bc64fc7')};
+    bServoOFF_TeachFrame : BOOL { CustomGroupReference('4c14a8f6-1734-4240-b9c9-ea4977a59a86') } {Id('ec2cfe77-2f8d-49f2-9452-0b7f6625a1bd')};
+    bServoON_TeachFrame : BOOL { CustomGroupReference('4c14a8f6-1734-4240-b9c9-ea4977a59a86') } {Id('6abb2344-5750-4952-9669-700420b032a0')};
+    eTeachTarget : E_TeachTarget { CustomGroupReference('4c14a8f6-1734-4240-b9c9-ea4977a59a86') } {Id('e016a2e5-70fa-4a63-88a2-336bf359a082')};
+    stRawVector : VECTOR { CustomGroupReference('4c14a8f6-1734-4240-b9c9-ea4977a59a86') } {Id('2243373a-1e1c-471d-a68a-6ef372be75f1')};
+    stFinalFrameRef : MC_CARTESIAN_REF { CustomGroupReference('4c14a8f6-1734-4240-b9c9-ea4977a59a86') } {Id('57a63e64-6df4-4d53-a22b-5a738a1830b7')};
+    stActualPosition : MC_CARTESIAN_REF { CustomGroupReference('4c14a8f6-1734-4240-b9c9-ea4977a59a86') } {Id('ea8fc97d-7fa1-4739-9fc4-bbb6e54f6e56')};
+    bServosAreActive : BOOL { CustomGroupReference('4c14a8f6-1734-4240-b9c9-ea4977a59a86') } {Id('9e777b70-792b-4664-aa0a-2298e3f10916')};
+    PosZero : MC_CARTESIAN_REF { CustomGroupReference('4c14a8f6-1734-4240-b9c9-ea4977a59a86') } {Id('200b6d6a-94f2-4a5b-bb78-04062d40d95d')};
+    iTargetFrame : INT { CustomGroupReference('4c14a8f6-1734-4240-b9c9-ea4977a59a86') } {Id('fb670f9d-5905-45b2-90a4-465baa25261b')};
+    bCalcReq : BOOL { CustomGroupReference('4c14a8f6-1734-4240-b9c9-ea4977a59a86') } {Id('729356c9-5746-4732-8eb1-0635221d9fff')};
+    vOffsetToApply : VECTOR { CustomGroupReference('4c14a8f6-1734-4240-b9c9-ea4977a59a86') } {Id('21ca2854-392d-4763-8cf4-0d6619fa244a')};
+    vResultFrame : VECTOR { CustomGroupReference('4c14a8f6-1734-4240-b9c9-ea4977a59a86') } {Id('8141aabb-a191-4c89-b896-a99638e7267a')};
+    bApplyOffsetReq : BOOL { CustomGroupReference('4c14a8f6-1734-4240-b9c9-ea4977a59a86') } {Id('0676e752-803c-4b0f-afe7-d841b65a8986')};
+END_VAR

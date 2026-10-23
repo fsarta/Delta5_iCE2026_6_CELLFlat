@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EsmConfiguration id="c3351ab3-7b35-44ce-8e4f-d02a2558411b" version="2" importRevision="1">
+	<Esms />
+	<Tasks>
+		<Task id="d6537923-5f9a-44fe-aab6-4d3148059339" name="SafetyTask" taskType="CyclicTask" priority="0" intervalTime="5000000" watchdogTime="100000000" executionTimeThreshold="0" coreAffinity="0" stackSize="0" taskBuffer="None" comment="" readonly="False">
+			<ProgramInstances>
+				<ProgramInstance id="54e6060a-76eb-4234-8309-1c76af88230f" name="S_Main" programType="S_Main" componentId="00000000-0000-0000-0000-000000000000" libraryName="Arp.Plc.Eclr" componentName="Arp.Plc.Eclr" componentType="EclrComponent" comment="" readonly="False" groupName="" />
+			</ProgramInstances>
+		</Task>
+	</Tasks>
+</EsmConfiguration>

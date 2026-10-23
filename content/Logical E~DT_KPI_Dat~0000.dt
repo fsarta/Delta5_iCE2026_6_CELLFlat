@@ -1,0 +1,79 @@
+   TYPE ST_KPI_Data : STRUCT
+       (* Produzione (turno: resettabili con G_xKPI_ResetShift) *)
+       udiPiecesPlaced      : UDINT;   (* pezzi piazzati nel turno *)
+       udiPiecesPicked       : UDINT;   (* pezzi prelevati nel turno *)
+       udiCyclesTotal        : UDINT;   (* cicli pick&place completati *)
+       udiCyclesGood         : UDINT;   (* cicli senza errore *)
+       udiPickErrors         : UDINT;   (* errori di prelievo *)
+       rProductsPerMin       : LREAL;   (* pezzi/min (rolling 60 s) *)
+       rProductionPerHour    : LREAL;   (* pezzi/ora (rolling 60 min) *)
+       tCycleTimeLast        : TIME;    (* ultimo ciclo (place -> place) *)
+       tCycleTimeAvg         : TIME;    (* media cicli nel turno *)
+       tCycleTimeMin         : TIME;    (* ciclo minimo nel turno *)
+       tCycleTimeMax         : TIME;    (* ciclo massimo nel turno *)
+       tPickTimeLast         : TIME;    (* ultimo tempo di prelievo (pick -> place) *)
+       tPickTimeAvg          : TIME;    (* media tempi di prelievo *)
+       rCycleSuccessRate     : LREAL;   (* % cicli buoni *)
+       rPickSuccessRate      : LREAL;   (* % prelievi buoni *)
+       (* Visione (turno) *)
+       udiVisionCycles       : UDINT;   (* foto / trigger visione *)
+       udiVisionGoodPhotos   : UDINT;   (* foto con almeno 1 pezzo *)
+       udiVisionEmptyPhotos  : UDINT;   (* foto vuote *)
+       udiProductsDetected   : UDINT;   (* somma pezzi rilevati *)
+       rVisionDetectionRate  : LREAL;   (* % foto con pezzo *)
+       rAvgProductsPerPhoto  : LREAL;   (* media pezzi per foto *)
+       tVisionProcLast       : TIME;    (* ultimo tempo elaborazione (trigger -> done) *)
+       tVisionProcAvg        : TIME;    (* media *)
+       tVisionProcMax        : TIME;    (* max *)
+       (* Sync trigger fisico + latch (turno) *)
+       udiTriggers           : UDINT;   (* impulsi trigger fisico *)
+       udiLatchCaptured      : UDINT;   (* latch catturati *)
+       udiLatchTimeouts      : UDINT;   (* timeout latch *)
+       udiStrayLatches       : UDINT;   (* latch inattesi *)
+       rLatchSuccessRate     : LREAL;   (* % latch catturati *)
+       rLastLatchedPos       : LREAL;   (* ultima posizione nastro agganciata *)
+       (* Tracking / buffer *)
+       xTrackingActive       : BOOL;    (* tracking in corso *)
+       udiTrackingErrors     : UDINT;   (* errori tracking (pareto, ultimi 50) *)
+       rDetectedVsPlaced     : LREAL;   (* rapporto pezzi rilevati / piazzati *)
+       (* Disponibilita / stati macchina (turno) *)
+       tStateAutomatic       : TIME;    (* tempo in OPERATIONAL_AUTOMATIC *)
+       tStateManual          : TIME;    (* tempo in OPERATIONAL_MANUAL *)
+       tStateStopping        : TIME;    (* tempo in STOPPING *)
+       tStateError           : TIME;    (* tempo in ERROR *)
+       tStateOther           : TIME;    (* IDLE/HOMING/POWERING/INIT/... *)
+       rAvailability         : LREAL;   (* % (auto+manual) / tempo totale *)
+       (* Errori (turno) *)
+       udiErrorEvents        : UDINT;   (* eventi errore *)
+       udiErrorsActive       : UDINT;   (* errori attivi ora *)
+       eHighestSeverity      : E_ErrorSeverity;  (* severita piu alta attiva *)
+       tTimeWithErrors       : TIME;    (* tempo cumulato con errori attivi *)
+       tMTBF                 : TIME;    (* tempo medio tra eventi errore *)
+       tMTTR                 : TIME;    (* tempo medio episodio errore (attivo -> risolto) *)
+       udiErrVision          : UDINT;   (* pareto ultimi 50 errori, per categoria *)
+       udiErrTracking        : UDINT;
+       udiErrMotion          : UDINT;
+       udiErrMachine         : UDINT;
+       udiErrPickPlace       : UDINT;
+       udiErrOther           : UDINT;
+       (* OEE *)
+       tIdealCycleTime       : TIME;    (* ciclo ideale (impostabile da HMI) *)
+       rPerformance          : LREAL;   (* % ideal/actual (max 100) *)
+       rQuality              : LREAL;   (* % piazzati / (piazzati + errori prelievo) *)
+       rOEE                  : LREAL;   (* disponibilita x performance x qualita *)
+       (* Lifetime (mai resettati) *)
+       udiPiecesPlacedTotal  : UDINT;
+       udiPiecesPickedTotal  : UDINT;
+       udiCyclesTotalLife    : UDINT;
+       udiVisionCyclesTotal  : UDINT;
+       udiTriggersTotal      : UDINT;
+       udiLatchCapturedTotal : UDINT;
+       udiErrorEventsTotal   : UDINT;
+       tUptimeTotal          : TIME;    (* uptime totale *)
+       (* Sistema (turno) *)
+       tUptime               : TIME;    (* da reset turno *)
+       tSinceLastError       : TIME;    (* tempo dall ultimo evento errore *)
+       iCurrentState         : INT;     (* stato macchina (0..11, per HMI) *)
+       xKpiReady             : BOOL;    (* FB KPI attivo *)
+   END_STRUCT
+   END_TYPE

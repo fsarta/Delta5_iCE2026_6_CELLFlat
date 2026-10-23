@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Metadata>
+   <FolderType>MethodFolder</FolderType>
+   <Kind>Method</Kind>
+   <ContentType>Method</ContentType>
+   <ReturnType>Yt_MA_Matrix3x3</ReturnType>
+   <AccessSpecifier>PUBLIC</AccessSpecifier>
+   <Id>6438c45d-d706-4076-8534-53d1e2235862</Id>
+   <ItemGroup>
+      <VariableWorksheet>
+         <Id>45ecf1d4-aed0-4368-a769-5d34a869d121</Id>
+      </VariableWorksheet>
+      <CodeWorksheet Include="Code.st">
+         <Id>05c0f539-4cde-4a15-a147-6dd3fb03a1c3</Id>
+         <Extension>.st</Extension>
+         <Type>.st</Type>
+         <ParentIndex>0</ParentIndex>
+      </CodeWorksheet>
+   </ItemGroup>
+</Metadata>

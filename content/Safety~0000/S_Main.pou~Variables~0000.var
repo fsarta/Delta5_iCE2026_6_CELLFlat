@@ -1,0 +1,58 @@
+{ CustomGroupDefinition('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24', 'Default') }
+
+VAR_EXTERNAL
+    ACK_REI_FSOE_MSTR_GLOBAL : BOOL { OutputLocation, CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('ee1b7f12-0b91-4884-8701-c3d9c0894af7')};
+    Safe_YellowInputButton : BOOL { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24'), InputLocation } {Id('481ecaac-5c97-41e5-b40c-da6c345dc72b')}; (*!!! DO NOT MODIFY !!! - Variable is automatically linked to module.*)
+END_VAR
+
+VAR
+    SF_EmergencyStop_V2_001 : SF_EmergencyStop_V2_00 { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('6f3f287e-68e8-4e43-868b-662f827a4b22')};
+END_VAR
+
+VAR_EXTERNAL
+    sEmergency_CH0 : SAFEBOOL { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24'), InputLocation } {Id('d45ce9ae-c123-4b67-be3c-620be67b47d4')};
+END_VAR
+
+VAR
+    F_TRIG1 : F_TRIG { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('13b22fba-ef0f-48d6-a2d9-02f140a5d260')};
+END_VAR
+
+VAR_EXTERNAL
+    ResetSafety : BOOL { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('1ef2c324-4bbf-4120-9e3a-64dbf927cf87')};
+    C001 : SAFEBOOL { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('523db346-4fe9-4730-911f-a5225a1e3a4d')};
+    sPilzSTO_SL : SAFEBOOL { OutputLocation, CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('d745fd23-d924-46b3-ac30-cec2d96180d6')};
+    sPilzSTO_UB : SAFEBOOL { OutputLocation, CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('e1943a22-fc5b-45b5-9842-007859d4d1b5')};
+    sPilzSTO_TInv : SAFEBOOL { OutputLocation, CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('011c913d-55ee-43ec-b60c-f160145830e0')};
+    EmergencyStop : SAFEBOOL { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('9e5d4a24-f951-42c6-b55c-3bc639c63828')};
+END_VAR
+
+VAR
+    SF_GuardLocking_2_V1_001 : SF_GuardLocking_2_V1_00 { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('ae5cdeb7-1abb-4c9f-803d-56243a349550')};
+END_VAR
+
+VAR_EXTERNAL
+    sDeltaDoor_CH0 : SAFEBOOL { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24'), InputLocation } {Id('c05de8d1-0098-4082-bf90-f8c8449b8126')};
+    sOutDeltaDoor : SAFEBOOL { OutputLocation, CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('ac313289-9e44-4850-a923-5a48a828a0cd')};
+    UnlockRequestDeltaDoor : BOOL { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('cec2cf81-e325-4732-888b-5236f07f3737')};
+    SecuredArea : BOOL { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('cb467039-8b1e-4513-814d-9881b660e281')};
+    CameraGuardLocked : BOOL { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24'), InputLocation } {Id('07b2bec7-431b-49f0-b674-2a725c075c90')}; (*!!! DO NOT MODIFY !!! - Variable is automatically linked to module.*)
+END_VAR
+
+VAR
+    SF_GuardLocking_2_V1_002 : SF_GuardLocking_2_V1_00 { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('6877a054-60a3-4db4-814d-49f3ba43f43e')};
+END_VAR
+
+VAR_EXTERNAL
+    sCameraDoor_CH0 : SAFEBOOL { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24'), InputLocation } {Id('17e00dd1-2a7b-4e8f-93b8-10e0d42d940c')};
+    sOutCameraDoor : SAFEBOOL { OutputLocation, CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('ff1f145a-9523-4d9e-a064-616637e55d71')};
+    UnlockRequestCameraDoor : BOOL { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('0f667ef5-c82e-4faa-8f30-fa48c6830362')};
+END_VAR
+
+VAR
+    sDeltaGuardLocked : SAFEBOOL { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('5bfa9349-f6be-4285-ada6-3f9033cdc62e')};
+    sCameraGuardLocked : SAFEBOOL { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('f79ce17a-5ee9-4d91-975c-fc65b0a7d82a')};
+END_VAR
+
+VAR_EXTERNAL
+    DeltaGuardLocked : BOOL { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24'), InputLocation } {Id('653a4f5b-23c3-442b-b900-42f0633c67a4')}; (*!!! DO NOT MODIFY !!! - Variable is automatically linked to module.*)
+END_VAR

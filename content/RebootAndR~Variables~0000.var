@@ -1,0 +1,68 @@
+{ CustomGroupDefinition('4f0164aa-293e-49c6-996f-5b129144c9c5', 'FBs') }
+{ CustomGroupDefinition('a04e0da4-75a3-431c-a769-2ffcda83b779', '') }
+
+VAR
+    Y_AX_RebootServo_S_Axis : Y_AX_RebootServo { CustomGroupReference('4f0164aa-293e-49c6-996f-5b129144c9c5') } {Id('df0822cf-2c30-4eeb-97ea-7c720a9ceee2')};
+    MC_Reset_S_Axis : MC_Reset { CustomGroupReference('4f0164aa-293e-49c6-996f-5b129144c9c5') } {Id('be6ff5d7-10c5-46f2-a38b-08730428b400')};
+    Y_AX_RebootServo_L_Axis : Y_AX_RebootServo { CustomGroupReference('4f0164aa-293e-49c6-996f-5b129144c9c5') } {Id('f20d7e78-1b6c-4c5e-8f14-4f0a31c30b8f')};
+    MC_Reset_L_Axis : MC_Reset { CustomGroupReference('4f0164aa-293e-49c6-996f-5b129144c9c5') } {Id('ddba6efe-fe62-4ff8-b634-07e8389acaa6')};
+    Y_AX_RebootServo_U_Axis : Y_AX_RebootServo { CustomGroupReference('4f0164aa-293e-49c6-996f-5b129144c9c5') } {Id('4969ebaf-3830-46d1-9d07-82a51fb2ff45')};
+    MC_Reset_U_Axis : MC_Reset { CustomGroupReference('4f0164aa-293e-49c6-996f-5b129144c9c5') } {Id('7b2a5e1d-49d2-4594-955f-7b308472d698')};
+    Y_AX_RebootServo_T_Axis : Y_AX_RebootServo { CustomGroupReference('4f0164aa-293e-49c6-996f-5b129144c9c5') } {Id('0839725d-e591-4c33-b232-57d9b1493a18')};
+    MC_Reset_T_Axis : MC_Reset { CustomGroupReference('4f0164aa-293e-49c6-996f-5b129144c9c5') } {Id('cd36c8b3-f031-4ff8-82a4-e01fb56ed8d7')};
+    Y_AX_RebootServo_B_Axis : Y_AX_RebootServo { CustomGroupReference('4f0164aa-293e-49c6-996f-5b129144c9c5') } {Id('55271953-8b8f-442b-8a3e-aca862695260')};
+    MC_Reset_B_Axis : MC_Reset { CustomGroupReference('4f0164aa-293e-49c6-996f-5b129144c9c5') } {Id('819b08ac-6237-433f-9e15-7d7f733fc277')};
+    Y_AX_RebootServo_CI_Axis : Y_AX_RebootServo { CustomGroupReference('4f0164aa-293e-49c6-996f-5b129144c9c5') } {Id('b00d883e-9277-4f8a-87e0-3a8e78ac305f')};
+    MC_Reset_CI_Axis : MC_Reset { CustomGroupReference('4f0164aa-293e-49c6-996f-5b129144c9c5') } {Id('f3ba8abe-17e6-4866-a783-3cba07eec347')};
+    Y_AX_RebootServo_CO_Axis : Y_AX_RebootServo { CustomGroupReference('4f0164aa-293e-49c6-996f-5b129144c9c5') } {Id('bcec1d98-96ae-46b0-8dd4-87ff5f1257d7')};
+    MC_Reset_CO_Axis : MC_Reset { CustomGroupReference('4f0164aa-293e-49c6-996f-5b129144c9c5') } {Id('c11d676d-df5a-4ff6-b4c6-8aa4450002cb')};
+END_VAR
+
+VAR_EXTERNAL
+    fbErrorHandler : FB_ErrorHandler { CustomGroupReference('4f0164aa-293e-49c6-996f-5b129144c9c5') } {Id('1fb72f10-ab3a-43d4-afce-d16c4c4136a1')};
+    S_Axis : AXIS_REF { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('c461029c-eab1-4e99-81a2-eaa9102ab37d')}; (* (!!! DO NOT MODIFY !!! - Variable is automatically linked to device)*)
+    L_Axis : AXIS_REF { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('2ae5fe4c-67a2-4c02-9aa9-badcdc409975')}; (* (!!! DO NOT MODIFY !!! - Variable is automatically linked to device)*)
+    U_Axis : AXIS_REF { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('1bd5c3de-2b3a-46b2-8fff-336c30666f1b')}; (* (!!! DO NOT MODIFY !!! - Variable is automatically linked to device)*)
+    T_Axis : AXIS_REF { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('9ec1286c-b478-41f8-bae6-98bbb77a63b0')}; (* (!!! DO NOT MODIFY !!! - Variable is automatically linked to device)*)
+    B_Axis : AXIS_REF { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('1e67b4c2-a93f-4bba-bbdb-d858bee387b2')}; (* (!!! DO NOT MODIFY !!! - Variable is automatically linked to device)*)
+    FeedIn_Axis : AXIS_REF { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('2a2b3c1c-cd67-4c3d-9e2f-300828fef8db')}; (* (!!! DO NOT MODIFY !!! - Variable is automatically linked to device)*)
+    FeedOut_Axis : AXIS_REF { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('8158a25f-021d-48bb-97e7-afa5683d29f9')}; (* (!!! DO NOT MODIFY !!! - Variable is automatically linked to device)*)
+    EC_SLAVE_STATE : EC_ByteArray513 { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('2376e541-4377-4adb-a4c5-4185bfcdc118')}; (*EtherCAT slaves state*)
+END_VAR
+
+VAR
+    ResetServoMotors : ARRAY[1..10] OF BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('674823ed-a316-4fd4-87c6-26e6ad029a6c')};
+END_VAR
+
+VAR_EXTERNAL
+    SystemControls : ST_HMI_Dashboard_Status { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('69b269e5-2de5-4c5a-a37f-abc4771023b5')};
+END_VAR
+
+VAR
+    rtRebootDone_S_Axis : R_TRIG { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('2b6ed8c6-3701-4138-9bd3-92e137cf7a30')};
+    rtResetDone_S_Axis : R_TRIG { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('0fb28a0a-4c86-48c1-8d59-ddffa965e5bc')};
+    rtRebootDone_L_Axis : R_TRIG { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('c4a77594-50ae-4076-92a7-301da78c4d05')};
+    rtResetDone_L_Axis : R_TRIG { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('26ac9403-0619-4793-8d77-3abd35da4412')};
+    rtRebootDone_U_Axis : R_TRIG { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('157e89e4-4736-422a-826f-4c106dab6fe2')};
+    rtResetDone_U_Axis : R_TRIG { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('64371135-6ea9-489f-96dd-993cedf1adc8')};
+    rtRebootDone_T_Axis : R_TRIG { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('274888fc-b8af-4433-a5b2-5e78555f7ec7')};
+    rtResetDone_T_Axis : R_TRIG { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('808517a7-8aed-4c5e-90ed-432b83bd0398')};
+    rtRebootDone_B_Axis : R_TRIG { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('4b50517e-645e-493a-8c89-295828d49c45')};
+    rtResetDone_B_Axis : R_TRIG { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('bd7b7db4-e213-4346-ad74-fea12b2a9299')};
+    rtRebootDone_CI_Axis : R_TRIG { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('aaac6bcc-d2c1-4d21-b8f9-38a4de37cf94')};
+    rtResetDone_CI_Axis : R_TRIG { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('706e5b24-b923-459f-a857-bbdb1debfbbe')};
+    rtRebootDone_CO_Axis : R_TRIG { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('3a52638f-eb0c-4ea3-92dd-f3cf656dabba')};
+    rtResetDone_CO_Axis : R_TRIG { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('4f8d46cc-c8ef-4bf0-b728-0ab15711cde4')};
+END_VAR
+
+VAR_EXTERNAL
+    DATA_Machine : DT_Machine { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('ca9935d2-dead-45a6-9e8a-40e9d210b3dc')};
+    G_bResetAllErrors : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('751fa8f0-a11f-4ab3-881f-812737c0f643')}; (*Global command to reset all errors (acknowledge and mark inactive)*)
+    G_bAcknowledgeAllErrors : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('5f0d1e11-ee96-49b3-ad52-b837aeb9a4d8')}; (*Global command to acknowledge all active errors*)
+    HMI_Data : ST_HMI_Interface { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('245d02b5-2ed0-42ef-8b81-bfdca058c83f')};
+END_VAR
+
+VAR
+    bOld_Reboot_S_Axis : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('fe440e3b-c7df-4c29-b331-9797fbb8a147')};
+    bEvtOld_Reboot_S_Axis : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('2d7e38af-bb04-4707-a733-f422cf6f07fb')};
+END_VAR

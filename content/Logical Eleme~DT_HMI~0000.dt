@@ -1,0 +1,339 @@
+TYPE
+    
+    E_PickPlaceMode : (
+        MODE_SINGLE_PICK := 0,              // Single Pick
+        MODE_DOUBLE_PICK := 1,              // Double Pick
+        MODE_PICK_TRACK_PLACE_FIXED := 2,   // FUTURE: Pick in tracking, Fixed place (YASKAWA lettering) 
+        MODE_PICK_PLACE_MOVEPATH := 3       // FUTURE: Complex movements with MovePath 
+    ) OF INT;
+    
+(*============================================================================================*)
+(*                                          DASHBOARD                                         *)
+(*============================================================================================*)
+
+    ST_HMI_Dashboard_Command : STRUCT
+        PowerUp         : BOOL;
+        PowerDown       : BOOL;
+        StartCycle      : BOOL; (* Automatic cycle start *)
+        StopCycle       : BOOL; (* Cycle stop *)
+        ManualMode      : BOOL;
+        AutomaticMode   : BOOL;
+        SafetuButton    : BOOL;
+        Commissioning   : BOOL;
+        ResetErrors     : BOOL; (* Reset alarms *)
+        AckErrors       : BOOL; (* Acknowledge errors *)
+        SetSpeedOverride: REAL; (* Speed override 0-100% *)
+        OperationMode   : E_PickPlaceMode; // Mode Selection
+        RebootAxis      : ARRAY[1..7] OF BOOL;
+        ResetAxis       : ARRAY[1..7] OF BOOL;
+    END_STRUCT;
+        
+    ST_HMI_Dashboard_Status : STRUCT
+        IsRunning           : BOOL; // Machine running 
+        IsAutoMode          : BOOL; // Automatic mode active 
+        IsManualMode        : BOOL; // Manual mode active 
+        AllMotorsServoOn    : BOOL;
+        AllMotorsServoOff   : BOOL;
+        ServoMotorsAlarm    : BOOL; // Error active 
+        SafetyOk            : BOOL; // Safety circuits OK 
+        CurrentSpeed        : REAL; // Current speed % 
+        CycleTime           : TIME; // Current cycle time 
+        ProductsPerMin      : REAL; // Instant production 
+        State_MachineController : E_MachineState;
+    END_STRUCT;
+    
+    ST_HMI_Dashboard_Version : STRUCT
+        Motion   : WSTRING; 
+        HMI      : WSTRING; 
+    END_STRUCT
+    
+    ST_HMI_Dashboard_Digital8 : STRUCT
+        x0 : BOOL; 
+        x1 : BOOL; 
+        x2 : BOOL; 
+        x3 : BOOL; 
+        x4 : BOOL; 
+        x5 : BOOL; 
+        x6 : BOOL; 
+        x7 : BOOL; 
+    END_STRUCT
+    
+    ST_HMI_Dashboard_Safety4 : STRUCT
+        x0 : BOOL; 
+        x1 : BOOL; 
+        x2 : BOOL; 
+        x3 : BOOL; 
+    END_STRUCT
+
+    
+    ST_HMI_Dashboard_InOut : STRUCT
+        DI0 : ST_HMI_Dashboard_Digital8; 
+        DO0 : ST_HMI_Dashboard_Digital8; 
+        SI0 : ST_HMI_Dashboard_Safety4;
+        SI1 : ST_HMI_Dashboard_Safety4;
+        SO0 : ST_HMI_Dashboard_Safety4;
+        SO1 : ST_HMI_Dashboard_Safety4;
+    END_STRUCT
+    
+    ST_HMI_Dashboard : STRUCT
+        Command         : ST_HMI_Dashboard_Command; // Command from HMI
+        Status          : ST_HMI_Dashboard_Status; // Status to HMI
+        SoftwareVersion : ST_HMI_Dashboard_Version;
+        InputOutput     : ST_HMI_Dashboard_InOut;
+    END_STRUCT;
+   
+(*============================================================================================*)
+(*                                            ROBOT                                           *)
+(*============================================================================================*)
+
+    ST_Robot_JogJoint_Command : STRUCT
+        S_Plus   :BOOL;
+        S_Minus  :BOOL;
+        L_Plus   :BOOL;
+        L_Minus  :BOOL;
+        U_Plus   :BOOL;
+        U_Minus  :BOOL;
+        B_Plus   :BOOL;
+        B_Minus  :BOOL;
+        T_Plus   :BOOL;
+        T_Minus  :BOOL;
+    END_STRUCT
+    
+    ST_Robot_JogLinear_Command : STRUCT
+        X_Plus   :BOOL;
+        X_Minus  :BOOL;
+        Y_Plus   :BOOL;
+        Y_Minus  :BOOL;
+        Z_Plus   :BOOL;
+        Z_Minus  :BOOL;
+        Rz_Plus   :BOOL;
+        Rz_Minus  :BOOL;
+        Ry_Plus   :BOOL;
+        Ry_Minus  :BOOL;
+    END_STRUCT
+    
+    ST_Robot_Command : STRUCT  // Controls on the HMI for jogging the robot
+        Joint_Mode  : BOOL;
+        Linear_Mode : BOOL;
+        
+        ACS_Mode    : BOOL;
+        MCS_Mode    : BOOL;
+        
+        JogJoint    : ST_Robot_JogJoint_Command;
+        JogLinear   : ST_Robot_JogLinear_Command;
+        
+        Stop        : BOOL;
+        
+        Dance       : BOOL;
+        
+        Slow_Speed  : BOOL := TRUE;
+        Medium_Speed: BOOL;
+        Fast_Speed  : BOOL;
+        Speed_Selected_HMI  :STRING; // Indication for the HMI
+        
+        GroupSetPosition : BOOL;
+        SetPosition : ARRAY[0..4] OF BOOL;
+        MoveAbsolute: BOOL;
+        MoveRelative: BOOL;
+    END_STRUCT
+
+    ST_Robot_Setting : STRUCT 
+        HomingPosition      : VECTOR;
+        CommandPosition     : VECTOR;
+        CommandDistance     : VECTOR;
+        CommandVelocity     : LREAL;
+        CommandAcceleration : LREAL;
+        CommandDeceleration : LREAL;
+    END_STRUCT
+    
+    ST_Robot_Status : STRUCT 
+        IsHomed     : BOOL;
+        IsPowered   : BOOL;
+        IsMoving    : BOOL;
+        Error       : BOOL;
+        ErrorID     : UDINT;
+    END_STRUCT
+    
+    ST_Robot_Feedback   : STRUCT //Current linear and joint position
+        Linear_Position :VECTOR;
+        Linear_Velocity :VECTOR;
+        Joint_Position  :VECTOR;
+        Joint_Velocity  :VECTOR;
+    END_STRUCT
+    
+    ST_Robot : STRUCT
+        Command     : ST_Robot_Command;
+        Setting     : ST_Robot_Setting;
+        Status      : ST_Robot_Status;
+        Feedback    : ST_Robot_Feedback;
+    END_STRUCT
+
+(*============================================================================================*)
+(*                                            AXIS                                            *)
+(*============================================================================================*)
+    
+    ST_Axis_Command : STRUCT  // Controls on the HMI for jogging the robot
+        
+        JogFWD  : BOOL;
+        JogREV  : BOOL;
+                
+        SetPosition : BOOL;
+        MoveAbsolute: BOOL;
+        MoveRelative: BOOL;
+        
+        Stop: BOOL;
+    END_STRUCT
+
+    ST_Axis_Setting : STRUCT 
+        HomingPosition      : LREAL;
+        CommandPosition     : LREAL;
+        CommandDistance     : LREAL;
+        CommandVelocity     : LREAL;
+        CommandAcceleration : LREAL;
+        CommandDeceleration : LREAL;
+    END_STRUCT
+    
+    ST_Axis_Status : STRUCT 
+        IsHomed     : BOOL;
+        IsPowered   : BOOL;
+        IsOn        : BOOL;
+        IsMoving    : BOOL;
+        Error       : BOOL;
+        ErrorID     : UDINT;
+    END_STRUCT
+    
+    ST_Axis_Feedback   : STRUCT 
+        Position    : LREAL;
+        Velocity    : LREAL;
+        Torque      : LREAL;
+    END_STRUCT
+    
+    ST_Axis : STRUCT
+        Command     : ST_Axis_Command;
+        Setting     : ST_Axis_Setting;
+        Status      : ST_Axis_Status;
+        Feedback    : ST_Axis_Feedback;
+    END_STRUCT
+    
+    ST_Axes : STRUCT
+        FeedIn      : ST_Axis;
+        FeedOut     : ST_Axis;
+        Virtual     : ST_Axis;
+    END_STRUCT
+
+(*============================================================================================*)
+(*                                         TEACH FRAME                                        *)
+(*============================================================================================*)
+    
+//    ST_TeachFrame : STRUCT
+//        ConfirmPoint :BOOL;
+//        PositionTeached :MC_CARTESIAN_REF;
+//    END_STRUCT
+
+    eFrame : (NONE, OO, XX, XY) OF INT;
+    
+    ST_aFrame :STRUCT
+        OO : MC_CARTESIAN_REF;
+        XX : MC_CARTESIAN_REF;
+        XY : MC_CARTESIAN_REF;
+    END_STRUCT
+    
+    ST_HMI_Frames : STRUCT
+        StartTeach      :BOOL;
+        SelectedFrame   : INT;
+        SelectedPoint   : eFrame;
+        ConfirmPoint    : BOOL;      
+        aTeachFrame     : ARRAY[1..2] OF ST_aFrame; // Array related to frame ID  
+        aFrameResult    : ARRAY[1..2] OF ST_aFrame; // Array related to frame ID  
+        vFrameResult    : ARRAY[1..2] OF VECTOR; 
+        vDistVisionRobot_FeedIn  : VECTOR;
+        vDistVisionRobot_FeedOut : VECTOR;
+//        FeedIn  : ST_TeachFrame;
+//        FeedOut : ST_TeachFrame;
+    END_STRUCT
+    
+(*============================================================================================*)
+(*                                           PROCESS                                          *)
+(*============================================================================================*)
+    
+    ST_Process_Setting : STRUCT
+        OperationMode : E_PickPlaceMode; // Mode Selection
+    
+        // Parametri Generali
+        PickHeight       : LREAL; // Z pick position 
+        PlaceHeight      : LREAL; // Z place position
+        TravelHeight     : LREAL; // Z movement position (safety)
+        
+        // Tracking parameters
+        PickStartDist : LREAL; // Start of tracking window - PICK
+        PickEndDist   : LREAL; // End of tracking window - PICK
+        PlaceStartDist: LREAL; // Start of tracking window - PLACE
+        PlaceEndDist  : LREAL; // End of tracking window - PLACE
+
+        // Double pick parameters
+        Gripper1_Offset : ARRAY[0..2] OF LREAL; 
+        Gripper2_Offset : ARRAY[0..2] OF LREAL; 
+        DoublePlace_Offset : ARRAY[1..3] OF LREAL; // Offset between first and second piece - PLACE
+    END_STRUCT
+    
+    ST_Process_Status : STRUCT
+        CurrentState    : INT; (* Machine status in cycle states *)
+        PickedCount     : UDINT;
+        PlacedCount     : UDINT;
+        Gripper1_State  : BOOL;
+        Gripper2_State  : BOOL;
+        TrackingActive  : BOOL;
+    END_STRUCT
+    
+    ST_HMI_Process : STRUCT
+        Setting : ST_Process_Setting;
+        Status  : ST_Process_Status;
+    END_STRUCT
+    
+(*============================================================================================*)
+(*                                           VISION                                           *)
+(*============================================================================================*)
+    
+    ST_Vision_Command : STRUCT
+        TriggerCamera    : BOOL; (* Trigger manuale da HMI *)
+        ChangeJob        : INT;  (* Cambio formato telecamera *)
+    END_STRUCT;
+
+    //ST_Vision_Setting : STRUCT
+
+    //END_STRUCT    
+        
+    ST_Vision_Status : STRUCT
+        IsConnected      : BOOL;
+        LastProcTime     : UINT; (* ms *)
+        TotalPartsFound  : UDINT;
+    END_STRUCT;
+    
+    ST_Vision_LastProduct : STRUCT
+        X       : LREAL;
+        Y       : LREAL;
+        Rotation: LREAL;
+        ClassID : INT;
+    END_STRUCT;
+    
+    ST_HMI_Vision : STRUCT
+        Command : ST_Vision_Command;
+        //Setting : ST_Vision_Setting;
+        Status  : ST_Vision_Status;
+        LastProduct : ST_Vision_LastProduct; // Ultimo prodotto rilevato
+    END_STRUCT;
+
+(*============================================================================================*)
+(*                                          INTERFACE                                         *)
+(*============================================================================================*)
+
+    ST_HMI_Interface : STRUCT
+        Dashboard   : ST_HMI_Dashboard;
+        Robot       : ST_Robot;
+        Axis        : ST_Axes;
+        TeachFrame  : ST_HMI_Frames;
+        Process     : ST_HMI_Process;
+        Vision      : ST_HMI_Vision;
+    END_STRUCT
+    
+END_TYPE

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RestoreDataItem Version="1" DeletionDate="2026-07-15 09:56:11Z" DisplayName="GROUP1 : Locally Hosted Group">
+    <NodeData DomainId="e639c0f9-db09-46f4-abf7-50216a13f220" SolutionId="606e2993-1c57-411c-b0d2-c57a13c52bbf" NodeId="36055f44-b601-471a-87a1-244a26409877" ParentId="ed514367-db0a-4693-894c-7207d1840059" PredecessorId="07fdb932-78bc-4374-98bc-de68282402e4" Position="3" Kind="Instance" />
+</RestoreDataItem>

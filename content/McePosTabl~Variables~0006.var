@@ -1,0 +1,17 @@
+{ CustomGroupDefinition('91dd9a7a-4a78-4126-9e6e-7061ee088dff', 'VAR_INPUT') }
+{ CustomGroupDefinition('b2862ff9-cc60-4fab-a59a-1e9130977030', '') }
+
+VAR_INPUT
+    allowQueuing : BOOL { CustomGroupReference('91dd9a7a-4a78-4126-9e6e-7061ee088dff') } {Id('3710e9f7-69b5-4174-a643-30e351c872d1')}; (*allow queuing the next motions*)
+    firstMove : BOOL { CustomGroupReference('91dd9a7a-4a78-4126-9e6e-7061ee088dff') } {Id('9aee6bde-f396-47a7-80f0-5667a3db40db')}; (*calc first move after system was reset*)
+    stopAfterLastEntry : BOOL { CustomGroupReference('91dd9a7a-4a78-4126-9e6e-7061ee088dff') } {Id('063618ec-676c-4438-b04a-b1382331374e')}; (*continue to the start of PosTable when searching for the next Index and LoadIndex*)
+    conditions : ARRAY_0_CONDITIONS_UBOUND_OF_BOOL { CustomGroupReference('91dd9a7a-4a78-4126-9e6e-7061ee088dff') } {Id('ca552f28-c038-466b-9b20-a8a6e16e8f5c')}; (*bits used as start conditions for a PosTable entry*)
+    loadIndex : INT { CustomGroupReference('91dd9a7a-4a78-4126-9e6e-7061ee088dff') } {Id('013f6ffd-a841-49d5-b64d-2f9d58f7ccb9')}; (*index for loading next motion(s)*)
+END_VAR
+
+VAR
+    nPosTableSize1 : INT { CustomGroupReference('b2862ff9-cc60-4fab-a59a-1e9130977030') } {Id('b1cafd6a-262c-42a9-8e02-179c5a7b3064')}; (*number of entries*)
+    nEntriesRemaining : INT { CustomGroupReference('b2862ff9-cc60-4fab-a59a-1e9130977030') } {Id('c823e347-f66f-4f74-81ad-4c97c0059681')}; (*number of entries remaining*)
+    stConditionResult1 : McePosTableConditions { CustomGroupReference('b2862ff9-cc60-4fab-a59a-1e9130977030') } {Id('4f1475dc-9bfb-4bbb-a57e-dfb70c582c34')}; (*state if the next motion condition are satisfie*)
+    nNextIndex : INT { CustomGroupReference('b2862ff9-cc60-4fab-a59a-1e9130977030') } {Id('68ccacfd-6168-45a9-990d-d5142c68d865')}; (*next valid entry*)
+END_VAR

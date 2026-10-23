@@ -1,0 +1,73 @@
+{ CustomGroupDefinition('a04e0da4-75a3-431c-a769-2ffcda83b779', '') }
+
+VAR
+    FB_PickPlace_Sequencer1 : FB_PickPlace_Sequencer1 { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('240d1328-764e-41fe-8e2d-eda9cc21e3f4')};
+    iPartOnGripper : INT { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('b7fc4303-4ab9-45df-ad7d-512c8be184d9')};
+    trigStart : R_TRIG { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('86c6c901-9b94-4286-96c5-a15ad9f0cd55')};
+    bHMI_Start : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('d3b456e3-6be0-4c3a-817c-a7ebd46d5160')};
+    bHMI_Stop : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('fd4a6fcd-aa1b-4de2-ad9e-4ee8a028fc03')};
+    eHMI_OperationMode : E_PickPlaceMode { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('658962f0-c4fb-4569-9dce-70a36d1a3b21')};
+    bStartCmd : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('8f26307a-66fe-4591-9814-beb40cd2fc20')};
+    bDoubleModeCmd : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('51df7a1f-d10f-4fc9-83da-fb8a35cb8557')};
+    iGripperToUseCmd : INT { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('d61db86e-8b7c-47b8-82be-1a7d8b11e0e2')};
+END_VAR
+
+VAR_EXTERNAL
+    DELTA : AXES_GROUP_REF { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('cd2d51be-80f5-48b1-b1ad-f2584da11c69')}; (* (!!! DO NOT MODIFY !!! - Variable is automatically linked to device)*)
+    FeedIn_Axis : AXIS_REF { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('c27b2c83-73a7-4508-a15e-0ba8fd3f1dd0')}; (* (!!! DO NOT MODIFY !!! - Variable is automatically linked to device)*)
+    FeedOut_Axis : AXIS_REF { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('bb8fb0ad-f8ca-4d01-88c2-7126ebd10d43')}; (* (!!! DO NOT MODIFY !!! - Variable is automatically linked to device)*)
+    CycleControls : ST_HMI_Dashboard_Command { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('ed192ba5-8f06-4c0c-b48c-f2d6d532c95f')};
+    StartPickPlace_Delta : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('c69cb071-d94a-4031-8668-689b8c094a65')};
+    bAutoModeSelected : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('3414f274-41b7-4205-b29d-24a6d39535c2')};
+    bManualModeSelected : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('418a8504-dcd5-4d78-9bca-f46de9d398c3')};
+    G_bResetAllErrors : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('dbe1cbfb-9e8f-4d84-bdbe-fc69ab3e0e8d')}; (*Global command to reset all errors (acknowledge and mark inactive)*)
+    G_bAcknowledgeAllErrors : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('fb69ba49-41a6-4f1b-8541-5f42b6b13f9c')}; (*Global command to acknowledge all active errors*)
+    stPickPlaceProductData_Pick : Yt_GP_MultiGrpProductStruct { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('c51962cd-10f9-44fb-a960-ff7dbe62c87f')};
+    stPickPlaceProductData_Place : Yt_GP_MultiGrpProductStruct { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('f3226c56-824b-4c6a-ada5-d7939670af0a')};
+    Frame_FeedIn : _FrameTypeTransform { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('019360f6-d907-4c4b-97c4-535f8e08861c')};
+    Frame_FeedOut : _FrameTypeTransform { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('7153480c-32b3-4c6f-a463-968cdf46b0af')};
+    rDetectedProducts : REAL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('b130191a-b8a8-4e3e-a2e0-773fe90b4b31')};
+    DATA_Machine : DT_Machine { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('5081d3ca-8763-4fba-bc9c-52acea0fc6bb')};
+    DATA_FeedInAxis : ST_AxisData { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('33cfa33d-1df5-4454-8ae3-b1ef726f462f')};
+    DATA_FeedOutAxis : ST_AxisData { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('56048e98-31bf-452b-be30-429b29aae94a')};
+    DATA_DELTA : DT_Group { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('00ed9ad4-e4b3-4d07-b83a-18404fb7250b')};
+    Gripper1_Offset : ARRAY[0..2] OF LREAL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('55469508-dde0-4460-a783-316ac05d7382')};
+    Gripper2_Offset : ARRAY[0..2] OF LREAL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('c3662781-0519-46f3-9632-aa291773fc39')};
+    RobotJog : ST_Robot_Command { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('ca2df5fa-9025-4a76-9ad5-bd26356e8b0b')};
+    HMI_Data : ST_HMI_Interface { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('389d0805-cab1-4380-b5bd-b1b5dc4b31d6')};
+    SystemControls : ST_HMI_Dashboard_Status { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('9f3a360b-27db-430a-9a7e-bcfbd13a93a8')};
+    CycleControl : ST_HMI_Dashboard_Command { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('bfdcf622-4c6f-4122-b87e-849cc943ee1d')};
+    SB_do1 : Yt_022_1BF00 { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('f642e8a0-2b57-46fb-b3f4-af4d822fa090')}; (*!!! DO NOT MODIFY !!! - Variable is automatically linked to module.*)
+END_VAR
+
+VAR
+    FB_ConveyorController1 : FB_ConveyorController { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('2940078c-dca4-4d84-8411-467d61cd19d8')};
+END_VAR
+
+VAR_EXTERNAL
+    vFeedIn_FrameOffset : VECTOR { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('3c390737-7bdd-482d-9ab1-df2a4feaf550')};
+    FeedIn_SmoothSpeed : LREAL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('967c19b2-9905-4c48-880c-c9e38868a85b')};
+    FeedIn_SmoothAcceleration : LREAL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('82da1bf3-bb5a-429c-b200-6f25325e4c1d')};
+    FeedIn_SmoothDeceleration : LREAL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('7ab3d44e-3b7c-4754-91a4-5705eef6a604')};
+    MultiGrpProductData : Yt_GP_MultiGrpProductStruct { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('6c53f404-83d6-4153-9be4-dff297bb856b')};
+    MonitorStatusData : Yt_GP_MultiGrpMonitorStatusStruct { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('aff1f07f-4500-429d-9873-b96175316cec')};
+END_VAR
+
+VAR
+    max_error : LREAL := LREAL#100.0 { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('00fc10ce-3e80-45a2-b72c-86a199eee76b')};
+    end_zone_margin : LREAL := LREAL#50.0 { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('9d2138f7-b1ec-4a75-af16-07413b842391')};
+END_VAR
+
+VAR_EXTERNAL
+    MainValveGripper : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('f9675931-496a-409c-ad43-779c511e2963')};
+    SecondaryValveGripper : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('b24fc93d-151f-427e-8529-e501e0ce51cd')};
+END_VAR
+
+VAR
+    rtStopCycle : R_TRIG { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('f50deb1d-d212-4fb2-adb7-dd0fd6d039f1')};
+    bStopCycleLatch : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('fb221e54-6fac-4dc5-9908-e364f8ea35ee')};
+END_VAR
+
+VAR_EXTERNAL
+    G_bAutoCycleRunning : BOOL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('764e2498-4012-4402-bd78-b216926fd7d5')};
+END_VAR

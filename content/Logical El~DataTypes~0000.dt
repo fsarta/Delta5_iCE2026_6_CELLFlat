@@ -1,0 +1,172 @@
+TYPE
+    
+    ST_EulerResult : STRUCT
+        fRx         : LREAL;
+        fRy         : LREAL;
+        fRz         : LREAL;
+        bGimbalLock : BOOL;    // TRUE if |Ry| ≈ 90° (singularity)
+    END_STRUCT
+
+    
+    E_PickPlace_State : (
+        Unknown                             := 0,
+        Idle                                := 1,  // Stato di riposo, in attesa di Start
+        Initialize                          := 2,   // Inizializzazione del ciclo e delle modalità
+    
+        // --- FASE DI PICK ---
+        CheckPickLimits                     := 100, // Verifica limiti prodotto da prelevare
+        CalculatePickGripperOffset          := 150,
+        SetPickFrame_Tracking               := 200, // Imposta il frame per il tracking del prelievo
+        ConvertPickToCartesian_Tracking     := 300, // Converte vettore in coordinate cartesiane
+        SetPickOffsetAndPCS_Tracking        := 350, // Imposta l'offset del PCS
+        EnablePickTracking                  := 400, // Abilita il conveyor tracking per il prelievo
+        StartMovePath                       := 450, // Abilita MovePath
+        ApproachPick_Tracking               := 500, // Avvicinamento alla posizione di prelievo (in tracking)
+        WaitForPickSync                     := 600, // Attesa sincronizzazione
+        DescendAndPick                      := 700, // Discesa asse Z e presa pezzo
+        WaitAfterPick_Tracking              := 750, // Pausa in sync dopo la presa
+        AscendAfterPick                     := 800, // Risalita asse Z
+        MoveToParking_AfterPick             := 850, // Vai alla posizione di parcheggio
+        SelectNextProduct_Pick              := 900, // Seleziona prossimo prodotto o passa a PLACE
+    
+        // --- FASE DI PICK (SENZA TRACKING) ---
+        SetPickFrame_Fixed,             // Imposta il frame per il prelievo fisso
+        ApproachPick_Fixed,             // Avvicinamento XY in posizione fissa
+        DescendAndPick_Fixed,           // Discesa Z e presa pezzo in posizione fissa
+    
+        // --- FASE DI PLACE ---
+        InitializePlace                     := 2000, // Inizializzazione fase di deposito
+        CheckPlaceLimits                    := 2100, // Verifica limiti prodotto da depositare
+        SetPlaceFrame_Tracking              := 2200, // Imposta il frame per il tracking del deposito
+        ConvertPlaceToCartesian_Tracking    := 2300, // Converte vettore in coordinate cartesiane
+        SetPlaceOffsetAndPCS_Tracking       := 2350, // Imposta l'offset del PCS
+        EnablePlaceTracking                 := 2400, // Abilita il conveyor tracking per il deposito
+        ApproachPlace_Tracking              := 2500, // Avvicinamento alla posizione di deposito (in tracking)
+        WaitForPlaceSync                    := 2600, // Attesa sincronizzazione
+        DescendAndPlace                     := 2700, // Discesa asse Z e deposito pezzo
+        WaitAfterPlace_Tracking             := 2750, // Pausa in sync dopo il deposito e rilascio pinza
+        AscendAfterPlace                    := 2800, // Risalita asse Z
+        MoveToParking_AfterPlace            := 2850, // Vai alla posizione di parcheggio
+        CycleCompletitionAndChangeMode      := 2900, // Fine ciclo, seleziona prossimo prodotto o cambia modalità
+    
+        // --- FASE DI PLACE (SENZA TRACKING) ---
+        SetPlaceFrame_Fixed,            // Imposta il frame per il deposito fisso
+        ApproachPlace_Fixed,            // Avvicinamento XY in posizione fissa
+        DescendAndPlace_Fixed,          // Discesa Z e deposito pezzo in posizione fissa
+        
+        InitializeFinalParking              := 3000,
+        MoveToParking_SafePosition          := 3100,
+        FinalParkingCompletition            := 3200,
+        
+        // --- STATO DI ERRORE ---
+        Error                               := 9999 // Stato di errore generico
+    )OF INT;
+    
+    E_PickPlace_OperationalMode : (
+        Normal := 0,
+        FixedPick := 1,
+        FixedPlace := 2,
+        TrackingBoth := 3
+    );
+
+    
+    DT_eState : (
+        Idle,                 (* Stato iniziale / Inattivo *)
+        WaitingForStart,      (* In attesa del segnale StartMoveAbsRotAxis *)
+        MovingToPos2,         (* In movimento verso PosBRot *)
+        AtPos2,               (* Raggiunto PosBRot *)
+        MovingToPos1,         (* In movimento verso PosARot *)
+        AtPos1,               (* Raggiunto PosARot *)
+        ErrorState,           (* Stato di errore *)
+        Resetting             (* Stato di reset *)
+    );
+    
+    E_StepStatus : (
+        BUSY    := 0,  
+        ACTIVE  := 1,
+        DONE    := 2,  
+        ERROR   := 3  
+    );
+    
+    E_MotionChannel : (
+        Blend1 := 1,
+        Blend2 := 2,
+        Blend3 := 3,
+        Blend4 := 4
+    );
+    
+(***************************************************************************************************************)    
+    
+    DT_AutoAxes_CommandAuto : STRUCT
+        Start : BOOL;
+        Stop : BOOL;
+    END_STRUCT;
+    
+    DT_AutoAxes_CommandManual : STRUCT
+        Start : BOOL;
+        Stop : BOOL;
+        JogFwd : BOOL;
+        JogRev : BOOL;
+    END_STRUCT;
+    
+    DT_AutoAxes_Command : STRUCT
+        AutoAxes : DT_AutoAxes_CommandAuto;
+        FeedOutAxis : DT_AutoAxes_CommandManual;
+        FeedInAxis : DT_AutoAxes_CommandManual;    
+    END_STRUCT;
+    
+    DT_AutoAxes_Setting : STRUCT
+        Velocity : LREAL;
+        Acceleration :LREAL;
+        Deceleration : LREAL;
+    END_STRUCT;
+    
+    DT_AutoAxes_SettingPos : STRUCT
+        Position : LREAL;
+        Velocity : LREAL;
+        Acceleration :LREAL;
+        Deceleration : LREAL;
+    END_STRUCT;
+
+    
+    DT_AutoAxes_SettingAxes : STRUCT
+        AutoAxes : DT_AutoAxes_Setting;
+        LINAxis : DT_AutoAxes_SettingPos;
+        ROTAxis : DT_AutoAxes_SettingPos;
+    END_STRUCT;
+
+    
+    DT_AutoAxes_Direction : STRUCT
+        LinToA : BOOL;
+        RotToB : BOOL;
+        LinToB : BOOL;
+        RotToA : BOOL;
+    END_STRUCT;   
+    
+    DT_AutoAxes_Status : STRUCT
+        Moving : BOOL;
+        Direction : DT_AutoAxes_Direction;
+    END_STRUCT;
+    
+    DT_AutoAxes_Feedback : STRUCT
+        Position : LREAL;
+        Velocity : LREAL;
+        Torque : LREAL;
+    END_STRUCT;
+    
+    DT_AutoAxes_FeedbackAxes : STRUCT
+        LINAxis : DT_AutoAxes_Feedback;
+        ROTAxis : DT_AutoAxes_Feedback;
+    END_STRUCT;
+    
+    DT_AutoAxes : STRUCT
+        Command : DT_AutoAxes_Command;
+        Setting : DT_AutoAxes_SettingAxes;
+        Status : DT_AutoAxes_Status;
+        Feedback :DT_AutoAxes_FeedbackAxes;
+    END_STRUCT;
+    
+(***************************************************************************************************************)    
+
+       
+END_TYPE

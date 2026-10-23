@@ -1,0 +1,5 @@
+{ CustomGroupDefinition('a97c0575-c14a-46ec-b2fe-f9f16cc32869', '') }
+
+VAR
+    bTemp : BYTE { CustomGroupReference('a97c0575-c14a-46ec-b2fe-f9f16cc32869') } {Id('50d4de36-01f9-4f81-a43d-1d856f2b0499')};
+END_VAR

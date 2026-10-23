@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Metadata>
+   <FolderType>PouFolder</FolderType>
+   <ContentType>FunctionBlock</ContentType>
+   <Kind>FunctionBlock</Kind>
+   <Usings></Usings>
+   <Id>5584e9db-3894-49a7-a42d-bf7d6eae3d95</Id>
+   <ItemGroup>
+      <VariableWorksheet>
+         <Id>0b71d4b0-df34-49af-9f76-dada47186fc9</Id>
+      </VariableWorksheet>
+      <CodeWorksheet Include="FB_Instance.st">
+         <Id>80a8f50c-35f8-40ff-887e-501e8fe41247</Id>
+         <Extension>.st</Extension>
+         <Type>.st</Type>
+         <ParentIndex>0</ParentIndex>
+      </CodeWorksheet>
+      <CodeWorksheet Include="MAPPING_Input.st">
+         <Id>11735e27-e3ef-4808-ab19-55c775ce3d29</Id>
+         <Extension>.st</Extension>
+         <Type>.st</Type>
+         <ParentIndex>1</ParentIndex>
+      </CodeWorksheet>
+      <CodeWorksheet Include="TEST_Position.st">
+         <Id>3a11610a-5186-4772-9c58-85767bda38dc</Id>
+         <Extension>.st</Extension>
+         <Type>.st</Type>
+         <ParentIndex>2</ParentIndex>
+      </CodeWorksheet>
+      <CodeWorksheet Include="RTN_TestPos.st">
+         <Id>d25a9eef-74dc-44b1-9eec-7db3e5682c9e</Id>
+         <Extension>.st</Extension>
+         <Type>.st</Type>
+         <ParentIndex>3</ParentIndex>
+      </CodeWorksheet>
+      <CodeWorksheet Include="RTN_CheckAbsEncOffset.st">
+         <Id>79976f36-3836-4d8f-ab50-e6152c171915</Id>
+         <Extension>.st</Extension>
+         <Type>.st</Type>
+         <ParentIndex>4</ParentIndex>
+      </CodeWorksheet>
+      <CodeWorksheet Include="MOTION.st">
+         <Id>6470273b-0ec2-4959-aa52-283b0d70db07</Id>
+         <Extension>.st</Extension>
+         <Type>.st</Type>
+         <ParentIndex>5</ParentIndex>
+      </CodeWorksheet>
+      <CodeWorksheet Include="MAPPING_Output.st">
+         <Id>220a44be-972a-47ef-aca8-795d7b5cbac7</Id>
+         <Extension>.st</Extension>
+         <Type>.st</Type>
+         <ParentIndex>6</ParentIndex>
+      </CodeWorksheet>
+   </ItemGroup>
+</Metadata>

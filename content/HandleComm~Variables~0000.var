@@ -1,0 +1,5 @@
+{ CustomGroupDefinition('4c14a8f6-1734-4240-b9c9-ea4977a59a86', '') }
+
+VAR
+    bServoError_Commissioning : BOOL { CustomGroupReference('4c14a8f6-1734-4240-b9c9-ea4977a59a86') } {Id('93f4a931-2b56-4ba3-8eee-ba924bc64fc7')};
+END_VAR

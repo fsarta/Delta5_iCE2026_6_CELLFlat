@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DevInstDoc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Projekte/PC_Worx_Next/XML/Schemas/DevInst.xsd" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <DevInst uuid="e80c5347-2c9d-4736-be8c-d4e2435129ac">
+    <TInfo uri="adeprojectref:///e639c0f9-db09-46f4-abf7-50216a13f220/cda306f5-f682-4871-b688-a10accb5b712/d697523d-b237-4ff4-a24f-e9916f76ca40" />
+    <InstVal xPath="/InstanceObjList/Obj[@uID='base00' type='Generic:Function']" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="/InstanceObjList/Obj[@uID='base01' type='Generic:Location']" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="/InstanceObjList/Obj[@uID='base02' type='AmlApcStationName']" Type="Ade.Fdcml.Core.String">[UTF-8;6963393232366D2D66736F652D31]</InstVal>
+    <InstVal xPath="Generic:Uri" Type="System.String">adeprojectref:///e639c0f9-db09-46f4-abf7-50216a13f220/606e2993-1c57-411c-b0d2-c57a13c52bbf/dad2d286-4f6b-4807-b381-87d03bbf955e</InstVal>
+    <InstVal xPath="Generic:FormattedTypeNameWithoutVersion" Type="System.String">iC9226M-FSoE</InstVal>
+    <InstVal xPath="Generic:FormattedTypeName" Type="System.String">iC9226M-FSoE Rev. &gt;= A/2026.6.0</InstVal>
+    <InstVal xPath="AutomationML:DeviceId" Type="System.String">9873992d-5707-40f0-a7c6-42fd3e5e8017</InstVal>
+    <InstVal xPath="AutomationML:RackId" Type="System.String">2004b8a4-021f-4685-8e17-0012eb3db3ae</InstVal>
+    <InstVal xPath="AutomationML:DeviceItemId" Type="System.String">09b1a33f-66f9-4e3c-affa-c6a6d2affaa6</InstVal>
+    <InstVal xPath="AutomationML:TagTableId" Type="System.String">8a8d544d-9f6c-4328-8aeb-8d52d6fdd87d</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/L7ObjList/Obj[@uID='o6_1' type='ESM:Instance0']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/L7ObjList/Obj[@uID='o6_2' type='PLCnext:TaskProperties']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/L7ObjList/Obj[@uID='oe6_evts' type='PLCnext:Events']" Type="Ade.Fdcml.Core.StringAscii">Arp.Plc.Esm.OnColdStart</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/L7ObjList/Obj[@uID='o6_3' type='SysVarUpdateTask']" Type="Ade.Fdcml.Core.String">[UTF-8;]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='piPrjName']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='diSerNum']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='diFWVer']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='diHWVer']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='diFPGAVer']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='diMAC0']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='dsDevHealth']/Current" Type="Ade.Fdcml.Core.BitString8">00</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='dsCPULoad']/Current" Type="Ade.Fdcml.Core.Unsigned8">0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='dsCPU0']/Current" Type="Ade.Fdcml.Core.Unsigned8">0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='dsCPU1']/Current" Type="Ade.Fdcml.Core.Unsigned8">0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='dsCPU2']/Current" Type="Ade.Fdcml.Core.Unsigned8">0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='dsMemUsage']/Current" Type="Ade.Fdcml.Core.Unsigned8">0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='dsMemUsageRetain']/Current" Type="Ade.Fdcml.Core.Unsigned8">0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='dsMemIECProg']/Current" Type="Ade.Fdcml.Core.Unsigned8">0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='dsMemIECData']/Current" Type="Ade.Fdcml.Core.Unsigned8">0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='dsMemIECRetain']/Current" Type="Ade.Fdcml.Core.Unsigned8">0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='dsTempBoard']/Current" Type="Ade.Fdcml.Core.Signed32">0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='dsLEDRdy']/Current" Type="Ade.Fdcml.Core.Unsigned32">0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='dsLEDRun']/Current" Type="Ade.Fdcml.Core.Unsigned32">0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='dsLEDError']/Current" Type="Ade.Fdcml.Core.Unsigned32">0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='dsLEDEcError']/Current" Type="Ade.Fdcml.Core.Unsigned32">0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='dsLEDEcRun']/Current" Type="Ade.Fdcml.Core.Unsigned32">0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='dsLEDIoError']/Current" Type="Ade.Fdcml.Core.Unsigned32">0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='dsLEDIoDiag']/Current" Type="Ade.Fdcml.Core.Unsigned32">0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='dsLEDPnCError']/Current" Type="Ade.Fdcml.Core.Unsigned32">0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='dsLEDPnDError']/Current" Type="Ade.Fdcml.Core.Unsigned32">0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='dsIF0Baud']/Current" Type="Ade.Fdcml.Core.Unsigned8">1</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='dsIF0Duplex']/Current" Type="Ade.Fdcml.Core.Unsigned8">1</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='dsIF0Link']/Current" Type="Ade.Fdcml.Core.Unsigned8">0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='dsIF1Baud']/Current" Type="Ade.Fdcml.Core.Unsigned8">1</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='dsIF1Duplex']/Current" Type="Ade.Fdcml.Core.Unsigned8">1</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='dsIF1Link']/Current" Type="Ade.Fdcml.Core.Unsigned8">0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='pds01']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='pds02']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='pds04']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='pds05']/Current" Type="Ade.Fdcml.Core.BitString8">00</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='pds06']/Current" Type="Ade.Fdcml.Core.Ipv4"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='pds07']/Current" Type="Ade.Fdcml.Core.Ipv4"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='pds08']/Current" Type="Ade.Fdcml.Core.Ipv4"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='pdsdns1']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='pds09']/Current" Type="Ade.Fdcml.Core.Unsigned8">0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='pds10']/Current" Type="Ade.Fdcml.Core.Unsigned8">1</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='pds11']/Current" Type="Ade.Fdcml.Core.Unsigned8">0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='pds12']/Current" Type="Ade.Fdcml.Core.Unsigned8">1</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='pds13']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='pds14']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='pds16']/Current" Type="Ade.Fdcml.Core.Unsigned8">0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/ParaList/Para[@uID='pdsntp']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/PDList/PD[@uid=pdesm1]" Type="System.String">ESM_DATA</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/PDList/PD[@uid=pddi1]" Type="System.String">RTC</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/PDList/PD[@uid=pddi2]" Type="System.String">DEVICE_STATE</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/PDList/PD[@uid=pddi4]" Type="System.String">USER_PARTITION</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/Generic:Uri" Type="System.String">adeprojectref:///e639c0f9-db09-46f4-abf7-50216a13f220/606e2993-1c57-411c-b0d2-c57a13c52bbf/a690662a-a3dd-4f06-933f-38d10c61bb2e</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/Generic:FormattedTypeNameWithoutVersion" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/Generic:FormattedTypeName" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/PDList/PD[@uid=epd040]" Type="System.String">PND_S1_PLC_RUN</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/PDList/PD[@uid=epd041]" Type="System.String">PND_S1_VALID_DATA_CYCLE</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/PDList/PD[@uid=epd053]" Type="System.String">PND_S1_OUTPUT_STATUS_GOOD</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/PDList/PD[@uid=epd054]" Type="System.String">PND_S1_INPUT_STATUS_GOOD</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/PDList/PD[@uid=epd055]" Type="System.String">PND_S1_DATA_LENGTH</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/PDList/PD[@uid=epd056]" Type="System.String">PND_S1_OUTPUTS</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/PDList/PD[@uid=epd057]" Type="System.String">PND_S1_INPUTS</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/PDList/PD[@uid=epd58]" Type="System.String">PND_IO_DRIVEN_BY_PLC</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/PDList/PD[@uid=epd100]" Type="System.String">ESM_DATA</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/PDList/PD[@uid=epd999]" Type="System.String">RTC</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/PDList/PD[@uid=epd998]" Type="System.String">DEVICE_STATE</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/PDList/PD[@uid=epd1001]" Type="System.String">USER_PARTITION</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/PDList/PD[@uid=epd137]" Type="System.String">PNIO_SYSTEM_BF</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/PDList/PD[@uid=epd138]" Type="System.String">PNIO_SYSTEM_SF</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/PDList/PD[@uid=epd139]" Type="System.String">PNIO_MAINTENANCE_DEMANDED</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/PDList/PD[@uid=epd140]" Type="System.String">PNIO_MAINTENANCE_REQUIRED</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/PDList/PD[@uid=epd401]" Type="System.String">PNIO_DIAG_AVAILABLE</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/PDList/PD[@uid=epd141]" Type="System.String">PNIO_CONFIG_STATUS</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/PDList/PD[@uid=epd142]" Type="System.String">PNIO_CONFIG_STATUS_ACTIVE</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/PDList/PD[@uid=epd143]" Type="System.String">PNIO_CONFIG_STATUS_READY</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/PDList/PD[@uid=epd144]" Type="System.String">PNIO_CONFIG_STATUS_CFG_FAULT</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/PDList/PD[@uid=epd145]" Type="System.String">PNIO_FORCE_FAILSAFE</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/PDList/PD[@uid=epd159]" Type="System.String">PNIO_FORCE_PRIMARY</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/PDList/PD[@uid=epd146]" Type="System.String">IP_ACTIVE_SOCKETS</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/PDList/PD[@uid=epf147]" Type="System.String">TLS_ACTIVE_SOCKETS</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/PDList/PD[@uid=epd160]" Type="System.String">SPLC</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/PDList/PD[@uid=epd201]" Type="System.String">SPLC_CONTROL_COMMAND</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/PDList/PD[@uid=epd202]" Type="System.String">SPLC_CONTROL_CONFIRM</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/PDList/PD[@uid=epdeth001]" Type="System.String">EC_MASTER_STATE</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/PDList/PD[@uid=epdeth002]" Type="System.String">EC_TOPOLOGY_OK</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/PDList/PD[@uid=epdeth003]" Type="System.String">EC_DC_IN_SYNC</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/PDList/PD[@uid=epdeth004]" Type="System.String">EC_SLAVE_STATE</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/PDList/PD[@uid=epdeth005]" Type="System.String">EC_SLAVE_LAST_AL_STATUS_CODE</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/PDList/PD[@uid=epdeth006]" Type="System.String">EC_CYCLIC_LOST_FRAMES</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/PDList/PD[@uid=epdeth007]" Type="System.String">EC_SLAVE_STATION_ADDRESS</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/PDList/PD[@uid=epslice001]" Type="System.String">SB_DATA_VALID</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/PDList/PD[@uid=epslice002]" Type="System.String">SB_TOPOLOGY_OK</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/PDList/PD[@uid=epslice003]" Type="System.String">SB_DIAG_ALARM_STATUS</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/PDList/PD[@uid=epslice004]" Type="System.String">SB_DIAG_ALARM_ACK_PENDING</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/PDList/PD[@uid=epd400]" Type="System.String">PLC_CRC_PRJ</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/PDList/PD[@uid=plcstate1]" Type="System.String">PLC_STATE</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/Generic:FormattedTypeNameWithoutVersion" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/Generic:FormattedTypeName" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_7']/L7ObjList/Obj[@uID='eip1' type='EIP:ProfileVersion']" Type="Ade.Fdcml.Core.StringAscii">1.0.0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_7']/Generic:Uri" Type="System.String">adeprojectref:///e639c0f9-db09-46f4-abf7-50216a13f220/606e2993-1c57-411c-b0d2-c57a13c52bbf/db952e51-6e33-49bd-92ee-d86cccdb234f</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_7']/Generic:FormattedTypeNameWithoutVersion" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_7']/Generic:FormattedTypeName" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_7']/NodeId" Type="Ade.Fdcml.Core.Unsigned32">0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/InstanceObjList/Obj[@uID='pnm03' type='PN:LLDPNoDEnabled']" Type="Ade.Fdcml.Core.Boolean">True</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/InstanceObjList/Obj[@uID='pnm04' type='PN:LLDPNoDUIEnabled']" Type="Ade.Fdcml.Core.Boolean">True</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/InstanceObjList/Obj[@uID='pnm05' type='PN:LLDPNoDEnabledLastValue']" Type="Ade.Fdcml.Core.Boolean">True</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/InstanceObjList/Obj[@uID='pnm06' type='PN:MRPActivateConfiguration']" Type="Ade.Fdcml.Core.Boolean">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/InstanceObjList/Obj[@uID='pnm07' type='PN:SNMPGlobalConfiguration']" Type="Ade.Fdcml.Core.Boolean">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/InstanceObjList/Obj[@uID='pnm08' type='PN:SNMPControl']" Type="Ade.Fdcml.Core.Unsigned16">0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/InstanceObjList/Obj[@uID='pnm09' type='PN:SNMPReadOnlyCommunityName']" Type="Ade.Fdcml.Core.String">[UTF-8;7075626C6963]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/InstanceObjList/Obj[@uID='pnm10' type='PN:SNMPReadWriteCommunityName']" Type="Ade.Fdcml.Core.String">[UTF-8;70726976617465]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/L7ObjList/Obj[@uID='pco11' type='PN:SuppSendClock']" Type="Ade.Fdcml.Core.Unsigned32">32</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/L7ObjList/Obj[@uID='pco14' type='PN:ConfigurePDev']" Type="Ade.Fdcml.Core.Boolean">True</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/L7ObjList/Obj[@uID='pco101' type='PN:RTClass']" Type="Ade.Fdcml.Core.Unsigned16">1</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/L7ObjList/Obj[@uID='pco200' type='PN:ProfileVersion']" Type="Ade.Fdcml.Core.StringAscii">7.0.0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/L7ObjList/Obj[@uID='pco209' type='SysVarUpdateTask']" Type="Ade.Fdcml.Core.String">[UTF-8;]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/L7ObjList/Obj[@uID='pco210' type='DeviceSysVarUpdateTask']" Type="Ade.Fdcml.Core.String">[UTF-8;]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/L7ObjList/Obj[@uID='pco211' type='PN:SysRedDevType']" Type="Ade.Fdcml.Core.StringAscii">None</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/PDList/PD[@uid=pndpd1]" Type="System.String">PND_S1_PLC_RUN</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/PDList/PD[@uid=pndpd2]" Type="System.String">PND_S1_VALID_DATA_CYCLE</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/PDList/PD[@uid=pndpd3]" Type="System.String">PND_S1_OUTPUT_STATUS_GOOD</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/PDList/PD[@uid=pndpd4]" Type="System.String">PND_S1_INPUT_STATUS_GOOD</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/PDList/PD[@uid=pndpd5]" Type="System.String">PND_S1_DATA_LENGTH</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/PDList/PD[@uid=pndpd6]" Type="System.String">PND_S1_OUTPUTS</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/PDList/PD[@uid=pndpd7]" Type="System.String">PND_S1_INPUTS</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/PDList/PD[@uid=pndpd8]" Type="System.String">PND_IO_DRIVEN_BY_PLC</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/PDList/PD[@uid=pncpd1]" Type="System.String">PNIO_SYSTEM_BF</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/PDList/PD[@uid=pncpd2]" Type="System.String">PNIO_SYSTEM_SF</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/PDList/PD[@uid=pncpd3]" Type="System.String">PNIO_MAINTENANCE_DEMANDED</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/PDList/PD[@uid=pncpd4]" Type="System.String">PNIO_MAINTENANCE_REQUIRED</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/PDList/PD[@uid=pncpd11]" Type="System.String">PNIO_DIAG_AVAILABLE</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/PDList/PD[@uid=pncpd5]" Type="System.String">PNIO_CONFIG_STATUS</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/PDList/PD[@uid=pncpd6]" Type="System.String">PNIO_CONFIG_STATUS_ACTIVE</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/PDList/PD[@uid=pncpd7]" Type="System.String">PNIO_CONFIG_STATUS_READY</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/PDList/PD[@uid=pncpd8]" Type="System.String">PNIO_CONFIG_STATUS_CFG_FAULT</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/PDList/PD[@uid=pncpd9]" Type="System.String">PNIO_FORCE_FAILSAFE</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/PDList/PD[@uid=pncpd10]" Type="System.String">PNIO_FORCE_PRIMARY</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/PN:ActiveIPLayer" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/Generic:Uri" Type="System.String">adeprojectref:///e639c0f9-db09-46f4-abf7-50216a13f220/606e2993-1c57-411c-b0d2-c57a13c52bbf/09b5d667-25b9-4fad-83a8-990a1aeb3897</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/Generic:FormattedTypeNameWithoutVersion" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/Generic:FormattedTypeName" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/AutomationML:IoSystemId" Type="System.String">83d02c35-6082-4417-9098-51767ef75aa2</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/AutomationML:SubnetId" Type="System.String">dacbc837-24aa-4811-8131-bef39543e108</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaNodeName']/Current" Type="Ade.Fdcml.Core.StringAscii">192.168.1.200</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaServerCertificateType']/Current" Type="Ade.Fdcml.Core.StringAscii">OpcUAConfigurationDocument.ServerCertificate.SelfSigned</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaSubjectAlternativeNameType_1']/Current" Type="Ade.Fdcml.Core.StringAscii">OpcUAConfigurationDocument.ServerCertificate.SelfSigned.SubjectAlternativeName[1].NotSet</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaSubjectAlternativeNameDnsName_1']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaSubjectAlternativeNameIpAddress_1']/Current" Type="Ade.Fdcml.Core.Ipv4"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaSubjectAlternativeNameType_2']/Current" Type="Ade.Fdcml.Core.StringAscii">OpcUAConfigurationDocument.ServerCertificate.SelfSigned.SubjectAlternativeName[2].NotSet</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaSubjectAlternativeNameDnsName_2']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaSubjectAlternativeNameIpAddress_2']/Current" Type="Ade.Fdcml.Core.Ipv4"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaSubjectAlternativeNameType_3']/Current" Type="Ade.Fdcml.Core.StringAscii">OpcUAConfigurationDocument.ServerCertificate.SelfSigned.SubjectAlternativeName[3].NotSet</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaSubjectAlternativeNameDnsName_3']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaSubjectAlternativeNameIpAddress_3']/Current" Type="Ade.Fdcml.Core.Ipv4"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaSubjectAlternativeNameType_4']/Current" Type="Ade.Fdcml.Core.StringAscii">OpcUAConfigurationDocument.ServerCertificate.SelfSigned.SubjectAlternativeName[4].NotSet</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaSubjectAlternativeNameDnsName_4']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaSubjectAlternativeNameIpAddress_4']/Current" Type="Ade.Fdcml.Core.Ipv4"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaServerIdentityStore']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaClientTrustStore']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaManagedSubjectAlternativeNameType_1']/Current" Type="Ade.Fdcml.Core.StringAscii">OpcUAConfigurationDocument.ServerCertificate.Managed.SubjectAlternativeName[1].NotSet</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaManagedSubjectAlternativeNameDnsName_1']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaManagedSubjectAlternativeNameIpAddress_1']/Current" Type="Ade.Fdcml.Core.Ipv4"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaManagedSubjectAlternativeNameType_2']/Current" Type="Ade.Fdcml.Core.StringAscii">OpcUAConfigurationDocument.ServerCertificate.Managed.SubjectAlternativeName[2].NotSet</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaManagedSubjectAlternativeNameDnsName_2']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaManagedSubjectAlternativeNameIpAddress_2']/Current" Type="Ade.Fdcml.Core.Ipv4"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaManagedSubjectAlternativeNameType_3']/Current" Type="Ade.Fdcml.Core.StringAscii">OpcUAConfigurationDocument.ServerCertificate.Managed.SubjectAlternativeName[3].NotSet</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaManagedSubjectAlternativeNameDnsName_3']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaManagedSubjectAlternativeNameIpAddress_3']/Current" Type="Ade.Fdcml.Core.Ipv4"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaManagedSubjectAlternativeNameType_4']/Current" Type="Ade.Fdcml.Core.StringAscii">OpcUAConfigurationDocument.ServerCertificate.Managed.SubjectAlternativeName[4].NotSet</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaManagedSubjectAlternativeNameDnsName_4']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaManagedSubjectAlternativeNameIpAddress_4']/Current" Type="Ade.Fdcml.Core.Ipv4"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaDiscoveryRegistrationEnabled']/Current" Type="Ade.Fdcml.Core.Boolean">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaDiscoveryRegistrationIntervalSeconds']/Current" Type="Ade.Fdcml.Core.Unsigned32">20</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaDiscoveryRegistrationUrl']/Current" Type="Ade.Fdcml.Core.String">[UTF-8;]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaGdsPortsToProvideType']/Current" Type="Ade.Fdcml.Core.StringAscii">OpcUAConfigurationDocument.GdsPortsToProvide.Flagged</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaFiletransferEnabled']/Current" Type="Ade.Fdcml.Core.Boolean">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaFiletransferpcweFolder']/Current" Type="Ade.Fdcml.Core.Boolean">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaFiletransferlogFileFolder']/Current" Type="Ade.Fdcml.Core.Boolean">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaSpecificationEnabled']/Current" Type="Ade.Fdcml.Core.Boolean">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaSpecificationPort']/Current" Type="Ade.Fdcml.Core.Unsigned16">52050</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaSpecificationPortEnabled']/Current" Type="Ade.Fdcml.Core.Boolean">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaSpecificationMaxSessionCount']/Current" Type="Ade.Fdcml.Core.Unsigned16">5</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaSpecificationMaxSessionCountEnabled']/Current" Type="Ade.Fdcml.Core.Boolean">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaPublishedFoldersPublishedFolderEnabled_1']/Current" Type="Ade.Fdcml.Core.Boolean">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaPublishedFoldersPublishedFolderfolderName_1']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaPublishedFoldersPublishedFolderfolderPath_1']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaPublishedFoldersPublishedFolderfilter_1']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaPublishedFoldersPublishedFolderEnabled_2']/Current" Type="Ade.Fdcml.Core.Boolean">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaPublishedFoldersPublishedFolderfolderName_2']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaPublishedFoldersPublishedFolderfolderPath_2']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaPublishedFoldersPublishedFolderfilter_2']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaPublishedFoldersPublishedFolderEnabled_3']/Current" Type="Ade.Fdcml.Core.Boolean">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaPublishedFoldersPublishedFolderfolderName_3']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaPublishedFoldersPublishedFolderfolderPath_3']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaPublishedFoldersPublishedFolderfilter_3']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaPublishedFoldersPublishedFolderEnabled_4']/Current" Type="Ade.Fdcml.Core.Boolean">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaPublishedFoldersPublishedFolderfolderName_4']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaPublishedFoldersPublishedFolderfolderPath_4']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaPublishedFoldersPublishedFolderfilter_4']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaPublishedFoldersPublishedFolderEnabled_5']/Current" Type="Ade.Fdcml.Core.Boolean">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaPublishedFoldersPublishedFolderfolderName_5']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaPublishedFoldersPublishedFolderfolderPath_5']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaPublishedFoldersPublishedFolderfilter_5']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaPublishedFoldersPublishedFolderEnabled_6']/Current" Type="Ade.Fdcml.Core.Boolean">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaPublishedFoldersPublishedFolderfolderName_6']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaPublishedFoldersPublishedFolderfolderPath_6']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaPublishedFoldersPublishedFolderfilter_6']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaPublishedFoldersPublishedFolderEnabled_7']/Current" Type="Ade.Fdcml.Core.Boolean">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaPublishedFoldersPublishedFolderfolderName_7']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaPublishedFoldersPublishedFolderfolderPath_7']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaPublishedFoldersPublishedFolderfilter_7']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaPublishedFoldersPublishedFolderEnabled_8']/Current" Type="Ade.Fdcml.Core.Boolean">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaPublishedFoldersPublishedFolderfolderName_8']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaPublishedFoldersPublishedFolderfolderPath_8']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaPublishedFoldersPublishedFolderfilter_8']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaPublishedFoldersPublishedFolderEnabled_9']/Current" Type="Ade.Fdcml.Core.Boolean">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaPublishedFoldersPublishedFolderfolderName_9']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaPublishedFoldersPublishedFolderfolderPath_9']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaPublishedFoldersPublishedFolderfilter_9']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaPublishedFoldersPublishedFolderEnabled_10']/Current" Type="Ade.Fdcml.Core.Boolean">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaPublishedFoldersPublishedFolderfolderName_10']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaPublishedFoldersPublishedFolderfolderPath_10']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaPublishedFoldersPublishedFolderfilter_10']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaSubscriptionSettingsEnabled']/Current" Type="Ade.Fdcml.Core.Boolean">True</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaSubscriptionSettingsSubscriptionKindEnabled']/Current" Type="Ade.Fdcml.Core.Boolean">True</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaSubscriptionSettingsSubscriptionKind']/Current" Type="Ade.Fdcml.Core.StringAscii">HighPerformance</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaSecuritySettingsEnabled']/Current" Type="Ade.Fdcml.Core.Boolean">True</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaSecuritySettingsApplicationUriCheck']/Current" Type="Ade.Fdcml.Core.Boolean">True</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaSecuritySettingsApplicationAuthentication']/Current" Type="Ade.Fdcml.Core.Boolean">True</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaBasic128Rsa15Enabled']/Current" Type="Ade.Fdcml.Core.Boolean">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaBasic256Enabled']/Current" Type="Ade.Fdcml.Core.Boolean">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaBasic256Sha256Enabled']/Current" Type="Ade.Fdcml.Core.Boolean">True</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaAes128Sha256RsaOaepEnabled']/Current" Type="Ade.Fdcml.Core.Boolean">True</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaAes256Sha256RsaPssEnabled']/Current" Type="Ade.Fdcml.Core.Boolean">True</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaReverseConnectEnabled']/Current" Type="Ade.Fdcml.Core.Boolean">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaReverseConnectUrlEnabled_1']/Current" Type="Ade.Fdcml.Core.Boolean">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaReverseConnectUrl_1']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaReverseConnectUrlEnabled_2']/Current" Type="Ade.Fdcml.Core.Boolean">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaReverseConnectUrl_2']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaReverseConnectUrlEnabled_3']/Current" Type="Ade.Fdcml.Core.Boolean">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaReverseConnectUrl_3']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaReverseConnectUrlEnabled_4']/Current" Type="Ade.Fdcml.Core.Boolean">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaReverseConnectUrl_4']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaReverseConnectUrlEnabled_5']/Current" Type="Ade.Fdcml.Core.Boolean">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaReverseConnectUrl_5']/Current" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaClientModuleApplicationEnabled']/Current" Type="Ade.Fdcml.Core.Boolean">True</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaClientModuleCertificateStoreDefinitionEnabled']/Current" Type="Ade.Fdcml.Core.Boolean">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaClientModuleSelfSignedIdentityStoreName']/Current" Type="Ade.Fdcml.Core.StringAscii">OPC UA Client self-signed</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaClientModuleGivenIdentityStoreName']/Current" Type="Ade.Fdcml.Core.StringAscii">OPC UA Client</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaClientModuleTrustStoreName']/Current" Type="Ade.Fdcml.Core.StringAscii">OPC UA Client</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaClientModuleSessionSecurityDefinitionEnabled']/Current" Type="Ade.Fdcml.Core.Boolean">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaClientModuleApplicationAuthentication']/Current" Type="Ade.Fdcml.Core.Boolean">True</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaClientModuleApplicationUriCheck']/Current" Type="Ade.Fdcml.Core.Boolean">True</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaClientModuleCertificateHostnameCheck']/Current" Type="Ade.Fdcml.Core.Boolean">True</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaClientModuleCertificateTimeCheck']/Current" Type="Ade.Fdcml.Core.Boolean">True</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaClientModuleCertificateIssuerTimeCheck']/Current" Type="Ade.Fdcml.Core.Boolean">True</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaClientModulePasswordEncryptionCheck']/Current" Type="Ade.Fdcml.Core.Boolean">True</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaClientModuleSessionConnectDefinitionEnabled']/Current" Type="Ade.Fdcml.Core.Boolean">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaClientModuleSessionTimeout']/Current" Type="Ade.Fdcml.Core.Unsigned64">1200000</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaClientModuleConnectTimeout']/Current" Type="Ade.Fdcml.Core.Unsigned64">5000</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaClientModuleWatchdogTimeout']/Current" Type="Ade.Fdcml.Core.Unsigned64">5000</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/ParaList/Para[@uID='opcuaClientModuleCallTimeout']/Current" Type="Ade.Fdcml.Core.Unsigned64">10000</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/Generic:Uri" Type="System.String">adeprojectref:///e639c0f9-db09-46f4-abf7-50216a13f220/606e2993-1c57-411c-b0d2-c57a13c52bbf/88c1f138-32b8-4554-a3cb-e7fdb0bfe019</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/Generic:FormattedTypeNameWithoutVersion" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_5']/Generic:FormattedTypeName" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os1' type='SafeOS1']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os1' type='SafeOS1']/Obj[@uID='os115' type='SafeOS1:CFunctionPointerList']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os1' type='SafeOS1']/Obj[@uID='os115' type='SafeOS1:CFunctionPointerList']/Obj[@uID='os115_1' type='SafeOS1:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os1' type='SafeOS1']/Obj[@uID='os115' type='SafeOS1:CFunctionPointerList']/Obj[@uID='os115_2' type='SafeOS1:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os1' type='SafeOS1']/Obj[@uID='os115' type='SafeOS1:CFunctionPointerList']/Obj[@uID='os115_3' type='SafeOS1:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os1' type='SafeOS1']/Obj[@uID='os115' type='SafeOS1:CFunctionPointerList']/Obj[@uID='os115_4' type='SafeOS1:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os1' type='SafeOS1']/Obj[@uID='os115' type='SafeOS1:CFunctionPointerList']/Obj[@uID='os115_5' type='SafeOS1:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os1' type='SafeOS1']/Obj[@uID='os115' type='SafeOS1:CFunctionPointerList']/Obj[@uID='os115_6' type='SafeOS1:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os1' type='SafeOS1']/Obj[@uID='os115' type='SafeOS1:CFunctionPointerList']/Obj[@uID='os115_7' type='SafeOS1:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os1' type='SafeOS1']/Obj[@uID='os115' type='SafeOS1:CFunctionPointerList']/Obj[@uID='os115_8' type='SafeOS1:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os1' type='SafeOS1']/Obj[@uID='os115' type='SafeOS1:CFunctionPointerList']/Obj[@uID='os115_9' type='SafeOS1:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os1' type='SafeOS1']/Obj[@uID='os115' type='SafeOS1:CFunctionPointerList']/Obj[@uID='os115_10' type='SafeOS1:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os1' type='SafeOS1']/Obj[@uID='os115' type='SafeOS1:CFunctionPointerList']/Obj[@uID='os115_11' type='SafeOS1:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os1' type='SafeOS1']/Obj[@uID='os115' type='SafeOS1:CFunctionPointerList']/Obj[@uID='os115_12' type='SafeOS1:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os1' type='SafeOS1']/Obj[@uID='os115' type='SafeOS1:CFunctionPointerList']/Obj[@uID='os115_13' type='SafeOS1:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os1' type='SafeOS1']/Obj[@uID='os115' type='SafeOS1:CFunctionPointerList']/Obj[@uID='os115_14' type='SafeOS1:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os1' type='SafeOS1']/Obj[@uID='os115' type='SafeOS1:CFunctionPointerList']/Obj[@uID='os115_15' type='SafeOS1:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os1' type='SafeOS1']/Obj[@uID='os115' type='SafeOS1:CFunctionPointerList']/Obj[@uID='os115_16' type='SafeOS1:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os1' type='SafeOS1']/Obj[@uID='os115' type='SafeOS1:CFunctionPointerList']/Obj[@uID='os115_17' type='SafeOS1:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os1' type='SafeOS1']/Obj[@uID='os115' type='SafeOS1:CFunctionPointerList']/Obj[@uID='os115_18' type='SafeOS1:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os1' type='SafeOS1']/Obj[@uID='os115' type='SafeOS1:CFunctionPointerList']/Obj[@uID='os115_19' type='SafeOS1:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os1' type='SafeOS1']/Obj[@uID='os115' type='SafeOS1:CFunctionPointerList']/Obj[@uID='os115_20' type='SafeOS1:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os1' type='SafeOS1']/Obj[@uID='os115' type='SafeOS1:CFunctionPointerList']/Obj[@uID='os115_21' type='SafeOS1:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os1' type='SafeOS1']/Obj[@uID='os115' type='SafeOS1:CFunctionPointerList']/Obj[@uID='os115_22' type='SafeOS1:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os1' type='SafeOS1']/Obj[@uID='os115' type='SafeOS1:CFunctionPointerList']/Obj[@uID='os115_23' type='SafeOS1:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os1' type='SafeOS1']/Obj[@uID='os115' type='SafeOS1:CFunctionPointerList']/Obj[@uID='os115_24' type='SafeOS1:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os1' type='SafeOS1']/Obj[@uID='os115' type='SafeOS1:CFunctionPointerList']/Obj[@uID='os115_25' type='SafeOS1:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os1' type='SafeOS1']/Obj[@uID='os115' type='SafeOS1:CFunctionPointerList']/Obj[@uID='os115_26' type='SafeOS1:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os1' type='SafeOS1']/Obj[@uID='os115' type='SafeOS1:CFunctionPointerList']/Obj[@uID='os115_27' type='SafeOS1:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os1' type='SafeOS1']/Obj[@uID='os115' type='SafeOS1:CFunctionPointerList']/Obj[@uID='os115_28' type='SafeOS1:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os1' type='SafeOS1']/Obj[@uID='os115' type='SafeOS1:CFunctionPointerList']/Obj[@uID='os115_29' type='SafeOS1:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os2' type='SafeOS2']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os2' type='SafeOS2']/Obj[@uID='os215' type='SafeOS2:CFunctionPointerList']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os2' type='SafeOS2']/Obj[@uID='os215' type='SafeOS2:CFunctionPointerList']/Obj[@uID='os215_1' type='SafeOS2:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os2' type='SafeOS2']/Obj[@uID='os215' type='SafeOS2:CFunctionPointerList']/Obj[@uID='os215_2' type='SafeOS2:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os2' type='SafeOS2']/Obj[@uID='os215' type='SafeOS2:CFunctionPointerList']/Obj[@uID='os215_3' type='SafeOS2:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os2' type='SafeOS2']/Obj[@uID='os215' type='SafeOS2:CFunctionPointerList']/Obj[@uID='os215_4' type='SafeOS2:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os2' type='SafeOS2']/Obj[@uID='os215' type='SafeOS2:CFunctionPointerList']/Obj[@uID='os215_5' type='SafeOS2:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os2' type='SafeOS2']/Obj[@uID='os215' type='SafeOS2:CFunctionPointerList']/Obj[@uID='os215_6' type='SafeOS2:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os2' type='SafeOS2']/Obj[@uID='os215' type='SafeOS2:CFunctionPointerList']/Obj[@uID='os215_7' type='SafeOS2:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os2' type='SafeOS2']/Obj[@uID='os215' type='SafeOS2:CFunctionPointerList']/Obj[@uID='os215_8' type='SafeOS2:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os2' type='SafeOS2']/Obj[@uID='os215' type='SafeOS2:CFunctionPointerList']/Obj[@uID='os215_9' type='SafeOS2:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os2' type='SafeOS2']/Obj[@uID='os215' type='SafeOS2:CFunctionPointerList']/Obj[@uID='os215_10' type='SafeOS2:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os2' type='SafeOS2']/Obj[@uID='os215' type='SafeOS2:CFunctionPointerList']/Obj[@uID='os215_11' type='SafeOS2:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os2' type='SafeOS2']/Obj[@uID='os215' type='SafeOS2:CFunctionPointerList']/Obj[@uID='os215_12' type='SafeOS2:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os2' type='SafeOS2']/Obj[@uID='os215' type='SafeOS2:CFunctionPointerList']/Obj[@uID='os215_13' type='SafeOS2:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os2' type='SafeOS2']/Obj[@uID='os215' type='SafeOS2:CFunctionPointerList']/Obj[@uID='os215_14' type='SafeOS2:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os2' type='SafeOS2']/Obj[@uID='os215' type='SafeOS2:CFunctionPointerList']/Obj[@uID='os215_15' type='SafeOS2:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os2' type='SafeOS2']/Obj[@uID='os215' type='SafeOS2:CFunctionPointerList']/Obj[@uID='os215_16' type='SafeOS2:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os2' type='SafeOS2']/Obj[@uID='os215' type='SafeOS2:CFunctionPointerList']/Obj[@uID='os215_17' type='SafeOS2:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os2' type='SafeOS2']/Obj[@uID='os215' type='SafeOS2:CFunctionPointerList']/Obj[@uID='os215_18' type='SafeOS2:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os2' type='SafeOS2']/Obj[@uID='os215' type='SafeOS2:CFunctionPointerList']/Obj[@uID='os215_19' type='SafeOS2:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os2' type='SafeOS2']/Obj[@uID='os215' type='SafeOS2:CFunctionPointerList']/Obj[@uID='os215_20' type='SafeOS2:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os2' type='SafeOS2']/Obj[@uID='os215' type='SafeOS2:CFunctionPointerList']/Obj[@uID='os215_21' type='SafeOS2:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os2' type='SafeOS2']/Obj[@uID='os215' type='SafeOS2:CFunctionPointerList']/Obj[@uID='os215_22' type='SafeOS2:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os2' type='SafeOS2']/Obj[@uID='os215' type='SafeOS2:CFunctionPointerList']/Obj[@uID='os215_23' type='SafeOS2:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os2' type='SafeOS2']/Obj[@uID='os215' type='SafeOS2:CFunctionPointerList']/Obj[@uID='os215_24' type='SafeOS2:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os2' type='SafeOS2']/Obj[@uID='os215' type='SafeOS2:CFunctionPointerList']/Obj[@uID='os215_25' type='SafeOS2:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os2' type='SafeOS2']/Obj[@uID='os215' type='SafeOS2:CFunctionPointerList']/Obj[@uID='os215_26' type='SafeOS2:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os2' type='SafeOS2']/Obj[@uID='os215' type='SafeOS2:CFunctionPointerList']/Obj[@uID='os215_27' type='SafeOS2:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os2' type='SafeOS2']/Obj[@uID='os215' type='SafeOS2:CFunctionPointerList']/Obj[@uID='os215_28' type='SafeOS2:CFunctionPointer']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os' type='SafeOS']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os3' type='SafeOS:Profisafe']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os3' type='SafeOS:Profisafe']/Obj[@uID='os3_44' type='SafeOS:CreateFsoeMstrAddrACKREQ']" Type="Ade.Fdcml.Core.Bit">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os3' type='SafeOS:Profisafe']/Obj[@uID='os3_45' type='SafeOS:CreateFsoeMstrAddrACKREI']" Type="Ade.Fdcml.Core.Bit">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os3' type='SafeOS:Profisafe']/Obj[@uID='os3_46' type='SafeOS:CreateFsoeMstrAddrPASSOUT']" Type="Ade.Fdcml.Core.Bit">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os3' type='SafeOS:Profisafe']/Obj[@uID='os3_47' type='SafeOS:CreateFsoeMstrAddrPASSON']" Type="Ade.Fdcml.Core.Bit">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os3' type='SafeOS:Profisafe']/Obj[@uID='os3_48' type='SafeOS:CreateFsoeMstrAddrCECRC']" Type="Ade.Fdcml.Core.Bit">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os3' type='SafeOS:Profisafe']/Obj[@uID='os3_49' type='SafeOS:CreateFsoeMstrAddrWDTIMEOUT']" Type="Ade.Fdcml.Core.Bit">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os3' type='SafeOS:Profisafe']/Obj[@uID='os3_50' type='SafeOS:CreateFsoeMstrAddrCOMM']" Type="Ade.Fdcml.Core.Bit">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os3' type='SafeOS:Profisafe']/Obj[@uID='os3_51' type='SafeOS:CreateFsoeMstrGlobalACKREQ']" Type="Ade.Fdcml.Core.Bit">True</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os3' type='SafeOS:Profisafe']/Obj[@uID='os3_52' type='SafeOS:CreateFsoeMstrGlobalACKREI']" Type="Ade.Fdcml.Core.Bit">True</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os3' type='SafeOS:Profisafe']/Obj[@uID='os3_53' type='SafeOS:CreateFsoeMstrGlobalPASSOUT']" Type="Ade.Fdcml.Core.Bit">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os3' type='SafeOS:Profisafe']/Obj[@uID='os3_54' type='SafeOS:CreateFsoeMstrGlobalCECRC']" Type="Ade.Fdcml.Core.Bit">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os3' type='SafeOS:Profisafe']/Obj[@uID='os3_55' type='SafeOS:CreateFsoeMstrGlobalWDTIMEOUT']" Type="Ade.Fdcml.Core.Bit">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os3' type='SafeOS:Profisafe']/Obj[@uID='os3_56' type='SafeOS:CreateFsoeMstrGlobalCOMM']" Type="Ade.Fdcml.Core.Bit">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='os8' type='SafeOS:ProxyTask']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/L7ObjList/Obj[@uID='scos209' type='SysVarUpdateTask']" Type="Ade.Fdcml.Core.String">[UTF-8;53616665747950726F78795461736B]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/PDList/PD[@uid=spnspd160]" Type="System.String">SPLC</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/PDList/PD[@uid=spnspd201]" Type="System.String">SPLC_CONTROL_COMMAND</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/PDList/PD[@uid=spnspd202]" Type="System.String">SPLC_CONTROL_CONFIRM</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/Generic:FormattedTypeNameWithoutVersion" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_11']/Generic:FormattedTypeName" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_SliceBus']/InstanceObjList/Obj[@uID='sliceBusd00' type='SliceBus:ConsecutiveNumber']" Type="Ade.Fdcml.Core.Signed32">0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_SliceBus']/InstanceObjList/Obj[@uID='sliceBusd01' type='NodeId']" Type="Ade.Fdcml.Core.Unsigned32">0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_SliceBus']/InstanceObjList/Obj[@uID='sliceBusd04' type='SysVarUpdateTask']" Type="Ade.Fdcml.Core.String">[UTF-8;466173745461736B]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_SliceBus']/L7ObjList/Obj[@uID='sliceBusCustom01' type='MaxInsertionsPerModule']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_SliceBus']/L7ObjList/Obj[@uID='sliceBusCustom01' type='MaxInsertionsPerModule']/Obj[@uID='sliceBusCustom01_sub0' type='0xA81BC80']" Type="Ade.Fdcml.Core.Unsigned16">6</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_SliceBus']/L7ObjList/Obj[@uID='sliceBusCustom02' type='InsertionLastModules']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_SliceBus']/L7ObjList/Obj[@uID='sliceBusCustom02' type='InsertionLastModules']/Obj[@uID='sliceBusCustom02_sub0' type='0x78DF1143']" Type="Ade.Fdcml.Core.Boolean">True</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_SliceBus']/L7ObjList/Obj[@uID='sliceBusCustom03' type='DownloadSlotActivationModules']" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_SliceBus']/L7ObjList/Obj[@uID='sliceBusCustom03' type='DownloadSlotActivationModules']/Obj[@uID='sliceBusCustom03_sub0' type='0x78DF1143']" Type="Ade.Fdcml.Core.Boolean">True</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_SliceBus']/L7ObjList/Obj[@uID='sliceBuso3' type='SliceBus:ProfileVersion']" Type="Ade.Fdcml.Core.StringAscii">1.0.0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_SliceBus']/L7ObjList/Obj[@uID='pco208' type='SliceBus:CycleTime']" Type="Ade.Fdcml.Core.Unsigned32">1000</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_SliceBus']/L7ObjList/Obj[@uID='sliceBuso08' type='SliceBus:SyncFreezeMode']" Type="Ade.Fdcml.Core.Boolean">True</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_SliceBus']/PDList/PD[@uid=slice001]" Type="System.String">SB_DATA_VALID</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_SliceBus']/PDList/PD[@uid=slice002]" Type="System.String">SB_TOPOLOGY_OK</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_SliceBus']/PDList/PD[@uid=slice003]" Type="System.String">SB_DIAG_ALARM_STATUS</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_SliceBus']/PDList/PD[@uid=slice004]" Type="System.String">SB_DIAG_ALARM_ACK_PENDING</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_SliceBus']/Generic:Uri" Type="System.String">adeprojectref:///e639c0f9-db09-46f4-abf7-50216a13f220/606e2993-1c57-411c-b0d2-c57a13c52bbf/a6fdec44-63d7-46c8-ab73-ee4fdafeff13</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_SliceBus']/Generic:FormattedTypeNameWithoutVersion" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_SliceBus']/Generic:FormattedTypeName" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_ecat']/InstanceObjList/Obj[@uID='ecatd01' type='NodeId']" Type="Ade.Fdcml.Core.Unsigned32">0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_ecat']/InstanceObjList/Obj[@uID='ecatd02' type='SysVarUpdateTask']" Type="Ade.Fdcml.Core.String">[UTF-8;466173745461736B]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_ecat']/InstanceObjList/Obj[@uID='ecatd02' type='ETHERCAT:AutomaticHcGroupGeneration']" Type="Ade.Fdcml.Core.Boolean">True</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_ecat']/InstanceObjList/Obj[@uID='ecatd03' type='ETHERCAT:LostCyclicFrameAlarmThreshold']" Type="Ade.Fdcml.Core.Unsigned16">9</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_ecat']/L7ObjList/Obj[@uID='pco207' type='ETHERCAT:StationName']" Type="Ade.Fdcml.Core.StringAscii">StationName</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_ecat']/L7ObjList/Obj[@uID='pco208' type='ETHERCAT:CycleTime']" Type="Ade.Fdcml.Core.Unsigned32">2000</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_ecat']/PDList/PD[@uid=ecatComVar1]" Type="System.String">EC_MASTER_STATE</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_ecat']/PDList/PD[@uid=ecatComVar2]" Type="System.String">EC_TOPOLOGY_OK</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_ecat']/PDList/PD[@uid=ecatComVar3]" Type="System.String">EC_DC_IN_SYNC</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_ecat']/PDList/PD[@uid=ecatComVar4]" Type="System.String">EC_SLAVE_STATE</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_ecat']/PDList/PD[@uid=ecatComVar5]" Type="System.String">EC_SLAVE_LAST_AL_STATUS_CODE</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_ecat']/PDList/PD[@uid=ecatComVar6]" Type="System.String">EC_CYCLIC_LOST_FRAMES</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_ecat']/PDList/PD[@uid=ecatComVar7]" Type="System.String">EC_SLAVE_STATION_ADDRESS</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_ecat']/Generic:Uri" Type="System.String">adeprojectref:///e639c0f9-db09-46f4-abf7-50216a13f220/606e2993-1c57-411c-b0d2-c57a13c52bbf/4ceac27b-95c0-4947-b581-b1d8c0d2e3d6</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_ecat']/Generic:FormattedTypeNameWithoutVersion" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_ecat']/Generic:FormattedTypeName" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_yashmi']/InstanceObjList/Obj[@uID='yashmid00' type='YasHmi:ConsecutiveNumber']" Type="Ade.Fdcml.Core.Signed32">0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_yashmi']/InstanceObjList/Obj[@uID='yashmid01' type='NodeId']" Type="Ade.Fdcml.Core.Unsigned32">0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_yashmi']/L7ObjList/Obj[@uID='yashmi1' type='YasHmi:ProfileVersion']" Type="Ade.Fdcml.Core.StringAscii">1.0.0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_yashmi']/Generic:Uri" Type="System.String">adeprojectref:///e639c0f9-db09-46f4-abf7-50216a13f220/606e2993-1c57-411c-b0d2-c57a13c52bbf/162cbb1f-40e5-42f8-8497-f90c7ce49707</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_yashmi']/Generic:FormattedTypeNameWithoutVersion" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_yashmi']/Generic:FormattedTypeName" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_FMK']/L7ObjList/Obj[@uID='FMK001' type='FMK:ProfileVersion']" Type="Ade.Fdcml.Core.StringAscii">1.0.0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_FMK']/PDList/PD[@uid=fmkExtComVar1]" Type="System.String">Y_FMK_AXISCOUNT_SERVO</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_FMK']/PDList/PD[@uid=fmkExtComVar2]" Type="System.String">Y_FMK_AXISCOUNT_VIRTUAL</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_FMK']/PDList/PD[@uid=fmkExtComVar3]" Type="System.String">Y_FMK_AXISCOUNT_EXTERNAL</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_FMK']/PDList/PD[@uid=fmkExtComVar4]" Type="System.String">Y_FMK_AXISCOUNT_OTHER</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_FMK']/PDList/PD[@uid=fmkExtComVar5]" Type="System.String">Y_FMK_AXISCOUNT_TOTAL</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_FMK']/PDList/PD[@uid=motionScanVar1]" Type="System.String">MOTIONSCAN_EXEC_TIME_THRESHOLD</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_FMK']/PDList/PD[@uid=motionScanVar2]" Type="System.String">MOTIONSCAN_METRICS_RESET</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_FMK']/PDList/PD[@uid=motionScanVar3]" Type="System.String">MOTIONSCAN_INTERVAL</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_FMK']/PDList/PD[@uid=motionScanVar4]" Type="System.String">MOTIONSCAN_LAST_EXEC_DURATION</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_FMK']/PDList/PD[@uid=motionScanVar5]" Type="System.String">MOTIONSCAN_MIN_EXEC_DURATION</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_FMK']/PDList/PD[@uid=motionScanVar6]" Type="System.String">MOTIONSCAN_MAX_EXEC_DURATION</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_FMK']/PDList/PD[@uid=motionScanVar7]" Type="System.String">MOTIONSCAN_LAST_ACTIVATION_DELAY</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_FMK']/PDList/PD[@uid=motionScanVar8]" Type="System.String">MOTIONSCAN_MIN_ACTIVATION_DELAY</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_FMK']/PDList/PD[@uid=motionScanVar9]" Type="System.String">MOTIONSCAN_MAX_ACTIVATION_DELAY</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_FMK']/PDList/PD[@uid=motionScanVar10]" Type="System.String">MOTIONSCAN_EXEC_TIME_THRESHOLD_CNT</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_FMK']/Generic:Uri" Type="System.String">adeprojectref:///e639c0f9-db09-46f4-abf7-50216a13f220/606e2993-1c57-411c-b0d2-c57a13c52bbf/74216e70-289a-4747-bfb4-0ef552ee3aeb</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_FMK']/Generic:FormattedTypeNameWithoutVersion" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_FMK']/Generic:FormattedTypeName" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_FMK']/LinkedVariables:axisCountServo" Type="Ade.Fdcml.Core.StringAscii">789e60d9-a68e-481c-b479-2cf8d4df5add</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_FMK']/LinkedVariables:axisCountExt" Type="Ade.Fdcml.Core.StringAscii">a95a93db-7f9d-441c-b9ba-0abbb4b7cbf9</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_FMK']/LinkedVariables:axisCountVirtual" Type="Ade.Fdcml.Core.StringAscii">6e397b18-6471-44f6-ad27-1cbf7b7721ba</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_FMK']/LinkedVariables:axisCountOther" Type="Ade.Fdcml.Core.StringAscii">afeabff7-e508-41b6-9459-e6cb93dd8560</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_FMK']/LinkedVariables:axisCountTotal" Type="Ade.Fdcml.Core.StringAscii">1b12ec39-a8c9-4b2c-90a3-9cdf60e94650</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_FMK']/LinkedVariables:motionScanInfo" Type="Ade.Fdcml.Core.StringAscii">e458ebd5-c7be-44c7-a867-25698d0b35ef</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_FMK']/LinkedVariables" Type="System.String">{"LinkedVariables:axisCountServo":{"GdsConnections":null,"DataType":"UINT","VariableName":"Y_FMK_AXISCOUNT_SERVO","NameFormat":"{0}","NameProvider":"","UId":"axisCountServo","StringIdentifier":"789e60d9-a68e-481c-b479-2cf8d4df5add","GroupStringIdentifier":"bdaef324-aa2b-4ae9-8399-9faa9fdb6393"},"LinkedVariables:axisCountExt":{"GdsConnections":null,"DataType":"UINT","VariableName":"Y_FMK_AXISCOUNT_EXTERNAL","NameFormat":"{0}","NameProvider":"","UId":"axisCountExt","StringIdentifier":"a95a93db-7f9d-441c-b9ba-0abbb4b7cbf9","GroupStringIdentifier":"bdaef324-aa2b-4ae9-8399-9faa9fdb6393"},"LinkedVariables:axisCountVirtual":{"GdsConnections":null,"DataType":"UINT","VariableName":"Y_FMK_AXISCOUNT_VIRTUAL","NameFormat":"{0}","NameProvider":"","UId":"axisCountVirtual","StringIdentifier":"6e397b18-6471-44f6-ad27-1cbf7b7721ba","GroupStringIdentifier":"bdaef324-aa2b-4ae9-8399-9faa9fdb6393"},"LinkedVariables:axisCountOther":{"GdsConnections":null,"DataType":"UINT","VariableName":"Y_FMK_AXISCOUNT_OTHER","NameFormat":"{0}","NameProvider":"","UId":"axisCountOther","StringIdentifier":"afeabff7-e508-41b6-9459-e6cb93dd8560","GroupStringIdentifier":"bdaef324-aa2b-4ae9-8399-9faa9fdb6393"},"LinkedVariables:axisCountTotal":{"GdsConnections":null,"DataType":"UINT","VariableName":"Y_FMK_AXISCOUNT_TOTAL","NameFormat":"{0}","NameProvider":"","UId":"axisCountTotal","StringIdentifier":"1b12ec39-a8c9-4b2c-90a3-9cdf60e94650","GroupStringIdentifier":"bdaef324-aa2b-4ae9-8399-9faa9fdb6393"},"LinkedVariables:motionScanInfo":{"GdsConnections":null,"DataType":"FMK_MOTIONSCAN_TYPE","VariableName":"Y_FMK_MOTIONSCAN_INFO","NameFormat":"{0}","NameProvider":"","UId":"motionScanInfo","StringIdentifier":"e458ebd5-c7be-44c7-a867-25698d0b35ef","GroupStringIdentifier":"bdaef324-aa2b-4ae9-8399-9faa9fdb6393"}}</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_mca']/InstanceObjList/Obj[@uID='cmnLevelOfDetail' type='LevelOfDetail']" Type="Ade.Fdcml.Core.Signed32">2</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_mca']/InstanceObjList/Obj[@uID='maSysVarUpdate' type='SysVarUpdateTask']" Type="Ade.Fdcml.Core.String">[UTF-8;466173745461736B]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_mca']/Generic:Uri" Type="System.String">adeprojectref:///e639c0f9-db09-46f4-abf7-50216a13f220/606e2993-1c57-411c-b0d2-c57a13c52bbf/5110f685-7efc-4051-a67f-fce86cdbd15b</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_mca']/Generic:FormattedTypeNameWithoutVersion" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_mca']/Generic:FormattedTypeName" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_mca']/NodeId" Type="Ade.Fdcml.Core.Unsigned32">0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_mcg']/InstanceObjList/Obj[@uID='mgSysVarUpdate' type='SysVarUpdateTask']" Type="Ade.Fdcml.Core.String">[UTF-8;466173745461736B]</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_mcg']/Generic:Uri" Type="System.String">adeprojectref:///e639c0f9-db09-46f4-abf7-50216a13f220/606e2993-1c57-411c-b0d2-c57a13c52bbf/ed514367-db0a-4693-894c-7207d1840059</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_mcg']/Generic:FormattedTypeNameWithoutVersion" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_mcg']/Generic:FormattedTypeName" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer3-4[@uID='L34_2']/L34ObjList/Obj[@uID='obj10' type='IP:DomainPrefix']" Type="Ade.Fdcml.Core.StringAscii">iC9226M-FSoE</InstVal>
+    <InstVal xPath="//Layer3-4[@uID='L34_2']/L34ObjList/Obj[@uID='obj12' type='IP:ProfileVersion']" Type="Ade.Fdcml.Core.StringAscii">1.0.0</InstVal>
+    <InstVal xPath="//Layer3-4[@uID='L34_2']/L34ObjList/Obj[@uID='obj13' type='SEC:Protocol']" Type="Ade.Fdcml.Core.Unsigned16">1</InstVal>
+    <InstVal xPath="//Layer3-4[@uID='L34_2']/L34ObjList/Obj[@uID='obj14' type='SEC:AuthMethod']" Type="Ade.Fdcml.Core.Unsigned16">1</InstVal>
+    <InstVal xPath="//Layer3-4[@uID='L34_2']/[/InstanceObjList/Obj[@uID='ip200' type='IP:SecondaryIpAddress']" Type="Ade.Fdcml.Core.Ipv4"></InstVal>
+    <InstVal xPath="//Layer3-4[@uID='L34_2']/[/InstanceObjList/Obj[@uID='ip201' type='IP:SecondaryDnsName']" Type="Ade.Fdcml.Core.StringAscii">ic9226m-fsoe-2</InstVal>
+    <InstVal xPath="//Layer3-4[@uID='L34_2']/[/InstanceObjList/Obj[@uID='ip202' type='IP:SecondaryExtendedDomainName']" Type="Ade.Fdcml.Core.String">[UTF-8;6963393232366D2D66736F652D32]</InstVal>
+    <InstVal xPath="//Layer3-4[@uID='L34_2']/[/InstanceObjList/Obj[@uID='ip203' type='IP:SecondaryDefaultGateway']" Type="Ade.Fdcml.Core.Ipv4"></InstVal>
+    <InstVal xPath="//Layer3-4[@uID='L34_2']/[/InstanceObjList/Obj[@uID='ip204' type='IP:SecondarySubnetMask']" Type="Ade.Fdcml.Core.Ipv4"></InstVal>
+    <InstVal xPath="//Layer3-4[@uID='L34_2']/[/InstanceObjList/Obj[@uID='ip205' type='IP:SecondaryIndividualSettings']" Type="Ade.Fdcml.Core.Boolean">False</InstVal>
+    <InstVal xPath="//Layer3-4[@uID='L34_2']/InstanceObjList/Obj[@uID='ip100' type='IP:IpAddress']" Type="Ade.Fdcml.Core.Ipv4">192.168.1.200</InstVal>
+    <InstVal xPath="//Layer3-4[@uID='L34_2']/InstanceObjList/Obj[@uID='ip101' type='IP:DnsName']" Type="Ade.Fdcml.Core.StringAscii">ic9226m-fsoe</InstVal>
+    <InstVal xPath="//Layer3-4[@uID='L34_2']/InstanceObjList/Obj[@uID='ip102' type='IP:ExtendedDomainName']" Type="Ade.Fdcml.Core.String">[UTF-8;6963393232366D2D66736F65]</InstVal>
+    <InstVal xPath="//Layer3-4[@uID='L34_2']/InstanceObjList/Obj[@uID='ip103' type='IP:DefaultGateway']" Type="Ade.Fdcml.Core.Ipv4"></InstVal>
+    <InstVal xPath="//Layer3-4[@uID='L34_2']/InstanceObjList/Obj[@uID='ip104' type='IP:SubnetMask']" Type="Ade.Fdcml.Core.Ipv4">255.255.255.0</InstVal>
+    <InstVal xPath="//Layer3-4[@uID='L34_2']/InstanceObjList/Obj[@uID='ip105' type='IP:IndividualSettings']" Type="Ade.Fdcml.Core.Boolean">True</InstVal>
+    <InstVal xPath="//Layer3-4[@uID='L34_2']/AutomationML:NodeId" Type="System.String">7419a6d0-c633-4b3b-a40d-60a70f3c7f30</InstVal>
+    <InstVal xPath="//Layer1-2[@uID='LAN2']/InstanceObjList/Obj[@uID='eth100' type='Eth:MacAddress']" Type="Ade.Fdcml.Core.MacAddress"></InstVal>
+    <InstVal xPath="//Layer1-2[@uID='LAN2']/AutomationML:CommunicationInterfaceId" Type="System.String">3f618828-96f8-4fbe-8b2c-ec2ec9b28d9c</InstVal>
+    <InstVal xPath="/EndPoint[@uID='e80c5347-2c9d-4736-be8c-d4e2435129ac.LAN2.pcep4']/Eth:PortNumber" Type="Ade.Fdcml.Core.Unsigned32">1</InstVal>
+    <InstVal xPath="/EndPoint[@uID='e80c5347-2c9d-4736-be8c-d4e2435129ac.LAN2.pcep4']/AutomationML:PortId" Type="System.String">0bd4a5d7-2c85-466a-b4ee-4ffef03f360f</InstVal>
+    <InstVal xPath="/EndPoint[@uID='e80c5347-2c9d-4736-be8c-d4e2435129ac.LAN2.pcep5']/Eth:PortNumber" Type="Ade.Fdcml.Core.Unsigned32">2</InstVal>
+    <InstVal xPath="/EndPoint[@uID='e80c5347-2c9d-4736-be8c-d4e2435129ac.LAN2.pcep5']/AutomationML:PortId" Type="System.String">157f02df-0c72-4808-92cc-253b4ed87dc4</InstVal>
+  </DevInst>
+</DevInstDoc>

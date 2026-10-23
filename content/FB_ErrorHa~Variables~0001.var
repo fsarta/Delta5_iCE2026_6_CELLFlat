@@ -1,0 +1,60 @@
+{ CustomGroupDefinition('24da5e1f-2951-49f9-978f-2847474b54c0', 'Input') }
+{ CustomGroupDefinition('686a5575-1a3b-413f-8558-e97ebcffcdfb', 'Output') }
+{ CustomGroupDefinition('a67d7da2-c443-4cba-b2c6-2c3d046a967c', '') }
+
+VAR_INPUT
+    bResetErrors : BOOL { CustomGroupReference('24da5e1f-2951-49f9-978f-2847474b54c0') } {Id('f0e72d70-e299-473f-a5d1-ec16deb189b6')}; (*Command to reset (clear) all errors in the buffer*)
+    bAcknowledgeErrors : BOOL { CustomGroupReference('24da5e1f-2951-49f9-978f-2847474b54c0') } {Id('83e38537-2846-4aea-b188-3015d920efb9')}; (*Command to acknowledge all active errors*)
+END_VAR
+
+VAR_EXTERNAL CONSTANT
+    C_ERROR_BUFFER_SIZE : UINT { CustomGroupReference('a67d7da2-c443-4cba-b2c6-2c3d046a967c') } {Id('e7c9a5e2-00c2-4e8d-a28c-ce3def1c60e8')}; (*Size of the circular error buffer*)
+END_VAR
+
+VAR_EXTERNAL
+    G_ErrorBuffer : arrST_ErrorEntry { CustomGroupReference('a67d7da2-c443-4cba-b2c6-2c3d046a967c') } {Id('1bf65e9e-bec6-4467-8c21-d8494ec22a75')};
+    G_udiErrorHead : UDINT { CustomGroupReference('a67d7da2-c443-4cba-b2c6-2c3d046a967c') } {Id('70896250-e176-468d-867b-a70a3c9196e4')};
+    G_udiErrorTail : UDINT { CustomGroupReference('a67d7da2-c443-4cba-b2c6-2c3d046a967c') } {Id('4c76c888-6477-4070-a155-0e858d648b80')}; (*Pointer to the oldest error (for reading/clearing)*)
+    G_bBufferFull : BOOL { CustomGroupReference('a67d7da2-c443-4cba-b2c6-2c3d046a967c') } {Id('56911b4b-0aa8-4956-828f-107315fd10af')};
+    G_bResetAllErrors : BOOL { CustomGroupReference('a67d7da2-c443-4cba-b2c6-2c3d046a967c') } {Id('054b07aa-8e64-4d92-a0f1-4c440ff5a44d')}; (*Global command to reset all errors (acknowledge and mark inactive)*)
+    G_bAcknowledgeAllErrors : BOOL { CustomGroupReference('a67d7da2-c443-4cba-b2c6-2c3d046a967c') } {Id('c1e7ba75-400e-4abc-80b4-57a34b5b7686')}; (*Global command to acknowledge all active errors*)
+END_VAR
+
+VAR
+    Y_YA_RealTimeClock1 : Y_YA_RealTimeClock { CustomGroupReference('a67d7da2-c443-4cba-b2c6-2c3d046a967c') } {Id('e11346b4-351b-4fb4-952f-a92f48425c16')};
+END_VAR
+
+VAR_EXTERNAL CONSTANT
+    C_MAX_ERROR_LOOKUP_ENTRIES : UDINT { CustomGroupReference('a67d7da2-c443-4cba-b2c6-2c3d046a967c') } {Id('139152c8-95ff-4e5f-9156-fa13c7b47487')};
+END_VAR
+
+VAR_EXTERNAL
+    G_ErrorLookupTable : arrST_ErrorLookupEntry { CustomGroupReference('a67d7da2-c443-4cba-b2c6-2c3d046a967c') } {Id('00fced50-e959-4d8c-af33-5107a1a3d772')};
+    G_stOverallErrorStatus : ST_GlobalErrorStatus { CustomGroupReference('a67d7da2-c443-4cba-b2c6-2c3d046a967c') } {Id('1112c5ec-1b06-44de-bf97-c2780de586ec')};
+END_VAR
+
+VAR
+    tCurrentSysTime : Yt_YA_RTC_Struct { CustomGroupReference('a67d7da2-c443-4cba-b2c6-2c3d046a967c') } {Id('c47680f2-4c3d-49c6-a366-fb1274c7fea4')}; (*Stores time once per cycle*)
+    xResetErrorsR_TRIG : R_TRIG { CustomGroupReference('a67d7da2-c443-4cba-b2c6-2c3d046a967c') } {Id('1a91c11b-0d57-4d59-8f2e-5c67ce9d64a6')}; (*Rising edge detection for reset command*)
+    xAcknowledgeErrorsR_TRIG : R_TRIG { CustomGroupReference('a67d7da2-c443-4cba-b2c6-2c3d046a967c') } {Id('5041c981-d8b8-4628-b292-121b3e996f3d')}; (*Rising edge detection for acknowledge command*)
+    bInitRetains : BOOL := TRUE { CustomGroupReference('a67d7da2-c443-4cba-b2c6-2c3d046a967c') } {Id('24752e65-df71-4239-adc8-a1b1af5c0175')};
+END_VAR
+
+VAR_EXTERNAL
+    G_udiQueue_Tail : UDINT { CustomGroupReference('a67d7da2-c443-4cba-b2c6-2c3d046a967c') } {Id('4b417163-21ca-4a31-b07d-bf022bc08a42')};
+    G_udiQueue_Head : UDINT { CustomGroupReference('a67d7da2-c443-4cba-b2c6-2c3d046a967c') } {Id('d5635c80-00cd-4a06-ae1f-0ceeafdb3365')};
+END_VAR
+
+VAR_EXTERNAL CONSTANT
+    C_FAST_QUEUE_SIZE : UINT { CustomGroupReference('a67d7da2-c443-4cba-b2c6-2c3d046a967c') } {Id('10630322-2a3a-4622-b0aa-b6ae94a7c3ea')};
+END_VAR
+
+VAR_EXTERNAL
+    G_aTaskQueue : arrST_ErrorRequest { CustomGroupReference('a67d7da2-c443-4cba-b2c6-2c3d046a967c') } {Id('16455d19-8127-4a91-ad3e-06855ec068bc')}; (*Physical queue for messages coming from the multiple tasks*)
+    G_bQueueOverflow : BOOL { CustomGroupReference('a67d7da2-c443-4cba-b2c6-2c3d046a967c') } {Id('be0c352c-7feb-4a82-a22e-e7f09f3a3245')};
+    G_aTaskQueues : arrST_TaskQueue { CustomGroupReference('a67d7da2-c443-4cba-b2c6-2c3d046a967c') } {Id('f0ad0e83-735d-44c5-94bd-9b91694b0611')};
+END_VAR
+
+VAR_EXTERNAL CONSTANT
+    C_MAX_TASKS : USINT { CustomGroupReference('a67d7da2-c443-4cba-b2c6-2c3d046a967c') } {Id('4e03fa86-66de-476a-923c-7c06a830b7d2')}; (*Maximum number of concurrent tasks*)
+END_VAR

@@ -1,0 +1,1866 @@
+<?xml version="1.0" encoding="utf-8"?>
+<body xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ <LD>
+  <comment localId="1" height="4" width="35">
+   <position x="5" y="8" />
+   <content>
+    <html xmlns="http://www.w3.org/1999/xhtml">
+     <head xmlns="">
+      <title />
+     </head>
+     <body xmlns="">
+      <p style="color:#000000;font-family:Arial;font-weight:bold;font-style:normal;font-size:14.00pt;">Code_Network1</p>
+     </body>
+    </html>
+   </content>
+   <addData>
+    <data name="commentInformation" handleUnknown="preserve">
+     <commentInformation autoSize="true" parentMainId="1" parentSubId="0" parentBaseType="Network" description="" executionOrderId="1" isJumpLabel="true" />
+    </data>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="2" subNetworkId="0" />
+    </data>
+   </addData>
+  </comment>
+  <leftPowerRail localId="2" height="20" width="3" executionOrderId="2">
+   <position x="6" y="16" />
+   <connectionPointOut formalParameter="3">
+    <relPosition x="3" y="6" />
+    <addData>
+     <data name="linkInformation" handleUnknown="preserve">
+      <linkInformation executionOrderId="2" localId="3" />
+     </data>
+    </addData>
+   </connectionPointOut>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="1" subNetworkId="0" />
+    </data>
+   </addData>
+  </leftPowerRail>
+  <comment localId="20" height="4" width="35">
+   <position x="5" y="40" />
+   <content>
+    <html xmlns="http://www.w3.org/1999/xhtml">
+     <head xmlns="">
+      <title />
+     </head>
+     <body xmlns="">
+      <p style="color:#000000;font-family:Arial;font-weight:bold;font-style:normal;font-size:14.00pt;">Code1_Network1</p>
+     </body>
+    </html>
+   </content>
+   <addData>
+    <data name="commentInformation" handleUnknown="preserve">
+     <commentInformation autoSize="true" parentMainId="3" parentSubId="0" parentBaseType="Network" description="" executionOrderId="2" isJumpLabel="true" />
+    </data>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="4" subNetworkId="0" />
+    </data>
+   </addData>
+  </comment>
+  <leftPowerRail localId="35" height="28" width="3" executionOrderId="2">
+   <position x="6" y="48" />
+   <connectionPointOut formalParameter="30">
+    <relPosition x="3" y="10" />
+    <addData>
+     <data name="linkInformation" handleUnknown="preserve">
+      <linkInformation executionOrderId="2" localId="30" />
+     </data>
+    </addData>
+   </connectionPointOut>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="3" subNetworkId="0" />
+    </data>
+   </addData>
+  </leftPowerRail>
+  <inVariable localId="41" height="4" width="13" executionOrderId="2">
+   <position x="16" y="100" />
+   <connectionPointOut>
+    <relPosition x="13" y="2" />
+   </connectionPointOut>
+   <expression>SecuredArea</expression>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="7" subNetworkId="0" />
+    </data>
+   </addData>
+  </inVariable>
+  <inVariable localId="79" height="4" width="13" executionOrderId="2">
+   <position x="16" y="148" />
+   <connectionPointOut>
+    <relPosition x="13" y="2" />
+   </connectionPointOut>
+   <expression>SecuredArea</expression>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="10" subNetworkId="0" />
+    </data>
+   </addData>
+  </inVariable>
+  <leftPowerRail localId="113" height="16" width="3" executionOrderId="2">
+   <position x="6" y="184" />
+   <connectionPointOut formalParameter="125">
+    <relPosition x="3" y="6" />
+    <addData>
+     <data name="linkInformation" handleUnknown="preserve">
+      <linkInformation executionOrderId="-2147483648" localId="125" />
+     </data>
+    </addData>
+   </connectionPointOut>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="5" subNetworkId="0" />
+    </data>
+   </addData>
+  </leftPowerRail>
+  <comment localId="66" height="4" width="40">
+   <position x="5" y="80" />
+   <content>
+    <html xmlns="http://www.w3.org/1999/xhtml">
+     <head xmlns="">
+      <title />
+     </head>
+     <body xmlns="">
+      <p style="color:#000000;font-family:Arial;font-weight:bold;font-style:normal;font-size:14.00pt;">Code1_Network3</p>
+     </body>
+    </html>
+   </content>
+   <addData>
+    <data name="commentInformation" handleUnknown="preserve">
+     <commentInformation autoSize="true" parentMainId="7" parentSubId="0" parentBaseType="Network" description="Cancello Lato Delta" executionOrderId="3" isJumpLabel="true" />
+    </data>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="8" subNetworkId="0" />
+    </data>
+   </addData>
+  </comment>
+  <comment localId="80" height="4" width="45">
+   <position x="5" y="128" />
+   <content>
+    <html xmlns="http://www.w3.org/1999/xhtml">
+     <head xmlns="">
+      <title />
+     </head>
+     <body xmlns="">
+      <p style="color:#000000;font-family:Arial;font-weight:bold;font-style:normal;font-size:14.00pt;">Code1_Network4</p>
+     </body>
+    </html>
+   </content>
+   <addData>
+    <data name="commentInformation" handleUnknown="preserve">
+     <commentInformation autoSize="true" parentMainId="10" parentSubId="0" parentBaseType="Network" description="Cancello Lato Camera" executionOrderId="4" isJumpLabel="true" />
+    </data>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="9" subNetworkId="0" />
+    </data>
+   </addData>
+  </comment>
+  <comment localId="115" height="4" width="35">
+   <position x="5" y="176" />
+   <content>
+    <html xmlns="http://www.w3.org/1999/xhtml">
+     <head xmlns="">
+      <title />
+     </head>
+     <body xmlns="">
+      <p style="color:#000000;font-family:Arial;font-weight:bold;font-style:normal;font-size:14.00pt;">Code1_Network2</p>
+     </body>
+    </html>
+   </content>
+   <addData>
+    <data name="commentInformation" handleUnknown="preserve">
+     <commentInformation autoSize="true" parentMainId="5" parentSubId="0" parentBaseType="Network" description="" executionOrderId="5" isJumpLabel="true" />
+    </data>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="6" subNetworkId="0" />
+    </data>
+   </addData>
+  </comment>
+  <contact localId="4" height="8" width="18" executionOrderId="6">
+   <position x="11" y="16" />
+   <connectionPointIn>
+    <relPosition x="0" y="6" />
+    <connection refLocalId="2" formalParameter="3">
+     <position x="11" y="22" />
+     <position x="9" y="22" />
+     <addData>
+      <data name="connectionInformation" handleUnknown="preserve">
+       <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+      </data>
+     </addData>
+    </connection>
+   </connectionPointIn>
+   <connectionPointOut>
+    <relPosition x="18" y="6" />
+   </connectionPointOut>
+   <variable>Safe_YellowInputButton</variable>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="1" subNetworkId="0" />
+    </data>
+   </addData>
+  </contact>
+  <contact localId="29" height="4" width="18" executionOrderId="6">
+   <position x="11" y="56" />
+   <connectionPointIn>
+    <relPosition x="0" y="2" />
+    <connection refLocalId="35" formalParameter="30">
+     <position x="11" y="58" />
+     <position x="9" y="58" />
+     <addData>
+      <data name="connectionInformation" handleUnknown="preserve">
+       <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+      </data>
+     </addData>
+    </connection>
+   </connectionPointIn>
+   <connectionPointOut>
+    <relPosition x="18" y="2" />
+   </connectionPointOut>
+   <variable>sEmergency_CH0</variable>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="3" subNetworkId="0" />
+    </data>
+   </addData>
+  </contact>
+  <block localId="31" width="18" height="8" typeName="BOOL_TO_SAFEBOOL" executionOrderId="6">
+   <position x="31" y="96" />
+   <inputVariables>
+    <variable formalParameter="IN" hidden="true">
+     <connectionPointIn>
+      <relPosition x="0" y="6" />
+      <connection refLocalId="41">
+       <position x="31" y="102" />
+       <position x="29" y="102" />
+       <addData>
+        <data name="connectionInformation" handleUnknown="preserve">
+         <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+        </data>
+       </addData>
+      </connection>
+     </connectionPointIn>
+    </variable>
+   </inputVariables>
+   <inOutVariables />
+   <outputVariables>
+    <variable formalParameter="BOOL_TO_SAFEBOOL" hidden="true">
+     <connectionPointOut>
+      <relPosition x="18" y="6" />
+     </connectionPointOut>
+    </variable>
+   </outputVariables>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="7" subNetworkId="0" />
+    </data>
+    <data name="blockInformation" handleUnknown="preserve">
+     <blockInformation canEditLabel="false" extensible="false" />
+    </data>
+    <data name="parameterInformations" handleUnknown="preserve">
+     <parameterInformations>
+      <parameterInformation formalParameter="IN" localId="39" executionOrderId="4" negatable="true" editorParameter="false" priority="1">
+       <position x="31" y="102" />
+      </parameterInformation>
+      <parameterInformation formalParameter="BOOL_TO_SAFEBOOL" localId="40" executionOrderId="8" negatable="true" editorParameter="false" priority="2">
+       <position x="49" y="102" />
+      </parameterInformation>
+     </parameterInformations>
+    </data>
+   </addData>
+  </block>
+  <block localId="81" width="18" height="8" typeName="BOOL_TO_SAFEBOOL" executionOrderId="6">
+   <position x="31" y="144" />
+   <inputVariables>
+    <variable formalParameter="IN" hidden="true">
+     <connectionPointIn>
+      <relPosition x="0" y="6" />
+      <connection refLocalId="79">
+       <position x="31" y="150" />
+       <position x="29" y="150" />
+       <addData>
+        <data name="connectionInformation" handleUnknown="preserve">
+         <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+        </data>
+       </addData>
+      </connection>
+     </connectionPointIn>
+    </variable>
+   </inputVariables>
+   <inOutVariables />
+   <outputVariables>
+    <variable formalParameter="BOOL_TO_SAFEBOOL" hidden="true">
+     <connectionPointOut>
+      <relPosition x="18" y="6" />
+     </connectionPointOut>
+    </variable>
+   </outputVariables>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="10" subNetworkId="0" />
+    </data>
+    <data name="blockInformation" handleUnknown="preserve">
+     <blockInformation canEditLabel="false" extensible="false" />
+    </data>
+    <data name="parameterInformations" handleUnknown="preserve">
+     <parameterInformations>
+      <parameterInformation formalParameter="IN" localId="82" executionOrderId="4" negatable="true" editorParameter="false" priority="1">
+       <position x="31" y="150" />
+      </parameterInformation>
+      <parameterInformation formalParameter="BOOL_TO_SAFEBOOL" localId="83" executionOrderId="8" negatable="true" editorParameter="false" priority="2">
+       <position x="49" y="150" />
+      </parameterInformation>
+     </parameterInformations>
+    </data>
+   </addData>
+  </block>
+  <contact localId="116" height="4" width="18" executionOrderId="6">
+   <position x="11" y="188" />
+   <connectionPointIn>
+    <relPosition x="0" y="2" />
+    <connection refLocalId="113" formalParameter="125">
+     <position x="11" y="190" />
+     <position x="9" y="190" />
+     <addData>
+      <data name="connectionInformation" handleUnknown="preserve">
+       <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+      </data>
+     </addData>
+    </connection>
+   </connectionPointIn>
+   <connectionPointOut>
+    <relPosition x="18" y="2" />
+   </connectionPointOut>
+   <variable>EmergencyStop</variable>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="5" subNetworkId="0" />
+    </data>
+   </addData>
+  </contact>
+  <coil localId="5" height="8" width="18" executionOrderId="8">
+   <position x="36" y="16" />
+   <connectionPointIn>
+    <relPosition x="0" y="6" />
+    <connection refLocalId="4">
+     <position x="36" y="22" />
+     <position x="29" y="22" />
+     <addData>
+      <data name="connectionInformation" handleUnknown="preserve">
+       <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+      </data>
+     </addData>
+    </connection>
+   </connectionPointIn>
+   <connectionPointOut>
+    <relPosition x="18" y="6" />
+   </connectionPointOut>
+   <variable>ACK_REI_FSOE_MSTR_GLOBAL</variable>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="1" subNetworkId="0" />
+    </data>
+   </addData>
+  </coil>
+  <contact localId="28" height="4" width="18" executionOrderId="8">
+   <position x="31" y="56" />
+   <connectionPointIn>
+    <relPosition x="0" y="2" />
+    <connection refLocalId="29">
+     <position x="31" y="58" />
+     <position x="29" y="58" />
+     <addData>
+      <data name="connectionInformation" handleUnknown="preserve">
+       <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+      </data>
+     </addData>
+    </connection>
+   </connectionPointIn>
+   <connectionPointOut>
+    <relPosition x="18" y="2" />
+   </connectionPointOut>
+   <variable>sDeltaDoor_CH0</variable>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="3" subNetworkId="0" />
+    </data>
+   </addData>
+  </contact>
+  <contact localId="131" height="4" width="18" executionOrderId="8">
+   <position x="31" y="188" />
+   <connectionPointIn>
+    <relPosition x="0" y="2" />
+    <connection refLocalId="116">
+     <position x="31" y="190" />
+     <position x="29" y="190" />
+     <addData>
+      <data name="connectionInformation" handleUnknown="preserve">
+       <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+      </data>
+     </addData>
+    </connection>
+   </connectionPointIn>
+   <connectionPointOut>
+    <relPosition x="18" y="2" />
+   </connectionPointOut>
+   <variable>sDeltaGuardLocked</variable>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="5" subNetworkId="0" />
+    </data>
+   </addData>
+  </contact>
+  <inVariable localId="27" height="4" width="18" executionOrderId="10">
+   <position x="11" y="112" />
+   <connectionPointOut>
+    <relPosition x="18" y="2" />
+   </connectionPointOut>
+   <expression>DeltaGuardLocked</expression>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="7" subNetworkId="0" />
+    </data>
+   </addData>
+  </inVariable>
+  <contact localId="43" height="4" width="18" executionOrderId="10">
+   <position x="51" y="56" />
+   <connectionPointIn>
+    <relPosition x="0" y="2" />
+    <connection refLocalId="28">
+     <position x="51" y="58" />
+     <position x="49" y="58" />
+     <addData>
+      <data name="connectionInformation" handleUnknown="preserve">
+       <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+      </data>
+     </addData>
+    </connection>
+   </connectionPointIn>
+   <connectionPointOut>
+    <relPosition x="18" y="2" />
+   </connectionPointOut>
+   <variable>sCameraDoor_CH0</variable>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="3" subNetworkId="0" />
+    </data>
+   </addData>
+  </contact>
+  <inVariable localId="84" height="4" width="18" executionOrderId="10">
+   <position x="11" y="160" />
+   <connectionPointOut>
+    <relPosition x="18" y="2" />
+   </connectionPointOut>
+   <expression>CameraGuardLocked</expression>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="10" subNetworkId="0" />
+    </data>
+   </addData>
+  </inVariable>
+  <contact localId="132" height="8" width="18" executionOrderId="10">
+   <position x="51" y="184" />
+   <connectionPointIn>
+    <relPosition x="0" y="6" />
+    <connection refLocalId="131">
+     <position x="51" y="190" />
+     <position x="49" y="190" />
+     <addData>
+      <data name="connectionInformation" handleUnknown="preserve">
+       <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+      </data>
+     </addData>
+    </connection>
+   </connectionPointIn>
+   <connectionPointOut>
+    <relPosition x="18" y="6" />
+   </connectionPointOut>
+   <variable>sCameraGuardLocked</variable>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="5" subNetworkId="0" />
+    </data>
+   </addData>
+  </contact>
+  <contact localId="22" height="4" width="18" executionOrderId="12">
+   <position x="31" y="60" />
+   <connectionPointIn>
+    <relPosition x="0" y="2" />
+    <connection refLocalId="29">
+     <position x="31" y="62" />
+     <position x="30" y="62" />
+     <position x="30" y="58" />
+     <position x="29" y="58" />
+     <addData>
+      <data name="connectionInformation" handleUnknown="preserve">
+       <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+      </data>
+     </addData>
+    </connection>
+   </connectionPointIn>
+   <connectionPointOut>
+    <relPosition x="18" y="2" />
+   </connectionPointOut>
+   <variable>SAFETRUE</variable>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="3" subNetworkId="0" />
+    </data>
+   </addData>
+  </contact>
+  <block localId="32" width="18" height="8" typeName="F_TRIG" instanceName="F_TRIG1" executionOrderId="12">
+   <position x="36" y="28" />
+   <inputVariables>
+    <variable formalParameter="CLK">
+     <connectionPointIn>
+      <relPosition x="0" y="6" />
+      <connection refLocalId="4">
+       <position x="36" y="34" />
+       <position x="35" y="34" />
+       <position x="35" y="22" />
+       <position x="29" y="22" />
+       <addData>
+        <data name="connectionInformation" handleUnknown="preserve">
+         <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+        </data>
+       </addData>
+      </connection>
+     </connectionPointIn>
+    </variable>
+   </inputVariables>
+   <inOutVariables />
+   <outputVariables>
+    <variable formalParameter="Q">
+     <connectionPointOut>
+      <relPosition x="18" y="6" />
+     </connectionPointOut>
+    </variable>
+   </outputVariables>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="1" subNetworkId="0" />
+    </data>
+    <data name="blockInformation" handleUnknown="preserve">
+     <blockInformation canEditLabel="true" extensible="false" />
+    </data>
+    <data name="parameterInformations" handleUnknown="preserve">
+     <parameterInformations>
+      <parameterInformation formalParameter="CLK" localId="33" executionOrderId="10" negatable="true" editorParameter="false" priority="1">
+       <position x="36" y="34" />
+      </parameterInformation>
+      <parameterInformation formalParameter="Q" localId="34" executionOrderId="14" negatable="true" editorParameter="false" priority="2">
+       <position x="54" y="34" />
+      </parameterInformation>
+     </parameterInformations>
+    </data>
+   </addData>
+  </block>
+  <contact localId="133" height="4" width="18" executionOrderId="12">
+   <position x="31" y="192" />
+   <connectionPointIn>
+    <relPosition x="0" y="2" />
+    <connection refLocalId="116">
+     <position x="31" y="194" />
+     <position x="30" y="194" />
+     <position x="30" y="190" />
+     <position x="29" y="190" />
+     <addData>
+      <data name="connectionInformation" handleUnknown="preserve">
+       <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+      </data>
+     </addData>
+    </connection>
+   </connectionPointIn>
+   <connectionPointOut>
+    <relPosition x="18" y="2" />
+   </connectionPointOut>
+   <variable>SAFETRUE</variable>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="5" subNetworkId="0" />
+    </data>
+   </addData>
+  </contact>
+  <inVariable localId="21" height="4" width="8" executionOrderId="14">
+   <position x="81" y="52" />
+   <connectionPointOut>
+    <relPosition x="8" y="2" />
+   </connectionPointOut>
+   <expression>TRUE</expression>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="3" subNetworkId="0" />
+    </data>
+   </addData>
+  </inVariable>
+  <block localId="71" width="18" height="8" typeName="BOOL_TO_SAFEBOOL" executionOrderId="14">
+   <position x="31" y="108" />
+   <inputVariables>
+    <variable formalParameter="IN" hidden="true">
+     <connectionPointIn>
+      <relPosition x="0" y="6" />
+      <connection refLocalId="27">
+       <position x="31" y="114" />
+       <position x="29" y="114" />
+       <addData>
+        <data name="connectionInformation" handleUnknown="preserve">
+         <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+        </data>
+       </addData>
+      </connection>
+     </connectionPointIn>
+    </variable>
+   </inputVariables>
+   <inOutVariables />
+   <outputVariables>
+    <variable formalParameter="BOOL_TO_SAFEBOOL" hidden="true">
+     <connectionPointOut>
+      <relPosition x="18" y="6" />
+     </connectionPointOut>
+    </variable>
+   </outputVariables>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="7" subNetworkId="0" />
+    </data>
+    <data name="blockInformation" handleUnknown="preserve">
+     <blockInformation canEditLabel="false" extensible="false" />
+    </data>
+    <data name="parameterInformations" handleUnknown="preserve">
+     <parameterInformations>
+      <parameterInformation formalParameter="IN" localId="72" executionOrderId="12" negatable="true" editorParameter="false" priority="1">
+       <position x="31" y="114" />
+      </parameterInformation>
+      <parameterInformation formalParameter="BOOL_TO_SAFEBOOL" localId="78" executionOrderId="16" negatable="true" editorParameter="false" priority="2">
+       <position x="49" y="114" />
+      </parameterInformation>
+     </parameterInformations>
+    </data>
+   </addData>
+  </block>
+  <block localId="85" width="18" height="8" typeName="BOOL_TO_SAFEBOOL" executionOrderId="14">
+   <position x="31" y="156" />
+   <inputVariables>
+    <variable formalParameter="IN" hidden="true">
+     <connectionPointIn>
+      <relPosition x="0" y="6" />
+      <connection refLocalId="84">
+       <position x="31" y="162" />
+       <position x="29" y="162" />
+       <addData>
+        <data name="connectionInformation" handleUnknown="preserve">
+         <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+        </data>
+       </addData>
+      </connection>
+     </connectionPointIn>
+    </variable>
+   </inputVariables>
+   <inOutVariables />
+   <outputVariables>
+    <variable formalParameter="BOOL_TO_SAFEBOOL" hidden="true">
+     <connectionPointOut>
+      <relPosition x="18" y="6" />
+     </connectionPointOut>
+    </variable>
+   </outputVariables>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="10" subNetworkId="0" />
+    </data>
+    <data name="blockInformation" handleUnknown="preserve">
+     <blockInformation canEditLabel="false" extensible="false" />
+    </data>
+    <data name="parameterInformations" handleUnknown="preserve">
+     <parameterInformations>
+      <parameterInformation formalParameter="IN" localId="86" executionOrderId="12" negatable="true" editorParameter="false" priority="1">
+       <position x="31" y="162" />
+      </parameterInformation>
+      <parameterInformation formalParameter="BOOL_TO_SAFEBOOL" localId="87" executionOrderId="16" negatable="true" editorParameter="false" priority="2">
+       <position x="49" y="162" />
+      </parameterInformation>
+     </parameterInformations>
+    </data>
+   </addData>
+  </block>
+  <coil localId="117" height="4" width="18" executionOrderId="14">
+   <position x="71" y="188" />
+   <connectionPointIn>
+    <relPosition x="0" y="2" />
+    <connection refLocalId="132">
+     <position x="71" y="190" />
+     <position x="69" y="190" />
+     <addData>
+      <data name="connectionInformation" handleUnknown="preserve">
+       <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+      </data>
+     </addData>
+    </connection>
+    <connection refLocalId="133">
+     <position x="71" y="190" />
+     <position x="70" y="190" />
+     <position x="70" y="194" />
+     <position x="49" y="194" />
+     <addData>
+      <data name="connectionInformation" handleUnknown="preserve">
+       <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+      </data>
+     </addData>
+    </connection>
+   </connectionPointIn>
+   <connectionPointOut>
+    <relPosition x="18" y="2" />
+   </connectionPointOut>
+   <variable>sPilzSTO_SL</variable>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="5" subNetworkId="0" />
+    </data>
+   </addData>
+  </coil>
+  <coil localId="37" height="4" width="18" executionOrderId="16">
+   <position x="61" y="32" />
+   <connectionPointIn>
+    <relPosition x="0" y="2" />
+    <connection refLocalId="32" formalParameter="Q">
+     <position x="61" y="34" />
+     <position x="54" y="34" />
+     <addData>
+      <data name="connectionInformation" handleUnknown="preserve">
+       <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+      </data>
+     </addData>
+    </connection>
+   </connectionPointIn>
+   <connectionPointOut>
+    <relPosition x="18" y="2" />
+   </connectionPointOut>
+   <variable>ResetSafety</variable>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="1" subNetworkId="0" />
+    </data>
+   </addData>
+  </coil>
+  <coil localId="118" height="4" width="18" executionOrderId="16">
+   <position x="71" y="192" />
+   <connectionPointIn>
+    <relPosition x="0" y="2" />
+    <connection refLocalId="132">
+     <position x="71" y="194" />
+     <position x="70" y="194" />
+     <position x="70" y="190" />
+     <position x="69" y="190" />
+     <addData>
+      <data name="connectionInformation" handleUnknown="preserve">
+       <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+      </data>
+     </addData>
+    </connection>
+    <connection refLocalId="133">
+     <position x="71" y="194" />
+     <position x="49" y="194" />
+     <addData>
+      <data name="connectionInformation" handleUnknown="preserve">
+       <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+      </data>
+     </addData>
+    </connection>
+   </connectionPointIn>
+   <connectionPointOut>
+    <relPosition x="18" y="2" />
+   </connectionPointOut>
+   <variable>sPilzSTO_UB</variable>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="5" subNetworkId="0" />
+    </data>
+   </addData>
+  </coil>
+  <inVariable localId="67" height="4" width="8" executionOrderId="18">
+   <position x="71" y="92" />
+   <connectionPointOut>
+    <relPosition x="8" y="2" />
+   </connectionPointOut>
+   <expression>TRUE</expression>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="7" subNetworkId="0" />
+    </data>
+   </addData>
+  </inVariable>
+  <inVariable localId="88" height="4" width="8" executionOrderId="18">
+   <position x="71" y="140" />
+   <connectionPointOut>
+    <relPosition x="8" y="2" />
+   </connectionPointOut>
+   <expression>TRUE</expression>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="10" subNetworkId="0" />
+    </data>
+   </addData>
+  </inVariable>
+  <coil localId="119" height="4" width="18" executionOrderId="18">
+   <position x="71" y="196" />
+   <connectionPointIn>
+    <relPosition x="0" y="2" />
+    <connection refLocalId="132">
+     <position x="71" y="198" />
+     <position x="70" y="198" />
+     <position x="70" y="190" />
+     <position x="69" y="190" />
+     <addData>
+      <data name="connectionInformation" handleUnknown="preserve">
+       <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+      </data>
+     </addData>
+    </connection>
+    <connection refLocalId="133">
+     <position x="71" y="198" />
+     <position x="70" y="198" />
+     <position x="70" y="194" />
+     <position x="49" y="194" />
+     <addData>
+      <data name="connectionInformation" handleUnknown="preserve">
+       <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+      </data>
+     </addData>
+    </connection>
+   </connectionPointIn>
+   <connectionPointOut>
+    <relPosition x="18" y="2" />
+   </connectionPointOut>
+   <variable>sPilzSTO_TInv</variable>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="5" subNetworkId="0" />
+    </data>
+   </addData>
+  </coil>
+  <inVariable localId="111" height="4" width="13" executionOrderId="20">
+   <position x="76" y="60" />
+   <connectionPointOut>
+    <relPosition x="13" y="2" />
+   </connectionPointOut>
+   <expression>SAFEFALSE</expression>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="3" subNetworkId="0" />
+    </data>
+   </addData>
+  </inVariable>
+  <rightPowerRail localId="6" height="20" width="3" executionOrderId="22">
+   <position x="81" y="16" />
+   <connectionPointIn>
+    <relPosition x="0" y="6" />
+    <connection refLocalId="5">
+     <position x="81" y="22" />
+     <position x="54" y="22" />
+     <addData>
+      <data name="connectionInformation" handleUnknown="preserve">
+       <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+      </data>
+     </addData>
+    </connection>
+    <addData>
+     <data name="linkInformation" handleUnknown="preserve">
+      <linkInformation executionOrderId="-2147483648" localId="24" />
+     </data>
+    </addData>
+   </connectionPointIn>
+   <connectionPointIn>
+    <relPosition x="0" y="18" />
+    <connection refLocalId="37">
+     <position x="81" y="34" />
+     <position x="79" y="34" />
+     <addData>
+      <data name="connectionInformation" handleUnknown="preserve">
+       <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+      </data>
+     </addData>
+    </connection>
+    <addData>
+     <data name="linkInformation" handleUnknown="preserve">
+      <linkInformation executionOrderId="-2147483648" localId="36" />
+     </data>
+    </addData>
+   </connectionPointIn>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="1" subNetworkId="0" />
+    </data>
+   </addData>
+  </rightPowerRail>
+  <inVariable localId="112" height="4" width="13" executionOrderId="24">
+   <position x="76" y="64" />
+   <connectionPointOut>
+    <relPosition x="13" y="2" />
+   </connectionPointOut>
+   <expression>SAFEFALSE</expression>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="3" subNetworkId="0" />
+    </data>
+   </addData>
+  </inVariable>
+  <rightPowerRail localId="120" height="16" width="3" executionOrderId="26">
+   <position x="91" y="184" />
+   <connectionPointIn>
+    <relPosition x="0" y="6" />
+    <connection refLocalId="117">
+     <position x="91" y="190" />
+     <position x="89" y="190" />
+     <addData>
+      <data name="connectionInformation" handleUnknown="preserve">
+       <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+      </data>
+     </addData>
+    </connection>
+    <addData>
+     <data name="linkInformation" handleUnknown="preserve">
+      <linkInformation executionOrderId="26" localId="121" />
+     </data>
+    </addData>
+   </connectionPointIn>
+   <connectionPointIn>
+    <relPosition x="0" y="10" />
+    <connection refLocalId="118">
+     <position x="91" y="194" />
+     <position x="89" y="194" />
+     <addData>
+      <data name="connectionInformation" handleUnknown="preserve">
+       <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+      </data>
+     </addData>
+    </connection>
+    <addData>
+     <data name="linkInformation" handleUnknown="preserve">
+      <linkInformation executionOrderId="26" localId="122" />
+     </data>
+    </addData>
+   </connectionPointIn>
+   <connectionPointIn>
+    <relPosition x="0" y="14" />
+    <connection refLocalId="119">
+     <position x="91" y="198" />
+     <position x="89" y="198" />
+     <addData>
+      <data name="connectionInformation" handleUnknown="preserve">
+       <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+      </data>
+     </addData>
+    </connection>
+    <addData>
+     <data name="linkInformation" handleUnknown="preserve">
+      <linkInformation executionOrderId="26" localId="123" />
+     </data>
+    </addData>
+   </connectionPointIn>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="5" subNetworkId="0" />
+    </data>
+   </addData>
+  </rightPowerRail>
+  <inVariable localId="7" height="4" width="13" executionOrderId="28">
+   <position x="76" y="68" />
+   <connectionPointOut>
+    <relPosition x="13" y="2" />
+   </connectionPointOut>
+   <expression>ResetSafety</expression>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="3" subNetworkId="0" />
+    </data>
+   </addData>
+  </inVariable>
+  <inVariable localId="77" height="4" width="23" executionOrderId="28">
+   <position x="56" y="108" />
+   <connectionPointOut>
+    <relPosition x="23" y="2" />
+   </connectionPointOut>
+   <expression>UnlockRequestDeltaDoor</expression>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="7" subNetworkId="0" />
+    </data>
+   </addData>
+  </inVariable>
+  <inVariable localId="90" height="4" width="23" executionOrderId="28">
+   <position x="56" y="156" />
+   <connectionPointOut>
+    <relPosition x="23" y="2" />
+   </connectionPointOut>
+   <expression>UnlockRequestCameraDoor</expression>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="10" subNetworkId="0" />
+    </data>
+   </addData>
+  </inVariable>
+  <block localId="8" width="23" height="28" typeName="SF_EmergencyStop_V2_00" instanceName="SF_EmergencyStop_V2_001" executionOrderId="32">
+   <position x="91" y="48" />
+   <inputVariables>
+    <variable formalParameter="Activate">
+     <connectionPointIn>
+      <relPosition x="0" y="6" />
+      <connection refLocalId="21">
+       <position x="91" y="54" />
+       <position x="89" y="54" />
+       <addData>
+        <data name="connectionInformation" handleUnknown="preserve">
+         <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+        </data>
+       </addData>
+      </connection>
+     </connectionPointIn>
+    </variable>
+    <variable formalParameter="S_EStopIn">
+     <connectionPointIn>
+      <relPosition x="0" y="10" />
+      <connection refLocalId="43">
+       <position x="91" y="58" />
+       <position x="69" y="58" />
+       <addData>
+        <data name="connectionInformation" handleUnknown="preserve">
+         <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+        </data>
+       </addData>
+      </connection>
+      <connection refLocalId="22">
+       <position x="91" y="58" />
+       <position x="75" y="58" />
+       <position x="75" y="62" />
+       <position x="49" y="62" />
+       <addData>
+        <data name="connectionInformation" handleUnknown="preserve">
+         <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+        </data>
+       </addData>
+      </connection>
+     </connectionPointIn>
+    </variable>
+    <variable formalParameter="S_StartReset">
+     <connectionPointIn>
+      <relPosition x="0" y="14" />
+      <connection refLocalId="111">
+       <position x="91" y="62" />
+       <position x="89" y="62" />
+       <addData>
+        <data name="connectionInformation" handleUnknown="preserve">
+         <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+        </data>
+       </addData>
+      </connection>
+     </connectionPointIn>
+    </variable>
+    <variable formalParameter="S_AutoReset">
+     <connectionPointIn>
+      <relPosition x="0" y="18" />
+      <connection refLocalId="112">
+       <position x="91" y="66" />
+       <position x="89" y="66" />
+       <addData>
+        <data name="connectionInformation" handleUnknown="preserve">
+         <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+        </data>
+       </addData>
+      </connection>
+     </connectionPointIn>
+    </variable>
+    <variable formalParameter="Reset">
+     <connectionPointIn>
+      <relPosition x="0" y="22" />
+      <connection refLocalId="7">
+       <position x="91" y="70" />
+       <position x="89" y="70" />
+       <addData>
+        <data name="connectionInformation" handleUnknown="preserve">
+         <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+        </data>
+       </addData>
+      </connection>
+     </connectionPointIn>
+    </variable>
+   </inputVariables>
+   <inOutVariables />
+   <outputVariables>
+    <variable formalParameter="Ready">
+     <connectionPointOut>
+      <relPosition x="23" y="6" />
+     </connectionPointOut>
+    </variable>
+    <variable formalParameter="S_EStopOut">
+     <connectionPointOut>
+      <relPosition x="23" y="10" />
+     </connectionPointOut>
+    </variable>
+    <variable formalParameter="SafetyDemand">
+     <connectionPointOut>
+      <relPosition x="23" y="14" />
+     </connectionPointOut>
+    </variable>
+    <variable formalParameter="ResetRequest">
+     <connectionPointOut>
+      <relPosition x="23" y="18" />
+     </connectionPointOut>
+    </variable>
+    <variable formalParameter="Error">
+     <connectionPointOut>
+      <relPosition x="23" y="22" />
+     </connectionPointOut>
+    </variable>
+    <variable formalParameter="DiagCode">
+     <connectionPointOut>
+      <relPosition x="23" y="26" />
+     </connectionPointOut>
+    </variable>
+   </outputVariables>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="3" subNetworkId="0" />
+    </data>
+    <data name="blockInformation" handleUnknown="preserve">
+     <blockInformation canEditLabel="true" extensible="false" />
+    </data>
+    <data name="parameterInformations" handleUnknown="preserve">
+     <parameterInformations>
+      <parameterInformation formalParameter="Activate" localId="9" executionOrderId="16" negatable="true" editorParameter="false" priority="1">
+       <position x="91" y="54" />
+      </parameterInformation>
+      <parameterInformation formalParameter="S_EStopIn" localId="10" executionOrderId="18" negatable="true" editorParameter="false" priority="2">
+       <position x="91" y="58" />
+      </parameterInformation>
+      <parameterInformation formalParameter="S_StartReset" localId="11" executionOrderId="22" negatable="true" editorParameter="false" priority="3">
+       <position x="91" y="62" />
+      </parameterInformation>
+      <parameterInformation formalParameter="S_AutoReset" localId="12" executionOrderId="26" negatable="true" editorParameter="false" priority="4">
+       <position x="91" y="66" />
+      </parameterInformation>
+      <parameterInformation formalParameter="Reset" localId="13" executionOrderId="30" negatable="true" editorParameter="false" priority="5">
+       <position x="91" y="70" />
+      </parameterInformation>
+      <parameterInformation formalParameter="Ready" localId="14" executionOrderId="34" negatable="true" editorParameter="false" priority="6">
+       <position x="114" y="54" />
+      </parameterInformation>
+      <parameterInformation formalParameter="S_EStopOut" localId="15" executionOrderId="36" negatable="true" editorParameter="false" priority="7">
+       <position x="114" y="58" />
+      </parameterInformation>
+      <parameterInformation formalParameter="SafetyDemand" localId="16" executionOrderId="38" negatable="true" editorParameter="false" priority="8">
+       <position x="114" y="62" />
+      </parameterInformation>
+      <parameterInformation formalParameter="ResetRequest" localId="17" executionOrderId="40" negatable="true" editorParameter="false" priority="9">
+       <position x="114" y="66" />
+      </parameterInformation>
+      <parameterInformation formalParameter="Error" localId="18" executionOrderId="42" negatable="true" editorParameter="false" priority="10">
+       <position x="114" y="70" />
+      </parameterInformation>
+      <parameterInformation formalParameter="DiagCode" localId="19" executionOrderId="44" negatable="true" editorParameter="false" priority="11">
+       <position x="114" y="74" />
+      </parameterInformation>
+     </parameterInformations>
+    </data>
+   </addData>
+  </block>
+  <inVariable localId="73" height="4" width="13" executionOrderId="32">
+   <position x="66" y="112" />
+   <connectionPointOut>
+    <relPosition x="13" y="2" />
+   </connectionPointOut>
+   <expression>SAFEFALSE</expression>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="7" subNetworkId="0" />
+    </data>
+   </addData>
+  </inVariable>
+  <inVariable localId="91" height="4" width="13" executionOrderId="32">
+   <position x="66" y="160" />
+   <connectionPointOut>
+    <relPosition x="13" y="2" />
+   </connectionPointOut>
+   <expression>SAFEFALSE</expression>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="10" subNetworkId="0" />
+    </data>
+   </addData>
+  </inVariable>
+  <inVariable localId="74" height="4" width="13" executionOrderId="36">
+   <position x="66" y="116" />
+   <connectionPointOut>
+    <relPosition x="13" y="2" />
+   </connectionPointOut>
+   <expression>SAFEFALSE</expression>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="7" subNetworkId="0" />
+    </data>
+   </addData>
+  </inVariable>
+  <inVariable localId="92" height="4" width="13" executionOrderId="36">
+   <position x="66" y="164" />
+   <connectionPointOut>
+    <relPosition x="13" y="2" />
+   </connectionPointOut>
+   <expression>SAFEFALSE</expression>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="10" subNetworkId="0" />
+    </data>
+   </addData>
+  </inVariable>
+  <inVariable localId="75" height="4" width="13" executionOrderId="40">
+   <position x="66" y="120" />
+   <connectionPointOut>
+    <relPosition x="13" y="2" />
+   </connectionPointOut>
+   <expression>ResetSafety</expression>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="7" subNetworkId="0" />
+    </data>
+   </addData>
+  </inVariable>
+  <inVariable localId="93" height="4" width="13" executionOrderId="40">
+   <position x="66" y="168" />
+   <connectionPointOut>
+    <relPosition x="13" y="2" />
+   </connectionPointOut>
+   <expression>ResetSafety</expression>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="10" subNetworkId="0" />
+    </data>
+   </addData>
+  </inVariable>
+  <block localId="45" width="28" height="36" typeName="SF_GuardLocking_2_V1_00" instanceName="SF_GuardLocking_2_V1_001" executionOrderId="44">
+   <position x="81" y="88" />
+   <inputVariables>
+    <variable formalParameter="Activate">
+     <connectionPointIn>
+      <relPosition x="0" y="6" />
+      <connection refLocalId="67">
+       <position x="81" y="94" />
+       <position x="79" y="94" />
+       <addData>
+        <data name="connectionInformation" handleUnknown="preserve">
+         <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+        </data>
+       </addData>
+      </connection>
+     </connectionPointIn>
+    </variable>
+    <variable formalParameter="S_Guard">
+     <connectionPointIn>
+      <relPosition x="0" y="10" />
+      <connection refLocalId="71" formalParameter="BOOL_TO_SAFEBOOL">
+       <position x="81" y="98" />
+       <position x="55" y="98" />
+       <position x="55" y="114" />
+       <position x="49" y="114" />
+       <addData>
+        <data name="connectionInformation" handleUnknown="preserve">
+         <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+        </data>
+       </addData>
+      </connection>
+     </connectionPointIn>
+    </variable>
+    <variable formalParameter="S_SafetyActive">
+     <connectionPointIn>
+      <relPosition x="0" y="14" />
+      <connection refLocalId="31" formalParameter="BOOL_TO_SAFEBOOL">
+       <position x="81" y="102" />
+       <position x="49" y="102" />
+       <addData>
+        <data name="connectionInformation" handleUnknown="preserve">
+         <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+        </data>
+       </addData>
+      </connection>
+     </connectionPointIn>
+    </variable>
+    <variable formalParameter="S_GuardLock">
+     <connectionPointIn>
+      <relPosition x="0" y="18" />
+      <connection refLocalId="71" formalParameter="BOOL_TO_SAFEBOOL">
+       <position x="81" y="106" />
+       <position x="49" y="114" />
+       <addData>
+        <data name="connectionInformation" handleUnknown="preserve">
+         <connectionInformation useAutoConnector="true" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+        </data>
+       </addData>
+      </connection>
+     </connectionPointIn>
+    </variable>
+    <variable formalParameter="UnlockRequest">
+     <connectionPointIn>
+      <relPosition x="0" y="22" />
+      <connection refLocalId="77">
+       <position x="81" y="110" />
+       <position x="79" y="110" />
+       <addData>
+        <data name="connectionInformation" handleUnknown="preserve">
+         <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+        </data>
+       </addData>
+      </connection>
+     </connectionPointIn>
+    </variable>
+    <variable formalParameter="S_StartReset">
+     <connectionPointIn>
+      <relPosition x="0" y="26" />
+      <connection refLocalId="73">
+       <position x="81" y="114" />
+       <position x="79" y="114" />
+       <addData>
+        <data name="connectionInformation" handleUnknown="preserve">
+         <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+        </data>
+       </addData>
+      </connection>
+     </connectionPointIn>
+    </variable>
+    <variable formalParameter="S_AutoReset">
+     <connectionPointIn>
+      <relPosition x="0" y="30" />
+      <connection refLocalId="74">
+       <position x="81" y="118" />
+       <position x="79" y="118" />
+       <addData>
+        <data name="connectionInformation" handleUnknown="preserve">
+         <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+        </data>
+       </addData>
+      </connection>
+     </connectionPointIn>
+    </variable>
+    <variable formalParameter="Reset">
+     <connectionPointIn>
+      <relPosition x="0" y="34" />
+      <connection refLocalId="75">
+       <position x="81" y="122" />
+       <position x="79" y="122" />
+       <addData>
+        <data name="connectionInformation" handleUnknown="preserve">
+         <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+        </data>
+       </addData>
+      </connection>
+     </connectionPointIn>
+    </variable>
+   </inputVariables>
+   <inOutVariables />
+   <outputVariables>
+    <variable formalParameter="Ready">
+     <connectionPointOut>
+      <relPosition x="28" y="6" />
+     </connectionPointOut>
+    </variable>
+    <variable formalParameter="S_GuardLocked">
+     <connectionPointOut>
+      <relPosition x="28" y="10" />
+     </connectionPointOut>
+    </variable>
+    <variable formalParameter="S_UnlockGuard">
+     <connectionPointOut>
+      <relPosition x="28" y="14" />
+     </connectionPointOut>
+    </variable>
+    <variable formalParameter="SafetyDemand">
+     <connectionPointOut>
+      <relPosition x="28" y="18" />
+     </connectionPointOut>
+    </variable>
+    <variable formalParameter="ResetRequest">
+     <connectionPointOut>
+      <relPosition x="28" y="22" />
+     </connectionPointOut>
+    </variable>
+    <variable formalParameter="Error">
+     <connectionPointOut>
+      <relPosition x="28" y="26" />
+     </connectionPointOut>
+    </variable>
+    <variable formalParameter="DiagCode">
+     <connectionPointOut>
+      <relPosition x="28" y="30" />
+     </connectionPointOut>
+    </variable>
+   </outputVariables>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="7" subNetworkId="0" />
+    </data>
+    <data name="blockInformation" handleUnknown="preserve">
+     <blockInformation canEditLabel="true" extensible="false" />
+    </data>
+    <data name="parameterInformations" handleUnknown="preserve">
+     <parameterInformations>
+      <parameterInformation formalParameter="Activate" localId="46" executionOrderId="20" negatable="true" editorParameter="false" priority="1">
+       <position x="81" y="94" />
+      </parameterInformation>
+      <parameterInformation formalParameter="S_Guard" localId="47" executionOrderId="22" negatable="true" editorParameter="false" priority="2">
+       <position x="81" y="98" />
+      </parameterInformation>
+      <parameterInformation formalParameter="S_SafetyActive" localId="48" executionOrderId="24" negatable="true" editorParameter="false" priority="3">
+       <position x="81" y="102" />
+      </parameterInformation>
+      <parameterInformation formalParameter="S_GuardLock" localId="49" executionOrderId="26" negatable="true" editorParameter="false" priority="4">
+       <position x="81" y="106" />
+      </parameterInformation>
+      <parameterInformation formalParameter="UnlockRequest" localId="50" executionOrderId="30" negatable="true" editorParameter="false" priority="5">
+       <position x="81" y="110" />
+      </parameterInformation>
+      <parameterInformation formalParameter="S_StartReset" localId="51" executionOrderId="34" negatable="true" editorParameter="false" priority="6">
+       <position x="81" y="114" />
+      </parameterInformation>
+      <parameterInformation formalParameter="S_AutoReset" localId="52" executionOrderId="38" negatable="true" editorParameter="false" priority="7">
+       <position x="81" y="118" />
+      </parameterInformation>
+      <parameterInformation formalParameter="Reset" localId="53" executionOrderId="42" negatable="true" editorParameter="false" priority="8">
+       <position x="81" y="122" />
+      </parameterInformation>
+      <parameterInformation formalParameter="Ready" localId="54" executionOrderId="46" negatable="true" editorParameter="false" priority="9">
+       <position x="109" y="94" />
+      </parameterInformation>
+      <parameterInformation formalParameter="S_GuardLocked" localId="55" executionOrderId="48" negatable="true" editorParameter="false" priority="10">
+       <position x="109" y="98" />
+      </parameterInformation>
+      <parameterInformation formalParameter="S_UnlockGuard" localId="56" executionOrderId="52" negatable="true" editorParameter="false" priority="11">
+       <position x="109" y="102" />
+      </parameterInformation>
+      <parameterInformation formalParameter="SafetyDemand" localId="57" executionOrderId="54" negatable="true" editorParameter="false" priority="12">
+       <position x="109" y="106" />
+      </parameterInformation>
+      <parameterInformation formalParameter="ResetRequest" localId="58" executionOrderId="56" negatable="true" editorParameter="false" priority="13">
+       <position x="109" y="110" />
+      </parameterInformation>
+      <parameterInformation formalParameter="Error" localId="59" executionOrderId="58" negatable="true" editorParameter="false" priority="14">
+       <position x="109" y="114" />
+      </parameterInformation>
+      <parameterInformation formalParameter="DiagCode" localId="61" executionOrderId="60" negatable="true" editorParameter="false" priority="15">
+       <position x="109" y="118" />
+      </parameterInformation>
+     </parameterInformations>
+    </data>
+   </addData>
+  </block>
+  <block localId="94" width="28" height="36" typeName="SF_GuardLocking_2_V1_00" instanceName="SF_GuardLocking_2_V1_002" executionOrderId="44">
+   <position x="81" y="136" />
+   <inputVariables>
+    <variable formalParameter="Activate">
+     <connectionPointIn>
+      <relPosition x="0" y="6" />
+      <connection refLocalId="88">
+       <position x="81" y="142" />
+       <position x="79" y="142" />
+       <addData>
+        <data name="connectionInformation" handleUnknown="preserve">
+         <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+        </data>
+       </addData>
+      </connection>
+     </connectionPointIn>
+    </variable>
+    <variable formalParameter="S_Guard">
+     <connectionPointIn>
+      <relPosition x="0" y="10" />
+      <connection refLocalId="85" formalParameter="BOOL_TO_SAFEBOOL">
+       <position x="81" y="146" />
+       <position x="55" y="146" />
+       <position x="55" y="162" />
+       <position x="49" y="162" />
+       <addData>
+        <data name="connectionInformation" handleUnknown="preserve">
+         <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+        </data>
+       </addData>
+      </connection>
+     </connectionPointIn>
+    </variable>
+    <variable formalParameter="S_SafetyActive">
+     <connectionPointIn>
+      <relPosition x="0" y="14" />
+      <connection refLocalId="81" formalParameter="BOOL_TO_SAFEBOOL">
+       <position x="81" y="150" />
+       <position x="49" y="150" />
+       <addData>
+        <data name="connectionInformation" handleUnknown="preserve">
+         <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+        </data>
+       </addData>
+      </connection>
+     </connectionPointIn>
+    </variable>
+    <variable formalParameter="S_GuardLock">
+     <connectionPointIn>
+      <relPosition x="0" y="18" />
+      <connection refLocalId="85" formalParameter="BOOL_TO_SAFEBOOL">
+       <position x="81" y="154" />
+       <position x="49" y="162" />
+       <addData>
+        <data name="connectionInformation" handleUnknown="preserve">
+         <connectionInformation useAutoConnector="true" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+        </data>
+       </addData>
+      </connection>
+     </connectionPointIn>
+    </variable>
+    <variable formalParameter="UnlockRequest">
+     <connectionPointIn>
+      <relPosition x="0" y="22" />
+      <connection refLocalId="90">
+       <position x="81" y="158" />
+       <position x="79" y="158" />
+       <addData>
+        <data name="connectionInformation" handleUnknown="preserve">
+         <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+        </data>
+       </addData>
+      </connection>
+     </connectionPointIn>
+    </variable>
+    <variable formalParameter="S_StartReset">
+     <connectionPointIn>
+      <relPosition x="0" y="26" />
+      <connection refLocalId="91">
+       <position x="81" y="162" />
+       <position x="79" y="162" />
+       <addData>
+        <data name="connectionInformation" handleUnknown="preserve">
+         <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+        </data>
+       </addData>
+      </connection>
+     </connectionPointIn>
+    </variable>
+    <variable formalParameter="S_AutoReset">
+     <connectionPointIn>
+      <relPosition x="0" y="30" />
+      <connection refLocalId="92">
+       <position x="81" y="166" />
+       <position x="79" y="166" />
+       <addData>
+        <data name="connectionInformation" handleUnknown="preserve">
+         <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+        </data>
+       </addData>
+      </connection>
+     </connectionPointIn>
+    </variable>
+    <variable formalParameter="Reset">
+     <connectionPointIn>
+      <relPosition x="0" y="34" />
+      <connection refLocalId="93">
+       <position x="81" y="170" />
+       <position x="79" y="170" />
+       <addData>
+        <data name="connectionInformation" handleUnknown="preserve">
+         <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+        </data>
+       </addData>
+      </connection>
+     </connectionPointIn>
+    </variable>
+   </inputVariables>
+   <inOutVariables />
+   <outputVariables>
+    <variable formalParameter="Ready">
+     <connectionPointOut>
+      <relPosition x="28" y="6" />
+     </connectionPointOut>
+    </variable>
+    <variable formalParameter="S_GuardLocked">
+     <connectionPointOut>
+      <relPosition x="28" y="10" />
+     </connectionPointOut>
+    </variable>
+    <variable formalParameter="S_UnlockGuard">
+     <connectionPointOut>
+      <relPosition x="28" y="14" />
+     </connectionPointOut>
+    </variable>
+    <variable formalParameter="SafetyDemand">
+     <connectionPointOut>
+      <relPosition x="28" y="18" />
+     </connectionPointOut>
+    </variable>
+    <variable formalParameter="ResetRequest">
+     <connectionPointOut>
+      <relPosition x="28" y="22" />
+     </connectionPointOut>
+    </variable>
+    <variable formalParameter="Error">
+     <connectionPointOut>
+      <relPosition x="28" y="26" />
+     </connectionPointOut>
+    </variable>
+    <variable formalParameter="DiagCode">
+     <connectionPointOut>
+      <relPosition x="28" y="30" />
+     </connectionPointOut>
+    </variable>
+   </outputVariables>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="10" subNetworkId="0" />
+    </data>
+    <data name="blockInformation" handleUnknown="preserve">
+     <blockInformation canEditLabel="true" extensible="false" />
+    </data>
+    <data name="parameterInformations" handleUnknown="preserve">
+     <parameterInformations>
+      <parameterInformation formalParameter="Activate" localId="95" executionOrderId="20" negatable="true" editorParameter="false" priority="1">
+       <position x="81" y="142" />
+      </parameterInformation>
+      <parameterInformation formalParameter="S_Guard" localId="96" executionOrderId="22" negatable="true" editorParameter="false" priority="2">
+       <position x="81" y="146" />
+      </parameterInformation>
+      <parameterInformation formalParameter="S_SafetyActive" localId="97" executionOrderId="24" negatable="true" editorParameter="false" priority="3">
+       <position x="81" y="150" />
+      </parameterInformation>
+      <parameterInformation formalParameter="S_GuardLock" localId="98" executionOrderId="26" negatable="true" editorParameter="false" priority="4">
+       <position x="81" y="154" />
+      </parameterInformation>
+      <parameterInformation formalParameter="UnlockRequest" localId="99" executionOrderId="30" negatable="true" editorParameter="false" priority="5">
+       <position x="81" y="158" />
+      </parameterInformation>
+      <parameterInformation formalParameter="S_StartReset" localId="100" executionOrderId="34" negatable="true" editorParameter="false" priority="6">
+       <position x="81" y="162" />
+      </parameterInformation>
+      <parameterInformation formalParameter="S_AutoReset" localId="101" executionOrderId="38" negatable="true" editorParameter="false" priority="7">
+       <position x="81" y="166" />
+      </parameterInformation>
+      <parameterInformation formalParameter="Reset" localId="102" executionOrderId="42" negatable="true" editorParameter="false" priority="8">
+       <position x="81" y="170" />
+      </parameterInformation>
+      <parameterInformation formalParameter="Ready" localId="103" executionOrderId="46" negatable="true" editorParameter="false" priority="9">
+       <position x="109" y="142" />
+      </parameterInformation>
+      <parameterInformation formalParameter="S_GuardLocked" localId="104" executionOrderId="48" negatable="true" editorParameter="false" priority="10">
+       <position x="109" y="146" />
+      </parameterInformation>
+      <parameterInformation formalParameter="S_UnlockGuard" localId="105" executionOrderId="52" negatable="true" editorParameter="false" priority="11">
+       <position x="109" y="150" />
+      </parameterInformation>
+      <parameterInformation formalParameter="SafetyDemand" localId="106" executionOrderId="54" negatable="true" editorParameter="false" priority="12">
+       <position x="109" y="154" />
+      </parameterInformation>
+      <parameterInformation formalParameter="ResetRequest" localId="107" executionOrderId="56" negatable="true" editorParameter="false" priority="13">
+       <position x="109" y="158" />
+      </parameterInformation>
+      <parameterInformation formalParameter="Error" localId="108" executionOrderId="58" negatable="true" editorParameter="false" priority="14">
+       <position x="109" y="162" />
+      </parameterInformation>
+      <parameterInformation formalParameter="DiagCode" localId="109" executionOrderId="60" negatable="true" editorParameter="false" priority="15">
+       <position x="109" y="166" />
+      </parameterInformation>
+     </parameterInformations>
+    </data>
+   </addData>
+  </block>
+  <coil localId="23" height="4" width="18" executionOrderId="46">
+   <position x="121" y="56" />
+   <connectionPointIn>
+    <relPosition x="0" y="2" />
+    <connection refLocalId="8" formalParameter="S_EStopOut">
+     <position x="121" y="58" />
+     <position x="114" y="58" />
+     <addData>
+      <data name="connectionInformation" handleUnknown="preserve">
+       <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+      </data>
+     </addData>
+    </connection>
+   </connectionPointIn>
+   <connectionPointOut>
+    <relPosition x="18" y="2" />
+   </connectionPointOut>
+   <variable>EmergencyStop</variable>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="3" subNetworkId="0" />
+    </data>
+   </addData>
+  </coil>
+  <rightPowerRail localId="26" height="28" width="3" executionOrderId="50">
+   <position x="141" y="48" />
+   <connectionPointIn>
+    <relPosition x="0" y="10" />
+    <connection refLocalId="23">
+     <position x="141" y="58" />
+     <position x="139" y="58" />
+     <addData>
+      <data name="connectionInformation" handleUnknown="preserve">
+       <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+      </data>
+     </addData>
+    </connection>
+    <addData>
+     <data name="linkInformation" handleUnknown="preserve">
+      <linkInformation executionOrderId="-2147483648" localId="25" />
+     </data>
+    </addData>
+   </connectionPointIn>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="3" subNetworkId="0" />
+    </data>
+   </addData>
+  </rightPowerRail>
+  <outVariable localId="44" height="4" width="18" executionOrderId="50">
+   <position x="111" y="96" />
+   <connectionPointIn>
+    <relPosition x="0" y="2" />
+    <connection refLocalId="45" formalParameter="S_GuardLocked">
+     <position x="111" y="98" />
+     <position x="109" y="98" />
+     <addData>
+      <data name="connectionInformation" handleUnknown="preserve">
+       <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+      </data>
+     </addData>
+    </connection>
+   </connectionPointIn>
+   <expression>sDeltaGuardLocked</expression>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="7" subNetworkId="0" />
+    </data>
+   </addData>
+  </outVariable>
+  <outVariable localId="69" height="4" width="18" executionOrderId="50">
+   <position x="111" y="144" />
+   <connectionPointIn>
+    <relPosition x="0" y="2" />
+    <connection refLocalId="94" formalParameter="S_GuardLocked">
+     <position x="111" y="146" />
+     <position x="109" y="146" />
+     <addData>
+      <data name="connectionInformation" handleUnknown="preserve">
+       <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+      </data>
+     </addData>
+    </connection>
+   </connectionPointIn>
+   <expression>sCameraGuardLocked</expression>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="10" subNetworkId="0" />
+    </data>
+   </addData>
+  </outVariable>
+  <coil localId="62" height="4" width="18" executionOrderId="62" negated="true">
+   <position x="136" y="148" />
+   <connectionPointIn>
+    <relPosition x="0" y="2" />
+    <connection refLocalId="94" formalParameter="S_UnlockGuard">
+     <position x="136" y="150" />
+     <position x="109" y="150" />
+     <addData>
+      <data name="connectionInformation" handleUnknown="preserve">
+       <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+      </data>
+     </addData>
+    </connection>
+   </connectionPointIn>
+   <connectionPointOut>
+    <relPosition x="18" y="2" />
+   </connectionPointOut>
+   <variable>sOutCameraDoor</variable>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="10" subNetworkId="0" />
+    </data>
+   </addData>
+  </coil>
+  <coil localId="65" height="4" width="18" executionOrderId="62" negated="true">
+   <position x="136" y="100" />
+   <connectionPointIn>
+    <relPosition x="0" y="2" />
+    <connection refLocalId="45" formalParameter="S_UnlockGuard">
+     <position x="136" y="102" />
+     <position x="109" y="102" />
+     <addData>
+      <data name="connectionInformation" handleUnknown="preserve">
+       <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+      </data>
+     </addData>
+    </connection>
+   </connectionPointIn>
+   <connectionPointOut>
+    <relPosition x="18" y="2" />
+   </connectionPointOut>
+   <variable>sOutDeltaDoor</variable>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="7" subNetworkId="0" />
+    </data>
+   </addData>
+  </coil>
+  <rightPowerRail localId="64" height="36" width="3" executionOrderId="66">
+   <position x="156" y="136" />
+   <connectionPointIn>
+    <relPosition x="0" y="14" />
+    <connection refLocalId="62">
+     <position x="156" y="150" />
+     <position x="154" y="150" />
+     <addData>
+      <data name="connectionInformation" handleUnknown="preserve">
+       <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+      </data>
+     </addData>
+    </connection>
+    <addData>
+     <data name="linkInformation" handleUnknown="preserve">
+      <linkInformation executionOrderId="-2147483648" localId="63" />
+     </data>
+    </addData>
+   </connectionPointIn>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="10" subNetworkId="0" />
+    </data>
+   </addData>
+  </rightPowerRail>
+  <rightPowerRail localId="70" height="36" width="3" executionOrderId="66">
+   <position x="156" y="88" />
+   <connectionPointIn>
+    <relPosition x="0" y="14" />
+    <connection refLocalId="65">
+     <position x="156" y="102" />
+     <position x="154" y="102" />
+     <addData>
+      <data name="connectionInformation" handleUnknown="preserve">
+       <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+      </data>
+     </addData>
+    </connection>
+    <addData>
+     <data name="linkInformation" handleUnknown="preserve">
+      <linkInformation executionOrderId="-2147483648" localId="68" />
+     </data>
+    </addData>
+   </connectionPointIn>
+   <addData>
+    <data name="objectInformation" handleUnknown="preserve">
+     <objectInformation networkId="7" subNetworkId="0" />
+    </data>
+   </addData>
+  </rightPowerRail>
+ </LD>
+ <addData>
+  <data name="docInformation" handleUnknown="preserve">
+   <docInformation gridActive="true" pageWidth="-1">
+    <version>2.9.0.19420.0:A2.0</version>
+    <multilineOptions maximumContactWidth="18" minimumContactWidth="18" maximumContactLines="7" contactEllipse="true" maximumInstanceNameWidth="32" maximumInstanceNameLines="5" instanceNameEllipse="true" maximumVariableWidth="2147483647" variableEllipse="false" />
+   </docInformation>
+  </data>
+ </addData>
+</body>

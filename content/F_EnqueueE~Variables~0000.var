@@ -1,0 +1,17 @@
+{ CustomGroupDefinition('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24', '') }
+
+VAR_INPUT
+    bIsActive : BOOL { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('acdbddae-a692-4e5d-9dbe-b74ee2dc18a1')}; (*Current state of the error*)
+    udiErrorID : UDINT { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('f2ea0ab3-6f4a-4370-a07f-b29052a4e16b')}; (*Error ID*)
+    sSource : STRING[80] { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('18052540-0506-4699-938d-fd4f2abef98b')}; (*Source*)
+    eSeverity : E_ErrorSeverity { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('f51fb227-d911-4e1e-bdd9-b3c71e8b9c64')}; (*Severity*)
+END_VAR
+
+VAR
+    udiNextHead : UDINT { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('570b9a69-d502-4bff-a288-0fbb29900896')};
+    G_udiQueue_Head : UDINT { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('a7a06134-feee-400e-aa41-5388e522d5f5')}; (*EXTERNAL*)
+    C_FAST_QUEUE_SIZE : UINT { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('ce76401b-f338-4f24-aae5-53509d364e8a')}; (*EXTERNAL*)
+    G_udiQueue_Tail : UDINT { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('0f76dccb-125f-4e32-9201-9c34700a57d7')}; (*EXTERNAL*)
+    G_aTaskQueue : arrST_ErrorRequest { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('00eeda53-3e6c-4de4-8503-4d01c768ebc1')}; (*EXTERNAL*)
+    G_bQueueOverflow : BOOL { CustomGroupReference('fb84caa8-36a3-47d9-8bf0-95ff0e8a7b24') } {Id('554d4fcf-c071-44d8-8e4c-94eda975f11a')}; (*EXTERNAL*)
+END_VAR

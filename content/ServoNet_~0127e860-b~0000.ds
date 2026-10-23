@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DevInstDoc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Projekte/PC_Worx_Next/XML/Schemas/DevInst.xsd" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <DevInst uuid="0127e860-b38c-48be-aab5-e90bc67120f5">
+    <TInfo uri="adeprojectref:///e639c0f9-db09-46f4-abf7-50216a13f220/cda306f5-f682-4871-b688-a10accb5b712/e04f2f1e-620b-43a5-8f63-87601929bb9d" />
+    <InstVal xPath="/InstanceObjList/Obj[@uID='base00' type='Generic:Function']" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="/InstanceObjList/Obj[@uID='base01' type='Generic:Location']" Type="Ade.Fdcml.Core.StringAscii"></InstVal>
+    <InstVal xPath="/InstanceObjList/Obj[@uID='base02' type='AmlApcStationName']" Type="Ade.Fdcml.Core.String">[UTF-8;]</InstVal>
+    <InstVal xPath="Generic:Uri" Type="System.String">adeprojectref:///e639c0f9-db09-46f4-abf7-50216a13f220/606e2993-1c57-411c-b0d2-c57a13c52bbf/2eabf5d2-9d78-459b-8b33-6be1a11694f6</InstVal>
+    <InstVal xPath="Generic:FormattedTypeNameWithoutVersion" Type="System.String">ServoNet Axis</InstVal>
+    <InstVal xPath="Generic:FormattedTypeName" Type="System.String">ServoNet Axis Rev. &gt;= 1.0.0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/InstanceObjList/Obj[@uID='cmnAxisNumber' type='AxisNumber']" Type="Ade.Fdcml.Core.Unsigned16">7</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/InstanceObjList/Obj[@uID='cmnAxisName' type='AxisName']" Type="Ade.Fdcml.Core.StringAscii">FeedOut_Axis</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/InstanceObjList/Obj[@uID='cmnUserUnits' type='UserUnits']" Type="Ade.Fdcml.Core.Signed32">1</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/Generic:FormattedTypeNameWithoutVersion" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/Generic:FormattedTypeName" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/NodeId" Type="Ade.Fdcml.Core.Unsigned32">7</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/InstanceObjList/Obj[@uID='cmnMachineCycleLoadType' type='MachineCycle.LoadType']" Type="Ade.Fdcml.Core.BitString8">00</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/InstanceObjList/Obj[@uID='cmnMachineCycleMotorType' type='MachineCycle.MotorType']" Type="Ade.Fdcml.Core.BitString8">01</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/InstanceObjList/Obj[@uID='cmnMachineCycleLowerLimit' type='MachineCycle.LowerLimit']" Type="Ade.Fdcml.Core.Float64">0</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/InstanceObjList/Obj[@uID='cmnMachineCycleUpperLimit' type='MachineCycle.UpperLimit']" Type="Ade.Fdcml.Core.Float64">1</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/InstanceObjList/Obj[@uID='cmnDriveConversionFeedConstant' type='DriveConversion.FeedConstant']" Type="Ade.Fdcml.Core.Float64">16.45</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/InstanceObjList/Obj[@uID='cmnDriveConversionOutputGearRatio' type='DriveConversion.OutputGearRatio']" Type="Ade.Fdcml.Core.Float64">1</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/InstanceObjList/Obj[@uID='cmnDriveConversionInputGearRatio' type='DriveConversion.InputGearRatio']" Type="Ade.Fdcml.Core.Float64">1</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/InstanceObjList/Obj[@uID='cmnDriveConversionPositionScale' type='DriveConversion.PositionScale']" Type="Ade.Fdcml.Core.Float64">16.45</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/Generic:FormattedTypeNameWithoutVersion" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_4']/Generic:FormattedTypeName" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/InstanceObjList/Obj[@uID='lmtSoftLimitsPositionEnabled' type='SoftLimits.Position.Enabled']" Type="Ade.Fdcml.Core.Bit">True</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/InstanceObjList/Obj[@uID='lmtSoftLimitsPositionNegativeDirection' type='SoftLimits.Position.NegativeDirection']" Type="Ade.Fdcml.Core.Float64">-1.797693E+308</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/InstanceObjList/Obj[@uID='lmtSoftLimitsPositionPositiveDirection' type='SoftLimits.Position.PositiveDirection']" Type="Ade.Fdcml.Core.Float64">1.797693E+308</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/InstanceObjList/Obj[@uID='lmtSoftLimitsVelocityEnabled' type='SoftLimits.Velocity.Enabled']" Type="Ade.Fdcml.Core.Bit">True</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/InstanceObjList/Obj[@uID='lmtSoftLimitsVelocityNegativeDirection' type='SoftLimits.Velocity.NegativeDirection']" Type="Ade.Fdcml.Core.Float64">1.797693E+308</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/InstanceObjList/Obj[@uID='lmtSoftLimitsVelocityPositiveDirection' type='SoftLimits.Velocity.PositiveDirection']" Type="Ade.Fdcml.Core.Float64">1.797693E+308</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/InstanceObjList/Obj[@uID='lmtSoftLimitsAccelerationEnabled' type='SoftLimits.Acceleration.Enabled']" Type="Ade.Fdcml.Core.Bit">True</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/InstanceObjList/Obj[@uID='lmtSoftLimitsAccelerationNegativeDirection' type='SoftLimits.Acceleration.NegativeDirection']" Type="Ade.Fdcml.Core.Float64">1.797693E+308</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/InstanceObjList/Obj[@uID='lmtSoftLimitsAccelerationPositiveDirection' type='SoftLimits.Acceleration.PositiveDirection']" Type="Ade.Fdcml.Core.Float64">1.797693E+308</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/InstanceObjList/Obj[@uID='lmtSoftLimitsDecelerationEnabled' type='SoftLimits.Deceleration.Enabled']" Type="Ade.Fdcml.Core.Bit">True</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/InstanceObjList/Obj[@uID='lmtSoftLimitsDecelerationNegativeDirection' type='SoftLimits.Deceleration.NegativeDirection']" Type="Ade.Fdcml.Core.Float64">1.797693E+308</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/InstanceObjList/Obj[@uID='lmtSoftLimitsDecelerationPositiveDirection' type='SoftLimits.Deceleration.PositiveDirection']" Type="Ade.Fdcml.Core.Float64">1.797693E+308</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/InstanceObjList/Obj[@uID='lmtSoftLimitsTorqueEnabled' type='SoftLimits.Torque.Enabled']" Type="Ade.Fdcml.Core.Bit">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/InstanceObjList/Obj[@uID='lmtSoftLimitsTorqueNegativeDirection' type='SoftLimits.Torque.NegativeDirection']" Type="Ade.Fdcml.Core.Float64">1.797693E+308</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/InstanceObjList/Obj[@uID='lmtSoftLimitsTorquePositiveDirection' type='SoftLimits.Torque.PositiveDirection']" Type="Ade.Fdcml.Core.Float64">1.797693E+308</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/Generic:FormattedTypeNameWithoutVersion" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_1']/Generic:FormattedTypeName" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/InstanceObjList/Obj[@uID='fnfFiltersPositionMovingAverageEnabled' type='Filters.PositionMovingAverage.Enabled']" Type="Ade.Fdcml.Core.Bit">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/InstanceObjList/Obj[@uID='fnfFiltersPositionMovingAverageTimeConstant' type='Filters.PositionMovingAverage.TimeConstant']" Type="Ade.Fdcml.Core.Float64">0.1</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/Generic:FormattedTypeNameWithoutVersion" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_2']/Generic:FormattedTypeName" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_3']/InstanceObjList/Obj[@uID='sngServoNetAxisNode' type='ServoNetAxis.Node']" Type="Ade.Fdcml.Core.Unsigned32">7</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_3']/InstanceObjList/Obj[@uID='sngServoNetModuleNumber' type='ServoNetAxis.ModuleNumber']" Type="Ade.Fdcml.Core.Unsigned16">1</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_3']/InstanceObjList/Obj[@uID='sngEnableTimeout' type='EnableTimeout']" Type="Ade.Fdcml.Core.Unsigned64">300</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_3']/InstanceObjList/Obj[@uID='sngServonetDriveUri' type='DriveUri']" Type="Ade.Fdcml.Core.StringAscii">adeprojectref:///e639c0f9-db09-46f4-abf7-50216a13f220/606e2993-1c57-411c-b0d2-c57a13c52bbf/fade4764-236a-43f5-a3fb-eab84ca30d04</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_3']/InstanceObjList/Obj[@uID='encServoNetEncoderEnableOverride' type='Features.EncoderEnableOverride']" Type="Ade.Fdcml.Core.Bit">False</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_3']/InstanceObjList/Obj[@uID='encServoNetEncoderResolutionOverride' type='Features.EncoderResolutionOverride']" Type="Ade.Fdcml.Core.Unsigned64">8192</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_3']/InstanceObjList/Obj[@uID='encServoNetEncoderTypeOverride' type='Features.EncoderTypeOverride']" Type="Ade.Fdcml.Core.BitString8">00</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_3']/Generic:FormattedTypeNameWithoutVersion" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_3']/Generic:FormattedTypeName" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/InstanceObjList/Obj[@uID='fmkAxisRefUri' type='LinkedVariables:axesRefVar']" Type="Ade.Fdcml.Core.StringAscii">a5f729b1-88f4-4e73-bf43-98c345937073</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=io1]" Type="System.String">AXIS.IO.Alarm status</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=io2]" Type="System.String">AXIS.IO.Power ON status</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=io3]" Type="System.String">AXIS.IO.Warning status</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=io4]" Type="System.String">AXIS.IO.Positive overtravel status</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=io5]" Type="System.String">AXIS.IO.Negative overtravel status</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=io6]" Type="System.String">AXIS.IO.HBB status</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=io7]" Type="System.String">AXIS.IO.Position set status</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/PDList/PD[@uid=io8]" Type="System.String">AXIS.IO.Servo ON status</InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/Generic:FormattedTypeNameWithoutVersion" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/Generic:FormattedTypeName" Type="System.String"></InstVal>
+    <InstVal xPath="//Layer7[@uID='L7_0']/LinkedVariables" Type="System.String">{"LinkedVariables:axesRefVar":{"GdsConnections":null,"DataType":"AXIS_REF","VariableName":"","NameFormat":"{0}","UId":"axesRefVar","StringIdentifier":"a5f729b1-88f4-4e73-bf43-98c345937073","GroupStringIdentifier":"aea8c6c8-77b0-485e-a7f9-3310e614bce8"}}</InstVal>
+  <InstVal xPath="//Layer7[@uID='L7_0']/InstanceObjList/Obj[@uID='ecatdhcsetting03' type='ETHERCAT:DeviceHotConnectGroup']" Type="Ade.Fdcml.Core.Boolean">False</InstVal></DevInst>
+</DevInstDoc>

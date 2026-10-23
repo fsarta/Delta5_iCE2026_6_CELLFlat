@@ -1,0 +1,170 @@
+(**)
+TYPE
+	TestPos								:STRUCT
+		Position						:LREAL;
+		Speed							:LREAL;
+		Acc								:LREAL;
+		Dec								:LREAL;
+		Delay							:INT;
+	END_STRUCT;
+
+	ARRAY_TestPos						:ARRAY [0..5] OF TestPos;
+
+	AxiCommand							:STRUCT
+	    Enable 							:BOOL;			
+		EmergencyStop					:BOOL;			
+		AbsSetPos						:BOOL;			
+		IncSetPos						:BOOL;			
+		ResetFault	 					:BOOL;			
+		JogPos							:BOOL;			
+		JogNeg							:BOOL;			
+		AbsPositioning					:BOOL;			
+		IncPositioning					:BOOL;			
+		TorqueControl					:BOOL;			
+		TouchProbe						:BOOL;
+        AbortTrigger                    :BOOL;
+		TestPos							:BOOL;			
+		WriteDrvPar						:BOOL;			
+		Home							:BOOL;			
+		HomeDir							:BOOL;			
+		HomeExtInRef					:BOOL;			
+		HomeExtIn						:BOOL;			
+		HomeZPulse						:BOOL;			
+		HomeAbsEnc						:BOOL;			
+		ManualBrake						:BOOL;			
+	END_STRUCT;
+
+ 	AxiSetting			                :STRUCT
+		AbsPosDirection					:MC_Direction;	
+		AbsPosBufferMode				:MC_BufferMode;	
+		SetPosValue						:LREAL;			
+		EmergencyStopRamp				:LREAL;			
+		AbsPositioningTarget			:LREAL;			
+		IncPositioningTarget			:LREAL;			
+		PositioningSpeed				:LREAL;			
+		PositioningAcc					:LREAL;			
+		PositioningDec					:LREAL;			
+		JogSpeed						:LREAL;			
+		JogAcc							:LREAL;			
+		JogDec							:LREAL;			
+		TqCtrlTorque					:LREAL;			
+		TqCtrlTorqueRamp				:LREAL;			
+		TqCtrlSpeed						:LREAL;			
+		TqCtrlAcc						:LREAL;			
+		TqCtrlDec						:LREAL;			
+		TqCtrlDir						:MC_Direction;	
+		TqCtrlBufferMode				:MC_BufferMode;	
+		TouchProbeTriggerInput			:MC_TRIGGER_REF;
+		IncPosBufferMode				:MC_BufferMode;	
+		IncHomePosBufferMode			:MC_BufferMode; 
+		WriteParNumber					:UINT;			
+		WriteDrvParValue				:DINT;			
+		HomeSpeed						:LREAL;			
+		HomeAcc							:LREAL;			
+		HomeDec							:LREAL;			
+		HomeOffsett						:LREAL;			
+		HomePos							:LREAL;			
+		TestPosMinPos					:LREAL;			
+		TestPosMaxPos					:LREAL;			
+		ManualBrakeState				:BOOL;			
+		TestPosSetting					:ARRAY_TestPos;
+		TestPosIndex                    :UINT;
+	END_STRUCT;
+
+    AxiStatus				        	:STRUCT
+	    Enabled 						:BOOL;			
+		StandStill						:BOOL;			
+		Fault							:BOOL;			
+		Stopping						:BOOL;			
+		JogInVelocity					:BOOL;			
+		AbsPosDone	 					:BOOL;			
+		IncPosDone	 					:BOOL;			
+		TestPosRunning					:BOOL;			
+		AbsSetPosDone					:BOOL;			
+		IncSetPosDone					:BOOL;			
+		InTorque						:BOOL;			
+		TouchProbeDone					:BOOL;
+		AbortTriggerDone				:BOOL;
+		TorqueLimitReached				:BOOL;			
+		WriteParDone					:BOOL;			
+		Homed		 					:BOOL;			
+		Errors							:BOOL;			
+	END_STRUCT;
+
+	AxiFeedback			               	:STRUCT
+		CommandPosition					:LREAL;			
+        ActualPosition 					:LREAL;			
+		CommandSpeed					:LREAL;			
+        ActualSpeed  					:LREAL;			
+		ActualTorque					:LREAL;			
+		TouchProbeRecPos				:LREAL;
+		FollErr							:LREAL;			
+		DriveAlarmID					:UINT;			
+	END_STRUCT;
+
+	AxiError			               	:STRUCT
+		AbsPosManager_Err				:BOOL;			
+		AbsPosManager_ErrId				:UINT;			
+        AxCtrl_Err	 					:BOOL;			
+        AxCtrl_ErrId	 				:UINT;			
+		Jog_Err							:BOOL;			
+		Jog_ErrId						:UINT;			
+        HomeJog_Err  					:BOOL;			
+        HomeJog_ErrId  					:UINT;			
+		MoveAbs_Err						:BOOL;			
+		MoveAbs_ErrId					:UINT;			
+		MoveInc_Err						:BOOL;			
+		MoveInc_ErrId					:UINT;			
+		MoveIncHome_Err					:BOOL;			
+		MoveIncHome_ErrId				:UINT;			
+		ReadActPos_Err					:BOOL;			
+		ReadActPos_ErrId				:UINT;			
+		ReadActTq_Err					:BOOL;			
+		ReadActTq_ErrId					:UINT;			
+		ReadActSp_Err					:BOOL;			
+		ReadActSp_ErrId					:UINT;			
+		ReadComPos_Err					:BOOL;			
+		ReadComPos_ErrId				:UINT;			
+		ReadPosErr_Err					:BOOL;			
+		ReadPosErr_ErrId				:UINT;			
+		ReadComSp_Err					:BOOL;			
+		ReadComSp_ErrId					:UINT;			
+		ReadStatus_Err					:BOOL;			
+		ReadStatus_ErrId				:UINT;			
+		AbsSetPos_Err					:BOOL;			
+		AbsSetPos_ErrId					:UINT;			
+		IncSetPos_Err					:BOOL;			
+		IncSetPos_ErrId					:UINT;			
+		HomeSetPos_Err					:BOOL;			
+		HomeSetPos_ErrId				:UINT;			
+		StepRefPulse_Err				:BOOL;			
+		StepRefPulse_ErrId				:UINT;			
+		Stop_Err						:BOOL;			
+		Stop_ErrId						:UINT;			
+		HomeStop_Err					:BOOL;			
+		HomeStop_ErrId					:UINT;			
+		TqCtrl_Err						:BOOL;			
+		TqCtrl_ErrId					:UINT;			
+		TouchProbe_Err					:BOOL;
+		TouchProbe_ErrId				:UINT;
+		AbortTrigger_Err				:BOOL;
+		AbortTrigger_ErrId				:UINT;
+		BrakeRelease_Err				:BOOL;			
+		BrakeRelease_ErrId				:UINT;			
+		ReadDrvPar_Err					:BOOL;			
+		ReadDrvPar_ErrId				:UINT;			
+		ResetML_Err						:BOOL;			
+		ResetML_ErrId					:UINT;			
+		WriteDrvPar_Err					:BOOL;			
+		WriteDrvPar_ErrId				:UINT;			
+	END_STRUCT;
+	
+	ST_AxisData    :STRUCT
+       Command     :AxiCommand;
+       Setting     :AxiSetting;
+       Status      :AxiStatus;
+       Feedback    :AxiFeedback;
+       Error       :AxiError;
+    END_STRUCT;
+END_TYPE
+(**)

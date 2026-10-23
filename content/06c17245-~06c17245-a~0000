@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RestoreDataItem Version="1" DeletionDate="2026-10-07 08:20:20Z" DisplayName="drive-8 : YASKAWA GA500 series 3.02">
+    <NodeData DomainId="e639c0f9-db09-46f4-abf7-50216a13f220" SolutionId="606e2993-1c57-411c-b0d2-c57a13c52bbf" NodeId="06c17245-a548-4b58-823b-8dbaa865e149" ParentId="4ceac27b-95c0-4947-b581-b1d8c0d2e3d6" PredecessorId="bb1d4abd-c22f-4a6d-b872-57e2598e1d9b" Position="14" Kind="Instance" />
+</RestoreDataItem>

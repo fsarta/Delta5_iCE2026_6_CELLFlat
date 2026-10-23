@@ -1,0 +1,12 @@
+{ CustomGroupDefinition('43899ef6-106e-48c4-af7f-e976ae62da8e', '') }
+
+VAR_INPUT
+    udiEventID : UDINT { CustomGroupReference('43899ef6-106e-48c4-af7f-e976ae62da8e') } {Id('c0507fa6-aca2-42f4-aceb-18c9f3407e27')};
+    sEventSource : STRING[80] { CustomGroupReference('43899ef6-106e-48c4-af7f-e976ae62da8e') } {Id('8aad6c17-8c2c-4305-b8e5-fb46a72eee5a')};
+    sEventMessage : STRING512 { CustomGroupReference('43899ef6-106e-48c4-af7f-e976ae62da8e') } {Id('0e53404c-fc77-4daf-aceb-763dcb02f835')};
+    eEventSeverity : E_ErrorSeverity { CustomGroupReference('43899ef6-106e-48c4-af7f-e976ae62da8e') } {Id('d04f6240-5ae3-4435-a3b9-2d3bf21fe29b')};
+END_VAR
+
+VAR
+    sFinalEventMessage : STRING512 { CustomGroupReference('43899ef6-106e-48c4-af7f-e976ae62da8e') } {Id('a45ee9dd-a46c-40d0-b2bd-de6101ea6812')};
+END_VAR

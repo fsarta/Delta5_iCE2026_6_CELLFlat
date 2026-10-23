@@ -1,0 +1,1 @@
+DEG_TO_RAD := deg * (PI / 180.0);
