@@ -114,11 +114,13 @@ FB_PickPlace_Sequencer1(
 (* ---------------------------------------------------------------------------------------------
    CONTROLLO VELOCITA' NASTRO FEEDIN (rampa proporzionale)
    ---------------------------------------------------------------------------------------------
-   Il nastro rallenta in modo proporzionale alla distanza residua dal punto di stop:
+   Il nastro rallenta in due fasi:
 
-     - da tracking_start (FrameOffset[1] + 300 mm) il setpoint scende linearmente
-       da v_nominal a v_min;
-     - negli ultimi end_zone_margin mm (50 mm) scende linearmente da v_min a 0;
+     - da tracking_start (FrameOffset[1] + 300 mm) entra nella fascia di prelievo
+       a velocita' ridotta COSTANTE v_min (50 mm/s): costante per non far
+       "pompare" il nastro ad ogni pezzo della fila;
+     - negli ultimi end_zone_margin mm (50 mm, cioe' da 400 a 450 mm) il setpoint
+       scende in modo PROPORZIONALE da v_min a 0;
      - a tracking_end (FrameOffset[1] + 450 mm) il nastro e' fermo.
 
    Il punto di arresto (450 mm) e' scelto per restare DENTRO la finestra di
@@ -128,8 +130,9 @@ FB_PickPlace_Sequencer1(
    avanti. Inoltre, siccome la rampa porta il setpoint a 0 gia' sulla soglia,
    il pezzo non "scivola" oltre il punto di stop come succedeva con il taglio
    secco a 0 e la decelerazione minima (dec_min).
-   La velocita' e' continua fra le zone: niente piu' gradini (era: v_nominal ->
-   v_min in un ciclo e poi taglio a 0 sulla soglia).
+   La rampa finale e' continua: il setpoint arriva a 0 esattamente sulla soglia,
+   senza il taglio secco di prima (era: v_nominal -> v_min in un ciclo e poi 0
+   istantaneo sulla soglia).
    --------------------------------------------------------------------------------------------- *)
 FB_ConveyorController1(
     enable          := StartPickPlace_Delta AND G_bAutoCycleRunning,

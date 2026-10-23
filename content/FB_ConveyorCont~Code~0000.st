@@ -1,10 +1,10 @@
 (* =========================================================================
    FB_ConveyorController - Controllo velocita' nastro FeedIn (tracking)
    -------------------------------------------------------------------------
-   Scopo del blocco: rallentare il nastro in modo PROPORZIONALE man mano che
-   il pezzo si avvicina alla soglia di fine corsa (tracking_end), in modo che
-   il robot riesca sempre a prendere il pezzo prima della EndDistance del
-   blocco MC_TrackConveyorBelt.
+   Scopo del blocco: rallentare il nastro man mano che il pezzo si avvicina
+   alla soglia di fine corsa (tracking_end), con una rampa proporzionale nella
+   fascia finale, in modo che il robot riesca sempre a prendere il pezzo prima
+   della EndDistance del blocco MC_TrackConveyorBelt.
 
    Zone (distance = posizione del pezzo, gia' riferita al frame FeedIn):
 
@@ -12,18 +12,27 @@
              nastro a v_nominal.
 
      ZONA 2  tracking_start < distance <= (tracking_end - ramp_margin)
-             rampa lineare da v_nominal a v_min:
-                 v = v_nominal - progress * (v_nominal - v_min)
+             fascia di prelievo: velocita' ridotta COSTANTE v_min.
 
      ZONA 3  (tracking_end - ramp_margin) < distance < tracking_end
-             rampa lineare finale da v_min a 0:
+             rampa lineare proporzionale da v_min a 0:
                  v = v_min * (1 - ratio_end)
 
      ZONA 4  distance >= tracking_end
              nastro fermo.
 
-   La velocita' e' CONTINUA: ai confini delle zone il valore coincide, quindi
-   non ci sono piu' gradini (v_nominal -> v_min -> 0) ma una rampa unica.
+   PERCHE' LA ZONA 2 E' COSTANTE E NON PROPORZIONALE
+   La posizione usata e' quella del pezzo attualmente in tracking. Se la
+   velocita' variasse in modo proporzionale per tutta la zona, OGNI pezzo
+   della fila farebbe rallentare e riaccelerare il nastro (effetto "pompa"):
+   rallenta mentre il pezzo attraversa la fascia, poi - preso il pezzo - il
+   tracking passa al successivo (piu' indietro) e il nastro torna a v_nominal.
+   Con una velocita' COSTANTE nella fascia di prelievo il nastro cambia
+   velocita' una sola volta per pezzo (nominale -> v_min) e resta stabile
+   durante il prelievo.
+   La rampa proporzionale resta dove serve davvero: negli ultimi millimetri
+   prima della soglia, per fermare il nastro in modo dolce e garantito sul
+   pezzo che arriva troppo avanti.
 
    La DECELERAZIONE e' sempre dec_max (= CommandDeceleration di HMI): e' l'unico
    parametro che il drive usa quando il jog viene rilasciato. Prima veniva
@@ -83,11 +92,14 @@ IF (distance <= tracking_start)
 
 ELSIF distance < (tracking_end - ramp_margin) THEN
 
-    (* ZONA 2: rampa proporzionale v_nominal -> v_min *)
-    progress      := (distance - tracking_start) / (zone_length - ramp_margin);
-    progress      := MAX(0.0, MIN(1.0, progress));
-
-    speed_setpoint  := v_nominal - progress * (v_nominal - v_ramp_min);
+    (* ZONA 2: fascia di prelievo -> velocita' ridotta COSTANTE (v_min).
+       Volutamente COSTANTE e non proporzionale: e' la zona in cui il pezzo
+       viene preso. Con una rampa continua qui, ogni volta che un pezzo
+       attraversa la fascia il nastro rallenterebbe e riaccelererebbe (effetto
+       "pompa") per OGNI pezzo della fila. Cosi' invece la velocita' cambia una
+       sola volta all'ingresso in zona (nominale -> v_min, rampa gestita
+       dall'accelerazione del drive) e resta stabile per tutto il prelievo. *)
+    speed_setpoint  := v_ramp_min;
     acceleration    := acc_max;
     tracking_active := TRUE;
     end_zone_active := FALSE;
