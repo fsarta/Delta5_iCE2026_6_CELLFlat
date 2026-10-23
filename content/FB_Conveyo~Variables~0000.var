@@ -38,6 +38,8 @@ VAR
     acc_phase2 : LREAL { CustomGroupReference('7ed7693a-99bb-4e1a-9936-faac69e9f5ac') } {Id('2725bcfb-8563-45a0-ac08-617b0ab6dc9e')};
     zone_length : LREAL { CustomGroupReference('7ed7693a-99bb-4e1a-9936-faac69e9f5ac') } {Id('0c91d7d0-1dd4-4a69-b108-44c3eb55631d')};
     progress : LREAL { CustomGroupReference('7ed7693a-99bb-4e1a-9936-faac69e9f5ac') } {Id('e856bfc3-d3f8-48af-be27-51d28842d4ee')};
+    ramp_margin : LREAL { CustomGroupReference('7ed7693a-99bb-4e1a-9936-faac69e9f5ac') } {Id('125779d0-8179-4a0a-bcec-1a1d245ba453')}; (* margine effettivo della rampa finale v_min -> 0 [mm], limitato alla lunghezza della zona *)
+    v_ramp_min : LREAL { CustomGroupReference('7ed7693a-99bb-4e1a-9936-faac69e9f5ac') } {Id('d1793fde-512e-4b4b-a897-b334e61cfa8c')}; (* v_min limitata a [0 .. v_nominal] per non invertire la rampa *)
 END_VAR
 
 VAR_EXTERNAL

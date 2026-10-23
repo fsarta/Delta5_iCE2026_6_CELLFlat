@@ -208,7 +208,14 @@ DATA_FeedInAxis.Setting.PositioningDec          := HMI_Data.Axis.FeedIn.Setting.
 DATA_FeedInAxis.Setting.HomePos                 := HMI_Data.Axis.FeedIn.Setting.HomingPosition;
 DATA_FeedInAxis.Setting.JogSpeed                := MIN(HMI_Data.Axis.FeedIn.Setting.CommandVelocity, FeedIn_SmoothSpeed); //HMI_Data.Axis.FeedIn.Setting.CommandVelocity;
 DATA_FeedInAxis.Setting.JogAcc                  := MIN(HMI_Data.Axis.FeedIn.Setting.CommandAcceleration, FeedIn_SmoothAcceleration); //HMI_Data.Axis.FeedIn.Setting.CommandAcceleration;
-DATA_FeedInAxis.Setting.JogDec                  := MIN(HMI_Data.Axis.FeedIn.Setting.CommandDeceleration, FeedIn_SmoothDeceleration); //HMI_Data.Axis.FeedIn.Setting.CommandDeceleration;
+(* DECELERAZIONE FEEDIN = FEEDOUT:
+   la decelerazione NON deve essere ridotta da FeedIn_SmoothDeceleration. E' l'unico
+   parametro che il drive usa quando il jog viene rilasciato: se lo si abbassa al valore
+   "morbido" (dec_min), allo Stop Ciclo il nastro FeedIn frena con una rampa lentissima
+   mentre il FeedOut (che usa CommandDeceleration) si ferma subito.
+   La rampa di velocita' del tracking e' gia' data dal setpoint (FB_ConveyorController),
+   non serve una decelerazione ridotta. *)
+DATA_FeedInAxis.Setting.JogDec                  := HMI_Data.Axis.FeedIn.Setting.CommandDeceleration;
 
         
 // FeedOut
