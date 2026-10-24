@@ -154,11 +154,26 @@ TYPE
         ErrorID     : UDINT;
     END_STRUCT
     
+    (* HMI: TCP in coordinate cartesiane come scalari separati.
+       I VECTOR (Linear_Position / Joint_Position) restano la sorgente interna,
+       ma molti client HMI/OPC UA non gestiscono bene gli elementi di un VECTOR:
+       questi campi sono il "mirror" pronto da linkare alla pagina. *)
+    ST_HMI_Tcp : STRUCT
+        X  : LREAL;
+        Y  : LREAL;
+        Z  : LREAL;
+        Rx : LREAL;
+        Ry : LREAL;
+        Rz : LREAL;
+    END_STRUCT
+
     ST_Robot_Feedback   : STRUCT //Current linear and joint position
         Linear_Position :VECTOR;
         Linear_Velocity :VECTOR;
         Joint_Position  :VECTOR;
         Joint_Velocity  :VECTOR;
+        TCP             : ST_HMI_Tcp;          (* HMI: TCP in MCS [mm/deg] *)
+        Joint           : ARRAY[0..4] OF LREAL;(* HMI: giunti S L U T B [deg] *)
     END_STRUCT
     
     ST_Robot : STRUCT
@@ -283,6 +298,10 @@ TYPE
         Gripper1_State  : BOOL;
         Gripper2_State  : BOOL;
         TrackingActive  : BOOL;
+        // --- HMI: avanzamento del sequencer Pick&Place ---
+        Step            : E_PickPlace_State; (* step corrente del sequencer *)
+        StepId          : INT;               (* stesso step come INT, comodo per l'HMI *)
+        RecipeName      : WSTRING;           (* placeholder: nel progetto non esiste gestione ricette *)
     END_STRUCT
     
     ST_HMI_Process : STRUCT
@@ -323,6 +342,53 @@ TYPE
         LastProduct : ST_Vision_LastProduct; // Ultimo prodotto rilevato
     END_STRUCT;
 
+(*============================================================================================*
+  HMI - CODA DI TRACKING FEEDIN (mirror della coda prodotti)
+  ---------------------------------------------------------------------------------------------
+  MultiGrpProductData NON e' pubblicato su OPC (IsOpc=False nel DataList): questa struttura e'
+  il mirror "piatto" che HMI.pou riempie ad ogni ciclo (SlowTask, 32 ms) e che il pannello
+  legge da HMI_Data.Tracking.
+  Array piatti (e non array di STRUCT) perche' sono i piu' semplici da mappare in JMobile.
+  Righe esposte: 8 (le prime della coda). Il buffer reale e' da 150 pezzi.
+
+  Stati (State[i]):
+      0 = QUEUED     pezzo in coda, deve ancora entrare nella finestra
+      1 = IN_WINDOW  pezzo dentro la finestra di prelievo
+      2 = TRACKING   pezzo agganciato dal robot (InSync)
+      3 = PAST       pezzo oltre la fine finestra (fuori portata)
+
+  BeltPos[i]         = mm percorsi dal pezzo sul nastro, riferiti alla stessa origine usata
+                       dal controllo nastro (ActualPosition - RecordedPosition - OffsetCamera).
+                       E' il valore da confrontare con WindowStart / WindowEnd.
+  DistToWindow[i]    = mm che mancano per entrare in finestra (0 se gia' dentro).
+*============================================================================================*)
+
+    ST_HMI_Tracking : STRUCT
+        Count            : INT;                          (* righe valide in coda (0..8) *)
+        BufferLevel      : INT;                          (* pezzi totali in coda nel buffer *)
+        Id               : ARRAY[0..7] OF INT;           (* indice/ID del pezzo *)
+        Valid            : ARRAY[0..7] OF BOOL;
+        X                : ARRAY[0..7] OF LREAL;         (* vision X [mm] *)
+        Y                : ARRAY[0..7] OF LREAL;         (* vision Y [mm] *)
+        Rz               : ARRAY[0..7] OF LREAL;         (* vision Rz [deg] *)
+        BeltPos          : ARRAY[0..7] OF LREAL;         (* posizione pezzo sul nastro [mm] *)
+        DistToWindow     : ARRAY[0..7] OF LREAL;         (* mm all'ingresso in finestra *)
+        State            : ARRAY[0..7] OF INT;           (* 0 QUEUED 1 IN_WINDOW 2 TRACKING 3 PAST *)
+        // --- finestra / nastro (gli stessi numeri usati da FB_ConveyorController) ---
+        WindowStart      : LREAL;                        (* inizio finestra: vFeedIn_FrameOffset[1] + 300 *)
+        WindowEnd        : LREAL;                        (* fine finestra:   vFeedIn_FrameOffset[1] + 450 *)
+        BeltSpeedSetpoint: LREAL;                        (* setpoint velocita' nastro (FeedIn_SmoothSpeed) *)
+        BeltSpeedActual  : LREAL;                        (* velocita' reale nastro [mm/s] *)
+        // --- prossimo pezzo da prelevare ---
+        NextValid        : BOOL;
+        NextId           : INT;
+        NextX            : LREAL;
+        NextY            : LREAL;
+        NextRz           : LREAL;
+        NextBeltPos      : LREAL;
+        NextDistToWindow : LREAL;
+    END_STRUCT
+
 (*============================================================================================*)
 (*                                          INTERFACE                                         *)
 (*============================================================================================*)
@@ -334,6 +400,7 @@ TYPE
         TeachFrame  : ST_HMI_Frames;
         Process     : ST_HMI_Process;
         Vision      : ST_HMI_Vision;
+        Tracking    : ST_HMI_Tracking;   (* coda tracking FeedIn per la pagina HMI *)
     END_STRUCT
     
 END_TYPE

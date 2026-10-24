@@ -178,6 +178,16 @@ HMI_Data.TeachFrame.ConfirmPoint := FALSE;
 (*---------------------------------------- (HMI to PLC) --------------------------------------*)
 DATA_Machine.Setting.OffsetCamera := 750.0;
 
+// Finestra di tracking FeedIn (vedi DT_Machine.Setting): unica sorgente usata da
+// PickPlaceManager (rampa nastro) e da HMI.pou (mirror HMI_Data.Tracking per la pagina HMI).
+DATA_Machine.Setting.TrackingWindowStart := 300.0;   // inizio fascia di prelievo [mm dal frame FeedIn su X]
+DATA_Machine.Setting.TrackingWindowEnd   := 450.0;   // nastro fermo [mm]; deve restare < EndDistance (500) del tracking
+
+// HMI: etichetta "recipe" mostrata nella pagina Robot & Part Positions.
+// Nel progetto NON esiste una gestione ricette: e' solo un'etichetta descrittiva,
+// modificabile qui se cambia il formato in produzione.
+HMI_Data.Process.Status.RecipeName := "VITI_M6";
+
 // TODO
 DATA_Machine.Setting.MinVelocity_Delta := 1500.0;
 DATA_Machine.Setting.MinRamp_Delta := 10000.0;

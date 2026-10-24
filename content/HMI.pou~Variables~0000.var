@@ -84,4 +84,18 @@ VAR_EXTERNAL
     aBuffer_X : Yt_RealArray50 { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('f25d9240-a464-4d39-ade0-5ce73ccef63b')};
     aBuffer_Y : Yt_RealArray50 { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('5860777e-aac3-47ba-a8cc-5f42f820aeba')};
     aBuffer_Rz : Yt_RealArray50 { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('c9b14315-4e7e-47ac-8a4d-1748f5f50337')};
+    MultiGrpProductData : Yt_GP_MultiGrpProductStruct { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('e797c93a-1584-4833-a82f-a2ab91d080a0')}; (* coda prodotti visione (non pubblicata su OPC): sorgente del mirror HMI_Data.Tracking *)
+END_VAR
+
+VAR
+    (* --- HMI: mirror locale della coda tracking FeedIn (vedi sezione TRACKING nel codice) --- *)
+    iTrackMax : INT { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('c10d9311-afc1-47bb-b780-5539e215311f')};
+    iTrackIdx : INT { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('260cd713-2749-413d-8fb0-aea9176d3114')};
+    iTrackStop : INT { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('bf932213-8476-4f97-a9c7-91a45d32d03a')};
+    iTrackLevel : INT { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('112d0ac4-8d21-421d-9f28-43000305572d')};
+    iTrackRow : INT { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('871ec618-a18c-4d10-be0b-90484532bf1e')};
+    iTrackLoop : INT { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('87f3cace-1a4c-4081-899b-924e989d4f89')};
+    iTrackBest : INT { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('59570e6c-aed5-46b7-92bd-02ec2f95b195')};
+    iTrackState : INT { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('9e629379-3137-4665-8028-8abd36fa23ff')};
+    lrTrackBeltPos : LREAL { CustomGroupReference('a04e0da4-75a3-431c-a769-2ffcda83b779') } {Id('e85d1bf4-a65b-4e58-b33a-4add1c6e395a')};
 END_VAR
