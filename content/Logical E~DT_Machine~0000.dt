@@ -68,6 +68,13 @@ TYPE
         WCS_MCS_ZeroDistance    :LREAL;
         LimitPos                :Array_XY_range;
         OffsetCamera            :LREAL;
+        // Finestra di tracking FeedIn, relative al frame FeedIn su X (vFeedIn_FrameOffset[1]):
+        //   TrackingWindowStart = inizio fascia di prelievo (nastro a velocita' ridotta)
+        //   TrackingWindowEnd   = nastro fermo (deve restare dentro la EndDistance del tracking)
+        // Sorgente unica: usata da PickPlaceManager (FB_ConveyorController) e da HMI.pou
+        // (mirror HMI_Data.Tracking), cosi' pagina e logica non possono divergere.
+        TrackingWindowStart     :LREAL;
+        TrackingWindowEnd       :LREAL;
     END_STRUCT;
 
     _Status                     :STRUCT

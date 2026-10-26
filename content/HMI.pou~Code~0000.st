@@ -166,6 +166,21 @@ HMI_Data.Robot.Feedback.Linear_Velocity  := DELTA.Machine.ActualVel;
 HMI_Data.Robot.Feedback.Joint_Position   := DELTA.Axis.ActualPos;
 HMI_Data.Robot.Feedback.Joint_Velocity   := DELTA.Axis.ActualVel;
 
+// HMI page "ROBOT & PART POSITIONS": TCP e giunti come scalari (piu' semplici da
+// mappare in JMobile rispetto agli elementi di un VECTOR).
+// Attenzione: nel VECTOR l'indice 0 non e' usato, le componenti sono [1..6] / [1..5].
+HMI_Data.Robot.Feedback.TCP.X    := TO_LREAL(DELTA.Machine.ActualPos[1]);
+HMI_Data.Robot.Feedback.TCP.Y    := TO_LREAL(DELTA.Machine.ActualPos[2]);
+HMI_Data.Robot.Feedback.TCP.Z    := TO_LREAL(DELTA.Machine.ActualPos[3]);
+HMI_Data.Robot.Feedback.TCP.Rx   := TO_LREAL(DELTA.Machine.ActualPos[4]);
+HMI_Data.Robot.Feedback.TCP.Ry   := TO_LREAL(DELTA.Machine.ActualPos[5]);
+HMI_Data.Robot.Feedback.TCP.Rz   := TO_LREAL(DELTA.Machine.ActualPos[6]);
+HMI_Data.Robot.Feedback.Joint[0] := TO_LREAL(DELTA.Axis.ActualPos[1]);
+HMI_Data.Robot.Feedback.Joint[1] := TO_LREAL(DELTA.Axis.ActualPos[2]);
+HMI_Data.Robot.Feedback.Joint[2] := TO_LREAL(DELTA.Axis.ActualPos[3]);
+HMI_Data.Robot.Feedback.Joint[3] := TO_LREAL(DELTA.Axis.ActualPos[4]);
+HMI_Data.Robot.Feedback.Joint[4] := TO_LREAL(DELTA.Axis.ActualPos[5]);
+
 (*============================================================================================*)
 (*                                            AXIS                                            *)
 (*============================================================================================*)
@@ -397,3 +412,140 @@ HMI_Data.Dashboard.InputOutput.SO1.x3 := safeOutSpare3;
 //HMI_Data.Vision.Status.TotalPartsFound
 
 //HMI_Data.Vision.LastProduct
+
+(*============================================================================================*)
+(*                        TRACKING · CODA PEZZI FEEDIN (pagina HMI)                           *)
+(*============================================================================================*)
+(* MultiGrpProductData NON e' pubblicato su OPC (IsOpc = False nel DataList): questa sezione
+   ne costruisce il "mirror" dentro HMI_Data.Tracking, che invece e' pubblicato insieme a
+   HMI_Data. Gira in SlowTask (32 ms), sufficiente per una pagina di monitoraggio.
+
+   Quantita' usate (identiche a quelle della logica di tracking):
+     BeltPos[i]      = ActualPosition - RecordedPosition - OffsetCamera
+                       (e' la stessa grandezza di "DistanceFromOrigin[1] - OffsetCamera"
+                        usata da PickPlaceManager per il pezzo in uso: cresce mentre il
+                        pezzo avanza verso il robot)
+     WindowStart     = vFeedIn_FrameOffset[1] + DATA_Machine.Setting.TrackingWindowStart (300 mm)
+     WindowEnd       = vFeedIn_FrameOffset[1] + DATA_Machine.Setting.TrackingWindowEnd   (450 mm)
+     DistToWindow[i] = MAX(0, WindowStart - BeltPos[i])
+
+   I due offset vengono da Init.pou (vedi DT_Machine.Setting): stessa sorgente usata da
+   PickPlaceManager per la rampa del nastro, quindi pagina HMI e logica non possono divergere.
+*)
+
+HMI_Data.Tracking.WindowStart       := vFeedIn_FrameOffset[1] + DATA_Machine.Setting.TrackingWindowStart;
+HMI_Data.Tracking.WindowEnd         := vFeedIn_FrameOffset[1] + DATA_Machine.Setting.TrackingWindowEnd;
+HMI_Data.Tracking.BeltSpeedSetpoint := FeedIn_SmoothSpeed;
+HMI_Data.Tracking.BeltSpeedActual   := TO_LREAL(DATA_FeedInAxis.Feedback.ActualSpeed);
+
+// --- puntatori dell'anello della coda prodotti ---
+iTrackMax  := MultiGrpProductData[0].BufferSize;
+IF iTrackMax <= 0 THEN
+    iTrackMax := 150;   // default: dimensione impostata in VisionManager
+END_IF
+iTrackIdx  := MultiGrpProductData[0].UsePointer;    // prossimo pezzo da prelevare
+iTrackStop := MultiGrpProductData[0].StorePointer;  // primo posto libero
+
+// pezzi presenti in coda (distanza sull'anello, gestendo il wrap)
+iTrackLevel := iTrackStop - iTrackIdx;
+IF iTrackLevel < 0 THEN
+    iTrackLevel := iTrackLevel + iTrackMax;
+END_IF
+IF iTrackLevel > iTrackMax THEN
+    iTrackLevel := iTrackMax;
+END_IF
+HMI_Data.Tracking.BufferLevel := iTrackLevel;
+
+// --- azzeramento righe non valide ---
+FOR iTrackRow := 0 TO 7 DO
+    HMI_Data.Tracking.Id[iTrackRow]           := 0;
+    HMI_Data.Tracking.Valid[iTrackRow]        := FALSE;
+    HMI_Data.Tracking.X[iTrackRow]            := 0.0;
+    HMI_Data.Tracking.Y[iTrackRow]            := 0.0;
+    HMI_Data.Tracking.Rz[iTrackRow]           := 0.0;
+    HMI_Data.Tracking.BeltPos[iTrackRow]      := 0.0;
+    HMI_Data.Tracking.DistToWindow[iTrackRow] := 0.0;
+    HMI_Data.Tracking.State[iTrackRow]        := 0;
+END_FOR
+
+// --- copia le prime 8 righe della coda (dalla piu' vecchia = prossima al prelievo) ---
+iTrackRow := 0;
+FOR iTrackLoop := 0 TO 7 DO
+    IF (iTrackRow >= iTrackLevel) OR (iTrackIdx < 0) OR (iTrackIdx >= iTrackMax) THEN
+        EXIT;
+    END_IF
+
+    lrTrackBeltPos := TO_LREAL(DATA_FeedInAxis.Feedback.ActualPosition)
+                      - TO_LREAL(MultiGrpProductData[0].ProductDetails[iTrackIdx].RecordedPosition)
+                      - TO_LREAL(DATA_Machine.Setting.OffsetCamera);
+
+    HMI_Data.Tracking.Id[iTrackRow]           := iTrackIdx;
+    HMI_Data.Tracking.Valid[iTrackRow]        := TRUE;
+    HMI_Data.Tracking.X[iTrackRow]            := TO_LREAL(MultiGrpProductData[0].ProductDetails[iTrackIdx].ProductPosition[1]);
+    HMI_Data.Tracking.Y[iTrackRow]            := TO_LREAL(MultiGrpProductData[0].ProductDetails[iTrackIdx].ProductPosition[2]);
+    HMI_Data.Tracking.Rz[iTrackRow]           := TO_LREAL(MultiGrpProductData[0].ProductDetails[iTrackIdx].ProductPosition[6]);
+    HMI_Data.Tracking.BeltPos[iTrackRow]      := lrTrackBeltPos;
+    HMI_Data.Tracking.DistToWindow[iTrackRow] := MAX(0.0, HMI_Data.Tracking.WindowStart - lrTrackBeltPos);
+
+    // Stato: 0 QUEUED / 1 IN_WINDOW / 2 TRACKING / 3 PAST
+    IF lrTrackBeltPos >= HMI_Data.Tracking.WindowEnd THEN
+        iTrackState := 3;
+    ELSIF lrTrackBeltPos >= HMI_Data.Tracking.WindowStart THEN
+        iTrackState := 1;
+    ELSE
+        iTrackState := 0;
+    END_IF
+    // il pezzo in uso dal sequencer (UsePointer) + tracking attivo -> TRACKING
+    IF (iTrackState = 1) AND (iTrackIdx = MultiGrpProductData[0].UsePointer) AND KPI_Data.xTrackingActive THEN
+        iTrackState := 2;
+    END_IF
+    HMI_Data.Tracking.State[iTrackRow] := iTrackState;
+
+    // avanza sull'anello
+    iTrackIdx := iTrackIdx + 1;
+    IF iTrackIdx >= iTrackMax THEN
+        iTrackIdx := 0;
+    END_IF
+    iTrackRow := iTrackRow + 1;
+END_FOR
+
+HMI_Data.Tracking.Count := iTrackRow;
+
+// --- NEXT PICK TARGET ---
+// 1) primo pezzo in finestra (il piu' avanti, cioe' il piu' vicino a WindowEnd)
+// 2) se nessuno e' in finestra: il pezzo in coda piu' avanti (il primo che entrera')
+iTrackBest := -1;
+FOR iTrackRow := 0 TO 7 DO
+    IF HMI_Data.Tracking.Valid[iTrackRow] AND ((HMI_Data.Tracking.State[iTrackRow] = 1) OR (HMI_Data.Tracking.State[iTrackRow] = 2)) THEN
+        IF (iTrackBest < 0) OR (HMI_Data.Tracking.BeltPos[iTrackRow] > HMI_Data.Tracking.BeltPos[iTrackBest]) THEN
+            iTrackBest := iTrackRow;
+        END_IF
+    END_IF
+END_FOR
+IF iTrackBest < 0 THEN
+    FOR iTrackRow := 0 TO 7 DO
+        IF HMI_Data.Tracking.Valid[iTrackRow] AND (HMI_Data.Tracking.State[iTrackRow] = 0) THEN
+            IF (iTrackBest < 0) OR (HMI_Data.Tracking.BeltPos[iTrackRow] > HMI_Data.Tracking.BeltPos[iTrackBest]) THEN
+                iTrackBest := iTrackRow;
+            END_IF
+        END_IF
+    END_FOR
+END_IF
+
+IF iTrackBest >= 0 THEN
+    HMI_Data.Tracking.NextValid        := TRUE;
+    HMI_Data.Tracking.NextId           := HMI_Data.Tracking.Id[iTrackBest];
+    HMI_Data.Tracking.NextX            := HMI_Data.Tracking.X[iTrackBest];
+    HMI_Data.Tracking.NextY            := HMI_Data.Tracking.Y[iTrackBest];
+    HMI_Data.Tracking.NextRz           := HMI_Data.Tracking.Rz[iTrackBest];
+    HMI_Data.Tracking.NextBeltPos      := HMI_Data.Tracking.BeltPos[iTrackBest];
+    HMI_Data.Tracking.NextDistToWindow := HMI_Data.Tracking.DistToWindow[iTrackBest];
+ELSE
+    HMI_Data.Tracking.NextValid        := FALSE;
+    HMI_Data.Tracking.NextId           := 0;
+    HMI_Data.Tracking.NextX            := 0.0;
+    HMI_Data.Tracking.NextY            := 0.0;
+    HMI_Data.Tracking.NextRz           := 0.0;
+    HMI_Data.Tracking.NextBeltPos      := 0.0;
+    HMI_Data.Tracking.NextDistToWindow := 0.0;
+END_IF

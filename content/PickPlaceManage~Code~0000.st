@@ -142,8 +142,8 @@ FB_ConveyorController1(
     (* Parametri – idealmente da struttura dati macchina *)
     v_nominal       := HMI_Data.Axis.FeedIn.Setting.CommandVelocity, //DATA_Machine.ConveyorNominalSpeed,
     v_min           := 50.0, //DATA_Machine.ConveyorMinSpeed,
-    tracking_start  := vFeedIn_FrameOffset[1] + 300.0, //DATA_Machine.TrackingStart,  (inizio rampa proporzionale)
-    tracking_end    := vFeedIn_FrameOffset[1] + 450.0, //DATA_Machine.TrackingEnd,    (nastro fermo: dentro la finestra di tracking, EndDistance = 500)
+    tracking_start  := vFeedIn_FrameOffset[1] + DATA_Machine.Setting.TrackingWindowStart, // (300 mm: inizio fascia di prelievo, vedi Init.pou)
+    tracking_end    := vFeedIn_FrameOffset[1] + DATA_Machine.Setting.TrackingWindowEnd,   // (450 mm: nastro fermo, dentro la finestra di tracking, EndDistance = 500)
     max_error       := max_error, //DATA_Machine.TrackingMaxError,
     end_zone_margin := end_zone_margin, //DATA_Machine.EndZoneMargin, (ultimi mm della rampa: v_min -> 0)
     dec_min         := 100.0, //DATA_Machine.DecMin, (non piu' usato per il jog: vedi HMI, JogDec = CommandDeceleration)
@@ -156,6 +156,12 @@ FB_ConveyorController1(
     tracking_active =>,
     end_zone_active =>
 );
+
+// 5b. HMI: step corrente del sequencer (pagina "Robot & Part Positions").
+// L'istanza FB_PickPlace_Sequencer1 e' locale a questo programma: la copia in HMI_Data
+// (pubblicata su OPC) va fatta qui, non in HMI.pou.
+HMI_Data.Process.Status.Step   := FB_PickPlace_Sequencer1.eCurrentStepName;
+HMI_Data.Process.Status.StepId := TO_INT(FB_PickPlace_Sequencer1.eCurrentStepName);
 
 // 6. Map FB Outputs to Physical Hardware
 IF FB_PickPlace_Sequencer1.eStepResult = E_StepStatus#ERROR THEN
